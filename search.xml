@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Linux基础2</title>
+      <link href="2020/11/08/2020-11-08-quannnxu-linux2/"/>
+      <url>2020/11/08/2020-11-08-quannnxu-linux2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-rm-删除"><a href="#1-rm-删除" class="headerlink" title="1.rm 删除"></a>1.rm 删除</h2><pre class=" language-shell"><code class="language-shell">rm -rf  #强制删除-f #直接不提示 直接删除</code></pre><p>场景:</p><p>LOG_PATH=””</p><p>业务逻辑判断 赋值 /xxxx/yyyy</p><p>​    漏了一种</p><p>rm -rf ${LOG_PATH}$/*  ==&gt; rm -rf /*</p><p>如何避免:</p><p>每次删除之前,都判断${LOG_PATH}$目录是否存在</p><p>set -u参数    在脚本的第一行#!bin/bash,在第二行写(赋值为空报错)</p><h2 id="2-添加用户"><a href="#2-添加用户" class="headerlink" title="2.添加用户"></a>2.添加用户</h2><p>[root@hadoop01 ~]# useradd quanxu<br>[root@hadoop01 ~]# id quanxu<br>uid=502(quanxu) gid=503(quanxu) 组=503(quanxu)</p><pre class=" language-shell"><code class="language-shell">cat /etc/passwd    #查看密码cat /etc/group    #查看用户组</code></pre><p>切换用户</p><pre class=" language-shell"><code class="language-shell">su - quanxu</code></pre><p>删除用户</p><pre class=" language-shell"><code class="language-shell">userdel quanxu</code></pre><p>删除用户,那么该用户所属的用户组加入没有其他用户则一起删除;否则有其他用户则不能删除</p><p>[root@hadoop01 quanxu]# rm -f /home/quanxu/.bash*</p><p>[root@hadoop01 quanxu]# su - quanxu<br>-bash-4.1$ </p><p>当前用户的所属家目录的个人环境变量不存在</p><p>一个用户默认创建的家目录是在/home/用户名,但是后期可以修改</p><pre class=" language-shell"><code class="language-shell">usermod -d /tmp #单独使用时，只是把保存在/etc/passwd这个配置文件当中的源目录名改成指定的新目录名，并不会把源目录下的内容移动到新目录下，如果要把源目录下的内容移动新目录下，则要和-m选项一起使用，才会把源目录下的内容移动到新目录下。</code></pre><pre class=" language-shell"><code class="language-shell">usermod -a -G dw qx  #添加用户qx  到组dw 里</code></pre><pre class=" language-shell"><code class="language-shell">usermod -g dw xx     #修改用户所属的群组</code></pre><pre class=" language-shell"><code class="language-shell">groupsmems -g xx -l #查看组的所有成员</code></pre><p>用户切换不了查看/etc/passwd文件</p><p>sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin #不可登录</p><p>quanxu:x:502:503::/home/quanxu:/bin/bash/false #禁止切换</p><pre class=" language-shell"><code class="language-shell">sudo #普通用户临时使用root的最大权限</code></pre><h2 id="4-权限"><a href="#4-权限" class="headerlink" title="4.权限"></a>4.权限</h2><pre class=" language-shell"><code class="language-shell">drwxr-xr-x.  22 root root  4096 7月  10 07:58 vard    rwx    r-x    r-x #第一个字符d代表文件夹 -文件#接下来三组的三个字母 分别是代表 读r 4,写w 2,执行x 1,-没有权限 0rwx:7        r-x:5        r-x :5#所属用户    所属组的成员    其他组的成员777 rwxrwxrwx755 rwxr-xr-x-rw-rw-r--. 1 quanxu quanxu   15 7月  11 02:29 quan.logchmod 640 quan.log    #所属成员可读可写,所属组其他成员可读,其他组成员不可读写执</code></pre><h2 id="5-大小"><a href="#5-大小" class="headerlink" title="5.大小"></a>5.大小</h2><p>文件大小:ll -h</p><p>文件或文件夹大小:du -sh</p><h2 id="6-搜索-find"><a href="#6-搜索-find" class="headerlink" title="6.搜索    find"></a>6.搜索    find</h2><p>find / -name ‘<em>hadoop</em>‘</p><p>history    查看历史操作</p><p>ps -ef    查看进程</p><h2 id="7-vi编辑"><a href="#7-vi编辑" class="headerlink" title="7.vi编辑"></a>7.vi编辑</h2><p>良好习惯:</p><p>vi 编辑生产配置文件</p><p>先cp conf conf20201108</p><p>粘贴的坑:</p><p>必须先进入编辑模式,否则第一行内容丢失,不完整</p><p>在命令行模式,常用的快捷方式:</p><pre class=" language-shell"><code class="language-shell">dd    删除当前行dG    删除当前行及以下所有行gg    跳转到第一行的第一个字母G    跳转到最后一行的第一个字母</code></pre><p>shift+$ 行尾</p><p>如何通过vi命令进行清空文件内容:</p><p>dd dG</p><p>i</p><p>复制粘贴</p><p>esc</p><p>shfit+:wq</p><pre class=" language-shell"><code class="language-shell">#尾行模式下set nu    #显示行号set nonu    #恢复正常</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux基础</title>
       <link href="2020/11/08/2014-07-24-quannnxu-linux/"/>
       <url>2020/11/08/2014-07-24-quannnxu-linux/</url>
