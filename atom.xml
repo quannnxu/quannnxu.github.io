@@ -6,7 +6,7 @@
   <link href="http://www.quanxu.com/atom.xml" rel="self"/>
   
   <link href="http://www.quanxu.com/"/>
-  <updated>2020-11-08T14:40:00.906Z</updated>
+  <updated>2020-11-12T10:40:34.360Z</updated>
   <id>http://www.quanxu.com/</id>
   
   <author>
@@ -15,6 +15,74 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>11.12早课</title>
+    <link href="http://www.quanxu.com/2020/11/12/2020-11-12-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2020/11/12/2020-11-12-quannnxu-zao-ke/</id>
+    <published>2020-11-12T10:39:49.779Z</published>
+    <updated>2020-11-12T10:40:34.360Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.经典错误1是什么  大概什么导致&lt;br&gt;command not found&lt;br&gt;要不就是没有安装，yum安装或者tar解压安装&lt;br&gt;要不就是安装好了，没有配置环境变量  到PATH里配置&lt;/p&gt;
+&lt;p&gt;2.经典错误2是什么 </summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>11.11早课</title>
+    <link href="http://www.quanxu.com/2020/11/12/2020-11-11-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2020/11/12/2020-11-11-quannnxu-zao-ke/</id>
+    <published>2020-11-12T10:38:50.637Z</published>
+    <updated>2020-11-12T10:39:36.171Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.vi三种模式&lt;br&gt;命令行模式、编辑模式、最后行模式&lt;/p&gt;
+&lt;p&gt;2.高危命令有哪两个？&lt;br&gt;rm -rf，&amp;gt;(覆盖)&lt;/p&gt;
+&lt;p&gt;3.实时查看 大小F 区别&lt;br&gt;-f   假如文件被移除 然后重命名 就无法再监控到文件&lt;br&gt;-F   假如文件被移除</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>11.10早课</title>
+    <link href="http://www.quanxu.com/2020/11/12/2020-11-10-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2020/11/12/2020-11-10-quannnxu-zao-ke/</id>
+    <published>2020-11-12T10:36:17.723Z</published>
+    <updated>2020-11-12T10:38:29.949Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.隐藏文件文件夹怎么标识，如何查看&lt;br&gt;隐藏文件以.开头        ls -a或者ll -a&lt;/p&gt;
+&lt;p&gt;2.级联创建文件夹参数是什么&lt;br&gt;-p&lt;/p&gt;
+&lt;p&gt;3.移动复制什么区别，是否可以改名&lt;br&gt;复制最终产生两份文件   </summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Linux基础2</title>
