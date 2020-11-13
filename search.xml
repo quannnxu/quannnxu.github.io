@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="2020/11/13/2020-11-13-quannnxu-zao-ke/"/>
+      <url>2020/11/13/2020-11-13-quannnxu-zao-ke/</url>
+      
+        <content type="html"><![CDATA[<p>1.全局环境变量在哪，怎么生效<br>/etc/profile    source或者. 生效</p><p>2.个人环境变量文件 默认在哪？ 一般使用哪个？ 个人环境变量文件一定在默认位置吗？（一般存放在当前用户的家目录）<br><del>/.bash_profile 和</del>/.bashrc位置<br>一般使用/.bashrc</p><p>3.声明环境变量  必须类似这样  export  JAVA_HOME = /usr/java/jdk1.8，是否有问题？<br>exprot JAVA_HOME=/usr/java/jdk1.8<br>export PATH=$JAVA_HOME/bin:$PATH【推荐】<br>=前后不能有空格</p><p>4.在环境变量文件 PATH=$JAVA_HOME/bin:$PATH    这样写法一般在最后，是声明JAVA的bin文件夹的可执行文件 java，这样敲命令 java，就能够找到</p><p>5.发现用户无法登录或者 无法执行命令 ，有可能什么文件导致？<br>/etc/passwd<br>文件中用户的最后一段为 /bin/false<br>mysqladmin:x:514:101::/usr/local/mysql:/bin/bash</p><p>6.同事给你交接服务器，就简单交接，请问拿到服务器，一般操作什么？<br>查看一下常规操作有哪些，搜索一下相应的软件包在什么地方<br>find / -name ‘<em>xxx</em>‘ 查看部署内容和位置<br>history</p><p>7.高危命令哪些<br>rm -fr</p><blockquote></blockquote><p>kill -9 (今天)</p><p>在我看来 生产上操作 修改 尤其不是自己掌管的服务配置文件，是不是高危？要不要提前备份呢？<br>是高危,需要备份</p><p>8.在生产上常见错误是什么 ，当前讲了两个<br>commond not found和permission defined</p><p>9.sudo  su 分别做什么<br>sudo su - jepson  这样执行是否OK？<br>sudo普通用户临时切换root的权限，su切换用户<br>可以执行</p><p>10.命令帮助是否会看，看什么？<br>–help查看[可选项option]和必填项以及后面的英文解释,【】里可选参数</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>11.12早课</title>
       <link href="2020/11/12/2020-11-12-quannnxu-zao-ke/"/>
       <url>2020/11/12/2020-11-12-quannnxu-zao-ke/</url>
