@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>mysql语法 | 欢迎来到我的博客</title>
+  <title>欢迎来到我的博客</title>
   
     
 <link rel="stylesheet" href="/js/aos/aos.css">
@@ -312,10 +312,10 @@
       
 
 
-<div class="post-detail-header" style="background: url(/medias/8.png) no-repeat; background-size: cover; 
+<div class="post-detail-header" style="background: url(/medias/1.png) no-repeat; background-size: cover; 
   background-position: center center;">
   
-    <span class="title">mysql语法</span>
+    <span class="title"></span>
   
 </div>
 <div class="row justify-center">
@@ -325,7 +325,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2020-11-15</span>
+        <span class="post-time">2020-11-16</span>
       </div>
       
       <div class="post-tags-categories">
@@ -375,7 +375,7 @@ update_time <span class="token keyword">timestamp</span> <span class="token oper
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>规范:<br>1.表名称  字段名称 不要写中文  尽量不要汉语拼音<br>2.统一风格:<br>已经存在表结构设计，风格比如是create_user;不同表的同一字段名称尽量统一,以防后面开发字段混淆.</p>
-<h4 id="4-增删改查"><a href="#4-增删改查" class="headerlink" title="4.增删改查"></a>4.增删改查</h4><p>插入数据</p>
+<h5 id="4-增删改查"><a href="#4-增删改查" class="headerlink" title="4.增删改查"></a>4.增删改查</h5><p>插入数据</p>
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">insert</span> <span class="token keyword">into</span> ruozedata<span class="token punctuation">.</span>employee<span class="token punctuation">(</span>name<span class="token punctuation">,</span>age<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'quanxu'</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>查询数据:</p>
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> ruozedata<span class="token punctuation">.</span>employee<span class="token punctuation">;</span></code></pre>
@@ -386,14 +386,14 @@ update_time <span class="token keyword">timestamp</span> <span class="token oper
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> ruozedata<span class="token punctuation">.</span>employee <span class="token keyword">ADD</span> <span class="token keyword">CONSTRAINT</span> employee_un <span class="token keyword">UNIQUE</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>SQL 错误 [1062] [23000]: Duplicate entry ‘quanxu’ for key ‘employee_un’</p>
 <p>违反唯一约束,这时就要去检查是否重复</p>
-<h4 id="5-后面四个字段一定要加上"><a href="#5-后面四个字段一定要加上" class="headerlink" title="5.后面四个字段一定要加上"></a>5.后面四个字段一定要加上</h4><pre class=" language-sql"><code class="language-sql">create_user <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>    <span class="token comment" spellcheck="true">--创建者</span>
+<h5 id="5-后面4个字段一定要加上"><a href="#5-后面4个字段一定要加上" class="headerlink" title="5.后面4个字段一定要加上"></a>5.后面4个字段一定要加上</h5><pre class=" language-sql"><code class="language-sql">create_user <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>    <span class="token comment" spellcheck="true">--创建者</span>
 create_time <span class="token keyword">timestamp</span> <span class="token operator">not</span> <span class="token boolean">null</span> <span class="token keyword">default</span> <span class="token keyword">current_timestamp</span><span class="token punctuation">,</span>    <span class="token comment" spellcheck="true">--创建时间</span>
 update_user <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>    <span class="token comment" spellcheck="true">--更新者</span>
 update_time <span class="token keyword">timestamp</span> <span class="token operator">not</span> <span class="token boolean">null</span> <span class="token keyword">default</span> <span class="token keyword">current_timestamp</span><span class="token punctuation">,</span>    <span class="token comment" spellcheck="true">--更新时间</span></code></pre>
 <p>离线数仓抽数的基础</p>
-<h4 id="6-字段注释一定要加上"><a href="#6-字段注释一定要加上" class="headerlink" title="6.字段注释一定要加上"></a>6.字段注释一定要加上</h4><p>comment ‘xxxx’</p>
+<h5 id="6-注释一定要加上"><a href="#6-注释一定要加上" class="headerlink" title="6.注释一定要加上"></a>6.注释一定要加上</h5><p>comment ‘xxxx’</p>
 <pre class=" language-sql"><code class="language-sql">name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token keyword">comment</span> <span class="token string">'名字'</span><span class="token punctuation">,</span></code></pre>
-<h4 id="7-其他语法"><a href="#7-其他语法" class="headerlink" title="7.其他语法"></a>7.其他语法</h4><ul>
+<h5 id="7-其他语法"><a href="#7-其他语法" class="headerlink" title="7.其他语法"></a>7.其他语法</h5><ul>
 <li><p>1.where(筛选)</p>
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> ruozedata<span class="token punctuation">.</span>employee <span class="token keyword">where</span> name <span class="token operator">=</span><span class="token string">'zhangsan'</span><span class="token punctuation">;</span>
 <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> ruozedata<span class="token punctuation">.</span>employee <span class="token keyword">where</span> name <span class="token operator">=</span><span class="token string">'zhangsan'</span> <span class="token operator">and</span> age<span class="token operator">=</span><span class="token number">22</span><span class="token punctuation">;</span> 
@@ -470,7 +470,7 @@ name<span class="token punctuation">,</span>
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2020/11/15/2020-11-16-quanxu-shu-cang-zhi-mysql-yu-fa/" target="_blank" title="mysql语法">http://www.quanxu.com/2020/11/15/2020-11-16-quanxu-shu-cang-zhi-mysql-yu-fa/</a>
+    <a href="/2020/11/16/2020-11-15-quanxu-shu-cang-zhi-mysql-yu-fa/" target="_blank" title="">http://www.quanxu.com/2020/11/16/2020-11-15-quanxu-shu-cang-zhi-mysql-yu-fa/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -485,18 +485,12 @@ name<span class="token punctuation">,</span>
     
       <div class="post-nav">
 
-  <div class="post-nav-prev post-nav-item">
-    <a href="/2020/11/15/2020-11-14-quanxu-shu-cang-zhi-mysql-bu-shu/">
-      上一篇:    mysql部署
-    </a>
-  </div>
-
 
 
   <div class="post-nav-next post-nav-item">
-    <a href="/2020/11/13/2020-11-13-quannnxu-zao-ke/">
+    <a href="/2020/11/16/2020-11-16-quannnxu-zao-ke/">
       <span>
-        下一篇:    11.13早课 
+        下一篇:    11.16早课 
       </span>
     </a>
   </div>
