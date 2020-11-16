@@ -63,17 +63,14 @@
     <link href="http://www.quanxu.com/2020/11/15/2020-11-15-quanxu-shu-cang-zhi-mysql-yu-fa/"/>
     <id>http://www.quanxu.com/2020/11/15/2020-11-15-quanxu-shu-cang-zhi-mysql-yu-fa/</id>
     <published>2020-11-15T07:17:21.696Z</published>
-    <updated>2020-11-15T15:40:13.739Z</updated>
+    <updated>2020-11-16T13:41:12.422Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;2.sql类型&lt;/p&gt;
-&lt;p&gt;ddl    数据定义语言    create drop&lt;/p&gt;
-&lt;p&gt;dml    数据操作语言    select    insert    update    delete&lt;/p&gt;
-&lt;p&gt;dcl    数据控制语言   </summary>
+    <summary type="html">&lt;h4 id=&quot;1-字段类型&quot;&gt;&lt;a href=&quot;#1-字段类型&quot; class=&quot;headerlink&quot; title=&quot;1.字段类型&quot;&gt;&lt;/a&gt;1.字段类型&lt;/h4&gt;&lt;h5 id=&quot;数值类型&quot;&gt;&lt;a href=&quot;#数值类型&quot; class=&quot;headerlink&quot;</summary>
         
       
     
