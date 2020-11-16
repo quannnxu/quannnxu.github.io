@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>欢迎来到我的博客</title>
+  <title>Linux基础3 | 欢迎来到我的博客</title>
   
     
 <link rel="stylesheet" href="/js/aos/aos.css">
@@ -315,7 +315,7 @@
 <div class="post-detail-header" style="background: url(/medias/1.png) no-repeat; background-size: cover; 
   background-position: center center;">
   
-    <span class="title"></span>
+    <span class="title">Linux基础3</span>
   
 </div>
 <div class="row justify-center">
@@ -333,20 +333,62 @@
         
       </div>
       <div class="post-content">
-        <p>1.全局环境变量在哪，怎么生效<br>/etc/profile    source或者. 生效</p>
-<p>2.个人环境变量文件 默认在哪？ 一般使用哪个？ 个人环境变量文件一定在默认位置吗？（一般存放在当前用户的家目录）<br><del>/.bash_profile 和</del>/.bashrc位置<br>一般使用/.bashrc</p>
-<p>3.声明环境变量  必须类似这样  export  JAVA_HOME = /usr/java/jdk1.8，是否有问题？<br>exprot JAVA_HOME=/usr/java/jdk1.8<br>export PATH=$JAVA_HOME/bin:$PATH【推荐】<br>=前后不能有空格</p>
-<p>4.在环境变量文件 PATH=$JAVA_HOME/bin:$PATH    这样写法一般在最后，是声明JAVA的bin文件夹的可执行文件 java，这样敲命令 java，就能够找到</p>
-<p>5.发现用户无法登录或者 无法执行命令 ，有可能什么文件导致？<br>/etc/passwd<br>文件中用户的最后一段为 /bin/false<br>mysqladmin:x:514:101::/usr/local/mysql:/bin/bash</p>
-<p>6.同事给你交接服务器，就简单交接，请问拿到服务器，一般操作什么？<br>查看一下常规操作有哪些，搜索一下相应的软件包在什么地方<br>find / -name ‘<em>xxx</em>‘ 查看部署内容和位置<br>history</p>
-<p>7.高危命令哪些<br>rm -fr</p>
-<blockquote>
-</blockquote>
-<p>kill -9 (今天)</p>
-<p>在我看来 生产上操作 修改 尤其不是自己掌管的服务配置文件，是不是高危？要不要提前备份呢？<br>是高危,需要备份</p>
-<p>8.在生产上常见错误是什么 ，当前讲了两个<br>commond not found和permission defined</p>
-<p>9.sudo  su 分别做什么<br>sudo su - jepson  这样执行是否OK？<br>sudo普通用户临时切换root的权限，su切换用户<br>可以执行</p>
-<p>10.命令帮助是否会看，看什么？<br>–help查看[可选项option]和必填项以及后面的英文解释,【】里可选参数</p>
+        <h2 id="1-查看磁盘空间"><a href="#1-查看磁盘空间" class="headerlink" title="1. 查看磁盘空间"></a>1. 查看磁盘空间</h2><p>[root@warehouse001 ~]# df -h<br>Filesystem      Size  Used Avail Use% Mounted on<br>/dev/vda1        40G   11G   27G  29% /<br>devtmpfs        3.7G     0  3.7G   0% /dev<br>tmpfs           3.7G     0  3.7G   0% /dev/shm<br>tmpfs           3.7G  496K  3.7G   1% /run<br>tmpfs           3.7G     0  3.7G   0% /sys/fs/cgroup<br>tmpfs           756M     0  756M   0% /run/user/0<br>[root@warehouse001 ~]# </p>
+<p>/dev/vda1        40G   11G   27G  29% /    系统盘</p>
+<p>/dev/vdb1        2T    0            2T    0%    /data01        数据盘</p>
+<h3 id="2-查看内存"><a href="#2-查看内存" class="headerlink" title="2. 查看内存"></a>2. 查看内存</h3><p>free -m<br>[root@warehouse001 ~]# free -m<br>              total        used        free      shared  buff/cache   available<br>Mem:    7552         800         162           0        6590        6442<br>Swap:        0           0           0</p>
+<p>剩余空间:total-used/toatl</p>
+<p>预留内存最好在15%左右</p>
+<p>swap    因为内存不够,使用部分磁盘空间来充当内存使用,虽然可以解决内存紧缺的问题,但是效率不高.尤其大数据,swap哪怕设置了大小,也尽量设置惰性使用.</p>
+<h3 id="3-机器负载"><a href="#3-机器负载" class="headerlink" title="3.机器负载"></a>3.机器负载</h3><p>load average: 0.00, 0.01, 0.05<br>                1m    5m        15m    </p>
+<pre><code>经验值:10 生产上尽量控制在10,否则服务器就认为卡</code></pre>
+<p>a.计算程序hivesql,spark,flink密集计算是不是要调优<br>b.是不是被挖矿了<br>6240 root      10 -10  131208  13072  10192 S   1.0  0.2   9:18.02 AliYunDun<br>                                                                                 cpu<br>查看负载和cpu<br>c.硬件问题    内存条损坏    最后一招,万能重启,检测是不是硬件问题</p>
+<h3 id="4-安装"><a href="#4-安装" class="headerlink" title="4.安装"></a>4.安装</h3><p>yum install</p>
+<p>yum remove</p>
+<p>yum search xxx 搜索应用</p>
+<h3 id="5-查看进程"><a href="#5-查看进程" class="headerlink" title="5.查看进程"></a>5.查看进程</h3><p>ps -ef | grep xxx(进程名称)<br>[root@warehouse001 ~]# ps -ef | grep httpd<br>root     11615 11102  0 16:02 pts/1    00:00:00 grep –color=auto httpd<br>            pid      父id</p>
+<h3 id="6-端口号"><a href="#6-端口号" class="headerlink" title="6.端口号"></a>6.端口号</h3><p>netstat -nlp | grep 0<br>tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      3845/sshd<br>总结:<br>a.有进程pid,不一定有端口号<br>b.服务的通信交流,其实就是要ip+端口号(交互)<br>如:那个机器上运行xxx服务,打开web页面<br>ip<br>ps -ef | grep xxx 找到pid</p>
+<p>netstat -nlp | grep pid</p>
+<p><a target="_blank" rel="noopener" href="https://139.224.129.11:80/">https://139.224.129.11:80</a></p>
+<p>windows:提前安装telnet客户端,控制面板卸载程序里面打开启用或关闭windows功能勾选telnet选项</p>
+<p>[root@warehouse001 ~]# telnet 139.224.129.11 22<br>Trying 139.224.129.11…<br>Connected to 139.224.129.11.<br>Escape character is ‘^]’.<br>SSH-2.0-OpenSSH_7.4</p>
+<p>先ping ip再telnet ip+port</p>
+<h3 id="7-卸载"><a href="#7-卸载" class="headerlink" title="7.卸载"></a>7.卸载</h3><p>yum remove<br>–nodeps                         do not verify package dependencies<br>不检查包的依赖性</p>
+<p>connection refused    连接拒绝<br>connection time out</p>
+<p>杀死进程<br>kill -9 pid 【高危命令】<br>误杀造成生产事故<br>kill -9 $(pgrep -f 匹配字符) 全局杀</p>
+<p>[root@warehouse001 ~]# netstat -nlp | grep ssh<br>tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      3845/sshd  </p>
+<p>tcp        0      0 :::22              0.0.0.0:*               LISTEN      3845/sshd  </p>
+<p>tcp        0      0 139.224.129.11:22              0.0.0.0:*               LISTEN      3845/sshd  </p>
+<p>22端口号服务器可以对外</p>
+<p>tcp        0      0 localhost:22              0.0.0.0:*               LISTEN      3845/sshd  </p>
+<p>tcp        0      0 127.0.0.1:22              0.0.0.0:*               LISTEN      3845/sshd </p>
+<p>localhost,127.0.0.1代表本机,外部不可访问</p>
+<p>在/etc/httpd里面配置</p>
+<h3 id="8-下载wget"><a href="#8-下载wget" class="headerlink" title="8.下载wget"></a>8.下载wget</h3><h3 id="9-压缩和解压"><a href="#9-压缩和解压" class="headerlink" title="9.压缩和解压"></a>9.压缩和解压</h3><p>zip -r 报名.zip 压缩目录<br>unzip 包名</p>
+<p>tar -czvf xxx.tar.gz xxx/*<br>tar -xzvf xxx.tar.gz</p>
+<h3 id="10-command-not-found"><a href="#10-command-not-found" class="headerlink" title="10.command not found"></a>10.command not found</h3><p>没有安装<br>没有配置环境变量</p>
+<p>[root@warehouse001 ~]# which java1<br>/usr/bin/which: no java1 in (/usr/java/jdk1.8.0_45/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin)<br>/etc/profile<br>exprot JAVA_HOME=/XXX<br>export PATH=$JAVA_HOME/bin:$PATH【推荐】</p>
+<h3 id="11-定时"><a href="#11-定时" class="headerlink" title="11.定时"></a>11.定时</h3><p>crontab -e    编辑一个定时器文件</p>
+<p>`* * * * * sleep 10s;date &gt;&gt; /root/ruoze.log</p>
+<p>分 时 日 月 周(最低粒度是分)<br>每隔10s打印一次</p>
+<pre class=" language-shell"><code class="language-shell">#/bin/bash
+set -u 
+
+for ((i=1;i<=6;i++));
+do
+    date
+    sleep 10s
+done</code></pre>
+<p>`* * * * *  z10s.sh &gt;&gt; /root/ruoze.log</p>
+<h3 id="12-后台执行脚本"><a href="#12-后台执行脚本" class="headerlink" title="12.后台执行脚本"></a>12.后台执行脚本</h3><p>nohub … &amp; 后台执行<br>nohub /root/ruoze.sh &gt;&gt; ruoze.log 2&gt;&amp;1 &amp;</p>
+<p>rm -rf </p>
+<p>#!/bin/bash<br>set -u</p>
+<p>row=0<br>#arry=(t1 t2)<br>arry=(t1)</p>
+<p>while(( ${row} &lt;2))<br>do<br>    tablename=$(arry[${row}])<br>    echo ${tablename}</p>
+<pre><code>row=$(($&#123;row&#125;+1))</code></pre>
+<p>done</p>
+<p>拿到别人的脚本千万不要太自信,千万不要直接在生产操作<br>假如修改先去开发环境测试验证,不要在生产环境随意执行<br>set -u 只会在参数不存在时报错,参数为空时不会报错</p>
+<p>生产一定要有敬畏之心 宁愿少做也不要做错 做之前必须开发环境走一下 哪怕生产有临时变动操作,请及时知会领导,让领导复核</p>
 
       </div>
       
@@ -357,7 +399,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2020/11/13/2020-11-13-quannnxu-zao-ke/" target="_blank" title="">http://www.quanxu.com/2020/11/13/2020-11-13-quannnxu-zao-ke/</a>
+    <a href="/2020/11/13/2020-11-13-quannnxu-linux3/" target="_blank" title="Linux基础3">http://www.quanxu.com/2020/11/13/2020-11-13-quannnxu-linux3/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -373,7 +415,7 @@
       <div class="post-nav">
 
   <div class="post-nav-prev post-nav-item">
-    <a href="/2020/11/15/2020-11-15-quanxu-shu-cang-zhi-mysql-yu-fa/">
+    <a href="/2020/11/13/2020-11-13-quannnxu-zao-ke/">
       上一篇:    
     </a>
   </div>
@@ -381,9 +423,9 @@
 
 
   <div class="post-nav-next post-nav-item">
-    <a href="/2020/11/13/2020-11-13-quannnxu-linux3/">
+    <a href="/2020/11/12/2020-11-12-quannnxu-zao-ke/">
       <span>
-        下一篇:    Linux基础3 
+        下一篇:    11.12早课 
       </span>
     </a>
   </div>

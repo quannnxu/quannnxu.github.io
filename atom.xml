@@ -6,7 +6,7 @@
   <link href="http://www.quanxu.com/atom.xml" rel="self"/>
   
   <link href="http://www.quanxu.com/"/>
-  <updated>2020-11-13T15:47:08.409Z</updated>
+  <updated>2020-11-16T10:23:11.171Z</updated>
   <id>http://www.quanxu.com/</id>
   
   <author>
@@ -15,6 +15,72 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://www.quanxu.com/2020/11/16/2020-11-16-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2020/11/16/2020-11-16-quannnxu-zao-ke/</id>
+    <published>2020-11-16T10:20:18.438Z</published>
+    <updated>2020-11-16T10:23:11.171Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.简述mysql安装流程&lt;br&gt;创建my.cnf&lt;br&gt;创建用户组及用户&lt;br&gt;配置环境变量&lt;br&gt;赋权限和用户组，切换用户mysqladmin，安装&lt;br&gt;配置服务及开机自启动&lt;br&gt;安装libaio及安装mysql的初始db&lt;br&gt;查看临时密码&lt;br&gt;启动&lt;br&gt;登录</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>mysql部署</title>
+    <link href="http://www.quanxu.com/2020/11/15/2020-11-14-quanxu-shu-cang-zhi-mysql-bu-shu/"/>
+    <id>http://www.quanxu.com/2020/11/15/2020-11-14-quanxu-shu-cang-zhi-mysql-bu-shu/</id>
+    <published>2020-11-15T13:15:29.955Z</published>
+    <updated>2020-11-16T10:22:20.224Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;mysql安装&quot;&gt;&lt;a href=&quot;#mysql安装&quot; class=&quot;headerlink&quot; title=&quot;mysql安装&quot;&gt;&lt;/a&gt;mysql安装&lt;/h3&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://www.quanxu.com/2020/11/15/2020-11-15-quanxu-shu-cang-zhi-mysql-yu-fa/"/>
+    <id>http://www.quanxu.com/2020/11/15/2020-11-15-quanxu-shu-cang-zhi-mysql-yu-fa/</id>
+    <published>2020-11-15T07:17:21.696Z</published>
+    <updated>2020-11-15T15:40:13.739Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;2.sql类型&lt;/p&gt;
+&lt;p&gt;ddl    数据定义语言    create drop&lt;/p&gt;
+&lt;p&gt;dml    数据操作语言    select    insert    update    delete&lt;/p&gt;
+&lt;p&gt;dcl    数据控制语言   </summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -30,6 +96,27 @@
         
     <summary type="html">&lt;p&gt;1.全局环境变量在哪，怎么生效&lt;br&gt;/etc/profile    source或者. 生效&lt;/p&gt;
 &lt;p&gt;2.个人环境变量文件 默认在哪？ 一般使用哪个？ 个人环境变量文件一定在默认位置吗？（一般存放在当前用户的家目录）&lt;br&gt;&lt;del&gt;/.bash_profile</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux基础3</title>
+    <link href="http://www.quanxu.com/2020/11/13/2020-11-13-quannnxu-linux3/"/>
+    <id>http://www.quanxu.com/2020/11/13/2020-11-13-quannnxu-linux3/</id>
+    <published>2020-11-13T13:12:01.683Z</published>
+    <updated>2020-11-16T10:21:24.375Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-查看磁盘空间&quot;&gt;&lt;a href=&quot;#1-查看磁盘空间&quot; class=&quot;headerlink&quot; title=&quot;1. 查看磁盘空间&quot;&gt;&lt;/a&gt;1. 查看磁盘空间&lt;/h2&gt;&lt;p&gt;[root@warehouse001 ~]# df -h&lt;br&gt;Filesystem </summary>
         
       
     

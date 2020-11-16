@@ -310,266 +310,334 @@
 </header>
     <main class="main" style="margin-top: 60px;">
       
+<link href="https://cdn.bootcdn.net/ajax/libs/Swiper/5.4.1/css/swiper.min.css" rel="stylesheet">
 
 
-<div class="post-detail-header" style="background: url(/medias/1.png) no-repeat; background-size: cover; 
-  background-position: center center;">
-  
-    <span class="title"></span>
-  
-</div>
-<div class="row justify-center">
-  <div class="main-content">
-    <article class="post post-detail">
-      
-      
-      <div class="post-meta">
-        <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2020-11-13</span>
-      </div>
-      
-      <div class="post-tags-categories">
-        
-        
-      </div>
-      <div class="post-content">
-        <p>1.全局环境变量在哪，怎么生效<br>/etc/profile    source或者. 生效</p>
-<p>2.个人环境变量文件 默认在哪？ 一般使用哪个？ 个人环境变量文件一定在默认位置吗？（一般存放在当前用户的家目录）<br><del>/.bash_profile 和</del>/.bashrc位置<br>一般使用/.bashrc</p>
-<p>3.声明环境变量  必须类似这样  export  JAVA_HOME = /usr/java/jdk1.8，是否有问题？<br>exprot JAVA_HOME=/usr/java/jdk1.8<br>export PATH=$JAVA_HOME/bin:$PATH【推荐】<br>=前后不能有空格</p>
-<p>4.在环境变量文件 PATH=$JAVA_HOME/bin:$PATH    这样写法一般在最后，是声明JAVA的bin文件夹的可执行文件 java，这样敲命令 java，就能够找到</p>
-<p>5.发现用户无法登录或者 无法执行命令 ，有可能什么文件导致？<br>/etc/passwd<br>文件中用户的最后一段为 /bin/false<br>mysqladmin:x:514:101::/usr/local/mysql:/bin/bash</p>
-<p>6.同事给你交接服务器，就简单交接，请问拿到服务器，一般操作什么？<br>查看一下常规操作有哪些，搜索一下相应的软件包在什么地方<br>find / -name ‘<em>xxx</em>‘ 查看部署内容和位置<br>history</p>
-<p>7.高危命令哪些<br>rm -fr</p>
-<blockquote>
-</blockquote>
-<p>kill -9 (今天)</p>
-<p>在我看来 生产上操作 修改 尤其不是自己掌管的服务配置文件，是不是高危？要不要提前备份呢？<br>是高危,需要备份</p>
-<p>8.在生产上常见错误是什么 ，当前讲了两个<br>commond not found和permission defined</p>
-<p>9.sudo  su 分别做什么<br>sudo su - jepson  这样执行是否OK？<br>sudo普通用户临时切换root的权限，su切换用户<br>可以执行</p>
-<p>10.命令帮助是否会看，看什么？<br>–help查看[可选项option]和必填项以及后面的英文解释,【】里可选参数</p>
 
-      </div>
-      
-        <div class="copyright">
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-    <strong>作者:  </strong>quanxu</a>
-    </li>
-    <li class="post-copyright-link">
-    <strong>文章链接:  </strong>
-    <a href="/2020/11/13/2020-11-13-quannnxu-zao-ke/" target="_blank" title="">http://www.quanxu.com/2020/11/13/2020-11-13-quannnxu-zao-ke/</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong>版权声明:   </strong>
-      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
-      许可协议。转载请注明出处!
-    </li>
-  </ul>
-<div>
-      
-    </article>
-    <!-- 上一篇文章和下一篇文章 -->
+<div class="swiper-length" style="display: none;">0</div>
+<div id="appSwiper"
+  class="swiper-no-swiping"
+  @mouseenter="stopAutoPlay()" 
+  @mouseleave="startAutoPlay()"
+>
+  <swiper v-cloak ref="mySwiper" :options="swiperOptions" @slideChangeTransitionEnd="slideChangeTransitionEnd">
     
-      <div class="post-nav">
-
-  <div class="post-nav-prev post-nav-item">
-    <a href="/2020/11/15/2020-11-15-quanxu-shu-cang-zhi-mysql-yu-fa/">
-      上一篇:    
-    </a>
-  </div>
-
-
-
-  <div class="post-nav-next post-nav-item">
-    <a href="/2020/11/13/2020-11-13-quannnxu-linux3/">
-      <span>
-        下一篇:    Linux基础3 
-      </span>
-    </a>
-  </div>
-
+      <swiper-slide>
+        <div class="item" style="background-image: url('/medias/beijing.jpg'); background-size: 40000px; 
+          background-position: center center;">
+            <div class="flag">
+              <div class="img-mask" style="height: 100%;background-image: url('/medias/beijing.jpg'); background-size: cover; 
+                background-position: center center;"></div>
+              <!-- <img class="homeSwiper img-mask" src="/medias/13.png" alt="" style="width: 100%;background-size: cover; 
+              background-position: center center;"> -->
+              <div class="flag-text">
+                <div>
+                  <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">心之所向,梦之所往</div>
+                  <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"></div>
+                </div>
+                <div style="display: flex;">
+                  <div class="ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a target="_blank" rel="noopener" href="https://github.com/quannnxu/quannnxu.github.io" class="read-more border-color bg-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
+                  <div class="ani animated" style="margin-left: 10px;" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a target="_blank" rel="noopener" href="https://github.com/quannnxu/quannnxu.github.io" class="read-more " style="display: inline-block; z-index:1;border: 1px solid white;">进入github</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </swiper-slide>
+    
+  </swiper>
 </div>
 
-    
-    
+<script src="/js/swiper.min.js"></script>
 
-    <!-- 打赏 -->
-    
-      <div id="appDonate" class="post-donate">
-  <div id="donate_board" class="donate_bar center" ref="donate">
-    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
-  </div>
-  <transition name="fade">
-    <div 
-      class="donate-box-mask"
-      v-cloak 
-      v-if="visible"
-      @click="cancelDialogDrawer()"
-    >
-    </div>
-  </transition>
-  <transition name="bounce">
-    <div class="donate-box" v-cloak v-if="visible">
-      <div class="donate-box_close">
-        <i class="fa fa-times" aria-hidden="true" @click="cancelDialogDrawer"></i>
-      </div>
-      <div class="donate-box_title">
-        <h4>
-          你的赏识是我前进的动力
-        </h4>
-      </div>
-      <div class="donate-box_tab">
-        <div class="Alipay" :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
-          支付宝
-        </div>
-        <div class="WeChatpay" :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
-          微信
-        </div>
-      </div>
-      <div class="donate-box_img">
-        <div class="AlipayImg" v-if="tabActive === 'Alipay'">
-          <img src="/medias/zfb1.jpg" alt="支付宝打赏" />
-        </div> 
-        <div class="WeChatpayImg" v-if="tabActive === 'WeChatpay'">
-          <img src="/medias/weixin.png" alt="微信打赏" />
-        </div>
-      </div>
-    </div>
-  </transition>
-</div>
 
+<script src="/js/vue-awesome-swiper.js"></script>
+
+
+<script src="/js/swiper.animate1.0.3.min.js"></script>
+
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper)
+</script>
 <script>
-  var body = document.body || document.documentElement || window;
+  let autoplay = 'true';
+  let delay = '5000';
+  let loop = JSON.parse('true');
+  let effect = 'slide';
+  let swiperLength = parseInt(document.querySelector(".swiper-length").innerText);
   var vm = new Vue({
-    el: '#appDonate',
+    el: '#appSwiper',
     data: {
-      visible: false,
-      tabActive: 'Alipay',
-      top: 0,
+      swiperOptions: {
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true // 允许点击小圆点跳转
+        },
+        loop: loop ? true : false,
+        effect, // fade
+        autoplay: (autoplay && swiperLength > 1) ? {
+  　　　　delay,
+  　　　　disableOnInteraction: false // 手动切换之后继续自动轮播
+    　　} : false,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        on:{
+          init: function() {
+            swiperAnimateCache(this); //隐藏动画元素 
+            swiperAnimate(this); //初始化完成开始动画
+          }, 
+          slideChangeTransitionEnd: function(){ 
+            swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          } 
+        }
+        // Some Swiper option/callback...
+      }
     },
     computed: {
+      swiper() {
+        return this.$refs.mySwiper.$swiper
+      }
     },
     mounted() {
+      // console.log('Current Swiper instance object', this.swiper)
+      // this.swiper.slideTo(0, 1000, false)
     },
     methods: {
-      showDialogDrawer() {
-        this.visible = true;
-        // 防止页面滚动，只能让弹框滚动
-        // function getScroll() {
-        //   return {
-        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
-        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-        //   };
-        // }
-        this.top = $(document).scrollTop() // or getScroll().top
-        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top + 'px; left: 0; overflow: hidden;';
+      stopAutoPlay() {
+        (autoplay && swiperLength > 1) && this.swiper.autoplay.stop();
       },
-      cancelDialogDrawer() {
-        this.visible = false;
-        body.removeAttribute('style');
-        $(document).scrollTop(this.top)
+      startAutoPlay() {
+        (autoplay && swiperLength > 1) && this.swiper.autoplay.start();
       },
-      changeTabActive(name) {
-        this.tabActive = name;
+      slideChangeTransitionEnd() {
+        console.log('1');
       }
     },
     created() {}
   })
 </script>
-    
-
-    <!-- 分享 -->
-    
-      <!-- https://github.com/overtrue/share.js -->
-
-<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-
-
-
-<script src="/js/shareJs/social-share.min.js"></script>
-
-</script>
 
 <style>
-  .social-share {
-    margin: 20px 0;
-  }
-</style>
-
-
-    
-
-    <!-- 评论 -->
-      
-        
-      
-  </div>
-
-  
-    <div class="toc-aside">
-      <div class="toc-main">
-        <div class="toc-aside-title">
-          <i class="fa fa-list-ul" aria-hidden="true"></i><span>目录</span>
-        </div>
-        <div class="toc-content">
-          <link href="/js/tocbot/tocbot.css" rel="stylesheet">
-<script src="/js/tocbot/tocbot.min.js"></script>
-<div class="toc"></div>
-
-<script>
-  if ($('.toc').length > 0) {
-    var headerEl = 'h2, h3, h4',  //headers 
-      content = '.post-detail',//文章容器
-      idArr = {};  //标题数组以确定是否增加索引id
-      //add #id
-
-    $(content).children(headerEl).each(function () {
-      //去除空格以及多余标点
-      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
-
-      headerId = headerId.toLowerCase();
-      if (idArr[headerId]) {
-        //id已经存在
-        $(this).attr('id', headerId + '-' + idArr[headerId]);
-        idArr[headerId]++;
-      }
-      else {
-        //id未存在
-        idArr[headerId] = 1;
-        $(this).attr('id', headerId);
-      }
-    });
-
-    tocbot.init({
-      // Where to render the table of contents.
-      tocSelector: '.toc',
-      // Where to grab the headings to build the table of contents.
-      contentSelector: content,
-      // Which headings to grab inside of the contentSelector element.
-      headingSelector: headerEl,
-      scrollSmooth: true,
-      scrollSmoothOffset: -80,
-      headingsOffset: 130,
-      positionFixedSelector: '.toc-main',
-      positionFixedClass: 'is-position-fixed',
-      fixedSidebarOffset: 'auto',
-    });
-  }
-
-</script>
-
-<style>
-.is-position-fixed {
-  position:fixed !important;
-  top: 64px;
+.swiper-container {
+  overflow: hidden;
 }
-
+.swiper-slide {
+  height: 350px;
+  position: relative;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  padding: 10px 10px;
+  transition: background 0.2s;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.swiper-slide .item {
+  width: 100%;
+  height: 100%;
+}
+.flag {
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+  color: #ffffff;
+  height: 100%;
+  background: #000;
+}
+.flag img {
+  min-height: 100%;
+}
+.flag-text {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 80%;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.flag-text .title {
+  font-size: 1.8rem;
+}
+.flag-text .excerpt {
+  width: 70%;
+  line-height: 27px;
+  height: 135px;
+  margin-top: 2%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: #42b983;
+}
+.img-mask {
+  opacity:0.6; filter: alpha(opacity=60);
+}
+.flag-text .read-more {
+  margin-bottom: 30px;
+  padding: 5px 15px;
+  color: #ffffff;
+  border-radius: 20px;
+}
+@media (min-width: 992px) {
+  .swiper-button-prev {
+    margin-left: 20%;
+    transform: translateX(-180%);
+  }
+  .swiper-button-next {
+    margin-right: 20%;
+    transform: translateX(180%);
+  }
+  .flag-text .title {
+    width: 80%;
+    line-height: 35px;
+    max-height: 70px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+}
+@media (max-width: 992px) {
+  .flag {
+    width: 100%;
+  }
+  .flag-text .title {
+    font-size: 1.5rem;
+    margin-top: 50px;
+  }
+  .flag-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  .flag-text .excerpt {
+    width: 100%;
+    line-height: 20px;
+    height: 100px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+  }
+  .flag-text .read-more {
+    margin-bottom: 80px;
+  }
+}
+@media (max-width: 992px) and (min-width: 551px) {
+  .flag-text .excerpt {
+    width: 70%;
+  }
+}
+@media (max-width: 551px) {
+  .swiper-slide {
+    height: 250px;
+  }
+  .flag-text .title {
+    line-height: 30px;
+    max-height: 60px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin-top: 20px;
+  }
+  .flag-text .excerpt {
+    font-size: 1rem;
+    line-height: 20px;
+    height: 80px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+  .flag-text .excerpt { 
+    margin-top: 10px;
+  }
+  .flag-text .read-more {
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    transform: scale(0.5);
+  }
+  .swiper-button-prev {
+    left: 0;
+  }
+  .swiper-button-next {
+    right: 0;
+  }
+}
 </style>
+
+
+
+
+
+
+<section class="posts">
+  
+    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2020-11-08</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2020/11/08/hello-world/">Hello World</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              
+            </div>
+            <div class="post-categories">
+              
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              
+              <a href="/2020/11/08/hello-world/" style="background: url('/medias/8.png');background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2020/11/08/hello-world/">
+            <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
+          </a>
         </div>
       </div>
-    </div>
+      <div class="post-img">
+        
+          <a href="/2020/11/08/hello-world/" style="background: url('/medias/8.png');background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
   
-</div>
+</section>
+
+  <nav class="page-nav">
+    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
 
     </main>
     <div class="footer bg-color">

@@ -325,7 +325,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2020-11-13</span>
+        <span class="post-time">2020-11-16</span>
       </div>
       
       <div class="post-tags-categories">
@@ -333,20 +333,19 @@
         
       </div>
       <div class="post-content">
-        <p>1.全局环境变量在哪，怎么生效<br>/etc/profile    source或者. 生效</p>
-<p>2.个人环境变量文件 默认在哪？ 一般使用哪个？ 个人环境变量文件一定在默认位置吗？（一般存放在当前用户的家目录）<br><del>/.bash_profile 和</del>/.bashrc位置<br>一般使用/.bashrc</p>
-<p>3.声明环境变量  必须类似这样  export  JAVA_HOME = /usr/java/jdk1.8，是否有问题？<br>exprot JAVA_HOME=/usr/java/jdk1.8<br>export PATH=$JAVA_HOME/bin:$PATH【推荐】<br>=前后不能有空格</p>
-<p>4.在环境变量文件 PATH=$JAVA_HOME/bin:$PATH    这样写法一般在最后，是声明JAVA的bin文件夹的可执行文件 java，这样敲命令 java，就能够找到</p>
-<p>5.发现用户无法登录或者 无法执行命令 ，有可能什么文件导致？<br>/etc/passwd<br>文件中用户的最后一段为 /bin/false<br>mysqladmin:x:514:101::/usr/local/mysql:/bin/bash</p>
-<p>6.同事给你交接服务器，就简单交接，请问拿到服务器，一般操作什么？<br>查看一下常规操作有哪些，搜索一下相应的软件包在什么地方<br>find / -name ‘<em>xxx</em>‘ 查看部署内容和位置<br>history</p>
-<p>7.高危命令哪些<br>rm -fr</p>
-<blockquote>
-</blockquote>
-<p>kill -9 (今天)</p>
-<p>在我看来 生产上操作 修改 尤其不是自己掌管的服务配置文件，是不是高危？要不要提前备份呢？<br>是高危,需要备份</p>
-<p>8.在生产上常见错误是什么 ，当前讲了两个<br>commond not found和permission defined</p>
-<p>9.sudo  su 分别做什么<br>sudo su - jepson  这样执行是否OK？<br>sudo普通用户临时切换root的权限，su切换用户<br>可以执行</p>
-<p>10.命令帮助是否会看，看什么？<br>–help查看[可选项option]和必填项以及后面的英文解释,【】里可选参数</p>
+        <p>1.简述mysql安装流程<br>创建my.cnf<br>创建用户组及用户<br>配置环境变量<br>赋权限和用户组，切换用户mysqladmin，安装<br>配置服务及开机自启动<br>安装libaio及安装mysql的初始db<br>查看临时密码<br>启动<br>登录及修改用户密码<br>重启</p>
+<p>2.MySQL默认配置文件在哪<br>/etc/my.cnf</p>
+<p>3.建表规范谈谈看<br>create table ruozedata.rz(<br>id int(11)  not null auto_increment, –第一列必须是自增长id    </p>
+<p>name varchar(255),<br>age  int(3),            –comment ‘xxx’  业务字段加上注释</p>
+<p>create_user varchar(255),<br>create_time timestamp not null default current_timestamp,</p>
+<p>update_user varchar(255),<br>update_time timestamp not null default current_timestamp on update current_timestamp,<br>primary key(id)  主键= 唯一约束 +not null非空约束<br>);</p>
+<p>4.模糊查询第三个字符为P<br>select * from table where 字段 like ‘__p%’(_占位符)</p>
+<p>5.合并去重  语法<br>select * from A<br>union<br>select * from B</p>
+<p>6.mysql默认端口号多少<br>3306</p>
+<p>7.测试服务通不通  怎么办<br>先ping ip<br>再telnet ip port</p>
+<p>8.常用错误有哪些<br>Command not found<br>permission defined<br>connect refused</p>
+<p>9.命令找不到  怎么办<br>检查安装包安装了没有<br>环境变量是否配置</p>
+<p>10.高危命令有哪些<br> rm -rf; &gt;; kill -9</p>
 
       </div>
       
@@ -357,7 +356,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2020/11/13/2020-11-13-quannnxu-zao-ke/" target="_blank" title="">http://www.quanxu.com/2020/11/13/2020-11-13-quannnxu-zao-ke/</a>
+    <a href="/2020/11/16/2020-11-16-quannnxu-zao-ke/" target="_blank" title="">http://www.quanxu.com/2020/11/16/2020-11-16-quannnxu-zao-ke/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -372,18 +371,12 @@
     
       <div class="post-nav">
 
-  <div class="post-nav-prev post-nav-item">
-    <a href="/2020/11/15/2020-11-15-quanxu-shu-cang-zhi-mysql-yu-fa/">
-      上一篇:    
-    </a>
-  </div>
-
 
 
   <div class="post-nav-next post-nav-item">
-    <a href="/2020/11/13/2020-11-13-quannnxu-linux3/">
+    <a href="/2020/11/15/2020-11-14-quanxu-shu-cang-zhi-mysql-bu-shu/">
       <span>
-        下一篇:    Linux基础3 
+        下一篇:    mysql部署 
       </span>
     </a>
   </div>
