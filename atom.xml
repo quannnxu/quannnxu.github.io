@@ -6,7 +6,7 @@
   <link href="http://www.quanxu.com/atom.xml" rel="self"/>
   
   <link href="http://www.quanxu.com/"/>
-  <updated>2020-11-16T10:27:48.879Z</updated>
+  <updated>2020-11-17T10:13:34.361Z</updated>
   <id>http://www.quanxu.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>11.16早课</title>
+    <link href="http://www.quanxu.com/2020/11/17/2020-11-17-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2020/11/17/2020-11-17-quannnxu-zao-ke/</id>
+    <published>2020-11-17T10:12:38.515Z</published>
+    <updated>2020-11-17T10:13:34.361Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.查看硬盘命令，一般分为哪两种盘&lt;/p&gt;
+&lt;p&gt;2.查看内存命令，剩余内存怎么看&lt;/p&gt;
+&lt;p&gt;3.使用top命令，可以查看哪些数据&lt;/p&gt;
+&lt;p&gt;4.which </summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>11.16早课</title>
