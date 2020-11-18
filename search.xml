@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>11.18早课</title>
+      <link href="2020/11/18/2020-11-18-quannnxu-zao-ke/"/>
+      <url>2020/11/18/2020-11-18-quannnxu-zao-ke/</url>
+      
+        <content type="html"><![CDATA[<p>1.which 命令作用是什么<br>which 　　查看可执行文件的位置。</p><ol start="2"><li>whereis  xxx命令<br>whereis 　查看文件的位置</li></ol><p>3.简述vi清空文件的步骤<br>先进入编辑模式,gg跳转首行,dG清空当前及以下行</p><p>4.谈谈  权限 相关的<br>r-4–&gt;读权限,w-2–&gt;写权限,x-1–&gt;执行权限<br>chmod 修改权限<br>chown 修改所属组</p><p>5.谈谈你对命令帮助的<br>–help    查看参数和可选参数,以及参数用法</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>11.17早课</title>
       <link href="2020/11/17/2020-11-17-quannnxu-zao-ke/"/>
       <url>2020/11/17/2020-11-17-quannnxu-zao-ke/</url>

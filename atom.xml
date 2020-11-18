@@ -6,7 +6,7 @@
   <link href="http://www.quanxu.com/atom.xml" rel="self"/>
   
   <link href="http://www.quanxu.com/"/>
-  <updated>2020-11-17T10:15:42.080Z</updated>
+  <updated>2020-11-18T09:48:58.806Z</updated>
   <id>http://www.quanxu.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>11.18早课</title>
+    <link href="http://www.quanxu.com/2020/11/18/2020-11-18-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2020/11/18/2020-11-18-quannnxu-zao-ke/</id>
+    <published>2020-11-18T09:48:18.952Z</published>
+    <updated>2020-11-18T09:48:58.806Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.which 命令作用是什么&lt;br&gt;which 　　查看可执行文件的位置。&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;whereis  xxx命令&lt;br&gt;whereis</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>11.17早课</title>
