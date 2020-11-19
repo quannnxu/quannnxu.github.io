@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>11.19早课</title>
+      <link href="2020/11/19/2020-11-19-quannnxu-zao-ke/"/>
+      <url>2020/11/19/2020-11-19-quannnxu-zao-ke/</url>
+      
+        <content type="html"><![CDATA[<p>1.which  whereis命令区别</p><p>2.su  sudo命令区别</p><p>3.全局搜索</p><p>4.压缩解压  哪两个命令</p><p>5.vi三种模式是什么。如何切换</p><p>6.谈谈哪些命令是操作文件夹的</p><p>7.谈谈哪些命令是操作文件的</p><p>8.哪两个命令是 大R</p><p>9.谈谈左连接理解</p><p>10.mysql的 full join 是怎样实现的，在数据质量的 数据量校验 发挥作用，是否理解？</p><p>1.which  whereis命令区别<br>which 查看可执行文件的位置。  whereis 查看文件的位置。</p><p>2.su  sudo命令区别<br>u切换用户，sudo临时获取root权限</p><p>3.全局搜索<br>find / -name ‘<em>xxx</em>‘</p><p>4.压缩解压  哪两个命令<br>tar -zcvf 压缩<br>tar -zxvf 解压</p><p>5.vi三种模式是什么。如何切换<br>编辑模式    –&gt; i键<br>命令行模式    –&gt; esc<br>尾行模式    –&gt; shift:</p><p>6.谈谈哪些命令是操作文件夹的<br>mkdir/find/mv等</p><p>7.谈谈哪些命令是操作文件的<br>vi/cp/mv/cat/less/more/tail/echo/touch等</p><p>8.哪两个命令是 大R<br>chmod    chown</p><p>9.谈谈左连接理解<br>left join （左连接）：返回包括左表中的所有记录和右表中连接字段相等的记录。</p><p>10.mysql的 full join 是怎样实现的，在数据质量的 数据量校验 发挥作用，是否理解？<br>select * from A a<br>left join B b on a.id=b.id<br>union<br>select * from A a<br>right join B b on a.id=b.id</p><p>full join后的数据量和目标表、源表的数据量一致</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>mysql2</title>
       <link href="2020/11/18/2020-11-18-quannnxu-mysql2/"/>
       <url>2020/11/18/2020-11-18-quannnxu-mysql2/</url>
