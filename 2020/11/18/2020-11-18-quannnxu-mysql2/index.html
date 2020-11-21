@@ -338,19 +338,19 @@
 <span class="token keyword">from</span> mydatabase<span class="token punctuation">.</span>t1 <span class="token number">a</span> 
 <span class="token keyword">left</span> <span class="token keyword">join</span> mydatabase<span class="token punctuation">.</span>t2 <span class="token number">b</span>
 <span class="token keyword">on</span> <span class="token number">a</span><span class="token punctuation">.</span>id<span class="token operator">=</span><span class="token number">b</span><span class="token punctuation">.</span>id </code></pre>
-<p><img src="C:\Users\10090\AppData\Roaming\Typora\typora-user-images\image-20201118212657967.png" alt="image-20201118212657967"></p>
+<p><img src="C:\Users\10090\AppData\Roaming\Typora\typora-user-images\image-20201118212657967.png" alt="avatar"></p>
 <h5 id="right-join"><a href="#right-join" class="headerlink" title="right join"></a>right join</h5><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
 <span class="token number">a</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span><span class="token number">a</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span><span class="token number">b</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span><span class="token number">b</span><span class="token punctuation">.</span>name
 <span class="token keyword">from</span> mydatabase<span class="token punctuation">.</span>t1 <span class="token number">a</span> 
 <span class="token keyword">right</span> <span class="token keyword">join</span> mydatabase<span class="token punctuation">.</span>t2 <span class="token number">b</span>
 <span class="token keyword">on</span> <span class="token number">a</span><span class="token punctuation">.</span>id<span class="token operator">=</span><span class="token number">b</span><span class="token punctuation">.</span>id </code></pre>
-<p><img src="C:\Users\10090\AppData\Roaming\Typora\typora-user-images\image-20201118212800497.png" alt="image-20201118212800497"></p>
+<p><img src="C:\Users\10090\AppData\Roaming\Typora\typora-user-images\image-20201118212800497.png" alt="avatar"></p>
 <h5 id="inner-join"><a href="#inner-join" class="headerlink" title="inner join"></a>inner join</h5><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
 <span class="token number">a</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span><span class="token number">a</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span><span class="token number">b</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span><span class="token number">b</span><span class="token punctuation">.</span>name
 <span class="token keyword">from</span> mydatabase<span class="token punctuation">.</span>t1 <span class="token number">a</span> 
 <span class="token keyword">inner</span> <span class="token keyword">join</span> mydatabase<span class="token punctuation">.</span>t2 <span class="token number">b</span>
 <span class="token keyword">on</span> <span class="token number">a</span><span class="token punctuation">.</span>id<span class="token operator">=</span><span class="token number">b</span><span class="token punctuation">.</span>id </code></pre>
-<p><img src="C:\Users\10090\AppData\Roaming\Typora\typora-user-images\image-20201118212818052.png" alt="image-20201118212818052"></p>
+<p><img src="C:\Users\10090\AppData\Roaming\Typora\typora-user-images\image-20201118212818052.png" alt="avatar"></p>
 <h5 id="full-join"><a href="#full-join" class="headerlink" title="full join"></a>full join</h5><p>a表+b表全部</p>
 <p>mysql中没有这个语法,spark,hive支持</p>
 <p>总结:</p>
@@ -423,6 +423,100 @@
 <span class="token keyword">right</span> <span class="token keyword">join</span> ruozedata<span class="token punctuation">.</span>t2 <span class="token number">b</span>
 <span class="token keyword">on</span> <span class="token number">a</span><span class="token punctuation">.</span>id<span class="token operator">=</span><span class="token number">b</span><span class="token punctuation">.</span>id 
 <span class="token keyword">where</span> <span class="token number">a</span><span class="token punctuation">.</span>id <span class="token operator">is</span> <span class="token boolean">null</span>            <span class="token comment" spellcheck="true">--需要剔除</span></code></pre>
+<p>练习</p>
+<p>use mydatabasedb;</p>
+<p>–部门表<br>dept部门表(deptno部门编号/dname部门名称/loc地点)<br>create table dept (<br>    deptno numeric(2),<br>    dname varchar(14),<br>    loc varchar(13)<br>);</p>
+<p>insert into dept values (10, ‘ACCOUNTING’, ‘NEW YORK’);<br>insert into dept values (20, ‘RESEARCH’, ‘DALLAS’);<br>insert into dept values (30, ‘SALES’, ‘CHICAGO’);<br>insert into dept values (40, ‘OPERATIONS’, ‘BOSTON’);</p>
+<p>–工资等级表<br>salgrade工资等级表(grade 等级/losal此等级的最低/hisal此等级的最高)<br>create table salgrade (<br>    grade numeric,<br>    losal numeric,<br>    hisal numeric<br>);</p>
+<p>insert into salgrade values (1, 700, 1200);<br>insert into salgrade values (2, 1201, 1400);<br>insert into salgrade values (3, 1401, 2000);<br>insert into salgrade values (4, 2001, 3000);<br>insert into salgrade values (5, 3001, 9999);</p>
+<p>–员工表<br>emp员工表(empno员工号/ename员工姓名/job工作/mgr上级编号/hiredate受雇日期/sal薪金/comm佣金/deptno部门编号)<br>工资 ＝ 薪金 ＋ 佣金</p>
+<p>create table emp (<br>    empno numeric(4) not null,<br>    ename varchar(10),<br>    job varchar(9),<br>    mgr numeric(4),<br>    hiredate datetime,<br>    sal numeric(7, 2),<br>    comm numeric(7, 2),<br>    deptno numeric(2)<br>);</p>
+<p>insert into emp values (7369, ‘SMITH’, ‘CLERK’, 7902, ‘1980-12-17’, 800, null, 20);<br>insert into emp values (7499, ‘ALLEN’, ‘SALESMAN’, 7698, ‘1981-02-20’, 1600, 300, 30);<br>insert into emp values (7521, ‘WARD’, ‘SALESMAN’, 7698, ‘1981-02-22’, 1250, 500, 30);<br>insert into emp values (7566, ‘JONES’, ‘MANAGER’, 7839, ‘1981-04-02’, 2975, null, 20);<br>insert into emp values (7654, ‘MARTIN’, ‘SALESMAN’, 7698, ‘1981-09-28’, 1250, 1400, 30);<br>insert into emp values (7698, ‘BLAKE’, ‘MANAGER’, 7839, ‘1981-05-01’, 2850, null, 30);<br>insert into emp values (7782, ‘CLARK’, ‘MANAGER’, 7839, ‘1981-06-09’, 2450, null, 10);<br>insert into emp values (7788, ‘SCOTT’, ‘ANALYST’, 7566, ‘1982-12-09’, 3000, null, 20);<br>insert into emp values (7839, ‘KING’, ‘PRESIDENT’, null, ‘1981-11-17’, 5000, null, 10);<br>insert into emp values (7844, ‘TURNER’, ‘SALESMAN’, 7698, ‘1981-09-08’, 1500, 0, 30);<br>insert into emp values (7876, ‘ADAMS’, ‘CLERK’, 7788, ‘1983-01-12’, 1100, null, 20);<br>insert into emp values (7900, ‘JAMES’, ‘CLERK’, 7698, ‘1981-12-03’, 950, null, 30);<br>insert into emp values (7902, ‘FORD’, ‘ANALYST’, 7566, ‘1981-12-03’, 3000, null, 20);<br>insert into emp values (7934, ‘MILLER’, ‘CLERK’, 7782, ‘1982-01-23’, 1300, null, 10);</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--1. 查询出部门编号为30的所有员工的编号和姓名</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> mydatabasedb<span class="token punctuation">.</span>emp <span class="token keyword">where</span> deptno<span class="token operator">=</span><span class="token string">'30'</span>
+
+<span class="token comment" spellcheck="true">--2.找出部门编号为10中所有经理，和部门编号为20中所有销售员的详细资料。</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> mydatabasedb<span class="token punctuation">.</span>emp <span class="token number">e</span> 
+<span class="token keyword">where</span> deptno <span class="token operator">=</span><span class="token number">10</span> <span class="token operator">and</span> job<span class="token operator">=</span><span class="token string">'MANAGER'</span>
+<span class="token keyword">union</span> 
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> mydatabasedb<span class="token punctuation">.</span>emp <span class="token number">e</span> 
+<span class="token keyword">where</span> deptno <span class="token operator">=</span><span class="token number">20</span> <span class="token operator">and</span> job<span class="token operator">=</span><span class="token string">'SALESMAN'</span>
+
+<span class="token comment" spellcheck="true">--3.查询所有员工详细信息，用工资降序排序，如果工资相同使用入职日期升序排序</span>
+<span class="token keyword">select</span>  
+<span class="token operator">*</span><span class="token punctuation">,</span> <span class="token number">e</span><span class="token punctuation">.</span>sal <span class="token operator">+</span>ifnull<span class="token punctuation">(</span><span class="token number">e</span><span class="token punctuation">.</span>comm<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span> salary
+<span class="token keyword">from</span> mydatabasedb<span class="token punctuation">.</span>emp <span class="token number">e</span> <span class="token keyword">order</span> <span class="token keyword">by</span> salary <span class="token keyword">desc</span><span class="token punctuation">,</span>hiredate 
+
+<span class="token comment" spellcheck="true">--4.列出薪金大于1500的各种工作及从事此工作的员工人数。</span>
+<span class="token keyword">select</span> 
+<span class="token number">e</span><span class="token punctuation">.</span>job<span class="token punctuation">,</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> 
+<span class="token keyword">from</span> mydatabasedb<span class="token punctuation">.</span>emp <span class="token number">e</span> 
+<span class="token keyword">where</span> sal<span class="token operator">></span><span class="token number">1500</span>
+<span class="token keyword">group</span> <span class="token keyword">by</span> job
+
+
+<span class="token comment" spellcheck="true">--5.列出在销售部工作的员工的姓名，假定不知道销售部的部门编号。</span>
+<span class="token keyword">select</span> 
+<span class="token number">e</span><span class="token punctuation">.</span>ename <span class="token punctuation">,</span><span class="token number">d</span><span class="token punctuation">.</span>dname 
+<span class="token keyword">from</span> mydatabasedb<span class="token punctuation">.</span>emp <span class="token number">e</span> 
+<span class="token keyword">left</span> <span class="token keyword">join</span> mydatabasedb<span class="token punctuation">.</span>dept <span class="token number">d</span> 
+<span class="token keyword">on</span> <span class="token number">e</span><span class="token punctuation">.</span>deptno <span class="token operator">=</span><span class="token number">d</span><span class="token punctuation">.</span>deptno
+<span class="token keyword">where</span> <span class="token number">d</span><span class="token punctuation">.</span>dname <span class="token operator">=</span><span class="token string">'SALES'</span>
+
+<span class="token comment" spellcheck="true">--6.查询姓名以S开头的\以S结尾\包含S字符\第二个字母为L  __</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> mydatabasedb<span class="token punctuation">.</span>emp <span class="token number">e</span> 
+<span class="token keyword">where</span> <span class="token number">e</span><span class="token punctuation">.</span>ename <span class="token operator">like</span> <span class="token string">'S%'</span>
+<span class="token operator">or</span> <span class="token number">e</span><span class="token punctuation">.</span>ename <span class="token operator">like</span> <span class="token string">'%S'</span>
+<span class="token operator">or</span> <span class="token number">e</span><span class="token punctuation">.</span>ename <span class="token operator">like</span> <span class="token string">'%S%'</span>
+<span class="token operator">or</span> <span class="token number">e</span><span class="token punctuation">.</span>ename <span class="token operator">like</span> <span class="token string">'_L%'</span>
+
+<span class="token comment" spellcheck="true">--7.查询每种工作的最高工资、最低工资、人数</span>
+<span class="token keyword">select</span> 
+<span class="token function">max</span><span class="token punctuation">(</span><span class="token number">e</span><span class="token punctuation">.</span>sal <span class="token operator">+</span>ifnull<span class="token punctuation">(</span><span class="token number">e</span><span class="token punctuation">.</span>comm<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> maxsalary
+<span class="token punctuation">,</span><span class="token function">min</span><span class="token punctuation">(</span><span class="token number">e</span><span class="token punctuation">.</span>sal <span class="token operator">+</span>ifnull<span class="token punctuation">(</span><span class="token number">e</span><span class="token punctuation">.</span>comm<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> minsalary
+<span class="token punctuation">,</span>job
+<span class="token punctuation">,</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> jobcount
+<span class="token keyword">from</span> mydatabasedb<span class="token punctuation">.</span>emp <span class="token number">e</span> 
+<span class="token keyword">group</span> <span class="token keyword">by</span> job
+
+
+<span class="token comment" spellcheck="true">--8.列出薪金 高于 公司平均薪金的所有员工号，员工姓名，所在部门名称，上级领导，工资，工资等级</span>
+<span class="token keyword">select</span> <span class="token operator">*</span>
+<span class="token punctuation">,</span><span class="token keyword">case</span> <span class="token keyword">when</span> t<span class="token punctuation">.</span>salary <span class="token operator">between</span> <span class="token number">700</span> <span class="token operator">and</span> <span class="token number">1200</span> <span class="token keyword">then</span> <span class="token number">1</span>
+<span class="token keyword">when</span> t<span class="token punctuation">.</span>salary <span class="token operator">between</span> <span class="token number">1201</span> <span class="token operator">and</span> <span class="token number">1400</span> <span class="token keyword">then</span> <span class="token number">2</span>
+<span class="token keyword">when</span> t<span class="token punctuation">.</span>salary <span class="token operator">between</span> <span class="token number">1404</span> <span class="token operator">and</span> <span class="token number">2000</span> <span class="token keyword">then</span> <span class="token number">3</span>
+<span class="token keyword">when</span> t<span class="token punctuation">.</span>salary <span class="token operator">between</span> <span class="token number">2001</span> <span class="token operator">and</span> <span class="token number">3000</span> <span class="token keyword">then</span> <span class="token number">3</span>
+<span class="token keyword">when</span> t<span class="token punctuation">.</span>salary <span class="token operator">between</span> <span class="token number">3001</span> <span class="token operator">and</span> <span class="token number">9999</span> <span class="token keyword">then</span> <span class="token number">4</span> 
+<span class="token keyword">end</span> <span class="token keyword">as</span> grade
+<span class="token keyword">from</span> 
+<span class="token punctuation">(</span><span class="token keyword">select</span> 
+<span class="token number">e</span><span class="token punctuation">.</span>empno 
+<span class="token punctuation">,</span><span class="token number">e</span><span class="token punctuation">.</span>ename 
+<span class="token punctuation">,</span><span class="token number">d</span><span class="token punctuation">.</span>dname
+<span class="token punctuation">,</span><span class="token number">e</span><span class="token punctuation">.</span>mgr
+<span class="token punctuation">,</span><span class="token number">e</span><span class="token punctuation">.</span>sal <span class="token operator">+</span>ifnull<span class="token punctuation">(</span><span class="token number">e</span><span class="token punctuation">.</span>comm<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span> salary
+<span class="token keyword">from</span> mydatabasedb<span class="token punctuation">.</span>emp <span class="token number">e</span> 
+<span class="token keyword">left</span> <span class="token keyword">join</span> mydatabasedb<span class="token punctuation">.</span>dept <span class="token number">d</span> 
+<span class="token keyword">on</span> <span class="token number">e</span><span class="token punctuation">.</span>deptno <span class="token operator">=</span><span class="token number">d</span><span class="token punctuation">.</span>deptno 
+<span class="token keyword">where</span> <span class="token number">e</span><span class="token punctuation">.</span>sal <span class="token operator">></span>
+<span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token function">avg</span><span class="token punctuation">(</span><span class="token number">e</span><span class="token punctuation">.</span>sal<span class="token punctuation">)</span> avgsal
+<span class="token keyword">from</span> mydatabasedb<span class="token punctuation">.</span>emp <span class="token number">e</span> <span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">as</span> t
+
+
+<span class="token comment" spellcheck="true">--9.列出薪金  高于  在部门30工作的  所有/任何一个员工的薪金的员工姓名和薪金、部门名称。</span>
+<span class="token keyword">select</span> 
+<span class="token number">e</span><span class="token punctuation">.</span>ename 
+<span class="token punctuation">,</span><span class="token number">e</span><span class="token punctuation">.</span>sal
+<span class="token punctuation">,</span><span class="token number">d</span><span class="token punctuation">.</span>dname 
+<span class="token keyword">from</span> mydatabasedb<span class="token punctuation">.</span>emp <span class="token number">e</span> 
+<span class="token keyword">left</span> <span class="token keyword">join</span> mydatabasedb<span class="token punctuation">.</span>dept <span class="token number">d</span> 
+<span class="token keyword">on</span> <span class="token number">e</span><span class="token punctuation">.</span>deptno <span class="token operator">=</span><span class="token number">d</span><span class="token punctuation">.</span>deptno 
+<span class="token keyword">where</span> <span class="token number">e</span><span class="token punctuation">.</span>sal<span class="token operator">></span><span class="token punctuation">(</span>
+<span class="token keyword">select</span> 
+<span class="token function">max</span><span class="token punctuation">(</span>sal<span class="token punctuation">)</span>
+<span class="token keyword">from</span> mydatabasedb<span class="token punctuation">.</span>emp t
+<span class="token keyword">where</span> deptno <span class="token operator">=</span><span class="token string">'30'</span>
+<span class="token punctuation">)</span></code></pre>
 
       </div>
       
