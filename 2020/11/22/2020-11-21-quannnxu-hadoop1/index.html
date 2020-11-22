@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html>
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>hadoop01 | 欢迎来到我的博客</title>
+  
+    
+<link rel="stylesheet" href="/js/aos/aos.css">
+
+  
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+  
+  
+<link rel="stylesheet" href="/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="欢迎来到我的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+  
+<script src="/js/jquery3.5.1.js"></script>
+
+  
+<script src="/js/vue2.6.11.js"></script>
+
+  <body>
+    <header class="header bg-color" 
+  style="position: fixed; 
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <i class="fa fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+  </div>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo" src="/medias/tuxiang.jpg" alt="logo">
+      <h3 class="drawer-box-head_title">欢迎来到我的博客</h3>
+      <h5 class="drawer-box-head_desc">心之所动,梦之所往</h5>
+    </div>
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          <li class="drawer-box-content_item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/friends" class="menu-item-link">
+              
+                <i class="fa fa-link" aria-hidden="true"></i>
+              
+              <span>友情链接</span>
+            </a>
+          </li>
+        
+        <li class="drawer-box-content_item">
+          <a href="">
+            <i class="fa fa-github" aria-hidden="true"></i>
+            <span>Github</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+    </div>
+    <div class="blog-title" id="author-avatar">
+      <div class="avatar">
+        <img src="/medias/tuxiang.jpg" alt="logo">
+      </div>
+      <a href="/" class="logo">欢迎来到我的博客</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          <li class="menu-item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-archive" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/friends" class="menu-item-link">
+              
+                <i class="fa fa-link" aria-hidden="true"></i>
+              
+              <span>友情链接</span>
+            </a>
+          </li>
+        
+      </ul>
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fa fa-search" aria-hidden="true"></i></div>
+  <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+    <div class="message-box">
+      <h2>
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <span class="title">搜索</span>
+      </h2>
+      <form class="site-search-form">
+        <input type="text"
+          placeholder="请输入关键字"
+          id="local-search-input" 
+          @click="getSearchFile()"
+          class="st-search-input"
+          v-model="searchInput"
+        />
+      </form>
+      <div class="result-wrapper">
+        <div id="local-search-result" class="local-search-result-cls"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/local_search.js"></script>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile();
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+    </nav>
+  </div>
+  
+  <a target="_blank" rel="noopener" href="https://github.com/quannnxu/quannnxu.github.io" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+</header>
+    <main class="main" style="margin-top: 60px;">
+      
+
+
+<div class="post-detail-header" style="background: url(/medias/5.jpg) no-repeat; background-size: cover; 
+  background-position: center center;">
+  
+    <span class="title">hadoop01</span>
+  
+</div>
+<div class="row justify-center">
+  <div class="main-content">
+    <article class="post post-detail">
+      
+      
+      <div class="post-meta">
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+        <span class="post-time">2020-11-22</span>
+      </div>
+      
+      <div class="post-tags-categories">
+        
+        
+      </div>
+      <div class="post-content">
+        <h4 id="1-谈谈大数据"><a href="#1-谈谈大数据" class="headerlink" title="1.谈谈大数据"></a>1.谈谈大数据</h4><p>存储                      hdfs  hive  hbase  kudu<br>计算                      SQL 数据处理 、scala/java、spark、flink<br>资源和计算作业的调度分配  yarn</p>
+<h4 id="2-hadoop官网"><a href="#2-hadoop官网" class="headerlink" title="2.hadoop官网"></a>2.hadoop官网</h4><p><a target="_blank" rel="noopener" href="https://hadoop.apache.org/">https://hadoop.apache.org</a></p>
+<p>hive.apache.org</p>
+<h4 id="3-hadoop版本选择"><a href="#3-hadoop版本选择" class="headerlink" title="3.hadoop版本选择"></a>3.hadoop版本选择</h4><p>hadoop2.x    hadoop3.x</p>
+<h4 id="4-hadoop认知"><a href="#4-hadoop认知" class="headerlink" title="4.hadoop认知"></a>4.hadoop认知</h4><p>广义: 以apache hadoop软件为主的生态圈 包含hive sqoop hbase kafka spark flink<br>狭义: apache hadoop软件<br>        hdfs          存储<br>        mapreduce     计算<br>        yarn          资源作业的分配调度</p>
+<p>大数据平台： 存储是第一位；存储和计算是相辅相成的</p>
+<h4 id="5-部署前准备"><a href="#5-部署前准备" class="headerlink" title="5.部署前准备"></a>5.部署前准备</h4><p>创建用户<br>useradd hadoop<br>su - hadoop<br>mkdir sourcecode software app log lib data tmp shell</p>
+<p>cd software/</p>
+<p>rz上传tar包</p>
+<p>[hadoop@warehouse001 software]$ ll<br>total 424180<br>-rw-r–r– 1 root root 434354462 Nov 22 09:42 hadoop-2.6.0-cdh5.16.2.tar.gz</p>
+<h4 id="6-jdk部署"><a href="#6-jdk部署" class="headerlink" title="6.jdk部署"></a>6.jdk部署</h4><p>[hadoop@warehouse001 software]$ which java<br>/usr/java/jdk1.8.0_181/bin/java</p>
+<h4 id="7-hdfs安装"><a href="#7-hdfs安装" class="headerlink" title="7.hdfs安装"></a>7.hdfs安装</h4><h5 id="7-1解压"><a href="#7-1解压" class="headerlink" title="7.1解压"></a>7.1解压</h5><p>[hadoop@warehouse001 ~]$ cd software/<br>[hadoop@warehouse001 software]$ tar -xzvf hadoop-2.6.0-cdh5.16.2.tar.gz -C ../app/</p>
+<h5 id="7-2软连接"><a href="#7-2软连接" class="headerlink" title="7.2软连接"></a>7.2软连接</h5><p>[hadoop@warehouse001 ~]$ cd app/<br>[hadoop@warehouse001 app]$ ll<br>total 4<br>drwxr-xr-x 14 hadoop hadoop 4096 Jun  3  2019 hadoop-2.6.0-cdh5.16.2<br>[hadoop@warehouse001 app]$ ln -s hadoop-2.6.0-cdh5.16.2  hadoop<br>[hadoop@warehouse001 app]$ ll<br>total 4<br>lrwxrwxrwx  1 hadoop hadoop   22 Nov 22 09:44 hadoop -&gt; hadoop-2.6.0-cdh5.16.2<br>drwxr-xr-x 14 hadoop hadoop 4096 Jun  3  2019 hadoop-2.6.0-cdh5.16.2<br>【补充】软连接：<br>    a.版本切换，脚本应用是配置的hadoop，是无感知的 </p>
+<p>b.小盘换大盘<br>    /       系统盘  100G  /ruozedata 80G<br>    /data01 数据盘  2T</p>
+<p>​    ll /             看一下ruozedata文件夹权限<br>​    ll /ruozedata    看一下ruozedata文件夹内容的权限<br>​    mv      /ruozedata /data01/ruozedata<br>​    ln -s   /data01/ruozedata  /ruozedata</p>
+<p>注意的是：<br>权限 rwx  用户用户组</p>
+<h5 id="7-3-解读目录只关注-bin-sbin-etc"><a href="#7-3-解读目录只关注-bin-sbin-etc" class="headerlink" title="7.3 解读目录只关注 bin  sbin  etc"></a>7.3 解读目录只关注 bin  sbin  etc</h5><p>[hadoop@warehouse001 app]$ cd hadoop<br>[hadoop@warehouse001 hadoop]$ ll<br>total 152<br>drwxr-xr-x  2 hadoop hadoop  4096 Jun  3  2019 bin        可执行命令<br>drwxr-xr-x  2 hadoop hadoop  4096 Jun  3  2019 bin-mapreduce1<br>drwxr-xr-x  3 hadoop hadoop  4096 Jun  3  2019 cloudera<br>drwxr-xr-x  6 hadoop hadoop  4096 Jun  3  2019 etc        配置文件<br>drwxr-xr-x  5 hadoop hadoop  4096 Jun  3  2019 examples<br>drwxr-xr-x  3 hadoop hadoop  4096 Jun  3  2019 examples-mapreduce1<br>drwxr-xr-x  2 hadoop hadoop  4096 Jun  3  2019 include<br>drwxr-xr-x  3 hadoop hadoop  4096 Jun  3  2019 lib<br>drwxr-xr-x  3 hadoop hadoop  4096 Jun  3  2019 libexec<br>-rw-r–r–  1 hadoop hadoop 85063 Jun  3  2019 LICENSE.txt<br>-rw-r–r–  1 hadoop hadoop 14978 Jun  3  2019 NOTICE.txt<br>-rw-r–r–  1 hadoop hadoop  1366 Jun  3  2019 README.txt<br>drwxr-xr-x  3 hadoop hadoop  4096 Jun  3  2019 sbin        启动停止脚本<br>drwxr-xr-x  4 hadoop hadoop  4096 Jun  3  2019 share<br>drwxr-xr-x 18 hadoop hadoop  4096 Jun  3  2019 src</p>
+<h5 id="7-4部署模式"><a href="#7-4部署模式" class="headerlink" title="7.4部署模式"></a>7.4部署模式</h5><p>Local (Standalone) Mode  本地      1台机器  1个单独的java进程 用于debug<br>Pseudo-Distributed Mode  伪分布式  1台机器  多个java进程<br>Fully-Distributed Mode   集群      多台机器 多个java进程 </p>
+<h5 id="7-5修改hadoop-env-sh文件，显性java家目录"><a href="#7-5修改hadoop-env-sh文件，显性java家目录" class="headerlink" title="7.5修改hadoop-env.sh文件，显性java家目录"></a>7.5修改hadoop-env.sh文件，显性java家目录</h5><p>export JAVA_HOME=/usr/java/jdk1.8.0_181</p>
+<h5 id="7-6配置hadoop用户的ssh信任关系"><a href="#7-6配置hadoop用户的ssh信任关系" class="headerlink" title="7.6配置hadoop用户的ssh信任关系"></a>7.6配置hadoop用户的ssh信任关系</h5><p>删除已存在的.ssh，建议生产上mv移走重命名</p>
+<p>[hadoop@warehouse001 ~]$ ssh-keygen<br>Generating public/private rsa key pair.<br>Enter file in which to save the key (/home/hadoop/.ssh/id_rsa):<br>Created directory ‘/home/hadoop/.ssh’.<br>Enter passphrase (empty for no passphrase):<br>Enter same passphrase again:<br>Your identification has been saved in /home/hadoop/.ssh/id_rsa.<br>Your public key has been saved in /home/hadoop/.ssh/id_rsa.pub.<br>The key fingerprint is:<br>SHA256:dBcBU5BHmP5ZqYc1cy8Bsd1bcHJbgQJ18aESVXW2bUs hadoop@warehouse001<br>The key’s randomart image is:<br>+—[RSA 2048]—-+<br>|         .*@B**+X|<br>|          +o==oBB|<br>|        …o+o.E=|<br>|       . …. O.=|<br>|        S  . * B.|<br>|            = o .|<br>|             . . |<br>|                 |<br>|                 |<br>+—-[SHA256]—–+<br>[hadoop@warehouse001 ~]$<br>[hadoop@warehouse001 ~]$ cd .ssh<br>[hadoop@warehouse001 .ssh]$ ll<br>total 8<br>-rw——- 1 hadoop hadoop 1679 Nov 22 10:29 id_rsa<br>-rw-r–r– 1 hadoop hadoop  401 Nov 22 10:29 id_rsa.pub<br>[hadoop@warehouse001 .ssh]$ cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys<br>[hadoop@warehouse001 .ssh]$ chmod 0600 ~/.ssh/authorized_keys</p>
+<p>验证ssh,第一次必须输入yes建立关系,无需输入密码即可打印日期</p>
+<p>[hadoop@warehouse001 .ssh]$ ssh hadoop@warehouse001 date<br>The authenticity of host ‘warehouse001 (172.23.75.57)’ can’t be established.<br>ECDSA key fingerprint is SHA256:XliTXyWZCOu2gk6FPXdhy4QOtYyTzmmKx6UdMuQ1LpY.<br>ECDSA key fingerprint is MD5:3e:e7:27:d3:95:28:f2:dd:b5:71:df:93:c9:83:b6:f3.<br>Are you sure you want to continue connecting (yes/no)? yes<br>Warning: Permanently added ‘warehouse001,172.23.75.57’ (ECDSA) to the list of known hosts.<br>Sun Nov 22 10:31:25 CST 2020</p>
+<p>第二次直接打印</p>
+<p>[hadoop@warehouse001 .ssh]$ ssh hadoop@warehouse001 date<br>Sun Nov 22 10:33:23 CST 2020<br>[hadoop@warehouse001 .ssh]$ </p>
+<h5 id="7-7-配置namenode进程以warehouse001启动"><a href="#7-7-配置namenode进程以warehouse001启动" class="headerlink" title="7.7 配置namenode进程以warehouse001启动"></a>7.7 配置namenode进程以warehouse001启动</h5><p>修改core-site.xml文件</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>fs.defaultFS<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>hdfs://warehouse001:9000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
+<h5 id="7-8-配置secondary-namenode进程以warehouse001启动"><a href="#7-8-配置secondary-namenode进程以warehouse001启动" class="headerlink" title="7.8 配置secondary namenode进程以warehouse001启动"></a>7.8 配置secondary namenode进程以warehouse001启动</h5><p>修改hdfs-site.xml文件</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.replication<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.namenode.secondary.http-address<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>            
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>warehouse001:50090<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.namenode.secondary.https-address<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>warehouse001:50091<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
+<h5 id="7-9配置datanode进程以warehouse001启动"><a href="#7-9配置datanode进程以warehouse001启动" class="headerlink" title="7.9配置datanode进程以warehouse001启动"></a>7.9配置datanode进程以warehouse001启动</h5><p>[hadoop@warehouse001 hadoop]$ vi slaves                </p>
+<p>warehouse001</p>
+<h5 id="7-10格式化"><a href="#7-10格式化" class="headerlink" title="7.10格式化"></a>7.10格式化</h5><p>[hadoop@warehouse001 hadoop]$ sbin/start-dfs.sh<br>20/11/22 11:17:04 INFO namenode.NNStorageRetentionManager: Going to retain 1 images with txid &gt;= 0<br>20/11/22 11:17:04 INFO util.ExitUtil: Exiting with status 0<br>20/11/22 11:17:04 INFO namenode.NameNode: SHUTDOWN_MSG:<br>/<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>****</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><br>SHUTDOWN_MSG: Shutting down NameNode at warehouse001/172.23.75.57<br>**<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/</p>
+<h5 id="7-11启动"><a href="#7-11启动" class="headerlink" title="7.11启动"></a>7.11启动</h5><p>[hadoop@warehouse001 sbin]$ sh start-dfs.sh<br>which: no start-dfs.sh in (/usr/java/jdk1.8.0_181/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/hadoop/.local/bin:/home/hadoop/bin)<br>20/11/22 11:29:21 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform… using builtin-java classes where applicable<br>Starting namenodes on [warehouse001]<br>warehouse001: starting namenode, logging to /home/hadoop/app/hadoop-2.6.0-cdh5.16.2/logs/hadoop-hadoop-namenode-warehouse001.out<br>localhost: starting datanode, logging to /home/hadoop/app/hadoop-2.6.0-cdh5.16.2/logs/hadoop-hadoop-datanode-warehouse001.out<br>Starting secondary namenodes [warehouse001]<br>warehouse001: starting secondarynamenode, logging to /home/hadoop/app/hadoop-2.6.0-cdh5.16.2/logs/hadoop-hadoop-secondarynamenode-warehouse001.out<br>20/11/22 11:29:36 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform… using builtin-java classes where applicable</p>
+<p>[hadoop@warehouse001 hadoop]$ jps<br>13377 Jps<br>13090 NameNode<br>12098 SecondaryNameNode<br>11944 DataNode</p>
+<p>hdfs存储来说:<br>namenode             名称节点       老大<br>secondary namenode   第二名称节点   老二  每隔1小时 把老大备份一下</p>
+<p>datanode             数据节点       小弟</p>
+<p>最终三个进程以warehouse001 机器名称启动 </p>
+<p>[hadoop@warehouse001 sbin]$ sh start-dfs.sh<br>which: no start-dfs.sh in (/usr/java/jdk1.8.0_181/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/hadoop/.local/bin:/home/hadoop/bin)<br>20/11/22 11:54:41 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform… using builtin-java classes where applicable<br>Starting namenodes on [warehouse001]<br>warehouse001: starting namenode, logging to /home/hadoop/app/hadoop-2.6.0-cdh5.16.2/logs/hadoop-hadoop-namenode-warehouse001.out<br>warehouse001: starting datanode, logging to /home/hadoop/app/hadoop-2.6.0-cdh5.16.2/logs/hadoop-hadoop-datanode-warehouse001.out<br>Starting secondary namenodes [warehouse001]<br>warehouse001: starting secondarynamenode, logging to /home/hadoop/app/hadoop-2.6.0-cdh5.16.2/logs/hadoop-hadoop-secondarynamenode-warehouse001.out<br>20/11/22 11:54:56 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform… using builtin-java classes where applicable</p>
+<p>打开web，云主机需要开启【安全组】</p>
+<p><a target="_blank" rel="noopener" href="http://warehouse001:50070/dfshealth.html#tab-overview">http://warehouse001:50070/dfshealth.html#tab-overview</a></p>
+<p>Make the HDFS directories required to execute MapReduce jobs:</p>
+<pre><code>  $ bin/hdfs dfs -mkdir /user
+  $ bin/hdfs dfs -mkdir /user/&lt;username&gt;</code></pre>
+<p>8.案例<br>[hadoop@warehouse001 hadoop]$bin/hadoop jar <br>share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0-cdh5.16.2.jar <br>grep input output ‘dfs[a-z.]+’</p>
+<p>执行成功后</p>
+<p>[hadoop@warehouse001 hadoop]$ bin/hdfs dfs -get output output</p>
+<p>[hadoop@warehouse001 hadoop]$ cd output/<br>[hadoop@warehouse001 output]$ ll<br>total 4<br>-rw-r–r– 1 hadoop hadoop 301 Nov 22 14:44 part-r-00000<br>-rw-r–r– 1 hadoop hadoop   0 Nov 22 14:44 _SUCCESS<br>[hadoop@warehouse001 output]$ cat part-r-00000<br>6       dfs.audit.logger<br>4       dfs.class<br>3       dfs.logger<br>3       dfs.server.namenode.<br>2       dfs.audit.log.maxfilesize<br>2       dfs.audit.log.maxbackupindex<br>2       dfs.period<br>1       dfsmetrics.log<br>1       dfsadmin<br>1       dfs.servers<br>1       dfs.replication<br>1       dfs.namenode.secondary.https<br>1       dfs.namenode.secondary.http<br>1       dfs.log<br>1       dfs.file<br>1       dfs.namenode.http</p>
+<p>但是namenode、datanode、checkpoint(secondarynamenode)官方默认配置如下:<br>dfs.namenode.name.dir –&gt; file://${hadoop.tmp.dir}/dfs/name<br>dfs.datanode.data.dir –&gt; file://${hadoop.tmp.dir}/dfs/data<br>dfs.namenode.checkpoint.dir –&gt; file://${hadoop.tmp.dir}/dfs/namesecondary</p>
+<p>所以配置hadoop.tmp.dir临时目录改为/home/hadoop/tmp，<br>那么namenode、datanode、checkpoint(secondarynamenode)<br>存储也对应变更。</p>
+<p>1.sql行转列、列转行</p>
+<p> 我们首先先通过一个学生成绩表(下面简化了些)来形象了解下行转列</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span>  <span class="token keyword">TABLE</span> mydatabasedb<span class="token punctuation">.</span>StudentScores
+<span class="token punctuation">(</span>
+UserName <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>     
+Subject <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+Score <span class="token keyword">int</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> mydatabasedb<span class="token punctuation">.</span>StudentScores <span class="token keyword">SELECT</span> <span class="token string">'Nick'</span><span class="token punctuation">,</span> <span class="token string">'语文'</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">;</span> 
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> mydatabasedb<span class="token punctuation">.</span>StudentScores <span class="token keyword">SELECT</span> <span class="token string">'Nick'</span><span class="token punctuation">,</span> <span class="token string">'数学'</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> mydatabasedb<span class="token punctuation">.</span>StudentScores <span class="token keyword">SELECT</span> <span class="token string">'Nick'</span><span class="token punctuation">,</span> <span class="token string">'英语'</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> mydatabasedb<span class="token punctuation">.</span>StudentScores <span class="token keyword">SELECT</span> <span class="token string">'Nick'</span><span class="token punctuation">,</span> <span class="token string">'生物'</span><span class="token punctuation">,</span> <span class="token number">85</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> mydatabasedb<span class="token punctuation">.</span>StudentScores <span class="token keyword">SELECT</span> <span class="token string">'Kent'</span><span class="token punctuation">,</span> <span class="token string">'语文'</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> mydatabasedb<span class="token punctuation">.</span>StudentScores <span class="token keyword">SELECT</span> <span class="token string">'Kent'</span><span class="token punctuation">,</span> <span class="token string">'数学'</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> mydatabasedb<span class="token punctuation">.</span>StudentScores <span class="token keyword">SELECT</span> <span class="token string">'Kent'</span><span class="token punctuation">,</span> <span class="token string">'英语'</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">;</span> 
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> mydatabasedb<span class="token punctuation">.</span>StudentScores <span class="token keyword">SELECT</span> <span class="token string">'Kent'</span><span class="token punctuation">,</span> <span class="token string">'生物'</span><span class="token punctuation">,</span> <span class="token number">85</span><span class="token punctuation">;</span>
+
+<span class="token keyword">select</span>  <span class="token operator">*</span> <span class="token keyword">from</span> mydatabasedb<span class="token punctuation">.</span>StudentScores
+
+<span class="token keyword">select</span> 
+UserName<span class="token punctuation">,</span>
+<span class="token function">max</span><span class="token punctuation">(</span><span class="token keyword">case</span> Subject <span class="token keyword">when</span> <span class="token string">'语文'</span> <span class="token keyword">then</span> score <span class="token keyword">else</span> <span class="token number">0</span> <span class="token keyword">end</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token string">'语文'</span><span class="token punctuation">,</span>
+<span class="token function">max</span><span class="token punctuation">(</span><span class="token keyword">case</span> Subject <span class="token keyword">when</span> <span class="token string">'数学'</span> <span class="token keyword">then</span> score <span class="token keyword">else</span> <span class="token number">0</span> <span class="token keyword">end</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token string">'数学'</span><span class="token punctuation">,</span>
+<span class="token function">max</span><span class="token punctuation">(</span><span class="token keyword">case</span> Subject <span class="token keyword">when</span> <span class="token string">'英语'</span> <span class="token keyword">then</span> score <span class="token keyword">else</span> <span class="token number">0</span> <span class="token keyword">end</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token string">'英语'</span><span class="token punctuation">,</span>
+<span class="token function">max</span><span class="token punctuation">(</span><span class="token keyword">case</span> Subject <span class="token keyword">when</span> <span class="token string">'生物'</span> <span class="token keyword">then</span> score <span class="token keyword">else</span> <span class="token number">0</span> <span class="token keyword">end</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token string">'生物'</span>
+<span class="token keyword">from</span> mydatabasedb<span class="token punctuation">.</span>StudentScores
+<span class="token keyword">group</span> <span class="token keyword">by</span> UserName</code></pre>
+<p><img src="http://note.youdao.com/noteshare?id=71da6482ab52b7bd4fa3eb891fd384d1&sub=A8818578D10F4EE2856E68C67C48D2B4" alt="avatar"></p>
+<p><img src="2020-11-21-quannnxu-hadoop1.assets/image-20201122164130788.png" alt="image-20201122164130788"></p>
+
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>quanxu</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/2020/11/22/2020-11-21-quannnxu-hadoop1/" target="_blank" title="hadoop01">http://www.quanxu.com/2020/11/22/2020-11-21-quannnxu-hadoop1/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <div class="post-nav">
+
+
+
+  <div class="post-nav-next post-nav-item">
+    <a href="/2020/11/19/2020-11-19-quannnxu-zao-ke/">
+      <span>
+        下一篇:    11.19早课 
+      </span>
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-if="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-if="visible">
+      <div class="donate-box_close">
+        <i class="fa fa-times" aria-hidden="true" @click="cancelDialogDrawer"></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-if="tabActive === 'Alipay'">
+          <img src="/medias/zfb1.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-if="tabActive === 'WeChatpay'">
+          <img src="/medias/weixin.png" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+
+
+<script src="/js/shareJs/social-share.min.js"></script>
+
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+
+    <!-- 评论 -->
+      
+        
+      
+  </div>
+
+  
+    <div class="toc-aside">
+      <div class="toc-main">
+        <div class="toc-aside-title">
+          <i class="fa fa-list-ul" aria-hidden="true"></i><span>目录</span>
+        </div>
+        <div class="toc-content">
+          <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script>
+<div class="toc"></div>
+
+<script>
+  if ($('.toc').length > 0) {
+    var headerEl = 'h2, h3, h4',  //headers 
+      content = '.post-detail',//文章容器
+      idArr = {};  //标题数组以确定是否增加索引id
+      //add #id
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: content,
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: headerEl,
+      scrollSmooth: true,
+      scrollSmoothOffset: -80,
+      headingsOffset: 130,
+      positionFixedSelector: '.toc-main',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  }
+
+</script>
+
+<style>
+.is-position-fixed {
+  position:fixed !important;
+  top: 64px;
+}
+
+</style>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+    </main>
+    <div class="footer bg-color">
+  <div class="footer-main">
+    <div class="link">
+      <a target="_blank" rel="noopener" href="https://github.com/yuang01/hexo-theme-bamboo">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+      <a href="mailto:1730241541@qq.com">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+      </a>
+      <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1730241541">
+        <i class="fa fa-qq" aria-hidden="true"></i>
+      </a>
+      <a href="/atom.xml" target="_blank">
+        <i class="fa fa-rss" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="footer-copyright">
+      Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/yuang01">yuang01</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> 
+    </div>
+    
+      
+  <!-- 不蒜子统计 -->
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-book" aria-hidden="true"></i>本站总阅读量：<span id="busuanzi_value_page_pv"></span> 次
+  </span>
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_uv" style='display:none'>
+        <i class="fa fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+  </span>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    
+  </div>
+</div>
+
+
+    
+      <div class="goTop bg-color">
+  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+</div>
+
+<script src="/js/goTop.js"></script>
+
+    
+
+    
+      <link href="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  display: none;
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  display: none;
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+<meting-js  
+  class=""
+  server="netease"
+  type="playlist"
+  id="442274724"
+  fixed='true'
+  autoplay='false'
+  theme='#42b983'
+  loop='all'
+  order='random'
+  preload='auto'
+  volume='0.7'
+  list-folded='true'
+>
+</meting-js>
+
+<!-- <style>
+  #aplayer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+  }
+</style> -->
+<script src="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      
+<script src="/js/fancybox/jquery.fancybox.min.js"></script>
+<script src="/js/wrapImage.js"></script>
+
+    
+
+    <!-- 爱心点击 -->
+    
+      
+<script src="/js/clicklove.js"></script>
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
+    
+      
+<script src="/js/aos/aos.js"></script>
+
+      <script>
+        // https://github.com/michalsnik/aos
+        const themeOffset = parseInt('120') || 120;
+        const themeDelay = parseInt('0')|| 0;
+        const themeDuration = parseInt('400') || 400;
+        const themeEasing = 'ease' || 'ease';
+        const themeOnce = JSON.parse('true' || true);
+        const themeMirror = JSON.parse('false' || false);
+        const themeAnchorPlacement = 'top-bottom' || 'top-bottom';
+        AOS.init({
+          // Global settings:
+          disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+          startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+          initClassName: 'aos-init', // class applied after initialization
+          animatedClassName: 'aos-animate', // class applied on animation
+          useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+          disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+          debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+          throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+          // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+          offset: themeOffset, // offset (in px) from the original trigger point
+          delay: themeDelay, // values from 0 to 3000, with step 50ms
+          duration: themeDuration, // values from 0 to 3000, with step 50ms
+          easing: themeEasing, // default easing for AOS animations
+          once: themeOnce, // whether animation should happen only once - while scrolling down
+          mirror: themeMirror, // whether elements should animate out while scrolling past them
+          anchorPlacement: themeAnchorPlacement, // defines which position of the element regarding to window should trigger the animation
+
+        });
+      </script>
+    
+
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css">
+<script src="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+<div id="appCopy">
+</div>
+<script>
+  var vm = new Vue({
+    el: '#appCopy',
+    data: {
+    },
+    computed: {
+    },
+    mounted() {
+      const that = this;
+      //  监听 ctrl + c事件  
+      $(document).unbind('keypress').bind('keypress', function (e) {
+        if (e.ctrlKey && e.keyCode == 67) {
+          doSomething();
+          // 返回false, 防止重复触发copy事件  
+          return false;
+        }
+      })
+
+      // 鼠标右键的复制事件  
+      $(document).unbind('copy').bind('copy', function (e) {
+        doSomething();
+        // console.log('右键复制 监听成功');
+      });
+
+      function doSomething() {
+        that.$notify({
+          title: '成功',
+          content: '复制成功了哦',
+          type: 'success'
+        })
+        // console.log('ctrl + c 监听成功');  
+      }
+    },
+    methods: {
+    },
+    created() { }
+  })
+</script>
+    
+
+    <!-- 输入框打字特效 -->
+    
+      
+<script src="/js/activate-power-mode.js"></script>
+
+      <script>
+          POWERMODE.colorful = true;  // 打开随机颜色特效
+          POWERMODE.shake = false;    // 关闭输入框抖动
+          document.body.addEventListener('input', POWERMODE);//监听打字事件
+      </script>
+    
+
+    <!-- markdown代码一键复制功能 -->
+    
+<script src="/js/clipboard/clipboard.min.js"></script>
+
+    <script>
+      !function (e, t, a) {
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function(){
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+          copyHtml += '<i class="fa fa-globe"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre code").before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+              target: function(trigger) {
+                  return trigger.nextElementSibling;
+              }
+          });
+        }
+        initCopyCode();
+      }(window, document);
+    </script>
+  
+  </body>
+</html>
