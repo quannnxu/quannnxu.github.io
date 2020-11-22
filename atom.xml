@@ -6,7 +6,7 @@
   <link href="http://www.quanxu.com/atom.xml" rel="self"/>
   
   <link href="http://www.quanxu.com/"/>
-  <updated>2020-11-22T08:48:19.084Z</updated>
+  <updated>2020-11-22T11:10:42.481Z</updated>
   <id>http://www.quanxu.com/</id>
   
   <author>
@@ -17,11 +17,24 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>hadoop02</title>
+    <link href="http://www.quanxu.com/2020/11/22/2020-11-21-quannnxu-hadoop2/"/>
+    <id>http://www.quanxu.com/2020/11/22/2020-11-21-quannnxu-hadoop2/</id>
+    <published>2020-11-22T11:10:12.196Z</published>
+    <updated>2020-11-22T11:10:42.481Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>hadoop01</title>
     <link href="http://www.quanxu.com/2020/11/22/2020-11-21-quannnxu-hadoop1/"/>
     <id>http://www.quanxu.com/2020/11/22/2020-11-21-quannnxu-hadoop1/</id>
     <published>2020-11-22T01:47:05.026Z</published>
-    <updated>2020-11-22T08:48:19.084Z</updated>
+    <updated>2020-11-22T10:35:31.068Z</updated>
     
     
       
@@ -66,7 +79,7 @@
     <link href="http://www.quanxu.com/2020/11/18/2020-11-18-quannnxu-mysql2/"/>
     <id>http://www.quanxu.com/2020/11/18/2020-11-18-quannnxu-mysql2/</id>
     <published>2020-11-18T13:03:21.403Z</published>
-    <updated>2020-11-21T10:49:35.235Z</updated>
+    <updated>2020-11-22T14:12:28.076Z</updated>
     
     
       
