@@ -429,6 +429,21 @@ UserName<span class="token punctuation">,</span>
 <span class="token keyword">from</span> mydatabasedb<span class="token punctuation">.</span>StudentScores
 <span class="token keyword">group</span> <span class="token keyword">by</span> UserName</code></pre>
 <p><img src="https://i.loli.net/2020/11/22/b3HoLOiN8YnzwFq.png"></p>
+<p>列转行:</p>
+<p><img src="https://i.loli.net/2020/11/23/UCgtDy2PNVxOz1e.png"></p>
+<p>实现:</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token punctuation">(</span>
+    <span class="token keyword">select</span> name<span class="token punctuation">,</span><span class="token string">'语文'</span> <span class="token keyword">as</span> 科目<span class="token punctuation">,</span>语文 <span class="token keyword">as</span> 分数 <span class="token keyword">from</span> mydatabasedb<span class="token punctuation">.</span>student
+    <span class="token keyword">union</span> <span class="token keyword">all</span>
+    <span class="token keyword">select</span> name<span class="token punctuation">,</span><span class="token string">'数学'</span> <span class="token keyword">as</span> 科目<span class="token punctuation">,</span>数学 <span class="token keyword">as</span> 分数 <span class="token keyword">from</span> mydatabasedb<span class="token punctuation">.</span>student
+    <span class="token keyword">union</span> <span class="token keyword">all</span>
+    <span class="token keyword">select</span> name<span class="token punctuation">,</span><span class="token string">'物理'</span> <span class="token keyword">as</span> 科目<span class="token punctuation">,</span>物理 <span class="token keyword">as</span> 分数 <span class="token keyword">from</span> mydatabasedb<span class="token punctuation">.</span>student
+<span class="token punctuation">)</span> <span class="token number">a</span> </code></pre>
+<p><img src="https://i.loli.net/2020/11/23/Oy9qUF2gAQt3ez4.png"></p>
+<p>理解：把语文列装换为分数列，本身列头没有了，使用字符来填充列头，代表本身列具备的含义。</p>
+<p>单个示例:</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span>  <span class="token string">'语文'</span> <span class="token keyword">as</span> 科目<span class="token punctuation">,</span> 语文 <span class="token keyword">as</span> 分数 <span class="token keyword">from</span> mydatabasedb<span class="token punctuation">.</span>student</code></pre>
+<p><img src="https://i.loli.net/2020/11/23/qAjzQyilEUvGY2h.png"></p>
 
       </div>
       
