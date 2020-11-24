@@ -333,7 +333,336 @@
         
       </div>
       <div class="post-content">
-        <h4 id="主从架构"><a href="#主从架构" class="headerlink" title="主从架构"></a>主从架构</h4>
+        <h4 id="主从架构"><a href="#主从架构" class="headerlink" title="主从架构"></a>主从架构</h4><p>ResourceManager daemon and NodeManager daemon</p>
+<h4 id="1-yarn部署"><a href="#1-yarn部署" class="headerlink" title="1.yarn部署"></a>1.yarn部署</h4><h5 id="1-1-配置文件"><a href="#1-1-配置文件" class="headerlink" title="1.1 配置文件"></a>1.1 配置文件</h5><p>[hadoop@warehouse001hadoop]$ cp mapred-site.xml.template mapred-site.xml<br>[hadoop@warehouse001hadoop]$ vi mapred-site.xml</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0"?></span>
+<span class="token prolog">&lt;?xml-stylesheet type="text/xsl" href="configuration.xsl"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>mapreduce.framework.name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>yarn<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
+<p>[hadoop@warehouse001hadoop]$ vi yarn-site.xml </p>
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0"?></span>
+<span class="token prolog">&lt;?xml-stylesheet type="text/xsl" href="configuration.xsl"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.nodemanager.aux-services<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>mapreduce_shuffle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
+<p>open: <a target="_blank" rel="noopener" href="http://114.67.101.143:8088/cluster%E5%AE%98%E7%BD%91">http://114.67.101.143:8088/cluster官网</a></p>
+<p>启动:</p>
+<p>[hadoop@warehouse001 hadoop]$ sbin/start-yarn.sh </p>
+<p>查看进程:</p>
+<p>[hadoop@warehouse001 hadoop]$ jps<br>12496 Jps<br>30954 ResourceManager<br>29050 NameNode<br>29179 DataNode<br>29340 SecondaryNameNode<br>31182 NodeManager</p>
+<h4 id="2-案例"><a href="#2-案例" class="headerlink" title="2.案例"></a>2.案例</h4><p>wordcount</p>
+<pre class=" language-linux"><code class="language-linux">#配置环境变量
+[hadoop@warehouse001 hadoop]$ cd 
+[hadoop@warehouse001 ~]$ which hadoop
+/usr/bin/which: no hadoop in (/usr/java/jdk1.8.0_181/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/hadoop/.local/bin:/home/hadoop/bin)
+[hadoop@warehouse001 ~]$ vi .bashrc 
+
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+export HADOOP_HOME=/home/hadoop/app/hadoop
+export PATH=$&#123;HADOOP_HOME&#125;/bin:$&#123;HADOOP_HOME&#125;/sbin:$PATH
+
+# User specific aliases and functions
+
+[hadoop@warehouse001 ~]$ source .bashrc 
+[hadoop@warehouse001 ~]$ which hadoop
+~/app/hadoop/bin/hadoop
+#造数据
+[hadoop@warehouse001 ~]$ cd data/
+[hadoop@warehouse001 data]$ mkdir input
+[hadoop@warehouse001 data]$ cd input/
+[hadoop@warehouse001 input]$ vi 1.log
+a b c
+www.quanxu.com
+xiaoming
+lihua
+111
+2
+a b
+c
+#上传hdfs
+[hadoop@warehouse001 input]$ hdfs dfs -ls /
+20/11/24 22:42:09 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 1 items
+drwxr-xr-x   - hadoop supergroup          0 2020-11-22 16:02 /user
+[hadoop@warehouse001 input]$ hdfs dfs -mkdir -p /wordcount/input
+20/11/24 22:43:27 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[hadoop@warehouse001 input]$ hdfs dfs -ls /
+20/11/24 22:43:40 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 2 items
+drwxr-xr-x   - hadoop supergroup          0 2020-11-22 16:02 /user
+drwxr-xr-x   - hadoop supergroup          0 2020-11-24 22:43 /wordcount
+
+drwxr-xr-x   - hadoop supergroup          0 2020-11-24 22:43 /wordcount/input
+[hadoop@warehouse001 input]$ hdfs dfs -put 1.log /wordcount/input
+20/11/24 22:45:52 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[hadoop@warehouse001 hadoop]$ cd src/
+[hadoop@warehouse001 src]$ ll
+total 200
+drwxr-xr-x  2 hadoop hadoop  4096 Jun  3  2019 build
+-rw-r--r--  1 hadoop hadoop 12096 Jun  3  2019 BUILDING.txt
+drwxr-xr-x  3 hadoop hadoop  4096 Jun  3  2019 dev-support
+drwxr-xr-x  3 hadoop hadoop  4096 Jun  3  2019 hadoop-assemblies
+drwxr-xr-x  2 hadoop hadoop  4096 Jun  3  2019 hadoop-build-tools
+drwxr-xr-x  2 hadoop hadoop  4096 Jun  3  2019 hadoop-client
+drwxr-xr-x 10 hadoop hadoop  4096 Jun  3  2019 hadoop-common-project
+drwxr-xr-x  2 hadoop hadoop  4096 Jun  3  2019 hadoop-dist
+drwxr-xr-x  6 hadoop hadoop  4096 Jun  3  2019 hadoop-hdfs-project
+drwxr-xr-x 10 hadoop hadoop  4096 Jun  3  2019 hadoop-mapreduce1-project
+drwxr-xr-x  9 hadoop hadoop  4096 Jun  3  2019 hadoop-mapreduce-project
+drwxr-xr-x  3 hadoop hadoop  4096 Jun  3  2019 hadoop-maven-plugins
+drwxr-xr-x  2 hadoop hadoop  4096 Jun  3  2019 hadoop-minicluster
+drwxr-xr-x  3 hadoop hadoop  4096 Jun  3  2019 hadoop-project
+drwxr-xr-x  2 hadoop hadoop  4096 Jun  3  2019 hadoop-project-dist
+drwxr-xr-x 18 hadoop hadoop  4096 Jun  3  2019 hadoop-tools
+drwxr-xr-x  3 hadoop hadoop  4096 Jun  3  2019 hadoop-yarn-project
+-rw-r--r--  1 hadoop hadoop 85063 Jun  3  2019 LICENSE.txt
+-rw-r--r--  1 hadoop hadoop 14978 Jun  3  2019 NOTICE.txt
+-rw-r--r--  1 hadoop hadoop 19039 Jun  3  2019 pom.xml
+-rw-r--r--  1 hadoop hadoop  1366 Jun  3  2019 README.txt
+[hadoop@warehouse001 src]$ cd hadoop-mapreduce-project
+hadoop@warehouse001 src]$ cd hadoop-mapreduce-project
+[hadoop@warehouse001 hadoop-mapreduce-project]$ ll
+total 328
+drwxr-xr-x  2 hadoop hadoop   4096 Jun  3  2019 bin
+-rw-r--r--  1 hadoop hadoop   2018 Jun  3  2019 CHANGES.MAPREDUCE-2841.txt
+-rw-r--r--  1 hadoop hadoop 293811 Jun  3  2019 CHANGES.txt
+drwxr-xr-x  2 hadoop hadoop   4096 Jun  3  2019 conf
+drwxr-xr-x  2 hadoop hadoop   4096 Jun  3  2019 dev-support
+drwxr-xr-x 10 hadoop hadoop   4096 Jun  3  2019 hadoop-mapreduce-client
+drwxr-xr-x  4 hadoop hadoop   4096 Jun  3  2019 hadoop-mapreduce-examples
+drwxr-xr-x  3 hadoop hadoop   4096 Jun  3  2019 lib
+-rw-r--r--  1 hadoop hadoop  11091 Jun  3  2019 pom.xml
+[hadoop@warehouse001 hadoop-mapreduce-project]$ cd hadoop-mapreduce-examples
+[hadoop@warehouse001 hadoop-mapreduce-examples]$ ll
+total 16
+drwxr-xr-x 2 hadoop hadoop 4096 Jun  3  2019 dev-support
+-rw-r--r-- 1 hadoop hadoop 5097 Jun  3  2019 pom.xml
+drwxr-xr-x 4 hadoop hadoop 4096 Jun  3  2019 src
+[hadoop@warehouse001 hadoop-mapreduce-examples]$ cd src
+[hadoop@warehouse001 src]$ cd main
+[hadoop@warehouse001 main]$ cd java/
+[hadoop@warehouse001 java]$ ll
+total 4
+drwxr-xr-x 3 hadoop hadoop 4096 Jun  3  2019 org
+[hadoop@warehouse001 java]$ cd org/
+[hadoop@warehouse001 org]$ ll
+total 4
+drwxr-xr-x 3 hadoop hadoop 4096 Jun  3  2019 apache
+[hadoop@warehouse001 org]$ cd apache/
+[hadoop@warehouse001 apache]$ ll
+total 4
+drwxr-xr-x 3 hadoop hadoop 4096 Jun  3  2019 hadoop
+[hadoop@warehouse001 apache]$ cd hadoop/
+[hadoop@warehouse001 hadoop]$ ll
+total 4
+drwxr-xr-x 5 hadoop hadoop 4096 Jun  3  2019 examples
+[hadoop@warehouse001 hadoop]$ cd examples/
+[hadoop@warehouse001 examples]$ ll
+total 204
+-rw-r--r-- 1 hadoop hadoop  2897 Jun  3  2019 AggregateWordCount.java
+-rw-r--r-- 1 hadoop hadoop  3016 Jun  3  2019 AggregateWordHistogram.java
+-rw-r--r-- 1 hadoop hadoop 21254 Jun  3  2019 BaileyBorweinPlouffe.java
+drwxr-xr-x 2 hadoop hadoop  4096 Jun  3  2019 dancing
+-rw-r--r-- 1 hadoop hadoop 13495 Jun  3  2019 DBCountPageView.java
+-rw-r--r-- 1 hadoop hadoop  4301 Jun  3  2019 ExampleDriver.java
+-rw-r--r-- 1 hadoop hadoop  3730 Jun  3  2019 Grep.java
+-rw-r--r-- 1 hadoop hadoop  7033 Jun  3  2019 Join.java
+-rw-r--r-- 1 hadoop hadoop  8111 Jun  3  2019 MultiFileWordCount.java
+-rw-r--r-- 1 hadoop hadoop   853 Jun  3  2019 package.html
+drwxr-xr-x 3 hadoop hadoop  4096 Jun  3  2019 pi
+-rw-r--r-- 1 hadoop hadoop 12628 Jun  3  2019 QuasiMonteCarlo.java
+-rw-r--r-- 1 hadoop hadoop 40575 Jun  3  2019 RandomTextWriter.java
+-rw-r--r-- 1 hadoop hadoop 10573 Jun  3  2019 RandomWriter.java
+-rw-r--r-- 1 hadoop hadoop  7809 Jun  3  2019 SecondarySort.java
+-rw-r--r-- 1 hadoop hadoop  8167 Jun  3  2019 Sort.java
+drwxr-xr-x 3 hadoop hadoop  4096 Jun  3  2019 terasort
+-rw-r--r-- 1 hadoop hadoop  3297 Jun  3  2019 WordCount.java
+-rw-r--r-- 1 hadoop hadoop  6327 Jun  3  2019 WordMean.java
+-rw-r--r-- 1 hadoop hadoop  7084 Jun  3  2019 WordMedian.java
+-rw-r--r-- 1 hadoop hadoop  7253 Jun  3  2019 WordStandardDeviation.java
+#下载到本地
+[hadoop@warehouse001 examples]$ sz WordCount.java
+rz
+?a? zmodem ′???￡  °′ Ctrl+C ???￡
+Transferring WordCount.java...
+  100%       3 KB    3 KB/s 00:00:01       0 Errors
+
+[hadoop@warehouse001 hadoop]$ find ./ -name *example*.jar
+./share/hadoop/mapreduce1/hadoop-examples-2.6.0-mr1-cdh5.16.2.jar
+./share/hadoop/mapreduce2/hadoop-mapreduce-examples-2.6.0-cdh5.16.2.jar
+./share/hadoop/mapreduce2/sources/hadoop-mapreduce-examples-2.6.0-cdh5.16.2-test-sources.jar
+./share/hadoop/mapreduce2/sources/hadoop-mapreduce-examples-2.6.0-cdh5.16.2-sources.jar
+
+hadoop jar \
+./share/hadoop/mapreduce2/hadoop-mapreduce-examples-2.6.0-cdh5.16.2.jar \
+wordcount /wordcount/input /wordcount/output1 
+[hadoop@warehouse001 hadoop]$ hadoop jar \
+> ./share/hadoop/mapreduce2/hadoop-mapreduce-examples-2.6.0-cdh5.16.2.jar \
+> wordcount /wordcount/input /wordcount/output1 
+20/11/24 23:06:50 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+20/11/24 23:06:51 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+20/11/24 23:06:52 INFO input.FileInputFormat: Total input paths to process : 1
+20/11/24 23:06:52 INFO mapreduce.JobSubmitter: number of splits:1【了解split切分的规则】
+20/11/24 23:06:53 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1606044808202_0001
+20/11/24 23:06:53 INFO impl.YarnClientImpl: Submitted application application_1606044808202_0001【分配的作业id号，web界面会显示】
+20/11/24 23:06:53 INFO mapreduce.Job: The url to track the job: http://warehouse001:8088/proxy/application_1606044808202_0001/
+20/11/24 23:06:53 INFO mapreduce.Job: Running job: job_1606044808202_0001
+20/11/24 23:06:58 INFO mapreduce.Job: Job job_1606044808202_0001 running in uber mode : false【了解uber mode
+20/11/24 23:06:58 INFO mapreduce.Job:  map 0% reduce 0%
+20/11/24 23:07:02 INFO mapreduce.Job:  map 100% reduce 0%
+20/11/24 23:07:07 INFO mapreduce.Job:  map 100% reduce 100%
+20/11/24 23:07:08 INFO mapreduce.Job: Job job_1606044808202_0001 completed successfully
+20/11/24 23:07:08 INFO mapreduce.Job: Counters: 49
+        File System Counters
+                FILE: Number of bytes read=96
+                FILE: Number of bytes written=286259
+                FILE: Number of read operations=0
+                FILE: Number of large read operations=0
+                FILE: Number of write operations=0
+                HDFS: Number of bytes read=160
+                HDFS: Number of bytes written=58
+                HDFS: Number of read operations=6
+                HDFS: Number of large read operations=0
+                HDFS: Number of write operations=2
+        Job Counters 
+                Launched map tasks=1
+                Launched reduce tasks=1【了解map、reduce个数的规则】
+                Data-local map tasks=1
+                Total time spent by all maps in occupied slots (ms)=1783
+                Total time spent by all reduces in occupied slots (ms)=1958
+                Total time spent by all map tasks (ms)=1783
+                Total time spent by all reduce tasks (ms)=1958
+                Total vcore-milliseconds taken by all map tasks=1783
+                Total vcore-milliseconds taken by all reduce tasks=1958
+                Total megabyte-milliseconds taken by all map tasks=1825792
+                Total megabyte-milliseconds taken by all reduce tasks=2004992
+        Map-Reduce Framework
+                Map input records=8
+                Map output records=11
+                Map output bytes=92
+                Map output materialized bytes=96
+                Input split bytes=111
+                Combine input records=11
+                Combine output records=8
+                Reduce input groups=8
+                Reduce shuffle bytes=96
+                Reduce input records=8
+                Reduce output records=8
+                Spilled Records=16
+                Shuffled Maps =1
+                Failed Shuffles=0
+                Merged Map outputs=1
+                GC time elapsed (ms)=89
+                CPU time spent (ms)=860
+                Physical memory (bytes) snapshot=489730048
+                Virtual memory (bytes) snapshot=5554565120
+                Total committed heap usage (bytes)=466092032
+        Shuffle Errors
+                BAD_ID=0
+                CONNECTION=0
+                IO_ERROR=0
+                WRONG_LENGTH=0
+                WRONG_MAP=0
+                WRONG_REDUCE=0
+        File Input Format Counters 
+                Bytes Read=49
+        File Output Format Counters 
+                Bytes Written=58</code></pre>
+<p><img src="https://i.loli.net/2020/11/24/7s82mHTuvPDLntV.png"></p>
+<p>如报错可进入history查看日志</p>
+<h4 id="3-关于挖矿"><a href="#3-关于挖矿" class="headerlink" title="3.关于挖矿"></a>3.关于挖矿</h4><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000015264170">https://segmentfault.com/a/1190000015264170</a></p>
+<p>[hadoop@warehouse001 hadoop]$ top</p>
+<p>top - 23:20:34 up 8 days,  5:42,  1 user,  load average: 0.00, 0.01, 0.05<br>Tasks:  84 total,   1 running,  83 sleeping,   0 stopped,   0 zombie<br>%Cpu(s):  0.2 us,  0.2 sy,  0.0 ni, 99.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st<br>KiB Mem :  7734044 total,  2442532 free,  2900996 used,  2390516 buff/cache<br>KiB Swap:        0 total,        0 free,        0 used.  4533612 avail Mem </p>
+<p>  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND<br> 5931 root      20   0   42156   5532   2704 S   0.3  0.1   0:50.91 aliyun-service<br>29340 hadoop    20   0 2798988 248088  19424 S   0.3  3.2   1:12.20 java          </p>
+<p>cpu过高，杀掉进程后，过段时间挖矿进程会重启</p>
+<p>所以需要调整8088端口</p>
+<p>在yarn-site.xml 新增:</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.resourcemanager.webapp.address<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>$<span class="token entity" title="&#123;">&amp;#123;</span>yarn.resourcemanager.hostname<span class="token entity" title="&#125;">&amp;#125;</span>:7776<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span></code></pre>
+<p>#重启</p>
+<p>[hadoop@warehouse001 hadoop]$ sbin/stop-yarn.sh </p>
+<p>[hadoop@warehouse001 hadoop]$ sbin/start-yarn.sh</p>
+<p><img src="https://i.loli.net/2020/11/24/uaGfhgHEne2SVLB.png"></p>
+<h4 id="4-jps命令"><a href="#4-jps命令" class="headerlink" title="4.jps命令"></a>4.jps命令</h4><h5 id="4-1-位置"><a href="#4-1-位置" class="headerlink" title="4.1 位置"></a>4.1 位置</h5><p>[hadoop@ruozedata001 hadoop]$ which jps<br>/usr/java/jdk1.8.0_181/bin/jps<br>[hadoop@ruozedata001 hadoop]$ </p>
+<h5 id="4-2-使用"><a href="#4-2-使用" class="headerlink" title="4.2 使用"></a>4.2 使用</h5><p>[hadoop@ruozedata001 hadoop]$ jps<br>21828 NameNode<br>21959 DataNode<br>27577 NodeManager<br>27466 ResourceManager<br>22124 SecondaryNameNode</p>
+<h5 id="4-3-对应的标识文件存储在哪里"><a href="#4-3-对应的标识文件存储在哪里" class="headerlink" title="4.3 对应的标识文件存储在哪里"></a>4.3 对应的标识文件存储在哪里</h5><p>[hadoop@warehouse001 hsperfdata_hadoop]$ ll<br>total 160<br>-rw——- 1 hadoop hadoop 32768 Nov 24 23:36 13863<br>-rw——- 1 hadoop hadoop 32768 Nov 24 23:36 14136<br>-rw——- 1 hadoop hadoop 32768 Nov 24 23:36 29050<br>-rw——- 1 hadoop hadoop 32768 Nov 24 23:36 29179<br>-rw——- 1 hadoop hadoop 32768 Nov 24 23:36 29340<br>[hadoop@warehouse001 hsperfdata_hadoop]$ pwd<br>/tmp/hsperfdata_hadoop</p>
+<h5 id="4-4-哪个用户可以查看"><a href="#4-4-哪个用户可以查看" class="headerlink" title="4.4 哪个用户可以查看"></a>4.4 哪个用户可以查看</h5><p>[root@warehouse001 ~]# jps<br>14389 Jps<br>13863 ResourceManager<br>14136 NodeManager<br>29050 NameNode<br>29179 DataNode<br>29340 SecondaryNameNode</p>
+<p>root和当前用户</p>
+<h5 id="4-5-出现process-information-unavailable描述"><a href="#4-5-出现process-information-unavailable描述" class="headerlink" title="4.5 出现process information unavailable描述"></a>4.5 出现process information unavailable描述</h5><p>当看见 process information unavailable<br>不能代表进程是存在 或者不存在，要当心，尤其使用jps命令来做脚本状态检测的<br>一般使用经典的 ps -ef | grep xxx命令去查看进程是否存在，<br>这才是真正的状态检测</p>
+<p>但是: 比如spark thriftserver +hive 会启动一个driver 进程 110，<br>默认端口号 10001。由于该程序的内存泄露或者某种bug，导致<br>进程ps是存在的，10001端口号下线了，就不能够对外提供服务。</p>
+<p>总结: 未来做任何程序的状态检测，必须通过端口号来。</p>
+<p>CDH root用户，jps命令查看会有很多的 process information unavailable<br>ps -ef| grep xxx 查看是正确的<br>那么想要看到正常的表述，需要切换对应的用户，<br>比如su - hdfs(有可能你切换不过去，需要/etc/passwd文件的修正)<br>再执行jps命令</p>
+<h5 id="4-6-删除之后是否影响服务重启呢"><a href="#4-6-删除之后是否影响服务重启呢" class="headerlink" title="4.6 删除之后是否影响服务重启呢"></a>4.6 删除之后是否影响服务重启呢</h5><p>经过测试验证，不影响重启</p>
+<h4 id="5-pid文件"><a href="#5-pid文件" class="headerlink" title="5.pid文件"></a>5.pid文件</h4><h5 id="5-1-pid文件的位置"><a href="#5-1-pid文件的位置" class="headerlink" title="5.1 pid文件的位置"></a>5.1 pid文件的位置</h5><p>/tmp </p>
+<p>[hadoop@warehouse001 tmp]$ ll</p>
+<p>-rw-rw-r– 1 hadoop hadoop        6 Nov 22 15:59 hadoop-hadoop-datanode.pid</p>
+<p>[hadoop@warehouse001 sbin]$ pwd<br>/home/hadoop/app/hadoop/sbin</p>
+<p>停止进程脚本:</p>
+<p>hadoop-daemon.sh</p>
+<pre class=" language-shell"><code class="language-shell">
+    if [ -f $pid ]; then
+      TARGET_PID=`cat $pid`
+      if kill -0 $TARGET_PID > /dev/null 2>&1; then
+        echo stopping $command
+        kill $TARGET_PID
+        sleep $HADOOP_STOP_TIMEOUT
+        if kill -0 $TARGET_PID > /dev/null 2>&1; then
+          echo "$command did not stop gracefully after $HADOOP_STOP_TIMEOUT seconds: killing with kill -9"
+          kill -9 $TARGET_PID
+        fi
+      else
+        echo no $command to stop
+      fi
+      rm -f $pid
+    else
+      echo no $command to stop
+    fi
+    ;;
+
+  (*)
+    echo $usage
+    exit 1
+    ;;</code></pre>
+<h5 id="5-2-删除之后是否影响服务重启呢"><a href="#5-2-删除之后是否影响服务重启呢" class="headerlink" title="5.2 删除之后是否影响服务重启呢"></a>5.2 删除之后是否影响服务重启呢</h5><p>经过测试验证，影响重启</p>
+<h5 id="5-3-如何修改位置"><a href="#5-3-如何修改位置" class="headerlink" title="5.3 如何修改位置"></a>5.3 如何修改位置</h5><p>[hadoop@ruozedata001 hadoop]$ vi hadoop-env.sh<br>export HADOOP_PID_DIR=/home/hadoop/tmp</p>
+<p>[hadoop@warehouse001 tmp]$ jps<br>17667 NameNode<br>17798 DataNode<br>17963 SecondaryNameNode<br>18077 Jps<br>[hadoop@warehouse001 tmp]$ cat hadoop-hadoop-datanode.pid<br>17798</p>
+<h4 id="6-块-block"><a href="#6-块-block" class="headerlink" title="6.块 block"></a>6.块 block</h4><p>dfs.blocksize   128M<br>大文件  小文件</p>
+<p>一缸水 260ml<br>瓶子的规格 128ml   ==》   dfs.blocksize<br>260/128=2 ….4ml<br>1 128ml<br>2 128ml<br>3 4ml</p>
+<p>一个大文件 260m<br>1 128m<br>2 128m<br>3 4m    –只占用4m不会占用128m</p>
+<p>存储到伪分布式hdfs上是                     3个块                   实际存储260m x 1=260m<br>      集群hdfs上&gt;=3节点  多副本机制3<br>      一个块会被连他自己 复制是3份    3x3= 9个块          实际存储260m x 3=780m</p>
+<p>10个小文件 每个小文件 10m，那么伪分布式：<br>10个块 </p>
+<p>namenode：维护一个文件被切割哪个块，这些块被存放到哪些机器</p>
+<p>10条元数据</p>
+<p>10个小文件 合并 1个文件100m,     那么伪分布式：<br>1个块</p>
+<p>1条元数据</p>
+<p>10个小文件10m VS 1个大文件100m<br>结果： 1个大文件对 nn的存储压力较小</p>
+<p>再举例:<br>假设1亿个小文件，每个小文件10kb, 集群3副本机制，3亿个block，3亿个元数据<br>假如1亿个小文件，合并为1kw个 100m文件 , 集群3副本机制，3kw block，3kw元数据 </p>
+<p>nn维护 3亿个元数据 还是 3kw元数据 的压力，谁轻松？<br>3kw轻松</p>
+<p>元数据是存储在nn进程的内存里 ，那内存是一定的 8g</p>
+<p>所以生产上:<br>尽量规避小文件在hdfs上的存储<br>a.数据传输到hdfs之前，提前合并<br>b.数据已经到hdfs，就定时的  业务低谷期，去合并冷文件<br>          写个脚本 每一天合并<br>          11-1 合并09-30数据<br>          11-2 合并10-1数据</p>
+<p>​          一天卡一天去处理 </p>
+<p>作业:</p>
+<p>1.作业输出的内容</p>
+<p>2.拓展 hdfs小文件如何合并</p>
+
       </div>
       
         <div class="copyright">
@@ -343,7 +672,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2020/11/22/2020-11-21-quannnxu-hadoop2/" target="_blank" title="hadoop02">http://www.quanxu.com/2020/11/22/2020-11-21-quannnxu-hadoop2/</a>
+    <a href="/2020/11/22/2020-11-22-quannnxu-hadoop2/" target="_blank" title="hadoop02">http://www.quanxu.com/2020/11/22/2020-11-22-quannnxu-hadoop2/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -357,6 +686,12 @@
     <!-- 上一篇文章和下一篇文章 -->
     
       <div class="post-nav">
+
+  <div class="post-nav-prev post-nav-item">
+    <a href="/2020/11/25/2020-11-24-quannnxu-zao-ke/">
+      上一篇:    11.24早课
+    </a>
+  </div>
 
 
 

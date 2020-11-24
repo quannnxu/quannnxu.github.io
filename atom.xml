@@ -6,7 +6,7 @@
   <link href="http://www.quanxu.com/atom.xml" rel="self"/>
   
   <link href="http://www.quanxu.com/"/>
-  <updated>2020-11-22T16:09:36.726Z</updated>
+  <updated>2020-11-24T16:46:30.112Z</updated>
   <id>http://www.quanxu.com/</id>
   
   <author>
@@ -17,18 +17,68 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>11.23早课</title>
+    <link href="http://www.quanxu.com/2020/11/25/2020-11-23-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2020/11/25/2020-11-23-quannnxu-zao-ke/</id>
+    <published>2020-11-24T16:44:45.263Z</published>
+    <updated>2020-11-24T16:46:30.112Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.查看当前目录&lt;/p&gt;
+&lt;p&gt;2.隐藏文件、文件夹以什么开始，怎样查看&lt;/p&gt;
+&lt;p&gt;3.ls -l 等价于什么？&lt;/p&gt;
+&lt;p&gt;4.级联创建文件夹&lt;/p&gt;
+&lt;p&gt;5.创建文件哪几种方式&lt;/p&gt;
+&lt;p&gt;6.cp和mv谁快？ 能不能在cp</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>11.24早课</title>
+    <link href="http://www.quanxu.com/2020/11/25/2020-11-24-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2020/11/25/2020-11-24-quannnxu-zao-ke/</id>
+    <published>2020-11-24T16:44:39.020Z</published>
+    <updated>2020-11-24T16:46:41.661Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.个人环境变量文件，默认在哪里？推荐使用哪个呢？怎样生效？生效完成后，习惯做一件事是执行什么命令？&lt;/p&gt;
+&lt;p&gt;2.历史命令，执行第55行；清空历史命令&lt;/p&gt;
+&lt;p&gt;3.假如su/ssh</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>hadoop02</title>
-    <link href="http://www.quanxu.com/2020/11/22/2020-11-21-quannnxu-hadoop2/"/>
-    <id>http://www.quanxu.com/2020/11/22/2020-11-21-quannnxu-hadoop2/</id>
+    <link href="http://www.quanxu.com/2020/11/22/2020-11-22-quannnxu-hadoop2/"/>
+    <id>http://www.quanxu.com/2020/11/22/2020-11-22-quannnxu-hadoop2/</id>
     <published>2020-11-22T11:10:12.196Z</published>
-    <updated>2020-11-22T16:09:36.726Z</updated>
+    <updated>2020-11-24T16:26:19.360Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;主从架构&quot;&gt;&lt;a href=&quot;#主从架构&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h4 id=&quot;主从架构&quot;&gt;&lt;a href=&quot;#主从架构&quot; class=&quot;headerlink&quot; title=&quot;主从架构&quot;&gt;&lt;/a&gt;主从架构&lt;/h4&gt;&lt;p&gt;ResourceManager daemon and NodeManager daemon&lt;/p&gt;
+&lt;h4</summary>
         
       
     
