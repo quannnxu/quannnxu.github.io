@@ -6,7 +6,7 @@
   <link href="http://www.quanxu.com/atom.xml" rel="self"/>
   
   <link href="http://www.quanxu.com/"/>
-  <updated>2020-11-24T16:46:30.112Z</updated>
+  <updated>2020-11-25T15:15:11.619Z</updated>
   <id>http://www.quanxu.com/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hadoop03</title>
+    <link href="http://www.quanxu.com/2020/11/25/2020-11-25-quannnxu-hadoop3/"/>
+    <id>http://www.quanxu.com/2020/11/25/2020-11-25-quannnxu-hadoop3/</id>
+    <published>2020-11-25T13:09:16.287Z</published>
+    <updated>2020-11-25T15:15:11.619Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;1-HDFS主从架构&quot;&gt;&lt;a href=&quot;#1-HDFS主从架构&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>11.24早课</title>
+    <link href="http://www.quanxu.com/2020/11/25/2020-11-25-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2020/11/25/2020-11-25-quannnxu-zao-ke/</id>
+    <published>2020-11-25T13:08:26.611Z</published>
+    <updated>2020-11-25T13:09:04.122Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.高危命令有哪些&lt;/p&gt;
+&lt;p&gt;2.带R的命令哪些    &lt;/p&gt;
+&lt;p&gt;3.带r的命令哪些&lt;/p&gt;
+&lt;p&gt;4.块128m,三副本机制，一个文件180m，需要多少块，多少存储空间？&lt;/p&gt;
+&lt;p&gt;5.boss让我打开A服务器的</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>11.23早课</title>
@@ -70,7 +116,7 @@
     <link href="http://www.quanxu.com/2020/11/22/2020-11-22-quannnxu-hadoop2/"/>
     <id>http://www.quanxu.com/2020/11/22/2020-11-22-quannnxu-hadoop2/</id>
     <published>2020-11-22T11:10:12.196Z</published>
-    <updated>2020-11-24T16:26:19.360Z</updated>
+    <updated>2020-11-25T10:38:19.338Z</updated>
     
     
       
@@ -413,27 +459,6 @@
 &lt;pre class=&quot; language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;/root
 
 /</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://www.quanxu.com/2020/11/08/hello-world/"/>
-    <id>http://www.quanxu.com/2020/11/08/hello-world/</id>
-    <published>2020-11-08T05:31:39.066Z</published>
-    <updated>2020-11-08T05:31:39.067Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
         
       
     
