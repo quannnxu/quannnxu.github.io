@@ -6,7 +6,7 @@
   <link href="http://www.quanxu.com/atom.xml" rel="self"/>
   
   <link href="http://www.quanxu.com/"/>
-  <updated>2020-11-25T15:15:11.619Z</updated>
+  <updated>2020-11-26T15:19:36.288Z</updated>
   <id>http://www.quanxu.com/</id>
   
   <author>
@@ -17,18 +17,22 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>hadoop03</title>
-    <link href="http://www.quanxu.com/2020/11/25/2020-11-25-quannnxu-hadoop3/"/>
-    <id>http://www.quanxu.com/2020/11/25/2020-11-25-quannnxu-hadoop3/</id>
-    <published>2020-11-25T13:09:16.287Z</published>
-    <updated>2020-11-25T15:15:11.619Z</updated>
+    <title>11.26早课</title>
+    <link href="http://www.quanxu.com/2020/11/26/2020-11-26-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2020/11/26/2020-11-26-quannnxu-zao-ke/</id>
+    <published>2020-11-26T15:19:02.807Z</published>
+    <updated>2020-11-26T15:19:36.288Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;1-HDFS主从架构&quot;&gt;&lt;a href=&quot;#1-HDFS主从架构&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;p&gt;1.Linux的hosts文件，我们应该注意什么&lt;/p&gt;
+&lt;p&gt;2.Windows系统的hosts会找吗？&lt;/p&gt;
+&lt;p&gt;3.一般shell，代码这些我们与机器通信，是hostname吗？&lt;/p&gt;
+&lt;p&gt;4.后台执行脚本或命令，前后加什么?&lt;/p&gt;
+&lt;p&gt;5.执行xxx.s</summary>
         
       
     
@@ -38,11 +42,32 @@
   </entry>
   
   <entry>
-    <title>11.24早课</title>
+    <title>hadoop03</title>
+    <link href="http://www.quanxu.com/2020/11/25/2020-11-25-quannnxu-hadoop3/"/>
+    <id>http://www.quanxu.com/2020/11/25/2020-11-25-quannnxu-hadoop3/</id>
+    <published>2020-11-25T13:09:16.287Z</published>
+    <updated>2020-11-26T14:53:58.913Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;1-HDFS主从架构&quot;&gt;&lt;a href=&quot;#1-HDFS主从架构&quot; class=&quot;headerlink&quot; title=&quot;1.HDFS主从架构&quot;&gt;&lt;/a&gt;1.HDFS主从架构&lt;/h4&gt;&lt;h5 id=&quot;namenode：nn名称节点&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>11.25早课</title>
     <link href="http://www.quanxu.com/2020/11/25/2020-11-25-quannnxu-zao-ke/"/>
     <id>http://www.quanxu.com/2020/11/25/2020-11-25-quannnxu-zao-ke/</id>
     <published>2020-11-25T13:08:26.611Z</published>
-    <updated>2020-11-25T13:09:04.122Z</updated>
+    <updated>2020-11-26T15:19:42.848Z</updated>
     
     
       
@@ -433,32 +458,6 @@
         
         
     <summary type="html">&lt;h2 id=&quot;1-rm-删除&quot;&gt;&lt;a href=&quot;#1-rm-删除&quot; class=&quot;headerlink&quot; title=&quot;1.rm 删除&quot;&gt;&lt;/a&gt;1.rm 删除&lt;/h2&gt;&lt;pre class=&quot; language-shell&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Linux基础</title>
-    <link href="http://www.quanxu.com/2020/11/08/2014-07-24-quannnxu-linux/"/>
-    <id>http://www.quanxu.com/2020/11/08/2014-07-24-quannnxu-linux/</id>
-    <published>2020-11-08T09:03:11.911Z</published>
-    <updated>2020-11-08T09:25:23.537Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;一.Linux基础命令&lt;/p&gt;
-&lt;p&gt;pwd 查看当前路径&lt;/p&gt;
-&lt;p&gt;[root@hadoop01 ~]# pwd&lt;/p&gt;
-&lt;pre class=&quot; language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;/root
-
-/</summary>
         
       
     
