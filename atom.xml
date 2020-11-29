@@ -6,7 +6,7 @@
   <link href="http://www.quanxu.com/atom.xml" rel="self"/>
   
   <link href="http://www.quanxu.com/"/>
-  <updated>2020-11-26T15:19:36.288Z</updated>
+  <updated>2020-11-29T15:34:57.952Z</updated>
   <id>http://www.quanxu.com/</id>
   
   <author>
@@ -17,11 +17,220 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>hadoop04</title>
+    <link href="http://www.quanxu.com/2018/11/29/2020-11-28-quannnxu-hadoop4/"/>
+    <id>http://www.quanxu.com/2018/11/29/2020-11-28-quannnxu-hadoop4/</id>
+    <published>2018-11-29T15:11:25.000Z</published>
+    <updated>2020-11-29T15:34:57.952Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.SNN(检查点动作)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/11/29/yqU1YtOkIhZVxSn.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;517是正在编辑的日志                                    </summary>
+        
+      
+    
+    
+    
+    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
+    
+    
+    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hadoop05之MapReduce架构</title>
+    <link href="http://www.quanxu.com/2018/11/29/2020-11-29-quannnxu-hadoop5/"/>
+    <id>http://www.quanxu.com/2018/11/29/2020-11-29-quannnxu-hadoop5/</id>
+    <published>2018-11-29T13:11:25.000Z</published>
+    <updated>2020-11-29T14:28:14.707Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;tip1:&lt;/p&gt;
+&lt;p&gt;A表:主表&lt;/p&gt;
+&lt;p&gt;id    name&lt;/p&gt;
+&lt;p&gt;1        a        1&lt;/p&gt;
+&lt;p&gt;2        b        1&lt;/p&gt;
+&lt;p&gt;3        c        1&lt;/p&gt;
+&lt;p&gt;4        c </summary>
+        
+      
+    
+    
+    
+    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
+    
+    
+    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hadoop03之hdfs架构</title>
+    <link href="http://www.quanxu.com/2018/11/24/2020-11-25-quannnxu-hadoop3/"/>
+    <id>http://www.quanxu.com/2018/11/24/2020-11-25-quannnxu-hadoop3/</id>
+    <published>2018-11-24T14:28:36.000Z</published>
+    <updated>2020-11-29T06:34:10.116Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;1-HDFS主从架构&quot;&gt;&lt;a href=&quot;#1-HDFS主从架构&quot; class=&quot;headerlink&quot; title=&quot;1.HDFS主从架构&quot;&gt;&lt;/a&gt;1.HDFS主从架构&lt;/h4&gt;&lt;h5 id=&quot;namenode：nn名称节点&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
+    
+    
+    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hadoop02之yarn部署及简析</title>
+    <link href="http://www.quanxu.com/2018/11/15/2020-11-22-quannnxu-hadoop2/"/>
+    <id>http://www.quanxu.com/2018/11/15/2020-11-22-quannnxu-hadoop2/</id>
+    <published>2018-11-15T13:50:28.000Z</published>
+    <updated>2020-11-29T14:06:18.971Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;主从架构&quot;&gt;&lt;a href=&quot;#主从架构&quot; class=&quot;headerlink&quot; title=&quot;主从架构&quot;&gt;&lt;/a&gt;主从架构&lt;/h4&gt;&lt;p&gt;ResourceManager daemon and NodeManager daemon&lt;/p&gt;
+&lt;h4</summary>
+        
+      
+    
+    
+    
+    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
+    
+    
+    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hadoop01之安装部署</title>
+    <link href="http://www.quanxu.com/2018/11/10/2020-11-21-quannnxu-hadoop1/"/>
+    <id>http://www.quanxu.com/2018/11/10/2020-11-21-quannnxu-hadoop1/</id>
+    <published>2018-11-10T13:50:28.000Z</published>
+    <updated>2020-11-29T06:32:19.550Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;1-谈谈大数据&quot;&gt;&lt;a href=&quot;#1-谈谈大数据&quot; class=&quot;headerlink&quot; title=&quot;1.谈谈大数据&quot;&gt;&lt;/a&gt;1.谈谈大数据&lt;/h4&gt;&lt;p&gt;存储                      hdfs  hive  hbase </summary>
+        
+      
+    
+    
+    
+    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
+    
+    
+    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql的join及练习</title>
+    <link href="http://www.quanxu.com/2018/11/06/2020-11-18-quannnxu-mysql2/"/>
+    <id>http://www.quanxu.com/2018/11/06/2020-11-18-quannnxu-mysql2/</id>
+    <published>2018-11-06T14:24:22.000Z</published>
+    <updated>2020-11-29T06:27:32.357Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h5 id=&quot;left-join&quot;&gt;&lt;a href=&quot;#left-join&quot; class=&quot;headerlink&quot; title=&quot;left join&quot;&gt;&lt;/a&gt;left join&lt;/h5&gt;&lt;pre class=&quot; language-sql&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="mysql" scheme="http://www.quanxu.com/categories/mysql/"/>
+    
+    
+    <category term="mysql" scheme="http://www.quanxu.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql语法</title>
+    <link href="http://www.quanxu.com/2018/11/05/2020-11-16-quanxu-shu-cang-zhi-mysql-yu-fa/"/>
+    <id>http://www.quanxu.com/2018/11/05/2020-11-16-quanxu-shu-cang-zhi-mysql-yu-fa/</id>
+    <published>2018-11-05T13:24:39.000Z</published>
+    <updated>2020-11-29T06:26:23.727Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;1-字段类型&quot;&gt;&lt;a href=&quot;#1-字段类型&quot; class=&quot;headerlink&quot; title=&quot;1.字段类型&quot;&gt;&lt;/a&gt;1.字段类型&lt;/h4&gt;&lt;h5 id=&quot;数值类型&quot;&gt;&lt;a href=&quot;#数值类型&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="mysql" scheme="http://www.quanxu.com/categories/mysql/"/>
+    
+    
+    <category term="mysql" scheme="http://www.quanxu.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql部署</title>
+    <link href="http://www.quanxu.com/2018/11/03/2020-11-14-quanxu-shu-cang-zhi-mysql-bu-shu/"/>
+    <id>http://www.quanxu.com/2018/11/03/2020-11-14-quanxu-shu-cang-zhi-mysql-bu-shu/</id>
+    <published>2018-11-03T11:56:39.000Z</published>
+    <updated>2020-11-29T06:12:52.362Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;mysql安装&quot;&gt;&lt;a href=&quot;#mysql安装&quot; class=&quot;headerlink&quot; title=&quot;mysql安装&quot;&gt;&lt;/a&gt;mysql安装&lt;/h3&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="mysql" scheme="http://www.quanxu.com/categories/mysql/"/>
+    
+    
+    <category term="mysql" scheme="http://www.quanxu.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
     <title>11.26早课</title>
-    <link href="http://www.quanxu.com/2020/11/26/2020-11-26-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2020/11/26/2020-11-26-quannnxu-zao-ke/</id>
-    <published>2020-11-26T15:19:02.807Z</published>
-    <updated>2020-11-26T15:19:36.288Z</updated>
+    <link href="http://www.quanxu.com/2018/10/30/2020-11-26-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2018/10/30/2020-11-26-quannnxu-zao-ke/</id>
+    <published>2018-10-30T12:53:59.000Z</published>
+    <updated>2020-11-29T06:25:24.204Z</updated>
     
     
       
@@ -38,36 +247,19 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>hadoop03</title>
-    <link href="http://www.quanxu.com/2020/11/25/2020-11-25-quannnxu-hadoop3/"/>
-    <id>http://www.quanxu.com/2020/11/25/2020-11-25-quannnxu-hadoop3/</id>
-    <published>2020-11-25T13:09:16.287Z</published>
-    <updated>2020-11-26T14:53:58.913Z</updated>
+    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;1-HDFS主从架构&quot;&gt;&lt;a href=&quot;#1-HDFS主从架构&quot; class=&quot;headerlink&quot; title=&quot;1.HDFS主从架构&quot;&gt;&lt;/a&gt;1.HDFS主从架构&lt;/h4&gt;&lt;h5 id=&quot;namenode：nn名称节点&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
+    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
     
   </entry>
   
   <entry>
     <title>11.25早课</title>
-    <link href="http://www.quanxu.com/2020/11/25/2020-11-25-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2020/11/25/2020-11-25-quannnxu-zao-ke/</id>
-    <published>2020-11-25T13:08:26.611Z</published>
-    <updated>2020-11-26T15:19:42.848Z</updated>
+    <link href="http://www.quanxu.com/2018/10/29/2020-11-25-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2018/10/29/2020-11-25-quannnxu-zao-ke/</id>
+    <published>2018-10-29T12:37:33.000Z</published>
+    <updated>2020-11-29T06:24:49.413Z</updated>
     
     
       
@@ -84,15 +276,46 @@
     
     
     
+    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
+    
+    
+    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11.24早课</title>
+    <link href="http://www.quanxu.com/2018/10/28/2020-11-24-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2018/10/28/2020-11-24-quannnxu-zao-ke/</id>
+    <published>2018-10-28T11:57:24.000Z</published>
+    <updated>2020-11-29T06:24:07.876Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.个人环境变量文件，默认在哪里？推荐使用哪个呢？怎样生效？生效完成后，习惯做一件事是执行什么命令？&lt;/p&gt;
+&lt;p&gt;2.历史命令，执行第55行；清空历史命令&lt;/p&gt;
+&lt;p&gt;3.假如su/ssh</summary>
+        
+      
+    
+    
+    
+    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
+    
+    
+    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
     
   </entry>
   
   <entry>
     <title>11.23早课</title>
-    <link href="http://www.quanxu.com/2020/11/25/2020-11-23-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2020/11/25/2020-11-23-quannnxu-zao-ke/</id>
-    <published>2020-11-24T16:44:45.263Z</published>
-    <updated>2020-11-24T16:46:30.112Z</updated>
+    <link href="http://www.quanxu.com/2018/10/26/2020-11-23-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2018/10/26/2020-11-23-quannnxu-zao-ke/</id>
+    <published>2018-10-26T13:18:24.000Z</published>
+    <updated>2020-11-29T06:23:25.663Z</updated>
     
     
       
@@ -110,81 +333,19 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>11.24早课</title>
-    <link href="http://www.quanxu.com/2020/11/25/2020-11-24-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2020/11/25/2020-11-24-quannnxu-zao-ke/</id>
-    <published>2020-11-24T16:44:39.020Z</published>
-    <updated>2020-11-24T16:46:41.661Z</updated>
+    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1.个人环境变量文件，默认在哪里？推荐使用哪个呢？怎样生效？生效完成后，习惯做一件事是执行什么命令？&lt;/p&gt;
-&lt;p&gt;2.历史命令，执行第55行；清空历史命令&lt;/p&gt;
-&lt;p&gt;3.假如su/ssh</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>hadoop02</title>
-    <link href="http://www.quanxu.com/2020/11/22/2020-11-22-quannnxu-hadoop2/"/>
-    <id>http://www.quanxu.com/2020/11/22/2020-11-22-quannnxu-hadoop2/</id>
-    <published>2020-11-22T11:10:12.196Z</published>
-    <updated>2020-11-25T10:38:19.338Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;主从架构&quot;&gt;&lt;a href=&quot;#主从架构&quot; class=&quot;headerlink&quot; title=&quot;主从架构&quot;&gt;&lt;/a&gt;主从架构&lt;/h4&gt;&lt;p&gt;ResourceManager daemon and NodeManager daemon&lt;/p&gt;
-&lt;h4</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>hadoop01</title>
-    <link href="http://www.quanxu.com/2020/11/22/2020-11-21-quannnxu-hadoop1/"/>
-    <id>http://www.quanxu.com/2020/11/22/2020-11-21-quannnxu-hadoop1/</id>
-    <published>2020-11-22T01:47:05.026Z</published>
-    <updated>2020-11-22T16:08:53.318Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;1-谈谈大数据&quot;&gt;&lt;a href=&quot;#1-谈谈大数据&quot; class=&quot;headerlink&quot; title=&quot;1.谈谈大数据&quot;&gt;&lt;/a&gt;1.谈谈大数据&lt;/h4&gt;&lt;p&gt;存储                      hdfs  hive  hbase </summary>
-        
-      
-    
-    
-    
+    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
     
   </entry>
   
   <entry>
     <title>11.19早课</title>
-    <link href="http://www.quanxu.com/2020/11/19/2020-11-19-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2020/11/19/2020-11-19-quannnxu-zao-ke/</id>
-    <published>2020-11-19T09:43:15.249Z</published>
-    <updated>2020-11-19T09:43:49.905Z</updated>
+    <link href="http://www.quanxu.com/2018/10/25/2020-11-19-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2018/10/25/2020-11-19-quannnxu-zao-ke/</id>
+    <published>2018-10-25T14:15:44.000Z</published>
+    <updated>2020-11-29T06:22:38.618Z</updated>
     
     
       
@@ -200,36 +361,19 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>mysql2</title>
-    <link href="http://www.quanxu.com/2020/11/18/2020-11-18-quannnxu-mysql2/"/>
-    <id>http://www.quanxu.com/2020/11/18/2020-11-18-quannnxu-mysql2/</id>
-    <published>2020-11-18T13:03:21.403Z</published>
-    <updated>2020-11-22T14:12:28.076Z</updated>
+    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h5 id=&quot;left-join&quot;&gt;&lt;a href=&quot;#left-join&quot; class=&quot;headerlink&quot; title=&quot;left join&quot;&gt;&lt;/a&gt;left join&lt;/h5&gt;&lt;pre class=&quot; language-sql&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
+    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
     
   </entry>
   
   <entry>
     <title>11.18早课</title>
-    <link href="http://www.quanxu.com/2020/11/18/2020-11-18-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2020/11/18/2020-11-18-quannnxu-zao-ke/</id>
-    <published>2020-11-18T09:48:18.952Z</published>
-    <updated>2020-11-18T09:48:58.806Z</updated>
+    <link href="http://www.quanxu.com/2018/10/23/2020-11-18-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2018/10/23/2020-11-18-quannnxu-zao-ke/</id>
+    <published>2018-10-23T12:59:47.000Z</published>
+    <updated>2020-11-29T06:22:10.380Z</updated>
     
     
       
@@ -244,15 +388,19 @@
     
     
     
+    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
+    
+    
+    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
     
   </entry>
   
   <entry>
     <title>11.17早课</title>
-    <link href="http://www.quanxu.com/2020/11/17/2020-11-17-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2020/11/17/2020-11-17-quannnxu-zao-ke/</id>
-    <published>2020-11-17T10:12:38.515Z</published>
-    <updated>2020-11-17T10:15:42.080Z</updated>
+    <link href="http://www.quanxu.com/2018/10/22/2020-11-17-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2018/10/22/2020-11-17-quannnxu-zao-ke/</id>
+    <published>2018-10-22T13:53:21.000Z</published>
+    <updated>2020-11-29T06:21:00.610Z</updated>
     
     
       
@@ -268,15 +416,19 @@
     
     
     
+    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
+    
+    
+    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
     
   </entry>
   
   <entry>
     <title>11.16早课</title>
-    <link href="http://www.quanxu.com/2020/11/16/2020-11-16-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2020/11/16/2020-11-16-quannnxu-zao-ke/</id>
-    <published>2020-11-16T10:20:18.438Z</published>
-    <updated>2020-11-16T10:27:48.879Z</updated>
+    <link href="http://www.quanxu.com/2018/10/21/2020-11-16-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2018/10/21/2020-11-16-quannnxu-zao-ke/</id>
+    <published>2018-10-21T13:15:56.000Z</published>
+    <updated>2020-11-29T06:20:25.117Z</updated>
     
     
       
@@ -289,57 +441,19 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>mysql部署</title>
-    <link href="http://www.quanxu.com/2020/11/15/2020-11-14-quanxu-shu-cang-zhi-mysql-bu-shu/"/>
-    <id>http://www.quanxu.com/2020/11/15/2020-11-14-quanxu-shu-cang-zhi-mysql-bu-shu/</id>
-    <published>2020-11-15T13:15:29.955Z</published>
-    <updated>2020-11-16T10:22:20.224Z</updated>
+    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;mysql安装&quot;&gt;&lt;a href=&quot;#mysql安装&quot; class=&quot;headerlink&quot; title=&quot;mysql安装&quot;&gt;&lt;/a&gt;mysql安装&lt;/h3&gt;&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>mysql语法</title>
-    <link href="http://www.quanxu.com/2020/11/15/2020-11-16-quanxu-shu-cang-zhi-mysql-yu-fa/"/>
-    <id>http://www.quanxu.com/2020/11/15/2020-11-16-quanxu-shu-cang-zhi-mysql-yu-fa/</id>
-    <published>2020-11-15T07:17:21.696Z</published>
-    <updated>2020-11-16T13:54:42.400Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;1-字段类型&quot;&gt;&lt;a href=&quot;#1-字段类型&quot; class=&quot;headerlink&quot; title=&quot;1.字段类型&quot;&gt;&lt;/a&gt;1.字段类型&lt;/h4&gt;&lt;h5 id=&quot;数值类型&quot;&gt;&lt;a href=&quot;#数值类型&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
+    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
     
   </entry>
   
   <entry>
     <title>11.13早课</title>
-    <link href="http://www.quanxu.com/2020/11/13/2020-11-13-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2020/11/13/2020-11-13-quannnxu-zao-ke/</id>
-    <published>2020-11-13T15:48:07.603Z</published>
-    <updated>2020-11-16T10:28:24.306Z</updated>
+    <link href="http://www.quanxu.com/2018/10/19/2020-11-13-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2018/10/19/2020-11-13-quannnxu-zao-ke/</id>
+    <published>2018-10-19T14:55:21.000Z</published>
+    <updated>2020-11-29T06:19:48.668Z</updated>
     
     
       
@@ -353,36 +467,19 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>Linux基础3</title>
-    <link href="http://www.quanxu.com/2020/11/13/2020-11-13-quannnxu-linux3/"/>
-    <id>http://www.quanxu.com/2020/11/13/2020-11-13-quannnxu-linux3/</id>
-    <published>2020-11-13T13:12:01.683Z</published>
-    <updated>2020-11-16T10:21:24.375Z</updated>
+    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-查看磁盘空间&quot;&gt;&lt;a href=&quot;#1-查看磁盘空间&quot; class=&quot;headerlink&quot; title=&quot;1. 查看磁盘空间&quot;&gt;&lt;/a&gt;1. 查看磁盘空间&lt;/h2&gt;&lt;p&gt;[root@warehouse001 ~]# df -h&lt;br&gt;Filesystem </summary>
-        
-      
-    
-    
-    
+    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
     
   </entry>
   
   <entry>
     <title>11.12早课</title>
-    <link href="http://www.quanxu.com/2020/11/12/2020-11-12-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2020/11/12/2020-11-12-quannnxu-zao-ke/</id>
-    <published>2020-11-12T10:39:49.779Z</published>
-    <updated>2020-11-12T10:40:34.360Z</updated>
+    <link href="http://www.quanxu.com/2018/10/18/2020-11-12-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2018/10/18/2020-11-12-quannnxu-zao-ke/</id>
+    <published>2018-10-18T13:35:35.000Z</published>
+    <updated>2020-11-29T06:18:39.084Z</updated>
     
     
       
@@ -396,15 +493,44 @@
     
     
     
+    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
+    
+    
+    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux基础03</title>
+    <link href="http://www.quanxu.com/2018/10/17/2020-11-13-quannnxu-linux3/"/>
+    <id>http://www.quanxu.com/2018/10/17/2020-11-13-quannnxu-linux3/</id>
+    <published>2018-10-17T13:13:29.000Z</published>
+    <updated>2020-11-29T06:11:46.266Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-查看磁盘空间&quot;&gt;&lt;a href=&quot;#1-查看磁盘空间&quot; class=&quot;headerlink&quot; title=&quot;1. 查看磁盘空间&quot;&gt;&lt;/a&gt;1. 查看磁盘空间&lt;/h2&gt;&lt;p&gt;[root@warehouse001 ~]# df -h&lt;br&gt;Filesystem </summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="http://www.quanxu.com/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="http://www.quanxu.com/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>11.11早课</title>
-    <link href="http://www.quanxu.com/2020/11/12/2020-11-11-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2020/11/12/2020-11-11-quannnxu-zao-ke/</id>
-    <published>2020-11-12T10:38:50.637Z</published>
-    <updated>2020-11-12T10:39:36.171Z</updated>
+    <link href="http://www.quanxu.com/2018/10/16/2020-11-11-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2018/10/16/2020-11-11-quannnxu-zao-ke/</id>
+    <published>2018-10-16T13:26:19.000Z</published>
+    <updated>2020-11-29T06:15:54.132Z</updated>
     
     
       
@@ -419,50 +545,10 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>11.10早课</title>
-    <link href="http://www.quanxu.com/2020/11/12/2020-11-10-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2020/11/12/2020-11-10-quannnxu-zao-ke/</id>
-    <published>2020-11-12T10:36:17.723Z</published>
-    <updated>2020-11-12T10:38:29.949Z</updated>
+    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1.隐藏文件文件夹怎么标识，如何查看&lt;br&gt;隐藏文件以.开头        ls -a或者ll -a&lt;/p&gt;
-&lt;p&gt;2.级联创建文件夹参数是什么&lt;br&gt;-p&lt;/p&gt;
-&lt;p&gt;3.移动复制什么区别，是否可以改名&lt;br&gt;复制最终产生两份文件   </summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Linux基础2</title>
-    <link href="http://www.quanxu.com/2020/11/08/2020-11-08-quannnxu-linux2/"/>
-    <id>http://www.quanxu.com/2020/11/08/2020-11-08-quannnxu-linux2/</id>
-    <published>2020-11-08T12:04:31.826Z</published>
-    <updated>2020-11-08T14:40:00.906Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-rm-删除&quot;&gt;&lt;a href=&quot;#1-rm-删除&quot; class=&quot;headerlink&quot; title=&quot;1.rm 删除&quot;&gt;&lt;/a&gt;1.rm 删除&lt;/h2&gt;&lt;pre class=&quot; language-shell&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
+    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
     
   </entry>
   
