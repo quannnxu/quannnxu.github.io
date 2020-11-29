@@ -6,7 +6,7 @@
   <link href="http://www.quanxu.com/atom.xml" rel="self"/>
   
   <link href="http://www.quanxu.com/"/>
-  <updated>2020-11-29T15:37:08.420Z</updated>
+  <updated>2020-11-29T15:39:31.306Z</updated>
   <id>http://www.quanxu.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hadoop05之MapReduce/yarn架构</title>
+    <link href="http://www.quanxu.com/2018/11/30/2020-11-29-quannnxu-hadoop5/"/>
+    <id>http://www.quanxu.com/2018/11/30/2020-11-29-quannnxu-hadoop5/</id>
+    <published>2018-11-30T13:11:25.000Z</published>
+    <updated>2020-11-29T15:39:31.306Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;tip1:&lt;/p&gt;
+&lt;p&gt;A表:主表&lt;/p&gt;
+&lt;p&gt;id    name&lt;/p&gt;
+&lt;p&gt;1        a        1&lt;/p&gt;
+&lt;p&gt;2        b        1&lt;/p&gt;
+&lt;p&gt;3        c        1&lt;/p&gt;
+&lt;p&gt;4        c </summary>
+        
+      
+    
+    
+    
+    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
+    
+    
+    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
+    
+  </entry>
   
   <entry>
     <title>hadoop04之hdfs命令</title>
@@ -31,37 +62,6 @@
     <summary type="html">&lt;p&gt;1.SNN(检查点动作)&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/11/29/yqU1YtOkIhZVxSn.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;517是正在编辑的日志                                    </summary>
-        
-      
-    
-    
-    
-    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
-    
-    
-    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hadoop05之MapReduce架构</title>
-    <link href="http://www.quanxu.com/2018/11/29/2020-11-29-quannnxu-hadoop5/"/>
-    <id>http://www.quanxu.com/2018/11/29/2020-11-29-quannnxu-hadoop5/</id>
-    <published>2018-11-29T13:11:25.000Z</published>
-    <updated>2020-11-29T14:28:14.707Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;tip1:&lt;/p&gt;
-&lt;p&gt;A表:主表&lt;/p&gt;
-&lt;p&gt;id    name&lt;/p&gt;
-&lt;p&gt;1        a        1&lt;/p&gt;
-&lt;p&gt;2        b        1&lt;/p&gt;
-&lt;p&gt;3        c        1&lt;/p&gt;
-&lt;p&gt;4        c </summary>
         
       
     
