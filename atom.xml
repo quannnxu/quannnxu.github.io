@@ -6,7 +6,7 @@
   <link href="http://www.quanxu.com/atom.xml" rel="self"/>
   
   <link href="http://www.quanxu.com/"/>
-  <updated>2020-11-29T15:39:31.306Z</updated>
+  <updated>2020-11-30T15:14:21.049Z</updated>
   <id>http://www.quanxu.com/</id>
   
   <author>
@@ -17,24 +17,45 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hadoop练习题01</title>
+    <link href="http://www.quanxu.com/2018/11/30/2020-11-30-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2018/11/30/2020-11-30-quannnxu-zao-ke/</id>
+    <published>2018-11-30T15:13:21.000Z</published>
+    <updated>2020-11-30T15:14:21.049Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.hadoop广义狭义&lt;br&gt;广义: 以apache hadoop软件为主的生态圈 包含hive sqoop hbase kafka spark flink&lt;br&gt;狭义: apache</summary>
+        
+      
+    
+    
+    
+    <category term="Hadoop练习题" scheme="http://www.quanxu.com/categories/Hadoop%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
+    
+    
+    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
+    
+  </entry>
+  
+  <entry>
     <title>hadoop05之MapReduce/yarn架构</title>
     <link href="http://www.quanxu.com/2018/11/30/2020-11-29-quannnxu-hadoop5/"/>
     <id>http://www.quanxu.com/2018/11/30/2020-11-29-quannnxu-hadoop5/</id>
     <published>2018-11-30T13:11:25.000Z</published>
-    <updated>2020-11-29T15:39:31.306Z</updated>
+    <updated>2020-11-30T14:31:11.815Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;tip1:&lt;/p&gt;
-&lt;p&gt;A表:主表&lt;/p&gt;
-&lt;p&gt;id    name&lt;/p&gt;
-&lt;p&gt;1        a        1&lt;/p&gt;
-&lt;p&gt;2        b        1&lt;/p&gt;
-&lt;p&gt;3        c        1&lt;/p&gt;
-&lt;p&gt;4        c </summary>
+    <summary type="html">&lt;p&gt;MapReduce&lt;/p&gt;
+&lt;p&gt;Hive 执行引擎就是MapReduce&lt;/p&gt;
+&lt;h4 id=&quot;1-分布式计算框架&quot;&gt;&lt;a href=&quot;#1-分布式计算框架&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -222,6 +243,32 @@
     
     
     <category term="mysql" scheme="http://www.quanxu.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql练习题1</title>
+    <link href="http://www.quanxu.com/2018/11/01/2020-11-27-quannnxu-zao-ke/"/>
+    <id>http://www.quanxu.com/2018/11/01/2020-11-27-quannnxu-zao-ke/</id>
+    <published>2018-11-01T14:21:51.000Z</published>
+    <updated>2020-11-30T15:15:00.269Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.简述mysql部署流程&lt;/p&gt;
+&lt;p&gt;2.mysql的创建DB 、创建用户设置密码权限的、刷权限，三句话会默写吗？博客写了吗？&lt;br&gt;create database ruozedata;&lt;br&gt;grant all privileges on ruozedata.*</summary>
+        
+      
+    
+    
+    
+    <category term="mysql练习题" scheme="http://www.quanxu.com/categories/mysql%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
+    
+    
+    <category term="mysql练习题" scheme="http://www.quanxu.com/tags/mysql%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
     
   </entry>
   
@@ -488,58 +535,6 @@
         
     <summary type="html">&lt;p&gt;1.经典错误1是什么  大概什么导致&lt;br&gt;command not found&lt;br&gt;要不就是没有安装，yum安装或者tar解压安装&lt;br&gt;要不就是安装好了，没有配置环境变量  到PATH里配置&lt;/p&gt;
 &lt;p&gt;2.经典错误2是什么 </summary>
-        
-      
-    
-    
-    
-    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-    
-    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux基础03</title>
-    <link href="http://www.quanxu.com/2018/10/17/2020-11-13-quannnxu-linux3/"/>
-    <id>http://www.quanxu.com/2018/10/17/2020-11-13-quannnxu-linux3/</id>
-    <published>2018-10-17T13:13:29.000Z</published>
-    <updated>2020-11-29T06:11:46.266Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-查看磁盘空间&quot;&gt;&lt;a href=&quot;#1-查看磁盘空间&quot; class=&quot;headerlink&quot; title=&quot;1. 查看磁盘空间&quot;&gt;&lt;/a&gt;1. 查看磁盘空间&lt;/h2&gt;&lt;p&gt;[root@warehouse001 ~]# df -h&lt;br&gt;Filesystem </summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="http://www.quanxu.com/categories/Linux/"/>
-    
-    
-    <category term="Linux" scheme="http://www.quanxu.com/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>11.11早课</title>
-    <link href="http://www.quanxu.com/2018/10/16/2020-11-11-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2018/10/16/2020-11-11-quannnxu-zao-ke/</id>
-    <published>2018-10-16T13:26:19.000Z</published>
-    <updated>2020-11-29T06:15:54.132Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1.vi三种模式&lt;br&gt;命令行模式、编辑模式、最后行模式&lt;/p&gt;
-&lt;p&gt;2.高危命令有哪两个？&lt;br&gt;rm -rf，&amp;gt;(覆盖)&lt;/p&gt;
-&lt;p&gt;3.实时查看 大小F 区别&lt;br&gt;-f   假如文件被移除 然后重命名 就无法再监控到文件&lt;br&gt;-F   假如文件被移除</summary>
         
       
     

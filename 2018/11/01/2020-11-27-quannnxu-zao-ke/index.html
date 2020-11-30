@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>hadoop03之hdfs架构 | 欢迎来到我的博客</title>
+  <title>mysql练习题1 | 欢迎来到我的博客</title>
   
     
 <link rel="stylesheet" href="/js/aos/aos.css">
@@ -312,10 +312,10 @@
       
 
 
-<div class="post-detail-header" style="background: url(/medias/7.jpg) no-repeat; background-size: cover; 
+<div class="post-detail-header" style="background: url(/medias/12.png) no-repeat; background-size: cover; 
   background-position: center center;">
   
-    <span class="title">hadoop03之hdfs架构</span>
+    <span class="title">mysql练习题1</span>
   
 </div>
 <div class="row justify-center">
@@ -325,7 +325,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2018-11-24</span>
+        <span class="post-time">2018-11-01</span>
       </div>
       
       <div class="post-tags-categories">
@@ -333,8 +333,8 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/tags/Hadoop/" class="">
-              Hadoop
+            <a href="/tags/mysql%E7%BB%83%E4%B9%A0%E9%A2%98/" class="">
+              mysql练习题
             </a>
           
         </div>
@@ -343,59 +343,37 @@
         <div class="categories">
           <i class="iconfont iconbookmark1"></i>
           
-            <a href="/categories/Hadoop/" class="">
-              Hadoop
+            <a href="/categories/mysql%E7%BB%83%E4%B9%A0%E9%A2%98/" class="">
+              mysql练习题
             </a>
           
         </div>
         
       </div>
       <div class="post-content">
-        <h4 id="1-HDFS主从架构"><a href="#1-HDFS主从架构" class="headerlink" title="1.HDFS主从架构"></a>1.HDFS主从架构</h4><h5 id="namenode：nn名称节点"><a href="#namenode：nn名称节点" class="headerlink" title="namenode：nn名称节点"></a>namenode：nn名称节点</h5><p>a.文件的名称</p>
-<p>b.文件的目录结构</p>
-<p>c.文件的属性    权限    副本数    创建时间</p>
-<p>[hadoop@warehouse001 ~]$ hdfs dfs -ls /<br>20/11/25 21:17:26 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform… using builtin-java classes where applicable<br>Found 3 items<br>drwx——   - hadoop supergroup          0 2018-11-24 23:06 /tmp<br>drwxr-xr-x   - hadoop supergroup          0 2018-11-22 16:02 /user<br>drwxr-xr-x   - hadoop supergroup          0 2018-11-24 23:06 /wordcount</p>
-<p>d.一个文件被对应切割那些数据块(包含副本数的块) ==&gt;对应分布在哪些datenode</p>
-<p>blockmap 块映射  nn是不会持久化内存这种映射关系</p>
-<p>是通过集群的启动和运行时,dn定期汇报blockreport给nn,然后再内存中动态维护这种映射关系</p>
-<p>作用:</p>
-<p>管理文件系统的命名空间,启示就是维护文件系统树的文件和文件夹</p>
-<p>镜像文件    fsimage</p>
-<p>编辑日志文件    editlogs</p>
-<p>[hadoop@warehouse001 current]$ pwd<br>/home/hadoop/tmp/dfs/name/current</p>
-<p>-rw-rw-r– 1 hadoop hadoop      42 Nov 26 20:06 edits_0000000000000000395-0000000000000000396<br>-rw-rw-r– 1 hadoop hadoop      42 Nov 26 21:06 edits_0000000000000000397-0000000000000000398<br>-rw-rw-r– 1 hadoop hadoop 1048576 Nov 26 21:06 edits_inprogress_0000000000000000399<br>-rw-rw-r– 1 hadoop hadoop    2599 Nov 26 20:06 fsimage_0000000000000000396<br>-rw-rw-r– 1 hadoop hadoop      62 Nov 26 20:06 fsimage_0000000000000000396.md5<br>-rw-rw-r– 1 hadoop hadoop    2599 Nov 26 21:06 fsimage_0000000000000000398<br>-rw-rw-r– 1 hadoop hadoop      62 Nov 26 21:06 fsimage_0000000000000000398.md5</p>
-<h5 id="secondary-namenode-sn-第二名称节点"><a href="#secondary-namenode-sn-第二名称节点" class="headerlink" title="secondary namenode:sn    第二名称节点"></a>secondary namenode:sn    第二名称节点</h5><p>a.fsimage editlog文件拿过来合并  备份 推送给nn</p>
-<p>[hadoop@warehouse001 current]$ pwd<br>/home/hadoop/tmp/dfs/namesecondary/current</p>
-<p>-rw-rw-r– 1 hadoop hadoop      42 Nov 26 20:06 edits_0000000000000000395-0000000000000000396<br>-rw-rw-r– 1 hadoop hadoop      42 Nov 26 21:06 edits_0000000000000000397-0000000000000000398<br>-rw-rw-r– 1 hadoop hadoop    2599 Nov 26 20:06 fsimage_0000000000000000396<br>-rw-rw-r– 1 hadoop hadoop      62 Nov 26 20:06 fsimage_0000000000000000396.md5<br>-rw-rw-r– 1 hadoop hadoop    2599 Nov 26 21:06 fsimage_0000000000000000398<br>-rw-rw-r– 1 hadoop hadoop      62 Nov 26 21:06 fsimage_0000000000000000398.md5<br>-rw-rw-r– 1 hadoop hadoop     204 Nov 26 21:06 VERSION</p>
-<p>将nn的 fsimage_0000000000000000396</p>
-<p>edits_0000000000000000397-0000000000000000398    ==&gt;检测点动作 checkpoint合并 fsimage_0000000000000000398    将398推送给nn</p>
-<p>而新的读写记录则在 edits_inprogress_0000000000000000399编辑日志里</p>
-<p>dfs.namenode.checkpoint.period  3600<br>dfs.namenode.checkpoint.txns    1000000</p>
-<p>早期为了解决nn是单点的，单点故障，增加一个snn，1小时的checkpoint<br>虽然能够减轻单点故障的带来的数据丢失风险，但是生产上不允许使用snn</p>
-<p>11:00 checkpoint<br>11:30  数据一直在写 突然nn硬盘挂了  无法恢复<br>拿snn节点的最新的fsimage，那么只能恢复11点的数据</p>
-<p>在生产上是不允许snn，是使用HA 高可靠，是通过配置另外一个实时的备份nn节点，<br>随时等待老大active nn 挂掉，然后成为老大</p>
-<h5 id="datanode：-数据节点-dn"><a href="#datanode：-数据节点-dn" class="headerlink" title="datanode： 数据节点 dn"></a>datanode： 数据节点 dn</h5><p>a.存储数据块 和 数据块的校验和</p>
-<p>[hadoop@warehouse001 subdir0]$ ll<br>-rw-rw-r– 1 hadoop hadoop     58 Nov 24 23:07 blk_1073741843<br>-rw-rw-r– 1 hadoop hadoop     11 Nov 24 23:07 blk_1073741843_1019.meta<br>-rw-rw-r– 1 hadoop hadoop    349 Nov 24 23:07 blk_1073741844<br>-rw-rw-r– 1 hadoop hadoop     11 Nov 24 23:07 blk_1073741844_1020.meta<br>-rw-rw-r– 1 hadoop hadoop  33585 Nov 24 23:07 blk_1073741845<br>-rw-rw-r– 1 hadoop hadoop    271 Nov 24 23:07 blk_1073741845_1021.meta<br>-rw-rw-r– 1 hadoop hadoop 141109 Nov 24 23:07 blk_1073741846<br>-rw-rw-r– 1 hadoop hadoop   1111 Nov 24 23:07 blk_1073741846_1022.meta<br>[hadoop@warehouse001 subdir0]$ pwd<br>/home/hadoop/tmp/dfs/data/current/BP-1844033615-172.23.75.57-1606031076865/current/finalized/subdir0/subdir0</p>
-<p>b.每隔一定的时间去发送blockreport<br>dfs.blockreport.intervalMsec          21600000        ==&gt;6h<br>dfs.datanode.directoryscan.interval   21600         ==&gt;6h </p>
-<p><a target="_blank" rel="noopener" href="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml">https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml</a></p>
-<p>补充:<a target="_blank" rel="noopener" href="https://ruozedata.github.io/2019/06/06/%E7%94%9F%E4%BA%A7HDFS%20Block%E6%8D%9F%E5%9D%8F%E6%81%A2%E5%A4%8D%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5(%E5%90%AB%E6%80%9D%E8%80%83%E9%A2%98)/">https://ruozedata.github.io/2019/06/06/%E7%94%9F%E4%BA%A7HDFS%20Block%E6%8D%9F%E5%9D%8F%E6%81%A2%E5%A4%8D%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5(%E5%90%AB%E6%80%9D%E8%80%83%E9%A2%98)/</a></p>
-<h4 id="2-HDFS写流程-面试"><a href="#2-HDFS写流程-面试" class="headerlink" title="2.HDFS写流程  面试"></a>2.HDFS写流程  面试</h4><p>对用户是无感知的</p>
-<h5 id="2-1-HDFS-Client调用FileSystem-create-filePath-方法，去和NN进行【RPC】通信。"><a href="#2-1-HDFS-Client调用FileSystem-create-filePath-方法，去和NN进行【RPC】通信。" class="headerlink" title="2.1 HDFS Client调用FileSystem.create(filePath)方法，去和NN进行【RPC】通信。"></a>2.1 HDFS Client调用FileSystem.create(filePath)方法，去和NN进行【RPC】通信。</h5><p>NN会去check这个文件是否存在，是否有权限创建这个文件。<br>假如都可以，就创建一个新的文件，但是这时没有数据，是不关联任何block的。<br>NN根据文件的大小，根据块大小 副本数，计算要上传多少的块和对应哪些DN节点上。<br>最终这个信息返回给客户端【FSDataOutputStream】对象</p>
-<h5 id="2-2Client-调用客户端【FSDataOutputStream】对象的write方法，"><a href="#2-2Client-调用客户端【FSDataOutputStream】对象的write方法，" class="headerlink" title="2.2Client 调用客户端【FSDataOutputStream】对象的write方法，"></a>2.2Client 调用客户端【FSDataOutputStream】对象的write方法，</h5><p>根据【副本放置策略】，将第一个块的第一个副本写到DN1，写完复制到DN2，写完再复制到DN3.<br>当第三个副本写完，就返回一个ack package确认包给DN2,DN2接收到ack 加上自己写完，<br>发送ack给DN1，DN1接收到ack加上自己写完，就发送ack给客户端【FSDataOutputStream】对象，<br>告诉它第一个块三副本写完了。<br>以此类推。</p>
-<h5 id="2-3-当所有的块全部写完，Client调用【FSDataOutputStream】对象的close方法，"><a href="#2-3-当所有的块全部写完，Client调用【FSDataOutputStream】对象的close方法，" class="headerlink" title="2.3.当所有的块全部写完，Client调用【FSDataOutputStream】对象的close方法，"></a>2.3.当所有的块全部写完，Client调用【FSDataOutputStream】对象的close方法，</h5><p>关闭输出流。再次调用FileSystem.complete方法 ，告诉nn文件写成功。</p>
-<p>伪分布式 1台dn，副本数参数必须设置是1吗？<br>设置2 也可以写，显示丢失一个副本</p>
-<p>生产上分布式  3台dn，副本数参数是3，如果其中一个dn挂了，数据是否能够写入？<br>可以的 </p>
-<p>生产上分布式  &gt;3台dn，副本数参数是3，如果其中一个dn挂了，数据是否能够写入？<br>肯定写</p>
-<p><img src="https://i.loli.net/2020/11/26/xPDC61rl8XesfKt.png"></p>
-<h4 id="3-HDFS读流程-面试"><a href="#3-HDFS读流程-面试" class="headerlink" title="3.HDFS读流程  面试"></a>3.HDFS读流程  面试</h4><h5 id="3-1Client调用FileSystem的open-filePath-，"><a href="#3-1Client调用FileSystem的open-filePath-，" class="headerlink" title="3.1Client调用FileSystem的open(filePath)，"></a>3.1Client调用FileSystem的open(filePath)，</h5><p>与NN进行【rpc】通信，返回该文件的部分或者全部的block列表<br>也就是返回【FSDataIntputStream】对象</p>
-<h5 id="3-2Client调度【FSDataIntputStream】对象的read方法，"><a href="#3-2Client调度【FSDataIntputStream】对象的read方法，" class="headerlink" title="3.2Client调度【FSDataIntputStream】对象的read方法，"></a>3.2Client调度【FSDataIntputStream】对象的read方法，</h5><p>与第一个块的最近的DN的进行读取，读取完成后，会check，假如ok就关闭与DN通信。<br>假如不ok，就会记录块+DN的信息，下次就不从这个节点读取。那么从第二个节点读取。</p>
-<p>然后与第二个块的最近的DN的进行读取，以此类推。<br>假如当block的列表全部读取完成，文件还没结束，就调用FileSystem从NN获取下一批次的block列表。</p>
-<h5 id="3-3-Client调用【FSDataIntputStream】对象的close方法，关闭输入流。"><a href="#3-3-Client调用【FSDataIntputStream】对象的close方法，关闭输入流。" class="headerlink" title="3.3.Client调用【FSDataIntputStream】对象的close方法，关闭输入流。"></a>3.3.Client调用【FSDataIntputStream】对象的close方法，关闭输入流。</h5><p><img src="https://i.loli.net/2020/11/26/xPDC61rl8XesfKt.png"></p>
-<h4 id="4-副本放置策略-不光光面试需要，生产也需要"><a href="#4-副本放置策略-不光光面试需要，生产也需要" class="headerlink" title="4.副本放置策略  不光光面试需要，生产也需要"></a>4.副本放置策略  不光光面试需要，生产也需要</h4><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1eE411p7un">https://www.bilibili.com/video/BV1eE411p7un</a></p>
-<p>生产上读写操作  尽量选择DN节点操作<br>第一个副本：<br>放置在上传的DN节点上，就近原则，节省IO(网络IO)<br>假如非DN节点，就随机挑选一个磁盘不太慢，cpu不太忙的节点。</p>
-<p>第二个副本:<br>放置在第一个副本的不同机架上的某个节点</p>
-<p>第三个副本:<br>与第二个副本放置同一个机架的不同节点上。</p>
-<p>如果副本数设置更多，随机放。</p>
+        <p>1.简述mysql部署流程</p>
+<p>2.mysql的创建DB 、创建用户设置密码权限的、刷权限，三句话会默写吗？博客写了吗？<br>create database ruozedata;<br>grant all privileges on ruozedata.* to mysql@’%’ identified by ‘ruozedata’;<br>flush privileges;</p>
+<p>3.建表规范，谈谈你的理解<br>第一列必须为自增长字段 主键，且无业务意义<br>后面加上:<br>create_user varchar(255),    –创建者<br>create_time timestamp not null default current_timestamp,    –创建时间<br>update_user varchar(255),    –更新者<br>update_time timestamp not null default current_timestamp,    –更新时间<br>数仓基础用的</p>
+<p>4.新增语句 怎么写？<br>insert into ruozedata.employee(name,age) values (‘zhangsan’,22);</p>
+<p>5.修改语句 怎么写？<br>update ruozedata.employee set age=’25’ where name =’zhangsan’;</p>
+<p>6.删除语句 怎么写？<br>delete from ruozedata.employee where id=1;</p>
+<p>7.查询语句 怎么写？<br>select * from a</p>
+<p>8.比如一张表5KW数据，一不小心 没有带where条件，是不是很致命？<br>是的</p>
+<p>9.查询名称第三个字母是 s的<br>select * from a where name like ‘__s%’</p>
+<p>10.建表自增长ID为主键，是不是比 uuid随机数这种好点？<br>是的,不会重复</p>
+<p>11.where order by  group by limit  这个顺序对吗？（昨晚群里截图的 ，其他人）<br>错,先group by 再order by</p>
+<p>12.谈谈你对子表/子查询的理解？<br>子表是查询条件作为表<br>子查询是查询条件作为字段</p>
+<p>13.聚合函数有哪些 常见的？<br>sum,count,avg,min,max</p>
+<p>14.group by … having 语法的，你的心得？<br>能使用having尽量使用having,不能使用时再使用子查询</p>
+<p>15.join语法的哪三种？谈谈对第一种的理解？<br>left join,right join,inner join,full join<br>左表为主表,显示全部左表信息右表关联不到的为null</p>
+<ol start="16">
+<li>a b表，其中aid null 1kw， bid null 10w数据。那么select xxxx from a left join b on a.aid=b.bid；请问致命吗？<br>致命,会出现10w*1kw的数据,笛卡尔积</li>
+</ol>
+<p>17.写sql还是后面spark代码（join的on条件字段还是group by字段），调优先学会抽样检查，知道自己的数据分布</p>
+<p>18.a b表，其中aid “010” 1kw， bid “010” 10w数据。那么select xxxx from a left join b on a.aid=b.bid；请问致命吗?<br>和16一样</p>
+<p>19.union all 和 union的区别<br>union all不去重,union去重</p>
+<p>20.默认排序是 降序？<br>升序</p>
+<p>21.写sql之前，你们觉得应该要做什么？</p>
 
       </div>
       
@@ -406,7 +384,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2018/11/24/2020-11-25-quannnxu-hadoop3/" target="_blank" title="hadoop03之hdfs架构">http://www.quanxu.com/2018/11/24/2020-11-25-quannnxu-hadoop3/</a>
+    <a href="/2018/11/01/2020-11-27-quannnxu-zao-ke/" target="_blank" title="mysql练习题1">http://www.quanxu.com/2018/11/01/2020-11-27-quannnxu-zao-ke/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -422,17 +400,17 @@
       <div class="post-nav">
 
   <div class="post-nav-prev post-nav-item">
-    <a href="/2018/11/29/2020-11-28-quannnxu-hadoop4/">
-      上一篇:    hadoop04之hdfs命令
+    <a href="/2018/11/03/2020-11-14-quanxu-shu-cang-zhi-mysql-bu-shu/">
+      上一篇:    mysql部署
     </a>
   </div>
 
 
 
   <div class="post-nav-next post-nav-item">
-    <a href="/2018/11/15/2020-11-22-quannnxu-hadoop2/">
+    <a href="/2018/10/30/2020-11-26-quannnxu-zao-ke/">
       <span>
-        下一篇:    hadoop02之yarn部署及简析 
+        下一篇:    11.26早课 
       </span>
     </a>
   </div>
