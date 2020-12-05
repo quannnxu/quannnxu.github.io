@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>归档: 2018 | 欢迎来到我的博客</title>
+  <title>hadoop05之MapReduce/yarn架构 | 欢迎来到我的博客</title>
   
     
 <link rel="stylesheet" href="/js/aos/aos.css">
@@ -309,87 +309,355 @@
   <a target="_blank" rel="noopener" href="https://github.com/quannnxu/quannnxu.github.io" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 </header>
     <main class="main" style="margin-top: 60px;">
-      <div style="width: 100%;height: 50vh;overflow: hidden;background-image: url('/medias/beijing2.jpg');background-size: cover; 
-background-position: center center;">
-</div>
-<section class="archive">
-  <div class="archive-content">
-    <ul class="post-archive">
       
-      
-        
-          
-          <div class="year" data-aos="zoom-in-up">
-              <div class="bullet"></div>
-              <a href="/archives/2018">2018</a>
-          </div>
-        
-        <li class="post-item" data-aos="fade-left">
-          <span class="post-date">11-01</span>
-          <a class="post-title" href="/2018/11/01/2020-11-27-quannnxu-zao-ke/">mysql练习题1</a>
-        </li>
-      
-        
-        <li class="post-item" data-aos="fade-left">
-          <span class="post-date">10-30</span>
-          <a class="post-title" href="/2018/10/30/2020-11-26-quannnxu-zao-ke/">11.26早课</a>
-        </li>
-      
-        
-        <li class="post-item" data-aos="fade-left">
-          <span class="post-date">10-29</span>
-          <a class="post-title" href="/2018/10/29/2020-11-25-quannnxu-zao-ke/">11.25早课</a>
-        </li>
-      
-        
-        <li class="post-item" data-aos="fade-left">
-          <span class="post-date">10-28</span>
-          <a class="post-title" href="/2018/10/28/2020-11-24-quannnxu-zao-ke/">11.24早课</a>
-        </li>
-      
-        
-        <li class="post-item" data-aos="fade-left">
-          <span class="post-date">10-26</span>
-          <a class="post-title" href="/2018/10/26/2020-11-23-quannnxu-zao-ke/">11.23早课</a>
-        </li>
-      
-        
-        <li class="post-item" data-aos="fade-left">
-          <span class="post-date">10-25</span>
-          <a class="post-title" href="/2018/10/25/2020-11-19-quannnxu-zao-ke/">11.19早课</a>
-        </li>
-      
-        
-        <li class="post-item" data-aos="fade-left">
-          <span class="post-date">10-23</span>
-          <a class="post-title" href="/2018/10/23/2020-11-18-quannnxu-zao-ke/">11.18早课</a>
-        </li>
-      
-        
-        <li class="post-item" data-aos="fade-left">
-          <span class="post-date">10-22</span>
-          <a class="post-title" href="/2018/10/22/2020-11-17-quannnxu-zao-ke/">11.17早课</a>
-        </li>
-      
-        
-        <li class="post-item" data-aos="fade-left">
-          <span class="post-date">10-21</span>
-          <a class="post-title" href="/2018/10/21/2020-11-16-quannnxu-zao-ke/">11.16早课</a>
-        </li>
-      
-        
-        <li class="post-item" data-aos="fade-left">
-          <span class="post-date">10-19</span>
-          <a class="post-title" href="/2018/10/19/2020-11-13-quannnxu-zao-ke/">11.13早课</a>
-        </li>
-      
-    </ul>
-  </div>
-</section>
 
-  <nav class="page-nav">
-    <a class="extend prev" rel="prev" href="/archives/2018/">上一页</a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2018/page/3/">3</a><a class="extend next" rel="next" href="/archives/2018/page/3/">下一页</a>
-  </nav>
+
+<div class="post-detail-header" style="background: url(/medias/13.png) no-repeat; background-size: cover; 
+  background-position: center center;">
+  
+    <span class="title">hadoop05之MapReduce/yarn架构</span>
+  
+</div>
+<div class="row justify-center">
+  <div class="main-content">
+    <article class="post post-detail">
+      
+      
+      <div class="post-meta">
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+        <span class="post-time">2018-12-02</span>
+      </div>
+      
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          <i class="iconfont icontag"></i>
+          
+            <a href="/tags/Hadoop/" class="">
+              Hadoop
+            </a>
+          
+        </div>
+        
+        
+        <div class="categories">
+          <i class="iconfont iconbookmark1"></i>
+          
+            <a href="/categories/Hadoop/" class="">
+              Hadoop
+            </a>
+          
+        </div>
+        
+      </div>
+      <div class="post-content">
+        <h4 id="1-container容器"><a href="#1-container容器" class="headerlink" title="1.container容器"></a>1.container容器</h4><p>关于yarn的调优,其实就是调整container</p>
+<p>虚拟化    是memory+cpu vcore组成的 是专门运行任务</p>
+<p>生产上应如何调优container参数?</p>
+<p>128G    16物理core</p>
+<h5 id="1-1-系统装完消耗1G"><a href="#1-1-系统装完消耗1G" class="headerlink" title="1.1 系统装完消耗1G"></a>1.1 系统装完消耗1G</h5><h5 id="1-2-系统要预留20-内存"><a href="#1-2-系统要预留20-内存" class="headerlink" title="1.2 系统要预留20%内存"></a>1.2 系统要预留20%内存</h5><p>给当前进程服务,防止出现oom-kill机制</p>
+<p>Linux系统防止夯住</p>
+<p>给未来部署软件预留空间</p>
+<p>128G服务器</p>
+<p>128G*20%=26G </p>
+<p>剩余102G</p>
+<h5 id="1-3-DN-NM节点"><a href="#1-3-DN-NM节点" class="headerlink" title="1.3 DN NM节点"></a>1.3 DN NM节点</h5><p>存储和计算一体,数据本地化,节省网络IO</p>
+<p>DN=2G(受限磁盘IO)</p>
+<p>NM=4G    NM进程本身的内存</p>
+<p>剩余内存96G    是真正container容器总内存,才是真正计算的内存</p>
+<h5 id="1-4-container内存"><a href="#1-4-container内存" class="headerlink" title="1.4 container内存"></a>1.4 container内存</h5><p>yarn.nodemanager.resource.memory-mb        -1</p>
+<p>​    <a target="_blank" rel="noopener" href="http://archive.cloudera.com/cdh5/cdh/5/hadoop-2.6.0-cdh5.16.2/">http://archive.cloudera.com/cdh5/cdh/5/hadoop-2.6.0-cdh5.16.2/</a></p>
+<p>yarn-default.xml</p>
+<p><strong>yarn.nodemanager.resource.memory-mb    96G</strong></p>
+<p><strong>yarn.scheduler.minimum-allocation-mb  1G</strong>    极限情况    96个container容器 内存1G</p>
+<p><strong>yarn.scheduler.maximum-allocation-mb  96G</strong>    极限情况    1个container容器 内存96G</p>
+<p>container容器会不断的字段增加内存1G,cdh有这个参数    默认不动</p>
+<h5 id="1-5-container虚拟core"><a href="#1-5-container虚拟core" class="headerlink" title="1.5 container虚拟core"></a>1.5 container虚拟core</h5><p>这个概念是yarn自己引入的.设计初衷是考虑不同服务器的cpu性能不一样,每个cpu计算能力不一样.</p>
+<p>比如某个物理cpu是另外一个物理cpu的2倍,这时通过设置第一个物理cpu的虚拟core来弥补差异</p>
+<p>但是后来大家都是使用虚拟core，默认值一般都不会去修改，就是2</p>
+<p>yarn.nodemanager.resource.pcores-vcores-multiplier  2 </p>
+<p>生产调整</p>
+<p><strong>yarn.nodemanager.resource.cpu-vcores    32</strong>(16*2,也可以适当预留几个物理core)</p>
+<p><strong>yarn.scheduler.minimum-allocation-vcores  1</strong>    极限情况,是32个</p>
+<p><strong>yarn.scheduler.maximum-allocation-vcores  32</strong>    极限情况,是1个</p>
+<p>补充:</p>
+<table>
+<thead>
+<tr>
+<th>yarn.nodemanager.pmem-check-enabled(检查物理内存)</th>
+<th>true</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>yarn.nodemanager.vmem-check-enabled(检查虚拟内存)</strong></td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td><strong>yarn.nodemanager.vmem-pmem-ratio(物理虚拟内存比例,一般不动)</strong></td>
+<td><strong>2.1</strong></td>
+</tr>
+</tbody></table>
+<h5 id="1-6-生产上如何设置"><a href="#1-6-生产上如何设置" class="headerlink" title="1.6 生产上如何设置"></a>1.6 生产上如何设置</h5><p>突破口yarn.scheduler.maximum-allocation-vcores</p>
+<p>CPU    内存</p>
+<p><strong>yarn.nodemanager.resource.cpu-vcores    32</strong></p>
+<p><strong>yarn.scheduler.minimum-allocation-vcores  1</strong>    </p>
+<p><strong>yarn.scheduler.maximum-allocation-vcores  4</strong>    极限情况下是有8个container</p>
+<p>CDH官方经过大量验证,经验值,container容器最大分配vcore不要超过5,故一般生产设置4</p>
+<p><strong>yarn.nodemanager.resource.memory-mb    96G</strong></p>
+<p><strong>yarn.scheduler.minimum-allocation-mb  1G</strong>    </p>
+<p><strong>yarn.scheduler.maximum-allocation-mb  12G</strong>    极限情况下,是有8个container</p>
+<p>也就是说:1个container12G    </p>
+<p>​                4个vcore    </p>
+<p>​                1个vcore使用3G</p>
+<p>正常来说,生产上yarn.scheduler.maximum-allocation-mb设置8G就OK</p>
+<h5 id="1-7-参数如何配置"><a href="#1-7-参数如何配置" class="headerlink" title="1.7 参数如何配置"></a>1.7 参数如何配置</h5><p>假如该节点还有HBase RS节点=30G内存(关于内存指针压缩技术)</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44641024/article/details/103248842">https://blog.csdn.net/weixin_44641024/article/details/103248842</a></p>
+<p>服务器256G    32个物理core</p>
+<p>如上6个参数如何设计?</p>
+<p>预留256*20%=51    RS=30G</p>
+<p>剩余175G</p>
+<p>DN=3G    NM=6G</p>
+<p>剩余166G</p>
+<p><strong>yarn.nodemanager.resource.cpu-vcores    60</strong></p>
+<p><strong>yarn.scheduler.minimum-allocation-vcores  1</strong>    </p>
+<p><strong>yarn.scheduler.maximum-allocation-vcores  4</strong>    极限情况下是有8个container</p>
+<p><strong>yarn.nodemanager.resource.memory-mb    166G</strong></p>
+<p><strong>yarn.scheduler.minimum-allocation-mb  1G</strong>    </p>
+<p><strong>yarn.scheduler.maximum-allocation-mb  21G</strong></p>
+<p>1个container21G    4个vcore    1个vcore5G</p>
+<h4 id="2-调度器"><a href="#2-调度器" class="headerlink" title="2.调度器"></a>2.调度器</h4><p>理想情况下，我们应用对Yarn资源的请求应该立刻得到满足，但现实情况资源往往是有限的，特别是在一</p>
+<p>个很繁忙的集群，一个应用资源的请求经常需要等待一段时间才能的到相应的资源。在Yarn中，负责给应</p>
+<p>用分配资源的就是Scheduler。其实调度本身就是一个难题，很难找到一个完美的策略可以解决所有的应用</p>
+<p>场景。为此，Yarn提供了多种调度器和可配置的策略供我们选择。</p>
+<h5 id="yarn的三种调度器"><a href="#yarn的三种调度器" class="headerlink" title="yarn的三种调度器:"></a>yarn的三种调度器:</h5><p><strong>FIFO Scheduler</strong>    先进先出调度器</p>
+<p>把应用按提交的顺序排成一个队列，这是一个<strong>先进先出</strong>队列，在进行资源分配的时候，先给队列中最头上的应用进行分配资源，待最头上的应用需求满足后再给下一个分配，以此类推。</p>
+<p><img src="https://i.loli.net/2020/12/05/2yhWg1HrIQTZlPA.png"></p>
+<p><strong>Capacity Scheduler</strong>    计算调度器</p>
+<p>Capacity调度器，有一个专门的队列用来运行小任务，但是为小任务专门设置一个队列会预先占用一定的集群资源，这就导致大任务的执行时间会落后于使用FIFO调度器时的时间。</p>
+<p><img src="https://i.loli.net/2020/12/05/7dhbfQwnW1uAycz.png"></p>
+<p><strong>FairScheduler</strong>    公平调度器 </p>
+<p>在Fair调度器中，我们不需要预先占用一定的系统资源，Fair调度器会为所有运行的job动态的调整系统资源。如下图所示，当第一个大job提交时，只有这一个job在运行，此时它获得了所有集群资源；当第二个小任务提交后，Fair调度器会分配一半资源给这个小任务，让这两个任务公平的共享集群资源。</p>
+<p><img src="https://i.loli.net/2020/12/05/aEeKiY8oxVj3pL6.png"></p>
+<p>当第一个大job提交时，只有这一个job在运行，此时它获得了所有集群资源；</p>
+<p>当第二个小任务提交后，从提交到获得资源会有一定的延迟，<br>因为它需要等待第一个任务释放占用的Container。</p>
+<p>小任务执行完成之后也会释放自己占用的资源，大任务又获得了全部的系统资源。<br>最终的效果就是Fair调度器即得到了高的资源利用率又能保证小任务及时完成。</p>
+
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>quanxu</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/2018/12/02/2020-12-02-quannnxu-hadoop6/" target="_blank" title="hadoop05之MapReduce/yarn架构">http://www.quanxu.com/2018/12/02/2020-12-02-quannnxu-hadoop6/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <div class="post-nav">
+
+
+
+  <div class="post-nav-next post-nav-item">
+    <a href="/2018/11/30/2020-11-30-quannnxu-zao-ke/">
+      <span>
+        下一篇:    Hadoop练习题01 
+      </span>
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-if="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-if="visible">
+      <div class="donate-box_close">
+        <i class="fa fa-times" aria-hidden="true" @click="cancelDialogDrawer"></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-if="tabActive === 'Alipay'">
+          <img src="/medias/zfb1.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-if="tabActive === 'WeChatpay'">
+          <img src="/medias/weixin.png" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+
+
+<script src="/js/shareJs/social-share.min.js"></script>
+
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+
+    <!-- 评论 -->
+      
+        
+      
+  </div>
+
+  
+    <div class="toc-aside">
+      <div class="toc-main">
+        <div class="toc-aside-title">
+          <i class="fa fa-list-ul" aria-hidden="true"></i><span>目录</span>
+        </div>
+        <div class="toc-content">
+          <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script>
+<div class="toc"></div>
+
+<script>
+  if ($('.toc').length > 0) {
+    var headerEl = 'h2, h3, h4',  //headers 
+      content = '.post-detail',//文章容器
+      idArr = {};  //标题数组以确定是否增加索引id
+      //add #id
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: content,
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: headerEl,
+      scrollSmooth: true,
+      scrollSmoothOffset: -80,
+      headingsOffset: 130,
+      positionFixedSelector: '.toc-main',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  }
+
+</script>
+
+<style>
+.is-position-fixed {
+  position:fixed !important;
+  top: 64px;
+}
+
+</style>
+        </div>
+      </div>
+    </div>
+  
+</div>
 
     </main>
     <div class="footer bg-color">

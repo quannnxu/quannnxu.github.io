@@ -6,7 +6,7 @@
   <link href="http://www.quanxu.com/atom.xml" rel="self"/>
   
   <link href="http://www.quanxu.com/"/>
-  <updated>2020-11-30T15:14:21.049Z</updated>
+  <updated>2020-12-05T07:04:12.646Z</updated>
   <id>http://www.quanxu.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hadoop05之MapReduce/yarn架构</title>
+    <link href="http://www.quanxu.com/2018/12/02/2020-12-02-quannnxu-hadoop6/"/>
+    <id>http://www.quanxu.com/2018/12/02/2020-12-02-quannnxu-hadoop6/</id>
+    <published>2018-12-02T14:18:44.000Z</published>
+    <updated>2020-12-05T07:04:12.646Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;1-container容器&quot;&gt;&lt;a href=&quot;#1-container容器&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
+    
+    
+    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
+    
+  </entry>
   
   <entry>
     <title>Hadoop练习题01</title>
@@ -509,32 +534,6 @@
         
     <summary type="html">&lt;p&gt;1.全局环境变量在哪，怎么生效&lt;br&gt;/etc/profile    source或者. 生效&lt;/p&gt;
 &lt;p&gt;2.个人环境变量文件 默认在哪？ 一般使用哪个？ 个人环境变量文件一定在默认位置吗？（一般存放在当前用户的家目录）&lt;br&gt;&lt;del&gt;/.bash_profile</summary>
-        
-      
-    
-    
-    
-    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-    
-    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>11.12早课</title>
-    <link href="http://www.quanxu.com/2018/10/18/2020-11-12-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2018/10/18/2020-11-12-quannnxu-zao-ke/</id>
-    <published>2018-10-18T13:35:35.000Z</published>
-    <updated>2020-11-29T06:18:39.084Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1.经典错误1是什么  大概什么导致&lt;br&gt;command not found&lt;br&gt;要不就是没有安装，yum安装或者tar解压安装&lt;br&gt;要不就是安装好了，没有配置环境变量  到PATH里配置&lt;/p&gt;
-&lt;p&gt;2.经典错误2是什么 </summary>
         
       
     

@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>hadoop05之MapReduce/yarn架构</title>
+      <link href="2018/12/02/2020-12-02-quannnxu-hadoop6/"/>
+      <url>2018/12/02/2020-12-02-quannnxu-hadoop6/</url>
+      
+        <content type="html"><![CDATA[<h4 id="1-container容器"><a href="#1-container容器" class="headerlink" title="1.container容器"></a>1.container容器</h4><p>关于yarn的调优,其实就是调整container</p><p>虚拟化    是memory+cpu vcore组成的 是专门运行任务</p><p>生产上应如何调优container参数?</p><p>128G    16物理core</p><h5 id="1-1-系统装完消耗1G"><a href="#1-1-系统装完消耗1G" class="headerlink" title="1.1 系统装完消耗1G"></a>1.1 系统装完消耗1G</h5><h5 id="1-2-系统要预留20-内存"><a href="#1-2-系统要预留20-内存" class="headerlink" title="1.2 系统要预留20%内存"></a>1.2 系统要预留20%内存</h5><p>给当前进程服务,防止出现oom-kill机制</p><p>Linux系统防止夯住</p><p>给未来部署软件预留空间</p><p>128G服务器</p><p>128G*20%=26G </p><p>剩余102G</p><h5 id="1-3-DN-NM节点"><a href="#1-3-DN-NM节点" class="headerlink" title="1.3 DN NM节点"></a>1.3 DN NM节点</h5><p>存储和计算一体,数据本地化,节省网络IO</p><p>DN=2G(受限磁盘IO)</p><p>NM=4G    NM进程本身的内存</p><p>剩余内存96G    是真正container容器总内存,才是真正计算的内存</p><h5 id="1-4-container内存"><a href="#1-4-container内存" class="headerlink" title="1.4 container内存"></a>1.4 container内存</h5><p>yarn.nodemanager.resource.memory-mb        -1</p><p>​    <a href="http://archive.cloudera.com/cdh5/cdh/5/hadoop-2.6.0-cdh5.16.2/">http://archive.cloudera.com/cdh5/cdh/5/hadoop-2.6.0-cdh5.16.2/</a></p><p>yarn-default.xml</p><p><strong>yarn.nodemanager.resource.memory-mb    96G</strong></p><p><strong>yarn.scheduler.minimum-allocation-mb  1G</strong>    极限情况    96个container容器 内存1G</p><p><strong>yarn.scheduler.maximum-allocation-mb  96G</strong>    极限情况    1个container容器 内存96G</p><p>container容器会不断的字段增加内存1G,cdh有这个参数    默认不动</p><h5 id="1-5-container虚拟core"><a href="#1-5-container虚拟core" class="headerlink" title="1.5 container虚拟core"></a>1.5 container虚拟core</h5><p>这个概念是yarn自己引入的.设计初衷是考虑不同服务器的cpu性能不一样,每个cpu计算能力不一样.</p><p>比如某个物理cpu是另外一个物理cpu的2倍,这时通过设置第一个物理cpu的虚拟core来弥补差异</p><p>但是后来大家都是使用虚拟core，默认值一般都不会去修改，就是2</p><p>yarn.nodemanager.resource.pcores-vcores-multiplier  2 </p><p>生产调整</p><p><strong>yarn.nodemanager.resource.cpu-vcores    32</strong>(16*2,也可以适当预留几个物理core)</p><p><strong>yarn.scheduler.minimum-allocation-vcores  1</strong>    极限情况,是32个</p><p><strong>yarn.scheduler.maximum-allocation-vcores  32</strong>    极限情况,是1个</p><p>补充:</p><table><thead><tr><th>yarn.nodemanager.pmem-check-enabled(检查物理内存)</th><th>true</th></tr></thead><tbody><tr><td><strong>yarn.nodemanager.vmem-check-enabled(检查虚拟内存)</strong></td><td><strong>true</strong></td></tr><tr><td><strong>yarn.nodemanager.vmem-pmem-ratio(物理虚拟内存比例,一般不动)</strong></td><td><strong>2.1</strong></td></tr></tbody></table><h5 id="1-6-生产上如何设置"><a href="#1-6-生产上如何设置" class="headerlink" title="1.6 生产上如何设置"></a>1.6 生产上如何设置</h5><p>突破口yarn.scheduler.maximum-allocation-vcores</p><p>CPU    内存</p><p><strong>yarn.nodemanager.resource.cpu-vcores    32</strong></p><p><strong>yarn.scheduler.minimum-allocation-vcores  1</strong>    </p><p><strong>yarn.scheduler.maximum-allocation-vcores  4</strong>    极限情况下是有8个container</p><p>CDH官方经过大量验证,经验值,container容器最大分配vcore不要超过5,故一般生产设置4</p><p><strong>yarn.nodemanager.resource.memory-mb    96G</strong></p><p><strong>yarn.scheduler.minimum-allocation-mb  1G</strong>    </p><p><strong>yarn.scheduler.maximum-allocation-mb  12G</strong>    极限情况下,是有8个container</p><p>也就是说:1个container12G    </p><p>​                4个vcore    </p><p>​                1个vcore使用3G</p><p>正常来说,生产上yarn.scheduler.maximum-allocation-mb设置8G就OK</p><h5 id="1-7-参数如何配置"><a href="#1-7-参数如何配置" class="headerlink" title="1.7 参数如何配置"></a>1.7 参数如何配置</h5><p>假如该节点还有HBase RS节点=30G内存(关于内存指针压缩技术)</p><p><a href="https://blog.csdn.net/weixin_44641024/article/details/103248842">https://blog.csdn.net/weixin_44641024/article/details/103248842</a></p><p>服务器256G    32个物理core</p><p>如上6个参数如何设计?</p><p>预留256*20%=51    RS=30G</p><p>剩余175G</p><p>DN=3G    NM=6G</p><p>剩余166G</p><p><strong>yarn.nodemanager.resource.cpu-vcores    60</strong></p><p><strong>yarn.scheduler.minimum-allocation-vcores  1</strong>    </p><p><strong>yarn.scheduler.maximum-allocation-vcores  4</strong>    极限情况下是有8个container</p><p><strong>yarn.nodemanager.resource.memory-mb    166G</strong></p><p><strong>yarn.scheduler.minimum-allocation-mb  1G</strong>    </p><p><strong>yarn.scheduler.maximum-allocation-mb  21G</strong></p><p>1个container21G    4个vcore    1个vcore5G</p><h4 id="2-调度器"><a href="#2-调度器" class="headerlink" title="2.调度器"></a>2.调度器</h4><p>理想情况下，我们应用对Yarn资源的请求应该立刻得到满足，但现实情况资源往往是有限的，特别是在一</p><p>个很繁忙的集群，一个应用资源的请求经常需要等待一段时间才能的到相应的资源。在Yarn中，负责给应</p><p>用分配资源的就是Scheduler。其实调度本身就是一个难题，很难找到一个完美的策略可以解决所有的应用</p><p>场景。为此，Yarn提供了多种调度器和可配置的策略供我们选择。</p><h5 id="yarn的三种调度器"><a href="#yarn的三种调度器" class="headerlink" title="yarn的三种调度器:"></a>yarn的三种调度器:</h5><p><strong>FIFO Scheduler</strong>    先进先出调度器</p><p>把应用按提交的顺序排成一个队列，这是一个<strong>先进先出</strong>队列，在进行资源分配的时候，先给队列中最头上的应用进行分配资源，待最头上的应用需求满足后再给下一个分配，以此类推。</p><p><img src="https://i.loli.net/2020/12/05/2yhWg1HrIQTZlPA.png"></p><p><strong>Capacity Scheduler</strong>    计算调度器</p><p>Capacity调度器，有一个专门的队列用来运行小任务，但是为小任务专门设置一个队列会预先占用一定的集群资源，这就导致大任务的执行时间会落后于使用FIFO调度器时的时间。</p><p><img src="https://i.loli.net/2020/12/05/7dhbfQwnW1uAycz.png"></p><p><strong>FairScheduler</strong>    公平调度器 </p><p>在Fair调度器中，我们不需要预先占用一定的系统资源，Fair调度器会为所有运行的job动态的调整系统资源。如下图所示，当第一个大job提交时，只有这一个job在运行，此时它获得了所有集群资源；当第二个小任务提交后，Fair调度器会分配一半资源给这个小任务，让这两个任务公平的共享集群资源。</p><p><img src="https://i.loli.net/2020/12/05/aEeKiY8oxVj3pL6.png"></p><p>当第一个大job提交时，只有这一个job在运行，此时它获得了所有集群资源；</p><p>当第二个小任务提交后，从提交到获得资源会有一定的延迟，<br>因为它需要等待第一个任务释放占用的Container。</p><p>小任务执行完成之后也会释放自己占用的资源，大任务又获得了全部的系统资源。<br>最终的效果就是Fair调度器即得到了高的资源利用率又能保证小任务及时完成。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hadoop </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hadoop </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hadoop练习题01</title>
       <link href="2018/11/30/2020-11-30-quannnxu-zao-ke/"/>
       <url>2018/11/30/2020-11-30-quannnxu-zao-ke/</url>
