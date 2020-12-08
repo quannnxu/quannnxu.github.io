@@ -6,7 +6,7 @@
   <link href="http://www.quanxu.com/atom.xml" rel="self"/>
   
   <link href="http://www.quanxu.com/"/>
-  <updated>2020-12-07T16:07:10.831Z</updated>
+  <updated>2020-12-08T15:03:53.553Z</updated>
   <id>http://www.quanxu.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hive基础之Hive参数配置及语法</title>
+    <link href="http://www.quanxu.com/2018/12/08/2020-12-06-quannnxu-hive2/"/>
+    <id>http://www.quanxu.com/2018/12/08/2020-12-06-quannnxu-hive2/</id>
+    <published>2018-12-08T14:13:28.000Z</published>
+    <updated>2020-12-08T15:03:53.553Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;1-参数修改&quot;&gt;&lt;a href=&quot;#1-参数修改&quot; class=&quot;headerlink&quot; title=&quot;1.参数修改&quot;&gt;&lt;/a&gt;1.参数修改&lt;/h4&gt;&lt;h5 id=&quot;1-1获取hive执行引擎&quot;&gt;&lt;a href=&quot;#1-1获取hive执行引擎&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
+    
+    
+    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
+    
+  </entry>
   
   <entry>
     <title>Hive基础之Hive简介及搭建</title>
@@ -508,31 +533,6 @@
 &lt;p&gt;2.查看内存命令，剩余内存怎么看&lt;/p&gt;
 &lt;p&gt;3.使用top命令，可以查看哪些数据&lt;/p&gt;
 &lt;p&gt;4.which </summary>
-        
-      
-    
-    
-    
-    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-    
-    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>11.16早课</title>
-    <link href="http://www.quanxu.com/2018/10/21/2020-11-16-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2018/10/21/2020-11-16-quannnxu-zao-ke/</id>
-    <published>2018-10-21T13:15:56.000Z</published>
-    <updated>2020-11-29T06:20:25.117Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1.简述mysql安装流程&lt;br&gt;创建my.cnf&lt;br&gt;创建用户组及用户&lt;br&gt;配置环境变量&lt;br&gt;赋权限和用户组，切换用户mysqladmin，安装&lt;br&gt;配置服务及开机自启动&lt;br&gt;安装libaio及安装mysql的初始db&lt;br&gt;查看临时密码&lt;br&gt;启动&lt;br&gt;登录</summary>
         
       
     
