@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>hadoop06之Yarn参数调优 | 欢迎来到我的博客</title>
+  <title>Hive基础之Hive分区和常用函数 | 欢迎来到我的博客</title>
   
     
 <link rel="stylesheet" href="/js/aos/aos.css">
@@ -312,10 +312,10 @@
       
 
 
-<div class="post-detail-header" style="background: url(/medias/3.png) no-repeat; background-size: cover; 
+<div class="post-detail-header" style="background: url(/medias/2.png) no-repeat; background-size: cover; 
   background-position: center center;">
   
-    <span class="title">hadoop06之Yarn参数调优</span>
+    <span class="title">Hive基础之Hive分区和常用函数</span>
   
 </div>
 <div class="row justify-center">
@@ -325,7 +325,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2018-12-02</span>
+        <span class="post-time">2018-12-10</span>
       </div>
       
       <div class="post-tags-categories">
@@ -333,8 +333,8 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/tags/Hadoop/" class="">
-              Hadoop
+            <a href="/tags/Hive/" class="">
+              Hive
             </a>
           
         </div>
@@ -343,104 +343,240 @@
         <div class="categories">
           <i class="iconfont iconbookmark1"></i>
           
-            <a href="/categories/Hadoop/" class="">
-              Hadoop
+            <a href="/categories/Hive/" class="">
+              Hive
             </a>
           
         </div>
         
       </div>
       <div class="post-content">
-        <h4 id="1-container容器"><a href="#1-container容器" class="headerlink" title="1.container容器"></a>1.container容器</h4><p>关于yarn的调优,其实就是调整container</p>
-<p>虚拟化    是memory+cpu vcore组成的 是专门运行任务</p>
-<p>生产上应如何调优container参数?</p>
-<p>128G    16物理core</p>
-<h5 id="1-1-系统装完消耗1G"><a href="#1-1-系统装完消耗1G" class="headerlink" title="1.1 系统装完消耗1G"></a>1.1 系统装完消耗1G</h5><h5 id="1-2-系统要预留20-内存"><a href="#1-2-系统要预留20-内存" class="headerlink" title="1.2 系统要预留20%内存"></a>1.2 系统要预留20%内存</h5><p>给当前进程服务,防止出现oom-kill机制</p>
-<p>Linux系统防止夯住</p>
-<p>给未来部署软件预留空间</p>
-<p>128G服务器</p>
-<p>128G*20%=26G </p>
-<p>剩余102G</p>
-<h5 id="1-3-DN-NM节点"><a href="#1-3-DN-NM节点" class="headerlink" title="1.3 DN NM节点"></a>1.3 DN NM节点</h5><p>存储和计算一体,数据本地化,节省网络IO</p>
-<p>DN=2G(受限磁盘IO)</p>
-<p>NM=4G    NM进程本身的内存</p>
-<p>剩余内存96G    是真正container容器总内存,才是真正计算的内存</p>
-<h5 id="1-4-container内存"><a href="#1-4-container内存" class="headerlink" title="1.4 container内存"></a>1.4 container内存</h5><p>yarn.nodemanager.resource.memory-mb        -1</p>
-<p>​    <a target="_blank" rel="noopener" href="http://archive.cloudera.com/cdh5/cdh/5/hadoop-2.6.0-cdh5.16.2/">http://archive.cloudera.com/cdh5/cdh/5/hadoop-2.6.0-cdh5.16.2/</a></p>
-<p>yarn-default.xml</p>
-<p><strong>yarn.nodemanager.resource.memory-mb    96G</strong></p>
-<p><strong>yarn.scheduler.minimum-allocation-mb  1G</strong>    极限情况    96个container容器 内存1G</p>
-<p><strong>yarn.scheduler.maximum-allocation-mb  96G</strong>    极限情况    1个container容器 内存96G</p>
-<p>container容器会不断的字段增加内存1G,cdh有这个参数    默认不动</p>
-<h5 id="1-5-container虚拟core"><a href="#1-5-container虚拟core" class="headerlink" title="1.5 container虚拟core"></a>1.5 container虚拟core</h5><p>这个概念是yarn自己引入的.设计初衷是考虑不同服务器的cpu性能不一样,每个cpu计算能力不一样.</p>
-<p>比如某个物理cpu是另外一个物理cpu的2倍,这时通过设置第一个物理cpu的虚拟core来弥补差异</p>
-<p>但是后来大家都是使用虚拟core，默认值一般都不会去修改，就是2</p>
-<p>yarn.nodemanager.resource.pcores-vcores-multiplier  2 </p>
-<p>生产调整</p>
-<p><strong>yarn.nodemanager.resource.cpu-vcores    32</strong>(16*2,也可以适当预留几个物理core)</p>
-<p><strong>yarn.scheduler.minimum-allocation-vcores  1</strong>    极限情况,是32个</p>
-<p><strong>yarn.scheduler.maximum-allocation-vcores  32</strong>    极限情况,是1个</p>
-<p>补充:</p>
-<table>
-<thead>
-<tr>
-<th>yarn.nodemanager.pmem-check-enabled(检查物理内存)</th>
-<th>true</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>yarn.nodemanager.vmem-check-enabled(检查虚拟内存)</strong></td>
-<td><strong>true</strong></td>
-</tr>
-<tr>
-<td><strong>yarn.nodemanager.vmem-pmem-ratio(物理虚拟内存比例,一般不动)</strong></td>
-<td><strong>2.1</strong></td>
-</tr>
-</tbody></table>
-<h5 id="1-6-生产上如何设置"><a href="#1-6-生产上如何设置" class="headerlink" title="1.6 生产上如何设置"></a>1.6 生产上如何设置</h5><p>突破口yarn.scheduler.maximum-allocation-vcores</p>
-<p>CPU    内存</p>
-<p><strong>yarn.nodemanager.resource.cpu-vcores    32</strong></p>
-<p><strong>yarn.scheduler.minimum-allocation-vcores  1</strong>    </p>
-<p><strong>yarn.scheduler.maximum-allocation-vcores  4</strong>    极限情况下是有8个container</p>
-<p>CDH官方经过大量验证,经验值,container容器最大分配vcore不要超过5,故一般生产设置4</p>
-<p><strong>yarn.nodemanager.resource.memory-mb    96G</strong></p>
-<p><strong>yarn.scheduler.minimum-allocation-mb  1G</strong>    </p>
-<p><strong>yarn.scheduler.maximum-allocation-mb  12G</strong>    极限情况下,是有8个container</p>
-<p>也就是说:1个container12G    </p>
-<p>​                4个vcore    </p>
-<p>​                1个vcore使用3G</p>
-<p>正常来说,生产上yarn.scheduler.maximum-allocation-mb设置8G就OK</p>
-<h5 id="1-7-参数如何配置"><a href="#1-7-参数如何配置" class="headerlink" title="1.7 参数如何配置"></a>1.7 参数如何配置</h5><p>假如该节点还有HBase RS节点=30G内存(关于内存指针压缩技术)</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44641024/article/details/103248842">https://blog.csdn.net/weixin_44641024/article/details/103248842</a></p>
-<p>服务器256G    32个物理core</p>
-<p>如上6个参数如何设计?</p>
-<p>预留256*20%=51    RS=30G</p>
-<p>剩余175G</p>
-<p>DN=3G    NM=6G</p>
-<p>剩余166G</p>
-<p><strong>yarn.nodemanager.resource.cpu-vcores    60</strong></p>
-<p><strong>yarn.scheduler.minimum-allocation-vcores  1</strong>    </p>
-<p><strong>yarn.scheduler.maximum-allocation-vcores  4</strong>    极限情况下是有8个container</p>
-<p><strong>yarn.nodemanager.resource.memory-mb    166G</strong></p>
-<p><strong>yarn.scheduler.minimum-allocation-mb  1G</strong>    </p>
-<p><strong>yarn.scheduler.maximum-allocation-mb  21G</strong></p>
-<p>1个container21G    4个vcore    1个vcore5G</p>
-<h4 id="2-调度器"><a href="#2-调度器" class="headerlink" title="2.调度器"></a>2.调度器</h4><p>理想情况下，我们应用对Yarn资源的请求应该立刻得到满足，但现实情况资源往往是有限的，特别是在一</p>
-<p>个很繁忙的集群，一个应用资源的请求经常需要等待一段时间才能的到相应的资源。在Yarn中，负责给应</p>
-<p>用分配资源的就是Scheduler。其实调度本身就是一个难题，很难找到一个完美的策略可以解决所有的应用</p>
-<p>场景。为此，Yarn提供了多种调度器和可配置的策略供我们选择。</p>
-<h5 id="yarn的三种调度器"><a href="#yarn的三种调度器" class="headerlink" title="yarn的三种调度器:"></a>yarn的三种调度器:</h5><p><strong>FIFO Scheduler</strong>    先进先出调度器</p>
-<p>把应用按提交的顺序排成一个队列，这是一个<strong>先进先出</strong>队列，在进行资源分配的时候，先给队列中最头上的应用进行分配资源，待最头上的应用需求满足后再给下一个分配，以此类推。</p>
-<p><img src="https://i.loli.net/2020/12/05/2yhWg1HrIQTZlPA.png"></p>
-<p><strong>Capacity Scheduler</strong>    计算调度器</p>
-<p>Capacity调度器，有一个专门的队列用来运行小任务，但是为小任务专门设置一个队列会预先占用一定的集群资源，这就导致大任务的执行时间会落后于使用FIFO调度器时的时间。</p>
-<p><img src="https://i.loli.net/2020/12/05/7dhbfQwnW1uAycz.png"></p>
-<p><strong>FairScheduler</strong>    公平调度器 </p>
-<p>在Fair调度器中，我们不需要预先占用一定的系统资源，Fair调度器会为所有运行的job动态的调整系统资源。如下图所示，当第一个大job提交时，只有这一个job在运行，此时它获得了所有集群资源；当第二个小任务提交后，Fair调度器会分配一半资源给这个小任务，让这两个任务公平的共享集群资源。</p>
-<p><img src="https://i.loli.net/2020/12/05/aEeKiY8oxVj3pL6.png"></p>
-<p>当第一个大job提交时，只有这一个job在运行，此时它获得了所有集群资源；</p>
-<p>当第二个小任务提交后，从提交到获得资源会有一定的延迟，<br>因为它需要等待第一个任务释放占用的Container。</p>
-<p>小任务执行完成之后也会释放自己占用的资源，大任务又获得了全部的系统资源。<br>最终的效果就是Fair调度器即得到了高的资源利用率又能保证小任务及时完成。</p>
+        <h4 id="1-PARTITIONED-BY"><a href="#1-PARTITIONED-BY" class="headerlink" title="1.PARTITIONED BY"></a>1.PARTITIONED BY</h4><h5 id="1-1-分区表"><a href="#1-1-分区表" class="headerlink" title="1.1 分区表"></a>1.1 分区表</h5><p>​    如:操作日志表    需记录时间,事件等信息,数据量大</p>
+<p>​    所以就需要分区</p>
+<p>语法:</p>
+<p>[PARTITIONED BY (col_name data_type [COMMENT col_comment], …)]</p>
+<h5 id="1-2-建表"><a href="#1-2-建表" class="headerlink" title="1.2 建表:"></a>1.2 建表:</h5><p>create table dept_partition(</p>
+<p>deptno int,</p>
+<p>dname string,</p>
+<p>loc string</p>
+<p>)partitioned by (day string)</p>
+<p>row format delimited fields terminated by ‘\t’;</p>
+<h5 id="1-3-加载数据"><a href="#1-3-加载数据" class="headerlink" title="1.3 加载数据"></a>1.3 加载数据</h5><p>load data local inpath ‘/home/hadoop/data/dept_20300901.txt’ overwrite into table dept_partition partition (day=20300901);</p>
+<p>hive (hive)&gt; select * from dept_partition;<br>OK<br>dept_partition.deptno   dept_partition.dname    dept_partition.loc      dept_partition.day<br>10      ACCOUNTING      NEW YORK        20300901<br>20      RESEARCH        DALLAS  20300901<br>30      SALES   CHICAGO 20300901<br>40      OPERATIONS      BOSTON  20300901<br>Time taken: 0.17 seconds, Fetched: 4 row(s)</p>
+<p><strong>20300901这一列的数据是不存在HDFS上的</strong></p>
+<p>分区表查询一般都要加分区字段:</p>
+<p>select * from dept_partition where day = ‘20300901’;</p>
+<p>分区表的分区元数据信息维护在partitions表中:</p>
+<p>tbls表信息:</p>
+<p><img src="https://i.loli.net/2020/12/14/q7eRKVshm16StPE.png"></p>
+<p>partitions表信息:</p>
+<p><img src="https://i.loli.net/2020/12/14/YSHcVox27wjsMrB.png"></p>
+<h5 id="1-4-也可以先创建hdfs路径-再数据put到指定目录下"><a href="#1-4-也可以先创建hdfs路径-再数据put到指定目录下" class="headerlink" title="1.4 也可以先创建hdfs路径,再数据put到指定目录下"></a>1.4 也可以先创建hdfs路径,再数据put到指定目录下</h5><p>hdfs dfs -mkdir -p /user/hive/warehouse/hive.db/dept_partition/day=20300904</p>
+<p>hdfs dfs -cp /user/hive/warehouse/hive.db/dept_partition/day=20300903/* /user/hive/warehouse/hive.db/dept_partition/day=20300904/</p>
+<p>但是这种操作插入数据需要刷新元数据.</p>
+<p>语法:</p>
+<pre><code>MSCK [REPAIR] TABLE table_name [ADD/DROP/SYNC PARTITIONS];</code></pre>
+<p>msck repair table dept_partition;</p>
+<p>这种操作会非常消耗资源,一般不建议用,可以使用下面的方式去修改分区信息:</p>
+<pre><code>ALTER TABLE table_name ADD [IF NOT EXISTS] PARTITION partition_spec [LOCATION &#39;location&#39;][, PARTITION partition_spec [LOCATION &#39;location&#39;], ...];</code></pre>
+<h5 id="1-5-删除分区"><a href="#1-5-删除分区" class="headerlink" title="1.5 删除分区"></a>1.5 删除分区</h5><pre><code>ALTER TABLE table_name DROP [IF EXISTS] PARTITION partition_spec[, PARTITION partition_spec, ...]
+  [IGNORE PROTECTION] [PURGE];            -- (Note: PURGE available in Hive 1.2.0 and later, IGNORE PROTECTION not available 2.0.0 and later)</code></pre>
+<p>alter table dept_partition drop partition (day=’20300904’);</p>
+<h5 id="1-6-查看分区信息"><a href="#1-6-查看分区信息" class="headerlink" title="1.6 查看分区信息:"></a>1.6 查看分区信息:</h5><p>show partitions dept_partition;</p>
+<p>insert在分区别里也可以使用</p>
+<p>语法:</p>
+<p>insert overwrite table dept_partiton partition(day = ‘20300904’);</p>
+<h5 id="1-7-多级分区"><a href="#1-7-多级分区" class="headerlink" title="1.7 多级分区"></a>1.7 多级分区</h5><p>在数据量特别大的时候坑需要多级分区,在分区关键字后面再加其他字段即可</p>
+<p>如:partitioned by (day string,hour string)</p>
+<h5 id="1-8-静态分区vs动态分区"><a href="#1-8-静态分区vs动态分区" class="headerlink" title="1.8 静态分区vs动态分区"></a>1.8 静态分区vs动态分区</h5><p>上述都是静态分区</p>
+<p>动态分区:</p>
+<p>案例:将emp表中的数据按照deptno将数据插入到emp对应的分区表中</p>
+<p>create table emp_partition(<br>  <code>empno</code> int,<br>  <code>ename</code> string,<br>  <code>job</code> string,<br>  <code>mgr</code> int,<br>  <code>hiredate</code> string,<br>  <code>sal</code> double,<br>  <code>comm</code> double)<br>partitioned by(deptno int)<br>ROW FORMAT DELIMITED FIELDS TERMINATED BY ‘\t’;</p>
+<p>插入数据:</p>
+<p>insert into table emp_partition partition(deptno=30)<br>select empno,ename,job,mgr,hiredate,sal,comm from emp where deptno=30;</p>
+<p>如果部门很多很多时,这样执行肯定是有问题的,所以就引进了动态分区.</p>
+<p>create table emp_dynamic_partition(<br>  <code>empno</code> int,<br>  <code>ename</code> string,<br>  <code>job</code> string,<br>  <code>mgr</code> int,<br>  <code>hiredate</code> string,<br>  <code>sal</code> double,<br>  <code>comm</code> double)<br>partitioned by(deptno int)<br>ROW FORMAT DELIMITED FIELDS TERMINATED BY ‘\t’;</p>
+<p>插入数据:</p>
+<p>insert into table emp_dynamic_partition partition(deptno) select empno,ename,job,mgr,hiredate,sal,comm, deptno from emp;</p>
+<p>但是执行时报错:</p>
+<p>FAILED: SemanticException [Error 10096]: Dynamic partition strict mode requires at least one static partition column. To turn this off set hive.exec.dynamic.partition.mode=nonstrict</p>
+<p>只需执行set hive.exec.dynamic.partition.mode=nonstrict;再执行加载操作即可</p>
+<p>hive (hive)&gt; show partitions emp_dynamic_partition<br>           &gt; ;<br>OK<br>partition<br>deptno=10<br>deptno=20<br>deptno=30<br>deptno=__HIVE_DEFAULT_PARTITION__</p>
+<h4 id="2-Hive中的函数"><a href="#2-Hive中的函数" class="headerlink" title="2.Hive中的函数"></a>2.Hive中的函数</h4><p>内置函数</p>
+<p>UDF函数</p>
+<h5 id="2-1-查看内置函数"><a href="#2-1-查看内置函数" class="headerlink" title="2.1 查看内置函数:"></a>2.1 查看内置函数:</h5><p>show functions;</p>
+<h5 id="2-2查看函数使用方法"><a href="#2-2查看函数使用方法" class="headerlink" title="2.2查看函数使用方法:"></a>2.2查看函数使用方法:</h5><p>desc function extended xxx;</p>
+<h5 id="2-3-常用内置函数"><a href="#2-3-常用内置函数" class="headerlink" title="2.3 常用内置函数"></a>2.3 常用内置函数</h5><h6 id="日期相关"><a href="#日期相关" class="headerlink" title="日期相关"></a>日期相关</h6><p><strong>current_date</strong></p>
+<p>2018-12-14</p>
+<p><strong>current_timestamp</strong></p>
+<p>2018-12-14 22:26:06.679</p>
+<p><strong>unix_timestamp</strong></p>
+<p>select unix_timestamp(“2018-12-14 22:26:06.679”);</p>
+<p>1544797566</p>
+<p>非标准格式可以转化:</p>
+<p>select unix_timestamp(“20181214 222606”,”yyyyMMdd HHmmss”);</p>
+<p>1544797566</p>
+<p><strong>from_unixtime(时间戳转time)</strong></p>
+<p>select from_unixtime(1544797566);</p>
+<p>2018-12-14 22:26:06</p>
+<p><strong>to_date(转化成日期格式)</strong></p>
+<p><strong>year</strong></p>
+<p><strong>day</strong></p>
+<p><strong>hour</strong></p>
+<p><strong>minuite</strong></p>
+<p><strong>second</strong></p>
+<pre><code>hive (hive)&gt; select year(&quot;2018-12-14 22:26:06&quot;);
+OK
+_c0
+2018
+Time taken: 0.035 seconds, Fetched: 1 row(s)
+hive (hive)&gt; select month(&quot;2018-12-14 22:26:06&quot;);
+OK
+_c0
+12
+Time taken: 0.025 seconds, Fetched: 1 row(s)
+hive (hive)&gt; select day(&quot;2018-12-14 22:26:06&quot;);
+OK
+_c0
+14
+Time taken: 0.024 seconds, Fetched: 1 row(s)
+hive (hive)&gt; select hour(&quot;2018-12-14 22:26:06&quot;);
+OK
+_c0
+22
+Time taken: 0.025 seconds, Fetched: 1 row(s)
+hive (hive)&gt; select minute(&quot;2018-12-14 22:26:06&quot;);
+OK
+_c0
+26
+Time taken: 0.03 seconds, Fetched: 1 row(s)
+hive (hive)&gt; select second(&quot;2018-12-14 22:26:06&quot;);
+OK
+_c0
+6
+Time taken: 0.023 seconds, Fetched: 1 row(s)</code></pre>
+<p><strong>weekofyear(一年的第几周)</strong></p>
+<p><strong>dayofmonth</strong></p>
+<p><strong>month_between(两个时间相差几个月)</strong></p>
+<p><strong>add_month(加…月)</strong></p>
+<p><strong>datediff(两个时间相差多少天)</strong></p>
+<p><strong>date_add(加..天)</strong></p>
+<p><strong>date_sub(减..天)</strong></p>
+<p><strong>last_day(本月的最后一天)</strong></p>
+<h6 id="算术相关"><a href="#算术相关" class="headerlink" title="算术相关:"></a>算术相关:</h6><p><strong>round(四舍五入)</strong></p>
+<p><strong>ceil(向上取整)</strong></p>
+<p><strong>floor(向下取整)</strong></p>
+<h6 id="字符串相关"><a href="#字符串相关" class="headerlink" title="字符串相关"></a>字符串相关</h6><p><strong>upper</strong></p>
+<p><strong>lower</strong></p>
+<p><strong>length(求字符串长度)</strong></p>
+<p><strong>trim(去空格)</strong></p>
+<p><strong>lpad(指定长度向左用指定字符补齐)</strong></p>
+<p><strong>rpad</strong></p>
+<p><strong>regexp_replace(用指定字符串替换字符串)</strong></p>
+<p>select regexp_replace(“2030/09/01”,”/“,”-“);</p>
+<p><strong>substr(从某个位置开始截取几位)</strong></p>
+<p><strong>concat(拼接)</strong></p>
+<p><strong>concat_ws(用第一个参数拼接后面的字符串)</strong></p>
+<p>select concat_ws(“.”,”192”,”168”,”1”,”1”);</p>
+<p><strong>split(根据指定字符拆分)</strong></p>
+<p>select split(“192.168.1.1”,”\.”);(需要转义特定字符)</p>
+<p><strong>json_tuple(拆分json字符串)</strong></p>
+<p><strong>parse_url_tuple</strong></p>
+<p><a target="_blank" rel="noopener" href="http://www.google.com/test/film?param1=value1&amp;param2=value2">http://www.google.com/test/film?param1=value1&amp;param2=value2</a></p>
+<p>http/https: 协议<br><a target="_blank" rel="noopener" href="http://www.google.com/">www.google.com</a>: domain<br>test/film: path<br>param1=value1&amp;param2=value2: param</p>
+<h4 id="3-案例"><a href="#3-案例" class="headerlink" title="3.案例:"></a>3.案例:</h4><p><strong>案例一</strong>:</p>
+<p>有一张部门表,求出每个部门的男女人数</p>
+<p>create table emp_info(<br>id string,<br>name string,<br>dept string,<br>sex string<br>)ROW FORMAT DELIMITED FIELDS TERMINATED BY ‘,’;</p>
+<p>数据:</p>
+<p>1,ZHANGSAN,RD,1<br>2,LISI,RD,1<br>3,XIAOHEI,RD,2<br>4,XIAOBAI,QA,1<br>5,ERGOU,QA,2<br>6,DAZHUANG,QA,2</p>
+<p>方法一:</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
+dept<span class="token punctuation">,</span>
+<span class="token function">sum</span><span class="token punctuation">(</span><span class="token keyword">case</span> <span class="token keyword">when</span> dept<span class="token operator">=</span><span class="token string">"1"</span> <span class="token keyword">then</span> <span class="token number">1</span> <span class="token keyword">else</span> <span class="token number">0</span> <span class="token keyword">end</span><span class="token punctuation">)</span> <span class="token keyword">as</span> m_cnt<span class="token punctuation">,</span>
+<span class="token function">sum</span><span class="token punctuation">(</span><span class="token keyword">case</span> <span class="token keyword">when</span> dept<span class="token operator">=</span><span class="token string">"2"</span> <span class="token keyword">then</span> <span class="token number">1</span> <span class="token keyword">else</span> <span class="token number">0</span> <span class="token keyword">end</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f_cnt
+<span class="token keyword">from</span> emp_info
+<span class="token keyword">group</span> <span class="token keyword">by</span> dept<span class="token punctuation">;</span></code></pre>
+<p>方法二:</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
+dept<span class="token punctuation">,</span>
+<span class="token function">sum</span><span class="token punctuation">(</span><span class="token keyword">if</span><span class="token punctuation">(</span>dept<span class="token operator">=</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">as</span> m_cnt<span class="token punctuation">,</span>
+<span class="token function">sum</span><span class="token punctuation">(</span><span class="token keyword">if</span><span class="token punctuation">(</span>dept<span class="token operator">=</span><span class="token string">"2"</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f_cnt
+<span class="token keyword">from</span> emp_info
+<span class="token keyword">group</span> <span class="token keyword">by</span> dept<span class="token punctuation">;</span></code></pre>
+<p><strong>案例二(行转列)</strong>:</p>
+<p>相同部门、性别的人合在一起两列展示部门性别和姓名：</p>
+<p>RD,1 PK|RUOZE<br>RD,2 XIAOHONG<br>QA,1 XIAOZHANG<br>QA,2 XIAOLI|XIAOFANG</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
+dept_sex<span class="token punctuation">,</span>
+concat_ws<span class="token punctuation">(</span><span class="token string">'|'</span><span class="token punctuation">,</span>collect_set<span class="token punctuation">(</span>t<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">from</span>
+<span class="token punctuation">(</span>
+<span class="token keyword">select</span> 
+name<span class="token punctuation">,</span>
+concat_ws<span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">,</span>dept<span class="token punctuation">,</span>sex<span class="token punctuation">)</span> dept_sex
+<span class="token keyword">from</span> 
+emp_info<span class="token punctuation">)</span> t
+<span class="token keyword">group</span> <span class="token keyword">by</span> dept_sex<span class="token punctuation">;</span></code></pre>
+<p><strong>案例三(列转行)</strong>:</p>
+<p>数据:</p>
+<p>PK MapReduce<br>PK Hive<br>PK Spark<br>PK Flink<br>J Hadoop<br>J HBase<br>J Kafka</p>
+<p>最终转化为:</p>
+<p>PK      MapReduce,Hive,Spark,Flink<br>J       Hadoop,HBase,Kafka</p>
+<p>建表:</p>
+<p>create table column2row(name string, courses string)<br>row format delimited fields terminated by ‘\t’;</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span>
+name<span class="token punctuation">,</span>
+course
+<span class="token keyword">from</span>
+column2row
+lateral <span class="token keyword">view</span> explode<span class="token punctuation">(</span>split<span class="token punctuation">(</span>courses<span class="token punctuation">,</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">)</span> course_tmp <span class="token keyword">as</span> course<span class="token punctuation">;</span></code></pre>
+<p><strong>案例四</strong></p>
+<p>按月统计每个网站的点击次数:</p>
+<p>create table user_click (</p>
+<p>domain string,</p>
+<p>time string,</p>
+<p>traffic int)ROW FORMAT DELIMITED FIELDS TERMINATED BY ‘,’;</p>
+<p>数据:</p>
+<p>gifshow.com,2019/01/01,5<br>yy.com,2019/01/01,4<br>huya.com,2019/01/01,1<br>gifshow.com,2019/01/20,6<br>gifshow.com,2019/02/01,8<br>yy.com,2019/01/20,5<br>gifshow.com,2019/02/02,7</p>
+<p>最终展示为:</p>
+<p>域名               月份    小计   累计<br>gifshow.com     2019-01  11    11<br>gifshow.com     2019-02  15    26<br>yy.com          2019-01  9     9<br>huya.com        2019-01  1     1</p>
+<p>1.先求出每个月的小计</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">table</span> t_user_click <span class="token keyword">as</span> 
+<span class="token keyword">select</span>
+domain<span class="token punctuation">,</span>
+month<span class="token punctuation">,</span>
+<span class="token function">sum</span><span class="token punctuation">(</span>traffic<span class="token punctuation">)</span> sum
+<span class="token keyword">from</span> 
+<span class="token punctuation">(</span><span class="token keyword">select</span>
+domain<span class="token punctuation">,</span>
+substr<span class="token punctuation">(</span>regexp_replace<span class="token punctuation">(</span>time<span class="token punctuation">,</span><span class="token string">"/"</span><span class="token punctuation">,</span><span class="token string">"-"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">)</span> month<span class="token punctuation">,</span>
+traffic
+<span class="token keyword">from</span>
+user_click<span class="token punctuation">)</span> <span class="token number">c</span> 
+<span class="token keyword">group</span> <span class="token keyword">by</span> <span class="token number">c</span><span class="token punctuation">.</span>domain<span class="token punctuation">,</span><span class="token number">c</span><span class="token punctuation">.</span>month<span class="token punctuation">;</span></code></pre>
+<p>2.求出当前月的累计数量</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span>
+t<span class="token punctuation">.</span>domain<span class="token punctuation">,</span>
+t<span class="token punctuation">.</span>month<span class="token punctuation">,</span>
+sum<span class="token punctuation">,</span>
+<span class="token function">sum</span><span class="token punctuation">(</span>u<span class="token punctuation">.</span>sum<span class="token punctuation">)</span>
+<span class="token keyword">from</span> t_user_click t
+<span class="token keyword">inner</span> <span class="token keyword">join</span> t_user_click u
+<span class="token keyword">on</span> t<span class="token punctuation">.</span>domain<span class="token operator">=</span>u<span class="token punctuation">.</span>domain
+<span class="token keyword">where</span> t<span class="token punctuation">.</span>month<span class="token operator">>=</span>u<span class="token punctuation">.</span>month
+<span class="token keyword">group</span> <span class="token keyword">by</span> t<span class="token punctuation">.</span>domain<span class="token punctuation">,</span>t<span class="token punctuation">.</span>month<span class="token punctuation">,</span>t<span class="token punctuation">.</span>sum<span class="token punctuation">;</span></code></pre>
+<p><strong>案例五</strong>:</p>
+<p>请用Hive完成wc统计<br>hello,hello,hello<br>world,world<br>welcome</p>
+<p>建表:</p>
+<p>create table hive_wc(sentence string);</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span>
+word<span class="token punctuation">,</span>
+<span class="token function">count</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> cnt
+<span class="token keyword">from</span>
+<span class="token punctuation">(</span><span class="token keyword">select</span> 
+explode<span class="token punctuation">(</span>split<span class="token punctuation">(</span>sentence<span class="token punctuation">,</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">as</span> word
+<span class="token keyword">from</span> hive_wc<span class="token punctuation">)</span> t
+<span class="token keyword">group</span> <span class="token keyword">by</span> word<span class="token punctuation">;</span></code></pre>
 
       </div>
       
@@ -451,7 +587,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2018/12/02/2020-12-02-quannnxu-hadoop6/" target="_blank" title="hadoop06之Yarn参数调优">http://www.quanxu.com/2018/12/02/2020-12-02-quannnxu-hadoop6/</a>
+    <a href="/2018/12/10/2020-12-12-quannnxu-hive4/" target="_blank" title="Hive基础之Hive分区和常用函数">http://www.quanxu.com/2018/12/10/2020-12-12-quannnxu-hive4/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -467,17 +603,17 @@
       <div class="post-nav">
 
   <div class="post-nav-prev post-nav-item">
-    <a href="/2018/12/05/2020-12-05-quannnxu-hive1/">
-      上一篇:    Hive基础之Hive简介及搭建
+    <a href="/2018/12/10/2020-12-07-quannnxu-hive3/">
+      上一篇:    Hive基础之Hive DML语法
     </a>
   </div>
 
 
 
   <div class="post-nav-next post-nav-item">
-    <a href="/2018/11/30/2020-11-30-quannnxu-zao-ke/">
+    <a href="/2018/12/08/2020-12-06-quannnxu-hive2/">
       <span>
-        下一篇:    Hadoop练习题01 
+        下一篇:    Hive基础之Hive参数配置及语法 
       </span>
     </a>
   </div>

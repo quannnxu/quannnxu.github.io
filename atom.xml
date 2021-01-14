@@ -6,7 +6,7 @@
   <link href="http://www.quanxu.com/atom.xml" rel="self"/>
   
   <link href="http://www.quanxu.com/"/>
-  <updated>2020-12-08T15:03:53.553Z</updated>
+  <updated>2020-12-23T13:14:32.188Z</updated>
   <id>http://www.quanxu.com/</id>
   
   <author>
@@ -17,11 +17,182 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>数仓知识</title>
+    <link href="http://www.quanxu.com/2018/12/23/2020-12-18-quannnxu-xiang-mu-4/"/>
+    <id>http://www.quanxu.com/2018/12/23/2020-12-18-quannnxu-xiang-mu-4/</id>
+    <published>2018-12-23T15:34:14.000Z</published>
+    <updated>2020-12-23T13:14:32.188Z</updated>
+    
+    
+    
+    
+    <category term="数仓" scheme="http://www.quanxu.com/categories/%E6%95%B0%E4%BB%93/"/>
+    
+    
+    <category term="数仓" scheme="http://www.quanxu.com/tags/%E6%95%B0%E4%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数仓知识</title>
+    <link href="http://www.quanxu.com/2018/12/16/2020-12-16-quannnxu-xiang-mu-1/"/>
+    <id>http://www.quanxu.com/2018/12/16/2020-12-16-quannnxu-xiang-mu-1/</id>
+    <published>2018-12-16T14:58:14.000Z</published>
+    <updated>2020-12-22T13:27:02.963Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;一-ERP介绍&quot;&gt;&lt;a href=&quot;#一-ERP介绍&quot; class=&quot;headerlink&quot; title=&quot;一.ERP介绍&quot;&gt;&lt;/a&gt;一.ERP介绍&lt;/h3&gt;&lt;p&gt;可以理解为一个复杂的丰富的进销存管理系统&lt;/p&gt;
+&lt;h4</summary>
+        
+      
+    
+    
+    
+    <category term="数仓" scheme="http://www.quanxu.com/categories/%E6%95%B0%E4%BB%93/"/>
+    
+    
+    <category term="数仓" scheme="http://www.quanxu.com/tags/%E6%95%B0%E4%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数仓知识之数仓分层建模</title>
+    <link href="http://www.quanxu.com/2018/12/16/2020-12-17-quannnxu-xiang-mu-2/"/>
+    <id>http://www.quanxu.com/2018/12/16/2020-12-17-quannnxu-xiang-mu-2/</id>
+    <published>2018-12-16T14:58:14.000Z</published>
+    <updated>2020-12-22T15:34:17.146Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;1-离线分层&quot;&gt;&lt;a href=&quot;#1-离线分层&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数仓" scheme="http://www.quanxu.com/categories/%E6%95%B0%E4%BB%93/"/>
+    
+    
+    <category term="数仓" scheme="http://www.quanxu.com/tags/%E6%95%B0%E4%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数仓知识</title>
+    <link href="http://www.quanxu.com/2018/12/16/2020-12-18-quannnxu-xiang-mu-3/"/>
+    <id>http://www.quanxu.com/2018/12/16/2020-12-18-quannnxu-xiang-mu-3/</id>
+    <published>2018-12-16T14:58:14.000Z</published>
+    <updated>2020-12-20T16:06:54.354Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.表设计&lt;/p&gt;
+&lt;p&gt;1.1 主键字段&lt;/p&gt;
+&lt;p&gt;1.2 更新时间字段&lt;/p&gt;
+&lt;p&gt;1.3</summary>
+        
+      
+    
+    
+    
+    <category term="数仓" scheme="http://www.quanxu.com/categories/%E6%95%B0%E4%BB%93/"/>
+    
+    
+    <category term="数仓" scheme="http://www.quanxu.com/tags/%E6%95%B0%E4%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hive基础之数据导出Sqoop</title>
+    <link href="http://www.quanxu.com/2018/12/13/2020-12-13-quannnxu-hive5/"/>
+    <id>http://www.quanxu.com/2018/12/13/2020-12-13-quannnxu-hive5/</id>
+    <published>2018-12-13T15:22:18.000Z</published>
+    <updated>2020-12-21T15:03:35.259Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;Sqoop&quot;&gt;&lt;a href=&quot;#Sqoop&quot; class=&quot;headerlink&quot; title=&quot;Sqoop&quot;&gt;&lt;/a&gt;&lt;strong&gt;Sqoop&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;RDBMS    ==&amp;gt;   </summary>
+        
+      
+    
+    
+    
+    <category term="Sqoop" scheme="http://www.quanxu.com/categories/Sqoop/"/>
+    
+    
+    <category term="Sqoop" scheme="http://www.quanxu.com/tags/Sqoop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hive基础之Hive DML语法</title>
+    <link href="http://www.quanxu.com/2018/12/10/2020-12-07-quannnxu-hive3/"/>
+    <id>http://www.quanxu.com/2018/12/10/2020-12-07-quannnxu-hive3/</id>
+    <published>2018-12-10T15:09:22.000Z</published>
+    <updated>2020-12-11T14:22:53.804Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Hive" scheme="http://www.quanxu.com/categories/Hive/"/>
+    
+    
+    <category term="Hive" scheme="http://www.quanxu.com/tags/Hive/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hive基础之Hive分区和常用函数</title>
+    <link href="http://www.quanxu.com/2018/12/10/2020-12-12-quannnxu-hive4/"/>
+    <id>http://www.quanxu.com/2018/12/10/2020-12-12-quannnxu-hive4/</id>
+    <published>2018-12-10T15:09:22.000Z</published>
+    <updated>2020-12-15T14:04:48.749Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;1-PARTITIONED-BY&quot;&gt;&lt;a href=&quot;#1-PARTITIONED-BY&quot; class=&quot;headerlink&quot; title=&quot;1.PARTITIONED BY&quot;&gt;&lt;/a&gt;1.PARTITIONED BY&lt;/h4&gt;&lt;h5</summary>
+        
+      
+    
+    
+    
+    <category term="Hive" scheme="http://www.quanxu.com/categories/Hive/"/>
+    
+    
+    <category term="Hive" scheme="http://www.quanxu.com/tags/Hive/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hive基础之Hive参数配置及语法</title>
     <link href="http://www.quanxu.com/2018/12/08/2020-12-06-quannnxu-hive2/"/>
     <id>http://www.quanxu.com/2018/12/08/2020-12-06-quannnxu-hive2/</id>
     <published>2018-12-08T14:13:28.000Z</published>
-    <updated>2020-12-08T15:03:53.553Z</updated>
+    <updated>2021-01-14T13:43:31.348Z</updated>
     
     
       
@@ -34,10 +205,10 @@
     
     
     
-    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
+    <category term="Hive" scheme="http://www.quanxu.com/categories/Hive/"/>
     
     
-    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
+    <category term="Hive" scheme="http://www.quanxu.com/tags/Hive/"/>
     
   </entry>
   
@@ -46,7 +217,7 @@
     <link href="http://www.quanxu.com/2018/12/05/2020-12-05-quannnxu-hive1/"/>
     <id>http://www.quanxu.com/2018/12/05/2020-12-05-quannnxu-hive1/</id>
     <published>2018-12-05T12:08:23.000Z</published>
-    <updated>2020-12-07T16:07:10.831Z</updated>
+    <updated>2021-01-14T13:43:48.947Z</updated>
     
     
       
@@ -59,19 +230,19 @@
     
     
     
-    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
+    <category term="Hive" scheme="http://www.quanxu.com/categories/Hive/"/>
     
     
-    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
+    <category term="Hive" scheme="http://www.quanxu.com/tags/Hive/"/>
     
   </entry>
   
   <entry>
-    <title>hadoop05之MapReduce/yarn架构</title>
+    <title>hadoop06之Yarn参数调优</title>
     <link href="http://www.quanxu.com/2018/12/02/2020-12-02-quannnxu-hadoop6/"/>
     <id>http://www.quanxu.com/2018/12/02/2020-12-02-quannnxu-hadoop6/</id>
     <published>2018-12-02T14:18:44.000Z</published>
-    <updated>2020-12-05T07:04:12.646Z</updated>
+    <updated>2021-01-14T13:43:07.675Z</updated>
     
     
       
@@ -344,204 +515,6 @@
     
     
     <category term="mysql练习题" scheme="http://www.quanxu.com/tags/mysql%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>11.26早课</title>
-    <link href="http://www.quanxu.com/2018/10/30/2020-11-26-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2018/10/30/2020-11-26-quannnxu-zao-ke/</id>
-    <published>2018-10-30T12:53:59.000Z</published>
-    <updated>2020-11-29T06:25:24.204Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1.Linux的hosts文件，我们应该注意什么&lt;/p&gt;
-&lt;p&gt;2.Windows系统的hosts会找吗？&lt;/p&gt;
-&lt;p&gt;3.一般shell，代码这些我们与机器通信，是hostname吗？&lt;/p&gt;
-&lt;p&gt;4.后台执行脚本或命令，前后加什么?&lt;/p&gt;
-&lt;p&gt;5.执行xxx.s</summary>
-        
-      
-    
-    
-    
-    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-    
-    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>11.25早课</title>
-    <link href="http://www.quanxu.com/2018/10/29/2020-11-25-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2018/10/29/2020-11-25-quannnxu-zao-ke/</id>
-    <published>2018-10-29T12:37:33.000Z</published>
-    <updated>2020-11-29T06:24:49.413Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1.高危命令有哪些&lt;/p&gt;
-&lt;p&gt;2.带R的命令哪些    &lt;/p&gt;
-&lt;p&gt;3.带r的命令哪些&lt;/p&gt;
-&lt;p&gt;4.块128m,三副本机制，一个文件180m，需要多少块，多少存储空间？&lt;/p&gt;
-&lt;p&gt;5.boss让我打开A服务器的</summary>
-        
-      
-    
-    
-    
-    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-    
-    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>11.24早课</title>
-    <link href="http://www.quanxu.com/2018/10/28/2020-11-24-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2018/10/28/2020-11-24-quannnxu-zao-ke/</id>
-    <published>2018-10-28T11:57:24.000Z</published>
-    <updated>2020-11-29T06:24:07.876Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1.个人环境变量文件，默认在哪里？推荐使用哪个呢？怎样生效？生效完成后，习惯做一件事是执行什么命令？&lt;/p&gt;
-&lt;p&gt;2.历史命令，执行第55行；清空历史命令&lt;/p&gt;
-&lt;p&gt;3.假如su/ssh</summary>
-        
-      
-    
-    
-    
-    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-    
-    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>11.23早课</title>
-    <link href="http://www.quanxu.com/2018/10/26/2020-11-23-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2018/10/26/2020-11-23-quannnxu-zao-ke/</id>
-    <published>2018-10-26T13:18:24.000Z</published>
-    <updated>2020-11-29T06:23:25.663Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1.查看当前目录&lt;/p&gt;
-&lt;p&gt;2.隐藏文件、文件夹以什么开始，怎样查看&lt;/p&gt;
-&lt;p&gt;3.ls -l 等价于什么？&lt;/p&gt;
-&lt;p&gt;4.级联创建文件夹&lt;/p&gt;
-&lt;p&gt;5.创建文件哪几种方式&lt;/p&gt;
-&lt;p&gt;6.cp和mv谁快？ 能不能在cp</summary>
-        
-      
-    
-    
-    
-    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-    
-    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>11.19早课</title>
-    <link href="http://www.quanxu.com/2018/10/25/2020-11-19-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2018/10/25/2020-11-19-quannnxu-zao-ke/</id>
-    <published>2018-10-25T14:15:44.000Z</published>
-    <updated>2020-11-29T06:22:38.618Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1.which  whereis命令区别&lt;/p&gt;
-&lt;p&gt;2.su  sudo命令区别&lt;/p&gt;
-&lt;p&gt;3.全局搜索&lt;/p&gt;
-&lt;p&gt;4.压缩解压 </summary>
-        
-      
-    
-    
-    
-    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-    
-    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>11.18早课</title>
-    <link href="http://www.quanxu.com/2018/10/23/2020-11-18-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2018/10/23/2020-11-18-quannnxu-zao-ke/</id>
-    <published>2018-10-23T12:59:47.000Z</published>
-    <updated>2020-11-29T06:22:10.380Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1.which 命令作用是什么&lt;br&gt;which 　　查看可执行文件的位置。&lt;/p&gt;
-&lt;ol start=&quot;2&quot;&gt;
-&lt;li&gt;whereis  xxx命令&lt;br&gt;whereis</summary>
-        
-      
-    
-    
-    
-    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-    
-    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>11.17早课</title>
-    <link href="http://www.quanxu.com/2018/10/22/2020-11-17-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2018/10/22/2020-11-17-quannnxu-zao-ke/</id>
-    <published>2018-10-22T13:53:21.000Z</published>
-    <updated>2020-11-29T06:21:00.610Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1.查看硬盘命令，一般分为哪两种盘&lt;/p&gt;
-&lt;p&gt;2.查看内存命令，剩余内存怎么看&lt;/p&gt;
-&lt;p&gt;3.使用top命令，可以查看哪些数据&lt;/p&gt;
-&lt;p&gt;4.which </summary>
-        
-      
-    
-    
-    
-    <category term="linux练习题" scheme="http://www.quanxu.com/categories/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-    
-    <category term="linux练习题" scheme="http://www.quanxu.com/tags/linux%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
     
   </entry>
   

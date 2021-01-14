@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>hadoop06之Yarn参数调优 | 欢迎来到我的博客</title>
+  <title>Hive基础之数据导出Sqoop | 欢迎来到我的博客</title>
   
     
 <link rel="stylesheet" href="/js/aos/aos.css">
@@ -312,10 +312,10 @@
       
 
 
-<div class="post-detail-header" style="background: url(/medias/3.png) no-repeat; background-size: cover; 
+<div class="post-detail-header" style="background: url(/medias/4.png) no-repeat; background-size: cover; 
   background-position: center center;">
   
-    <span class="title">hadoop06之Yarn参数调优</span>
+    <span class="title">Hive基础之数据导出Sqoop</span>
   
 </div>
 <div class="row justify-center">
@@ -325,7 +325,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2018-12-02</span>
+        <span class="post-time">2018-12-13</span>
       </div>
       
       <div class="post-tags-categories">
@@ -333,8 +333,8 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/tags/Hadoop/" class="">
-              Hadoop
+            <a href="/tags/Sqoop/" class="">
+              Sqoop
             </a>
           
         </div>
@@ -343,104 +343,143 @@
         <div class="categories">
           <i class="iconfont iconbookmark1"></i>
           
-            <a href="/categories/Hadoop/" class="">
-              Hadoop
+            <a href="/categories/Sqoop/" class="">
+              Sqoop
             </a>
           
         </div>
         
       </div>
       <div class="post-content">
-        <h4 id="1-container容器"><a href="#1-container容器" class="headerlink" title="1.container容器"></a>1.container容器</h4><p>关于yarn的调优,其实就是调整container</p>
-<p>虚拟化    是memory+cpu vcore组成的 是专门运行任务</p>
-<p>生产上应如何调优container参数?</p>
-<p>128G    16物理core</p>
-<h5 id="1-1-系统装完消耗1G"><a href="#1-1-系统装完消耗1G" class="headerlink" title="1.1 系统装完消耗1G"></a>1.1 系统装完消耗1G</h5><h5 id="1-2-系统要预留20-内存"><a href="#1-2-系统要预留20-内存" class="headerlink" title="1.2 系统要预留20%内存"></a>1.2 系统要预留20%内存</h5><p>给当前进程服务,防止出现oom-kill机制</p>
-<p>Linux系统防止夯住</p>
-<p>给未来部署软件预留空间</p>
-<p>128G服务器</p>
-<p>128G*20%=26G </p>
-<p>剩余102G</p>
-<h5 id="1-3-DN-NM节点"><a href="#1-3-DN-NM节点" class="headerlink" title="1.3 DN NM节点"></a>1.3 DN NM节点</h5><p>存储和计算一体,数据本地化,节省网络IO</p>
-<p>DN=2G(受限磁盘IO)</p>
-<p>NM=4G    NM进程本身的内存</p>
-<p>剩余内存96G    是真正container容器总内存,才是真正计算的内存</p>
-<h5 id="1-4-container内存"><a href="#1-4-container内存" class="headerlink" title="1.4 container内存"></a>1.4 container内存</h5><p>yarn.nodemanager.resource.memory-mb        -1</p>
-<p>​    <a target="_blank" rel="noopener" href="http://archive.cloudera.com/cdh5/cdh/5/hadoop-2.6.0-cdh5.16.2/">http://archive.cloudera.com/cdh5/cdh/5/hadoop-2.6.0-cdh5.16.2/</a></p>
-<p>yarn-default.xml</p>
-<p><strong>yarn.nodemanager.resource.memory-mb    96G</strong></p>
-<p><strong>yarn.scheduler.minimum-allocation-mb  1G</strong>    极限情况    96个container容器 内存1G</p>
-<p><strong>yarn.scheduler.maximum-allocation-mb  96G</strong>    极限情况    1个container容器 内存96G</p>
-<p>container容器会不断的字段增加内存1G,cdh有这个参数    默认不动</p>
-<h5 id="1-5-container虚拟core"><a href="#1-5-container虚拟core" class="headerlink" title="1.5 container虚拟core"></a>1.5 container虚拟core</h5><p>这个概念是yarn自己引入的.设计初衷是考虑不同服务器的cpu性能不一样,每个cpu计算能力不一样.</p>
-<p>比如某个物理cpu是另外一个物理cpu的2倍,这时通过设置第一个物理cpu的虚拟core来弥补差异</p>
-<p>但是后来大家都是使用虚拟core，默认值一般都不会去修改，就是2</p>
-<p>yarn.nodemanager.resource.pcores-vcores-multiplier  2 </p>
-<p>生产调整</p>
-<p><strong>yarn.nodemanager.resource.cpu-vcores    32</strong>(16*2,也可以适当预留几个物理core)</p>
-<p><strong>yarn.scheduler.minimum-allocation-vcores  1</strong>    极限情况,是32个</p>
-<p><strong>yarn.scheduler.maximum-allocation-vcores  32</strong>    极限情况,是1个</p>
-<p>补充:</p>
-<table>
-<thead>
-<tr>
-<th>yarn.nodemanager.pmem-check-enabled(检查物理内存)</th>
-<th>true</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>yarn.nodemanager.vmem-check-enabled(检查虚拟内存)</strong></td>
-<td><strong>true</strong></td>
-</tr>
-<tr>
-<td><strong>yarn.nodemanager.vmem-pmem-ratio(物理虚拟内存比例,一般不动)</strong></td>
-<td><strong>2.1</strong></td>
-</tr>
-</tbody></table>
-<h5 id="1-6-生产上如何设置"><a href="#1-6-生产上如何设置" class="headerlink" title="1.6 生产上如何设置"></a>1.6 生产上如何设置</h5><p>突破口yarn.scheduler.maximum-allocation-vcores</p>
-<p>CPU    内存</p>
-<p><strong>yarn.nodemanager.resource.cpu-vcores    32</strong></p>
-<p><strong>yarn.scheduler.minimum-allocation-vcores  1</strong>    </p>
-<p><strong>yarn.scheduler.maximum-allocation-vcores  4</strong>    极限情况下是有8个container</p>
-<p>CDH官方经过大量验证,经验值,container容器最大分配vcore不要超过5,故一般生产设置4</p>
-<p><strong>yarn.nodemanager.resource.memory-mb    96G</strong></p>
-<p><strong>yarn.scheduler.minimum-allocation-mb  1G</strong>    </p>
-<p><strong>yarn.scheduler.maximum-allocation-mb  12G</strong>    极限情况下,是有8个container</p>
-<p>也就是说:1个container12G    </p>
-<p>​                4个vcore    </p>
-<p>​                1个vcore使用3G</p>
-<p>正常来说,生产上yarn.scheduler.maximum-allocation-mb设置8G就OK</p>
-<h5 id="1-7-参数如何配置"><a href="#1-7-参数如何配置" class="headerlink" title="1.7 参数如何配置"></a>1.7 参数如何配置</h5><p>假如该节点还有HBase RS节点=30G内存(关于内存指针压缩技术)</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44641024/article/details/103248842">https://blog.csdn.net/weixin_44641024/article/details/103248842</a></p>
-<p>服务器256G    32个物理core</p>
-<p>如上6个参数如何设计?</p>
-<p>预留256*20%=51    RS=30G</p>
-<p>剩余175G</p>
-<p>DN=3G    NM=6G</p>
-<p>剩余166G</p>
-<p><strong>yarn.nodemanager.resource.cpu-vcores    60</strong></p>
-<p><strong>yarn.scheduler.minimum-allocation-vcores  1</strong>    </p>
-<p><strong>yarn.scheduler.maximum-allocation-vcores  4</strong>    极限情况下是有8个container</p>
-<p><strong>yarn.nodemanager.resource.memory-mb    166G</strong></p>
-<p><strong>yarn.scheduler.minimum-allocation-mb  1G</strong>    </p>
-<p><strong>yarn.scheduler.maximum-allocation-mb  21G</strong></p>
-<p>1个container21G    4个vcore    1个vcore5G</p>
-<h4 id="2-调度器"><a href="#2-调度器" class="headerlink" title="2.调度器"></a>2.调度器</h4><p>理想情况下，我们应用对Yarn资源的请求应该立刻得到满足，但现实情况资源往往是有限的，特别是在一</p>
-<p>个很繁忙的集群，一个应用资源的请求经常需要等待一段时间才能的到相应的资源。在Yarn中，负责给应</p>
-<p>用分配资源的就是Scheduler。其实调度本身就是一个难题，很难找到一个完美的策略可以解决所有的应用</p>
-<p>场景。为此，Yarn提供了多种调度器和可配置的策略供我们选择。</p>
-<h5 id="yarn的三种调度器"><a href="#yarn的三种调度器" class="headerlink" title="yarn的三种调度器:"></a>yarn的三种调度器:</h5><p><strong>FIFO Scheduler</strong>    先进先出调度器</p>
-<p>把应用按提交的顺序排成一个队列，这是一个<strong>先进先出</strong>队列，在进行资源分配的时候，先给队列中最头上的应用进行分配资源，待最头上的应用需求满足后再给下一个分配，以此类推。</p>
-<p><img src="https://i.loli.net/2020/12/05/2yhWg1HrIQTZlPA.png"></p>
-<p><strong>Capacity Scheduler</strong>    计算调度器</p>
-<p>Capacity调度器，有一个专门的队列用来运行小任务，但是为小任务专门设置一个队列会预先占用一定的集群资源，这就导致大任务的执行时间会落后于使用FIFO调度器时的时间。</p>
-<p><img src="https://i.loli.net/2020/12/05/7dhbfQwnW1uAycz.png"></p>
-<p><strong>FairScheduler</strong>    公平调度器 </p>
-<p>在Fair调度器中，我们不需要预先占用一定的系统资源，Fair调度器会为所有运行的job动态的调整系统资源。如下图所示，当第一个大job提交时，只有这一个job在运行，此时它获得了所有集群资源；当第二个小任务提交后，Fair调度器会分配一半资源给这个小任务，让这两个任务公平的共享集群资源。</p>
-<p><img src="https://i.loli.net/2020/12/05/aEeKiY8oxVj3pL6.png"></p>
-<p>当第一个大job提交时，只有这一个job在运行，此时它获得了所有集群资源；</p>
-<p>当第二个小任务提交后，从提交到获得资源会有一定的延迟，<br>因为它需要等待第一个任务释放占用的Container。</p>
-<p>小任务执行完成之后也会释放自己占用的资源，大任务又获得了全部的系统资源。<br>最终的效果就是Fair调度器即得到了高的资源利用率又能保证小任务及时完成。</p>
+        <h4 id="Sqoop"><a href="#Sqoop" class="headerlink" title="Sqoop"></a><strong>Sqoop</strong></h4><p>RDBMS    ==&gt;    Hadoop(HDFS/Hive/HBase…)</p>
+<p>Hadoop(HDFS/Hive/HBase…)    ==&gt;    RDBMS</p>
+<p>以Hadoop作为参照物,如果数据是进Hadoop的,那就是导入,反之就是导出</p>
+<p>import导入</p>
+<p>export导出</p>
+<p>1.4.7 版本  Sqoop1<br>1.99.7 版本 Sqoop2</p>
+<p><strong>配置Sqoop:</strong></p>
+<p>$SQOOP_HOME/conf/sqoop-env.sh<br>export HADOOP_COMMON_HOME=/home/hadoop/app/hadoop-2.6.0-cdh5.16.2<br>export HADOOP_MAPRED_HOME=/home/hadoop/app/hadoop-2.6.0-cdh5.16.2<br>export HIVE_HOME=/home/hadoop/app/hive-1.1.0-cdh5.16.2</p>
+<p>拷贝MySQL驱动包到$SQOOP_HOME/lib/目录下</p>
+<p><strong>系统环境变量:</strong><br>export SQOOP_HOME=/home/hadoop/app/sqoop-1.4.6-cdh5.16.2<br>export PATH=$SQOOP_HOME/bin:$PATH<br>export SQOOP_HOME=/home/hadoop/app/sqoop-1.4.6-cdh5.16.2<br>export PATH=$SQOOP_HOME/bin:$PATH</p>
+<p>[hadoop@warehouse001 bin]$ sqoop help</p>
+<p>Available commands:<br>  codegen            Generate code to interact with database records<br>  create-hive-table  Import a table definition into Hive<br>  <strong>eval</strong>               Evaluate a SQL statement and display the results<br>  <strong>export             Export an HDFS directory to a database table</strong><br>  help               List available commands<br>  <strong>import             Import a table from a database to HDFS</strong><br>  import-all-tables  Import tables from a database to HDFS<br>  import-mainframe   Import datasets from a mainframe server to HDFS<br>  <strong>job</strong>                Work with saved jobs<br>  <strong>list-databases     List available databases on a server</strong><br>  <strong>list-tables        List available tables in a database</strong><br>  merge              Merge results of incremental imports<br>  metastore          Run a standalone Sqoop metastore<br>  version            Display version information</p>
+<p>查看mysql数据库</p>
+<pre><code>sqoop list-databases \
+--connect jdbc:mysql://localhost:3306 \
+--username root \
+--password &#39;xxxxx&#39;</code></pre>
+<p>查看表:</p>
+<pre><code>sqoop list-tables \
+--connect jdbc:mysql://localhost:3306/hive_metadata \
+--username root \
+--password &#39;xxxxx&#39;</code></pre>
+<p>sqoop import <br>–connect jdbc:mysql://localhost:3306/hive_metadata \    jdbc的URL<br>–username root \        –用户<br>–password ‘xxxxx’ <br>–delete-target-dir \        –删除目标文件夹<br>–columns “EMPNO,ENAME,JOB,SAL,COMM” \        –指定字段<br>–mapreduce-job-name EmpFromMySQL2HDFS \    –修改mapreduce任务名称<br>–table emp <br>–null-string ‘’ \        –指定字符串替换null<br>–null-non-string 0 \        –指定字符替换非string类型字段<br>–fields-terminated-by ‘\t’ \    –指定分隔符<br>–where ‘SAL&gt;2000’ <br>–target-dir EMP_COLUMN</p>
+<p>-e   “sql语句” 指定导出条件</p>
+<p>-e和–table不能同时使用</p>
+<p>-e sql语句后需要加$CONDITIONS</p>
+<p>如果是””加sql语句则需要转义\$CONDITIONS”</p>
+<p>导出没有主键的表,则需要设置参数–split-by 字段或者-m 1</p>
+<p>原因sqoop默认开启的是4个map,默认是按主键切分任务的</p>
+<p>–options-file 文件</p>
+<p>文件格式:</p>
+<p>import<br>–connect<br>jdbc:mysql://localhost:3306/mydatabase<br>–username<br>root<br>–password<br>‘xxxx’<br>–delete-target-dir<br>–columns<br>“EMPNO,ENAME,JOB,SAL,COMM”<br>–mapreduce-job-name<br>EmpFromMySQL2HDFS<br>–table<br>emp<br>–target-dir<br>EMP_COLUMN</p>
+<p><strong>sqoop job –create封装到job中</strong></p>
+<p>sqoop job –create my_job  <br>–import –connect jdbc:mysql://localhost:3306/mydatabase <br>–username root <br>–password ‘xxxx’ <br>–delete-target-dir <br>–table product_info <br>–split-by product_id</p>
+<p>查看job</p>
+<p>sqoop job -list </p>
+<p>执行job</p>
+<p>sqoop job -exec ruozedata_job</p>
+<p>删除job</p>
+<p>sqoop job -delete ruozedata_job</p>
+<p><strong>RDBMS导入到Hive中:</strong></p>
+<p>sqoop import <br>–connect jdbc:mysql://localhost:3306/mydatabase <br>–username root <br>–password ‘xxxxx’ <br>–delete-target-dir <br>–hive-database hive<br>–hive-import <br>–hive-overwrite <br>–hive-table emp_column <br>–columns “EMPNO,ENAME,JOB,SAL,COMM” <br>–mapreduce-job-name EmpFromMySQL2Hive <br>–table emp <br>–null-string ‘’ <br>–null-non-string 0 <br>–fields-terminated-by ‘\t’ </p>
+<p>需提前创建好表结构</p>
+<p>分区表需要加:</p>
+<p>–hive-partition-key ‘day’ \            分区字段<br>–hive-partition-value ‘yyyyMMdd’ \        分区字段值</p>
+<p>导出数据</p>
+<p>sqoop export <br>–connect jdbc:mysql://localhost:3306/product <br>–username root <br>–password ‘xxxxx’ <br>–table city_info <br>–fields-terminated-by ‘\t’ <br>–export-dir /user/hadoop/emp            –导出文件的路径</p>
+<p><strong>案例:</strong></p>
+<p>city_info.sql  product_info.sql  user_click.txt</p>
+<p>城市表：MySQL<br>商品表：MySQL<br>用户行为日志：Hive</p>
+<p>create table user_click(<br>user_id string,<br>session_id string,<br>time string,<br>city_id int,<br>product_id int<br>) partitioned by(day string)<br>row format delimited fields terminated by ‘,’;    </p>
+<p>按照区域求最受欢迎商品的TopN</p>
+<p>1.首先使用sqoop导出数据到Hive中</p>
+<pre><code>sqoop import \
+--connect jdbc:mysql://localhost:3306/product  \
+--username root --password &#39;xxxxx&#39; \
+--table city_info \
+--delete-target-dir \
+--hive-import  --hive-database product --hive-table city_info --hive-overwrite  \
+--fields-terminated-by &#39;\t&#39; \
+--split-by city_id \
+-m 2 \
+--verbose</code></pre>
+<pre><code>sqoop import --connect jdbc:mysql://localhost:3306/product \
+--username root --password &#39;xxxxx&#39; \
+--table product_info \
+--delete-target-dir \
+--hive-import --hive-database product --hive-table product_info --hive-overwrite \
+--fields-terminated-by &#39;\t&#39; \
+--split-by product_id \
+-m 2</code></pre>
+<p>city_info.city_id       city_info.city_name     city_info.area<br>1       BEIJING NC<br>2       SHANGHAI        EC<br>3       NANJING EC</p>
+<p>product_info.product_id product_info.product_name       product_info.extend_info<br>1       product1        {“product_status”:1}<br>2       product2        {“product_status”:1}<br>3       product3        {“product_status”:1}</p>
+<p>user_click.user_id      user_click.session_id   user_click.time user_click.city_id      user_click.product_id    user_click.day<br>95      2bf501a7637549c89cf55342331b15db        2016-05-05 21:01:56     1       72      2016-05-05<br>95      2bf501a7637549c89cf55342331b15db        2016-05-05 21:52:26     1       68      2016-05-05<br>95      2bf501a7637549c89cf55342331b15db        2016-05-05 21:17:03     1       40      2016-05-05</p>
+<p>作业:分组TopN的结果export到mysql</p>
+<p>一.获取商品信息及城市区域信息</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">drop</span> <span class="token keyword">table</span> tmp_product_basic_info<span class="token punctuation">;</span>
+<span class="token keyword">create</span> <span class="token keyword">table</span> tmp_product_basic_info <span class="token keyword">as</span>
+<span class="token keyword">select</span>
+u<span class="token punctuation">.</span>product_id<span class="token punctuation">,</span>u<span class="token punctuation">.</span>city_id<span class="token punctuation">,</span><span class="token number">c</span><span class="token punctuation">.</span>city_name<span class="token punctuation">,</span><span class="token number">c</span><span class="token punctuation">.</span>area
+<span class="token keyword">from</span> 
+user_click u
+<span class="token keyword">join</span> <span class="token punctuation">(</span><span class="token keyword">select</span> city_id<span class="token punctuation">,</span>city_name<span class="token punctuation">,</span>area <span class="token keyword">from</span> city_info<span class="token punctuation">)</span> <span class="token number">c</span>
+<span class="token keyword">on</span> <span class="token number">c</span><span class="token punctuation">.</span>city_id<span class="token operator">=</span>u<span class="token punctuation">.</span>city_id<span class="token punctuation">;</span></code></pre>
+<p><img src="https://i.loli.net/2020/12/21/8ygt4VsP31irkxv.png"></p>
+<p>二.获取区域的商品点击次数</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">drop</span> <span class="token keyword">table</span> tmp_area_product_click_cnt<span class="token punctuation">;</span>
+<span class="token keyword">create</span> <span class="token keyword">table</span> tmp_area_product_click_cnt <span class="token keyword">as</span>
+<span class="token keyword">select</span> 
+t<span class="token punctuation">.</span>product_id<span class="token punctuation">,</span>t<span class="token punctuation">.</span>area<span class="token punctuation">,</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> click_cnt
+<span class="token keyword">from</span> tmp_product_basic_info t 
+<span class="token keyword">join</span> user_click <span class="token number">c</span> <span class="token keyword">on</span>
+<span class="token number">c</span><span class="token punctuation">.</span>product_id<span class="token operator">=</span>t<span class="token punctuation">.</span>product_id
+<span class="token keyword">group</span> <span class="token keyword">by</span> t<span class="token punctuation">.</span>product_id<span class="token punctuation">,</span>t<span class="token punctuation">.</span>area<span class="token punctuation">;</span></code></pre>
+<p><img src="https://i.loli.net/2020/12/21/poYCckqfmvT42rK.png"></p>
+<p>三.获取完整的商品点击次数信息</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">drop</span> <span class="token keyword">table</span> tmp_product_full_click_cnt<span class="token punctuation">;</span>
+<span class="token keyword">create</span> <span class="token keyword">table</span> tmp_product_full_click_cnt <span class="token keyword">as</span>
+<span class="token keyword">select</span> 
+<span class="token number">a</span><span class="token punctuation">.</span>product_id<span class="token punctuation">,</span><span class="token number">a</span><span class="token punctuation">.</span>area<span class="token punctuation">,</span><span class="token number">a</span><span class="token punctuation">.</span>click_cnt<span class="token punctuation">,</span><span class="token number">b</span><span class="token punctuation">.</span>product_name<span class="token punctuation">,</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>get_json_object<span class="token punctuation">(</span>extend_info<span class="token punctuation">,</span><span class="token string">'$.product_status'</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">=</span> <span class="token string">'0'</span><span class="token punctuation">,</span><span class="token string">'self'</span><span class="token punctuation">,</span><span class="token string">'third'</span> <span class="token punctuation">)</span> <span class="token keyword">status</span>
+<span class="token keyword">from</span> tmp_area_product_click_cnt <span class="token number">a</span>
+<span class="token keyword">join</span> product_info <span class="token number">b</span> 
+<span class="token keyword">on</span> <span class="token number">a</span><span class="token punctuation">.</span>product_id<span class="token operator">=</span><span class="token number">b</span><span class="token punctuation">.</span>product_id<span class="token punctuation">;</span></code></pre>
+<p><img src="https://i.loli.net/2020/12/21/hUnDfFR8ljNGCXQ.png"><br>获取json格式的value</p>
+<p>select extend_info,get_json_object(extend_info,’$.product_status’) from product_info limit 5;</p>
+<p>四.分组topN</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">drop</span> <span class="token keyword">table</span> product_click_top<span class="token punctuation">;</span>
+<span class="token keyword">create</span> <span class="token keyword">table</span> product_click_top <span class="token keyword">as</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span>
+<span class="token punctuation">(</span><span class="token keyword">select</span> 
+<span class="token number">a</span><span class="token punctuation">.</span>product_id<span class="token punctuation">,</span><span class="token number">a</span><span class="token punctuation">.</span>area<span class="token punctuation">,</span><span class="token number">a</span><span class="token punctuation">.</span>click_cnt<span class="token punctuation">,</span><span class="token number">a</span><span class="token punctuation">.</span>product_name<span class="token punctuation">,</span><span class="token keyword">status</span><span class="token punctuation">,</span>
+row_number<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> area <span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token number">a</span><span class="token punctuation">.</span>click_cnt <span class="token keyword">desc</span><span class="token punctuation">)</span> rank
+<span class="token keyword">from</span> tmp_product_full_click_cnt <span class="token number">a</span><span class="token punctuation">)</span> <span class="token number">b</span>
+<span class="token keyword">where</span> <span class="token number">b</span><span class="token punctuation">.</span>rank<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span></code></pre>
+<p><img src="https://i.loli.net/2020/12/21/vmclfgHBVFwKpTh.png"></p>
+<p>导出数据到mysql:</p>
+<pre><code>sqoop export \
+--connect jdbc:mysql://localhost:3306/product \
+--username root \
+--password &#39;ruozedata&#39; \
+--table product_click_top \
+--fields-terminated-by &#39;\001&#39; \
+--export-dir /user/hive/warehouse/product.db/product_click_top \
+--verbose</code></pre>
+<p>注意指定分隔符,hive默认是\001,mysql表需要自己预先创建好.</p>
+<p><img src="https://i.loli.net/2020/12/21/58bQW7XHYUTOVks.png"></p>
+<p>常见的sqoop报错:</p>
+<p><a target="_blank" rel="noopener" href="http://blog.itpub.net/25854343/viewspace-2565234/">http://blog.itpub.net/25854343/viewspace-2565234/</a></p>
 
       </div>
       
@@ -451,7 +490,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2018/12/02/2020-12-02-quannnxu-hadoop6/" target="_blank" title="hadoop06之Yarn参数调优">http://www.quanxu.com/2018/12/02/2020-12-02-quannnxu-hadoop6/</a>
+    <a href="/2018/12/13/2020-12-13-quannnxu-hive5/" target="_blank" title="Hive基础之数据导出Sqoop">http://www.quanxu.com/2018/12/13/2020-12-13-quannnxu-hive5/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -467,17 +506,17 @@
       <div class="post-nav">
 
   <div class="post-nav-prev post-nav-item">
-    <a href="/2018/12/05/2020-12-05-quannnxu-hive1/">
-      上一篇:    Hive基础之Hive简介及搭建
+    <a href="/2018/12/16/2020-12-18-quannnxu-xiang-mu-3/">
+      上一篇:    数仓知识
     </a>
   </div>
 
 
 
   <div class="post-nav-next post-nav-item">
-    <a href="/2018/11/30/2020-11-30-quannnxu-zao-ke/">
+    <a href="/2018/12/10/2020-12-07-quannnxu-hive3/">
       <span>
-        下一篇:    Hadoop练习题01 
+        下一篇:    Hive基础之Hive DML语法 
       </span>
     </a>
   </div>
