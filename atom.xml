@@ -6,7 +6,7 @@
   <link href="http://www.quanxu.com/atom.xml" rel="self"/>
   
   <link href="http://www.quanxu.com/"/>
-  <updated>2021-01-18T15:38:54.997Z</updated>
+  <updated>2021-02-27T10:18:32.955Z</updated>
   <id>http://www.quanxu.com/</id>
   
   <author>
@@ -15,6 +15,137 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Scala总结</title>
+    <link href="http://www.quanxu.com/2019/04/01/scala-zong-jie/"/>
+    <id>http://www.quanxu.com/2019/04/01/scala-zong-jie/</id>
+    <published>2019-04-01T15:22:19.000Z</published>
+    <updated>2021-02-27T10:18:32.955Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;一-Scala类型&quot;&gt;&lt;a href=&quot;#一-Scala类型&quot; class=&quot;headerlink&quot; title=&quot;一 Scala类型&quot;&gt;&lt;/a&gt;一 Scala类型&lt;/h3&gt;&lt;p&gt;定义变量:&lt;/p&gt;
+&lt;p&gt;var   </summary>
+        
+      
+    
+    
+    
+    <category term="Scala" scheme="http://www.quanxu.com/categories/Scala/"/>
+    
+    
+    <category term="Scala" scheme="http://www.quanxu.com/tags/Scala/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Scala之面向对象编程</title>
+    <link href="http://www.quanxu.com/2019/03/25/scala03-mian-xiang-dui-xiang/"/>
+    <id>http://www.quanxu.com/2019/03/25/scala03-mian-xiang-dui-xiang/</id>
+    <published>2019-03-25T14:57:36.000Z</published>
+    <updated>2021-01-26T15:11:46.077Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;面向对象编程:OOS&lt;/p&gt;
+&lt;p&gt;Java面向对象编程:&lt;/p&gt;
+&lt;p&gt;​    封装: 在类中有属性、方法&lt;/p&gt;
+&lt;p&gt;​    继承:父类和子类之间的关系，属性、方法都可以进行重新&lt;/p&gt;
+&lt;p&gt;​    多态:父类引用指向子类对象&lt;/p&gt;
+&lt;p&gt;​   </summary>
+        
+      
+    
+    
+    
+    <category term="Scala" scheme="http://www.quanxu.com/categories/Scala/"/>
+    
+    
+    <category term="Scala" scheme="http://www.quanxu.com/tags/Scala/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hadoop总结</title>
+    <link href="http://www.quanxu.com/2019/03/21/hadoop-zong-jie/"/>
+    <id>http://www.quanxu.com/2019/03/21/hadoop-zong-jie/</id>
+    <published>2019-03-21T14:35:32.000Z</published>
+    <updated>2021-02-27T10:20:05.444Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;一-Hadoop伪分布式集群部署步骤及总结&quot;&gt;&lt;a href=&quot;#一-Hadoop伪分布式集群部署步骤及总结&quot; class=&quot;headerlink&quot; title=&quot;一 Hadoop伪分布式集群部署步骤及总结:&quot;&gt;&lt;/a&gt;一</summary>
+        
+      
+    
+    
+    
+    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
+    
+    
+    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Scala之方法</title>
+    <link href="http://www.quanxu.com/2019/03/21/scala02-fang-fa/"/>
+    <id>http://www.quanxu.com/2019/03/21/scala02-fang-fa/</id>
+    <published>2019-03-21T13:33:51.000Z</published>
+    <updated>2021-01-25T16:15:26.986Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;pre class=&quot; language-scala&quot;&gt;&lt;code class=&quot;language-scala&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;package&lt;/span&gt; com&lt;span class=&quot;token</summary>
+        
+      
+    
+    
+    
+    <category term="Scala" scheme="http://www.quanxu.com/categories/Scala/"/>
+    
+    
+    <category term="Scala" scheme="http://www.quanxu.com/tags/Scala/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Scala之方法</title>
+    <link href="http://www.quanxu.com/2019/03/21/scala03oo/"/>
+    <id>http://www.quanxu.com/2019/03/21/scala03oo/</id>
+    <published>2019-03-21T13:33:51.000Z</published>
+    <updated>2021-01-25T16:15:26.986Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;pre class=&quot; language-scala&quot;&gt;&lt;code class=&quot;language-scala&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;package&lt;/span&gt; com&lt;span class=&quot;token</summary>
+        
+      
+    
+    
+    
+    <category term="Scala" scheme="http://www.quanxu.com/categories/Scala/"/>
+    
+    
+    <category term="Scala" scheme="http://www.quanxu.com/tags/Scala/"/>
+    
+  </entry>
   
   <entry>
     <title>Hadoop HA之集群部署</title>
@@ -42,6 +173,32 @@
   </entry>
   
   <entry>
+    <title>Scala基础</title>
+    <link href="http://www.quanxu.com/2019/03/15/2021-1-21-scala-ji-chu-01/"/>
+    <id>http://www.quanxu.com/2019/03/15/2021-1-21-scala-ji-chu-01/</id>
+    <published>2019-03-15T10:22:22.000Z</published>
+    <updated>2021-01-25T12:27:36.972Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;1-Scala&quot;&gt;&lt;a href=&quot;#1-Scala&quot; class=&quot;headerlink&quot; title=&quot;1.Scala&quot;&gt;&lt;/a&gt;1.Scala&lt;/h3&gt;&lt;p&gt;下载路径:&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Scala" scheme="http://www.quanxu.com/categories/Scala/"/>
+    
+    
+    <category term="Scala" scheme="http://www.quanxu.com/tags/Scala/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hadoop HA架构</title>
     <link href="http://www.quanxu.com/2019/03/10/hadoopha01/"/>
     <id>http://www.quanxu.com/2019/03/10/hadoopha01/</id>
@@ -63,6 +220,135 @@
     
     
     <category term="Hadoop HA" scheme="http://www.quanxu.com/tags/Hadoop-HA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux总结</title>
+    <link href="http://www.quanxu.com/2019/02/22/linux-zong-jie/"/>
+    <id>http://www.quanxu.com/2019/02/22/linux-zong-jie/</id>
+    <published>2019-02-22T14:12:45.000Z</published>
+    <updated>2021-02-27T10:23:30.594Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;一-Linux&quot;&gt;&lt;a href=&quot;#一-Linux&quot; class=&quot;headerlink&quot; title=&quot;一 Linux&quot;&gt;&lt;/a&gt;一 Linux&lt;/h3&gt;&lt;h4 id=&quot;1-1-文件-文件夹&quot;&gt;&lt;a href=&quot;#1-1-文件-文件夹&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="http://www.quanxu.com/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="http://www.quanxu.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flume基础03</title>
+    <link href="http://www.quanxu.com/2019/02/20/flume03/"/>
+    <id>http://www.quanxu.com/2019/02/20/flume03/</id>
+    <published>2019-02-20T14:43:25.000Z</published>
+    <updated>2021-02-17T15:08:35.837Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;一进多出:&lt;/p&gt;
+&lt;p&gt;vi channel-replicating-selector.conf&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;a1.sources = r1
+a1.channels = c1 c2 
+a1.sinks = k1</summary>
+        
+      
+    
+    
+    
+    <category term="Flume" scheme="http://www.quanxu.com/categories/Flume/"/>
+    
+    
+    <category term="Flume" scheme="http://www.quanxu.com/tags/Flume/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flume基础</title>
+    <link href="http://www.quanxu.com/2019/02/15/flume01/"/>
+    <id>http://www.quanxu.com/2019/02/15/flume01/</id>
+    <published>2019-02-15T12:59:22.000Z</published>
+    <updated>2021-02-10T09:57:58.992Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;1-Flume&quot;&gt;&lt;a href=&quot;#1-Flume&quot; class=&quot;headerlink&quot; title=&quot;1 Flume&quot;&gt;&lt;/a&gt;1 Flume&lt;/h3&gt;&lt;h4 id=&quot;1-1-解压&quot;&gt;&lt;a href=&quot;#1-1-解压&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Flume" scheme="http://www.quanxu.com/categories/Flume/"/>
+    
+    
+    <category term="Flume" scheme="http://www.quanxu.com/tags/Flume/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Shell基础</title>
+    <link href="http://www.quanxu.com/2019/02/15/shell-ji-chu-01/"/>
+    <id>http://www.quanxu.com/2019/02/15/shell-ji-chu-01/</id>
+    <published>2019-02-15T12:42:22.000Z</published>
+    <updated>2021-02-27T10:13:34.135Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;1-脚本规范&quot;&gt;&lt;a href=&quot;#1-脚本规范&quot; class=&quot;headerlink&quot; title=&quot;1.脚本规范&quot;&gt;&lt;/a&gt;1.脚本规范&lt;/h3&gt;&lt;h4 id=&quot;1-1-第一行&quot;&gt;&lt;a href=&quot;#1-1-第一行&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Shell" scheme="http://www.quanxu.com/categories/Shell/"/>
+    
+    
+    <category term="Shell" scheme="http://www.quanxu.com/tags/Shell/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hive总结</title>
+    <link href="http://www.quanxu.com/2019/01/31/hive-zong-jie/"/>
+    <id>http://www.quanxu.com/2019/01/31/hive-zong-jie/</id>
+    <published>2019-01-31T13:42:39.000Z</published>
+    <updated>2021-02-27T10:22:14.709Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;一-Hive基础总结&quot;&gt;&lt;a href=&quot;#一-Hive基础总结&quot; class=&quot;headerlink&quot; title=&quot;一 Hive基础总结&quot;&gt;&lt;/a&gt;一 Hive基础总结&lt;/h3&gt;&lt;h4 id=&quot;1-1-Hive简介&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Hive" scheme="http://www.quanxu.com/categories/Hive/"/>
+    
+    
+    <category term="Hive" scheme="http://www.quanxu.com/tags/Hive/"/>
     
   </entry>
   
@@ -188,31 +474,6 @@
   </entry>
   
   <entry>
-    <title>Hive基础之Hive分区和常用函数</title>
-    <link href="http://www.quanxu.com/2018/12/10/2020-12-12-quannnxu-hive4/"/>
-    <id>http://www.quanxu.com/2018/12/10/2020-12-12-quannnxu-hive4/</id>
-    <published>2018-12-10T15:09:22.000Z</published>
-    <updated>2020-12-15T14:04:48.749Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;1-PARTITIONED-BY&quot;&gt;&lt;a href=&quot;#1-PARTITIONED-BY&quot; class=&quot;headerlink&quot; title=&quot;1.PARTITIONED BY&quot;&gt;&lt;/a&gt;1.PARTITIONED BY&lt;/h4&gt;&lt;h5</summary>
-        
-      
-    
-    
-    
-    <category term="Hive" scheme="http://www.quanxu.com/categories/Hive/"/>
-    
-    
-    <category term="Hive" scheme="http://www.quanxu.com/tags/Hive/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Hive基础之Hive DML语法</title>
     <link href="http://www.quanxu.com/2018/12/10/2020-12-07-quannnxu-hive3/"/>
     <id>http://www.quanxu.com/2018/12/10/2020-12-07-quannnxu-hive3/</id>
@@ -238,43 +499,18 @@
   </entry>
   
   <entry>
-    <title>Hive基础之Hive参数配置及语法</title>
-    <link href="http://www.quanxu.com/2018/12/08/2020-12-06-quannnxu-hive2/"/>
-    <id>http://www.quanxu.com/2018/12/08/2020-12-06-quannnxu-hive2/</id>
-    <published>2018-12-08T14:13:28.000Z</published>
-    <updated>2021-01-14T13:43:31.348Z</updated>
+    <title>Hive基础之Hive分区和常用函数</title>
+    <link href="http://www.quanxu.com/2018/12/10/2020-12-12-quannnxu-hive4/"/>
+    <id>http://www.quanxu.com/2018/12/10/2020-12-12-quannnxu-hive4/</id>
+    <published>2018-12-10T15:09:22.000Z</published>
+    <updated>2020-12-15T14:04:48.749Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;1-参数修改&quot;&gt;&lt;a href=&quot;#1-参数修改&quot; class=&quot;headerlink&quot; title=&quot;1.参数修改&quot;&gt;&lt;/a&gt;1.参数修改&lt;/h4&gt;&lt;h5 id=&quot;1-1获取hive执行引擎&quot;&gt;&lt;a href=&quot;#1-1获取hive执行引擎&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Hive" scheme="http://www.quanxu.com/categories/Hive/"/>
-    
-    
-    <category term="Hive" scheme="http://www.quanxu.com/tags/Hive/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hive基础之Hive简介及搭建</title>
-    <link href="http://www.quanxu.com/2018/12/05/2020-12-05-quannnxu-hive1/"/>
-    <id>http://www.quanxu.com/2018/12/05/2020-12-05-quannnxu-hive1/</id>
-    <published>2018-12-05T12:08:23.000Z</published>
-    <updated>2021-01-14T13:43:48.947Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;1-Hive是基于Hadoop之上的&quot;&gt;&lt;a href=&quot;#1-Hive是基于Hadoop之上的&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h4 id=&quot;1-PARTITIONED-BY&quot;&gt;&lt;a href=&quot;#1-PARTITIONED-BY&quot; class=&quot;headerlink&quot; title=&quot;1.PARTITIONED BY&quot;&gt;&lt;/a&gt;1.PARTITIONED BY&lt;/h4&gt;&lt;h5</summary>
         
       
     
@@ -284,236 +520,6 @@
     
     
     <category term="Hive" scheme="http://www.quanxu.com/tags/Hive/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hadoop06之Yarn参数调优</title>
-    <link href="http://www.quanxu.com/2018/12/02/2020-12-02-quannnxu-hadoop6/"/>
-    <id>http://www.quanxu.com/2018/12/02/2020-12-02-quannnxu-hadoop6/</id>
-    <published>2018-12-02T14:18:44.000Z</published>
-    <updated>2021-01-14T13:43:07.675Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;1-container容器&quot;&gt;&lt;a href=&quot;#1-container容器&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
-    
-    
-    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hadoop练习题01</title>
-    <link href="http://www.quanxu.com/2018/11/30/2020-11-30-quannnxu-zao-ke/"/>
-    <id>http://www.quanxu.com/2018/11/30/2020-11-30-quannnxu-zao-ke/</id>
-    <published>2018-11-30T15:13:21.000Z</published>
-    <updated>2020-11-30T15:14:21.049Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1.hadoop广义狭义&lt;br&gt;广义: 以apache hadoop软件为主的生态圈 包含hive sqoop hbase kafka spark flink&lt;br&gt;狭义: apache</summary>
-        
-      
-    
-    
-    
-    <category term="Hadoop练习题" scheme="http://www.quanxu.com/categories/Hadoop%E7%BB%83%E4%B9%A0%E9%A2%98/"/>
-    
-    
-    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hadoop05之MapReduce/yarn架构</title>
-    <link href="http://www.quanxu.com/2018/11/30/2020-11-29-quannnxu-hadoop5/"/>
-    <id>http://www.quanxu.com/2018/11/30/2020-11-29-quannnxu-hadoop5/</id>
-    <published>2018-11-30T13:11:25.000Z</published>
-    <updated>2020-11-30T14:31:11.815Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;MapReduce&lt;/p&gt;
-&lt;p&gt;Hive 执行引擎就是MapReduce&lt;/p&gt;
-&lt;h4 id=&quot;1-分布式计算框架&quot;&gt;&lt;a href=&quot;#1-分布式计算框架&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
-    
-    
-    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hadoop04之hdfs命令</title>
-    <link href="http://www.quanxu.com/2018/11/29/2020-11-28-quannnxu-hadoop4/"/>
-    <id>http://www.quanxu.com/2018/11/29/2020-11-28-quannnxu-hadoop4/</id>
-    <published>2018-11-29T15:11:25.000Z</published>
-    <updated>2020-11-29T15:37:08.420Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1.SNN(检查点动作)&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/11/29/yqU1YtOkIhZVxSn.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;517是正在编辑的日志                                    </summary>
-        
-      
-    
-    
-    
-    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
-    
-    
-    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hadoop03之hdfs架构</title>
-    <link href="http://www.quanxu.com/2018/11/24/2020-11-25-quannnxu-hadoop3/"/>
-    <id>http://www.quanxu.com/2018/11/24/2020-11-25-quannnxu-hadoop3/</id>
-    <published>2018-11-24T14:28:36.000Z</published>
-    <updated>2020-11-29T06:34:10.116Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;1-HDFS主从架构&quot;&gt;&lt;a href=&quot;#1-HDFS主从架构&quot; class=&quot;headerlink&quot; title=&quot;1.HDFS主从架构&quot;&gt;&lt;/a&gt;1.HDFS主从架构&lt;/h4&gt;&lt;h5 id=&quot;namenode：nn名称节点&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
-    
-    
-    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hadoop02之yarn部署及简析</title>
-    <link href="http://www.quanxu.com/2018/11/15/2020-11-22-quannnxu-hadoop2/"/>
-    <id>http://www.quanxu.com/2018/11/15/2020-11-22-quannnxu-hadoop2/</id>
-    <published>2018-11-15T13:50:28.000Z</published>
-    <updated>2020-11-29T14:06:18.971Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;主从架构&quot;&gt;&lt;a href=&quot;#主从架构&quot; class=&quot;headerlink&quot; title=&quot;主从架构&quot;&gt;&lt;/a&gt;主从架构&lt;/h4&gt;&lt;p&gt;ResourceManager daemon and NodeManager daemon&lt;/p&gt;
-&lt;h4</summary>
-        
-      
-    
-    
-    
-    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
-    
-    
-    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hadoop01之安装部署</title>
-    <link href="http://www.quanxu.com/2018/11/10/2020-11-21-quannnxu-hadoop1/"/>
-    <id>http://www.quanxu.com/2018/11/10/2020-11-21-quannnxu-hadoop1/</id>
-    <published>2018-11-10T13:50:28.000Z</published>
-    <updated>2020-11-29T06:32:19.550Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;1-谈谈大数据&quot;&gt;&lt;a href=&quot;#1-谈谈大数据&quot; class=&quot;headerlink&quot; title=&quot;1.谈谈大数据&quot;&gt;&lt;/a&gt;1.谈谈大数据&lt;/h4&gt;&lt;p&gt;存储                      hdfs  hive  hbase </summary>
-        
-      
-    
-    
-    
-    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
-    
-    
-    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mysql的join及练习</title>
-    <link href="http://www.quanxu.com/2018/11/06/2020-11-18-quannnxu-mysql2/"/>
-    <id>http://www.quanxu.com/2018/11/06/2020-11-18-quannnxu-mysql2/</id>
-    <published>2018-11-06T14:24:22.000Z</published>
-    <updated>2020-11-29T06:27:32.357Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h5 id=&quot;left-join&quot;&gt;&lt;a href=&quot;#left-join&quot; class=&quot;headerlink&quot; title=&quot;left join&quot;&gt;&lt;/a&gt;left join&lt;/h5&gt;&lt;pre class=&quot; language-sql&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
-    <category term="mysql" scheme="http://www.quanxu.com/categories/mysql/"/>
-    
-    
-    <category term="mysql" scheme="http://www.quanxu.com/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mysql语法</title>
-    <link href="http://www.quanxu.com/2018/11/05/2020-11-16-quanxu-shu-cang-zhi-mysql-yu-fa/"/>
-    <id>http://www.quanxu.com/2018/11/05/2020-11-16-quanxu-shu-cang-zhi-mysql-yu-fa/</id>
-    <published>2018-11-05T13:24:39.000Z</published>
-    <updated>2020-11-29T06:26:23.727Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;1-字段类型&quot;&gt;&lt;a href=&quot;#1-字段类型&quot; class=&quot;headerlink&quot; title=&quot;1.字段类型&quot;&gt;&lt;/a&gt;1.字段类型&lt;/h4&gt;&lt;h5 id=&quot;数值类型&quot;&gt;&lt;a href=&quot;#数值类型&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="mysql" scheme="http://www.quanxu.com/categories/mysql/"/>
-    
-    
-    <category term="mysql" scheme="http://www.quanxu.com/tags/mysql/"/>
     
   </entry>
   
