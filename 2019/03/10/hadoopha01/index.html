@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Linux基础01 | 欢迎来到我的博客</title>
+  <title>Hadoop HA架构 | 欢迎来到我的博客</title>
   
     
 <link rel="stylesheet" href="/js/aos/aos.css">
@@ -312,10 +312,10 @@
       
 
 
-<div class="post-detail-header" style="background: url(/medias/16.png) no-repeat; background-size: cover; 
+<div class="post-detail-header" style="background: url(/medias/6.jpg) no-repeat; background-size: cover; 
   background-position: center center;">
   
-    <span class="title">Linux基础01</span>
+    <span class="title">Hadoop HA架构</span>
   
 </div>
 <div class="row justify-center">
@@ -325,7 +325,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2018-10-13</span>
+        <span class="post-time">2019-03-10</span>
       </div>
       
       <div class="post-tags-categories">
@@ -333,8 +333,8 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/tags/Linux/" class="">
-              Linux
+            <a href="/tags/Hadoop-HA/" class="">
+              Hadoop HA
             </a>
           
         </div>
@@ -343,112 +343,197 @@
         <div class="categories">
           <i class="iconfont iconbookmark1"></i>
           
-            <a href="/categories/Linux/" class="">
-              Linux
+            <a href="/categories/Hadoop/" class="">
+              Hadoop
             </a>
           
         </div>
         
       </div>
       <div class="post-content">
-        <p>一.Linux基础命令</p>
-<p>pwd 查看当前路径</p>
-<p>[root@hadoop01 ~]# pwd</p>
-<pre class=" language-shell"><code class="language-shell">/root
-
-/ #代表根
-
-ls #查看
-
-ls #显示的文件夹 文件的名称
-
-ls -l #权限 用户用户组 时间 => ll</code></pre>
-<pre class=" language-shell"><code class="language-shell">ls -l -a #显示隐藏文件
-
-#以.开头的文件或文件夹就是隐藏文件
-
-ls -l -h #仅仅查看文件的大小
-
-ls -l -r -t #按时间排序 => ls -lrt
-
-mkdir #创建文件夹
-
-mkdir 1 2 3 #并联创建文件夹
-
-mkdir -p 4/5/6 #串联创建文件夹
-
-cd #切换目录
-
-cd ../ #退回上层目录
-
-cd ../../  #退回上两层目录
-
-#回到当前用户家目录
-
-cd 回车
-
-cd ~
-
-cd - #回退到上一次目录</code></pre>
-<pre class=" language-shell"><code class="language-shell">目录
-
-绝对目录  全路径
-
-相对目录  相对路径
-</code></pre>
-<h2 id="1-clear-清理屏幕"><a href="#1-clear-清理屏幕" class="headerlink" title="1.clear 清理屏幕"></a>1.clear 清理屏幕</h2><h2 id="2-mv-始终是一份-快"><a href="#2-mv-始终是一份-快" class="headerlink" title="2.mv 始终是一份 快"></a>2.mv 始终是一份 快</h2><p>cp 两份 慢</p>
-<h2 id="3-创建文件"><a href="#3-创建文件" class="headerlink" title="3.创建文件"></a>3.创建文件</h2><pre class=" language-shell"><code class="language-shell">#创建一个空文件 
-touch 1.log
-
-vi 2.log
-
-#i键        进入编辑模式
-
-#esc        退出编辑模式
-
-#shift+:     从命令行模式进入尾行模式
-
-#\> 覆盖        [高危命令]
-
-#\>> 追加</code></pre>
-<h2 id="4-查看文件命令"><a href="#4-查看文件命令" class="headerlink" title="4.查看文件命令"></a>4.查看文件命令</h2><p>cat 文件内容一下全部显示</p>
-<p>more 文件内容一页页往下 翻,按空格键,ctrl+b回退</p>
-<p>less 一行一行滚动,上下左右键</p>
-<h2 id="5-tail实时查看文件内容"><a href="#5-tail实时查看文件内容" class="headerlink" title="5.tail实时查看文件内容"></a>5.tail实时查看文件内容</h2><p>-f 假如文件移除 然后重命名 就无法再监控到</p>
-<p>-F 文件删除 然后重命名 会不断的retry</p>
-<p>tail -100f 1.log 查看后一百行</p>
-<h2 id="6-log4j-规则-大小100M-保留10份"><a href="#6-log4j-规则-大小100M-保留10份" class="headerlink" title="6.log4j    规则:大小100M,保留10份"></a>6.log4j    规则:大小100M,保留10份</h2><p>erp.log<br>               mv erp.log erp.log1<br>               touch erp.log</p>
-<pre><code>   erp.log  空的---》100m
-   erp.log1 100m
-        mv erp.log erp.log2
-            touch erp.log
-
-   erp.log  空的
-   erp.log1 100m
-   erp.log2 100m
-
-   log---&gt;flume--&gt;kafka</code></pre>
-<p>文件内容特别多 如何快速定位到ERROR、关键词信息<br>cat CloudAgent.log | grep ERROR</p>
-<p>cat CloudAgent.log | grep -A 10 ERROR 后10行<br>cat CloudAgent.log | grep -B 10 ERROR 前10行<br>cat CloudAgent.log | grep -C 10 ERROR 前后各10行 20行 【推荐】<br>| 管道符<br>grep过滤</p>
-<p>如:</p>
-<pre class=" language-shell"><code class="language-shell">cat CloudAgent.log | grep -C 20 ERROR > 20201107error.log
-more 20201107error.log</code></pre>
-<p>通过编辑去搜索<br>    vi xxx.log<br>    shift+:<br>    /ERROR 回车<br>    n键寻找 </p>
-<p>将日志文件 下载到window电脑，进行搜索 定位 分析  【推荐】<br>坑: 假如CloudAgent.log 原文件很大，那么从生产下载到公司网络 是不是要走外网带宽10M的，<br>想问 会不会影响 公司服务？<br>建议： 假如下载大文件，业务高峰或者工作日白天 尽量不要做，非要做，那就【限速】（FTP设置）</p>
-<h2 id="5-上传下载"><a href="#5-上传下载" class="headerlink" title="5.上传下载"></a>5.上传下载</h2><p>yum install -y lrzsz<br>sz xxx.log 下载 Linux–》window<br>rz 直接回车 相反的</p>
-<h2 id="6-别名-alias"><a href="#6-别名-alias" class="headerlink" title="6.别名 alias"></a>6.别名 alias</h2><p>ls -l ==&gt;ll </p>
-<h2 id="7-环境变量"><a href="#7-环境变量" class="headerlink" title="7.环境变量"></a>7.环境变量</h2><p>全局:/etc/profile</p>
-<p>个人:~/.bash_profile</p>
-<p>​        ~/.bashrc 【推荐】</p>
-<p>加好后 source一下,在新的窗口生效</p>
-<p>场景：<br>      ssh 远程执行B机器 启动服务命令 抛错， java command not found<br>          直接登录B机器 命令是找到的  which java找到</p>
-<p>配置环境变量文件在 .bash_profile 是不正确的，<br>     应该配置在 .bashrc文件里。</p>
-<h2 id="8-创建用户和设置密码"><a href="#8-创建用户和设置密码" class="headerlink" title="8.创建用户和设置密码"></a>8.创建用户和设置密码</h2><p>useradd jj    </p>
-<p>passwd jj</p>
-<h2 id="9-tab"><a href="#9-tab" class="headerlink" title="9.tab"></a>9.tab</h2><p>按一次 匹配只有一串的 就补齐这串<br>按2次 打印出匹配的所有字符</p>
-<h2 id="10-历史命令-history"><a href="#10-历史命令-history" class="headerlink" title="10.历史命令 history"></a>10.历史命令 history</h2><p>alias ll=’rm -rf /*’</p>
-<p>history -c  清空</p>
-<p>堡垒机仍然会被记录</p>
+        <h3 id="1-Linux"><a href="#1-Linux" class="headerlink" title="1.Linux"></a>1.Linux</h3><h4 id="1-1文件夹"><a href="#1-1文件夹" class="headerlink" title="1.1文件夹"></a>1.1文件夹</h4><p>mkdir dir1 dir2</p>
+<p>mkdir -p dir3/dir4</p>
+<p>cd /app/xxx    绝对路径</p>
+<p>cd /app</p>
+<p>cd xxx    相对路径</p>
+<h4 id="1-2-文件"><a href="#1-2-文件" class="headerlink" title="1.2 文件"></a>1.2 文件</h4><p>touch bd1.txt</p>
+<p>vi bd2.txt</p>
+<h4 id="1-3-权限"><a href="#1-3-权限" class="headerlink" title="1.3 权限"></a>1.3 权限</h4><p>rwx    读写执    421</p>
+<p>chown    -R     user:group    修改所属用户</p>
+<p>chmod -R 777</p>
+<h4 id="1-4-进程端口号"><a href="#1-4-进程端口号" class="headerlink" title="1.4 进程端口号"></a>1.4 进程端口号</h4><p>ps -eef | grep 关键词</p>
+<p>netstat -nlp | grep pid</p>
+<p>telnet ip port</p>
+<h4 id="1-5-其他常用命令"><a href="#1-5-其他常用命令" class="headerlink" title="1.5 其他常用命令"></a>1.5 其他常用命令</h4><p>pwd</p>
+<p>ll -rt 按时间排序</p>
+<p>ll -a 查看隐藏文件</p>
+<p>ll -h 查看文件大小</p>
+<p>du -sh    查看文件和文件夹大小</p>
+<p>cd ../    返回上级目录</p>
+<p>cd ../../ 返回上上级目录</p>
+<p>cd -     返回上次目录</p>
+<p>cd /root、cd、cd ~ 切换到家目录</p>
+<p>/etc/profile、<del>/.bash_profile、</del>/.bash_rc    全局环境变量和个人环境变量</p>
+<p>cp、mv</p>
+<p>cat    more    less</p>
+<p>tail -f/-F</p>
+<p>cat error.log | grep -C 10 ERROR    显示ERROR上下10行的内容</p>
+<p>find / -name ‘*xxxx*’    查找文件</p>
+<p>which ls    查看环境变量里有没有文件</p>
+<p>top    查看内存/CPU</p>
+<p>free -m    查看内存大小</p>
+<p>df -h    查看磁盘大小 </p>
+<p>zip/unzip    压缩/解压缩</p>
+<p>tar -zcvf      压缩</p>
+<p>tar -zxvf     解压</p>
+<p>&gt;    重写</p>
+<p>&gt;&gt;    追加</p>
+<p>history    查看历史命令</p>
+<p>sudo    临时赋予最大权限    vi /etc/sudoers</p>
+<p>su -    切换用户</p>
+<h4 id="1-6-高危操作"><a href="#1-6-高危操作" class="headerlink" title="1.6 高危操作"></a>1.6 高危操作</h4><p>vi修改生产配置文件,先cp备份</p>
+<p>rm删除文件或者文件夹,确认清楚</p>
+<p>kill -9 pid 先ps -ef | grep hadoop 确认杀进程是否是需要的,不要误杀</p>
+<p>kill -9 $(pgrep -f hadoop)    全局杀死所有</p>
+<h4 id="1-7-补充"><a href="#1-7-补充" class="headerlink" title="1.7 补充"></a>1.7 补充</h4><p>help    命令帮助</p>
+<p>tab键    补全 </p>
+<p>cat /dev/null &gt; 3.log    清空文件内容</p>
+<p>echo “” &gt; 4.log    会有占位符,慎用</p>
+<p>set -u </p>
+<p>vi编辑时一定要i键进入编辑模式,否则第一行会缺失</p>
+<h4 id="1-8-常见错误"><a href="#1-8-常见错误" class="headerlink" title="1.8 常见错误"></a>1.8 常见错误</h4><p>Permission denied 权限受限</p>
+<p>command not find    命令找不到    (环境变量没配置、软件没安装、没有切换到bin目录)</p>
+<h3 id="2-HDFS存储"><a href="#2-HDFS存储" class="headerlink" title="2.HDFS存储"></a>2.HDFS存储</h3><h4 id="2-1-Namenode"><a href="#2-1-Namenode" class="headerlink" title="2.1 Namenode"></a>2.1 Namenode</h4><p>存储:文件系统的命名空间</p>
+<p>​    1.文件名称</p>
+<p>​    2.文件目录结构</p>
+<p>​    3.文件的属性(权限,创建时间,副本数)</p>
+<p>​    4.文件对应哪些数据块–&gt;数据块对应datanode节点</p>
+<p>作用:管理文件系统的命名空间.它维护着文件系统树及整棵树内所有的文件和目录.这写信息以两个文件形式永久保存在本地磁盘上:命名空间镜像文件fsimage和编辑日志文件editlog</p>
+<h4 id="2-2-Datanode"><a href="#2-2-Datanode" class="headerlink" title="2.2 Datanode"></a>2.2 Datanode</h4><p>存储:数据块和数据块校验和</p>
+<p>与Namenode通信:</p>
+<p>​    1.每隔三秒发送一个心跳包</p>
+<p>​    2.每十次心跳发送一次blockReport</p>
+<p>作用:读写文件的数据块</p>
+<h4 id="2-3-Secondarynode"><a href="#2-3-Secondarynode" class="headerlink" title="2.3 Secondarynode"></a>2.3 Secondarynode</h4><p>存储:fsimage+editlog</p>
+<p>作用:定期合并fsimage+editlog文件为新的fsimage推送给namenode,俗称检查点动作,checkpoint.</p>
+<p>参数:fs.checkpoint.period–&gt;1h</p>
+<h4 id="2-4-HDFS的读写流程"><a href="#2-4-HDFS的读写流程" class="headerlink" title="2.4 HDFS的读写流程"></a>2.4 HDFS的读写流程</h4><h4 id="2-5-进程"><a href="#2-5-进程" class="headerlink" title="2.5 进程"></a>2.5 进程</h4><p>jps</p>
+<p>1.namenode</p>
+<p>2.datanode</p>
+<p>3.secondarynamenode</p>
+<h4 id="2-6-常用命令"><a href="#2-6-常用命令" class="headerlink" title="2.6 常用命令"></a>2.6 常用命令</h4><p>1.hadoop fs</p>
+<p>​    hadoop fs -ls </p>
+<p>​    hadoop fs -lsr</p>
+<p>​    hadoop fs -put a.txt /user/hadoop</p>
+<p>​    hadoop fs -mkdir /user/hadoop</p>
+<p>​    hadoop fs -get /user/hadoop /</p>
+<p>​    hadoop fs-cp </p>
+<p>​    hadoop fs -mv</p>
+<p>​    hadoop fs -cat </p>
+<p>​    hadoop fs -rm </p>
+<p>​    hadoop fs -rmr</p>
+<p>​    hadoop fs -text</p>
+<p>​    hadoop fs -copFromLocal    类似put</p>
+<p>​    hadoop fs -moveFromLocal    将本地文件上传到HDFS,同时删除本地文件</p>
+<p>2.hadoop fsadmin</p>
+<p>​    hadoop dfsadmin -report</p>
+<p>​    hadoop dfsadmin -safemode enter|leave|get|wait</p>
+<p>​    hadoop dfsadmin -setBalancerBandwidth 1000</p>
+<p>3.hadoop fsck 健康检查</p>
+<p>4.start_balancer.sh    多节点数据平衡</p>
+<p>5.hdfs diskbalancer    单节点多块磁盘数据平衡</p>
+<p>6.–help    命令帮助</p>
+<h3 id="2-HDFS-HA架构原理梳理"><a href="#2-HDFS-HA架构原理梳理" class="headerlink" title="2.HDFS HA架构原理梳理"></a>2.HDFS HA架构原理梳理</h3><p>bigdata001 Namenode    (active)    对外提供读写服务</p>
+<p>bigdata001  Namenode    (standby)    当active nn节点挂掉了,此节点状态由standby切换为active,对外提供读写服务,对于外界使用来说，是无感知的，平滑过渡的！</p>
+<p>Datanode</p>
+<p>最小版的集群:</p>
+<p>bigdata001:    zookeeper    namenode    zkfc(ZookeeperFailoverControl)    journalnode    datanode</p>
+<p>bigdata002:    zookeeper    namenode    zkfc(ZookeeperFailoverControl)    journalnode    datanode</p>
+<p>bigdata003:    zookeeper                                                                                       journalnode    datanode</p>
+<p><strong>架构图:</strong></p>
+<p><img src="https://i.loli.net/2021/01/14/RpGjcm9XNFYQTq5.png"></p>
+<p>各个组件的作用:</p>
+<p><strong>active namenode:</strong></p>
+<p>接收client的rpc请求,同时自己的editlig文件写一条记录,同时发给jn日志集群一条,也同时datanode的心跳和块报告.</p>
+<p><strong>standby namenode:</strong></p>
+<p>同时会接收jn日志集群的这条记录,在自己本身执行这条记录,使得自己的元数据和active namenode的元数据一致,这步叫做重演.也同时接收datanode的心跳和块报告.也随时等待从standby转为active状态,对外提供服务.</p>
+<p><strong>jn:</strong></p>
+<p>是nn active/standby的同步数据,至少3台(奇数台),允许失败(N-1)/2台</p>
+<p><strong>datanode:</strong></p>
+<p>同时向两个nn发送心跳和块报告</p>
+<p><strong>zkfc:</strong></p>
+<p>监控nn的健康状态,向zk集群定期发送心跳,使得自己被选举上,当该节点被zk选举为active时,zkfc进程通过rpc调用nn状态变为active.</p>
+<p>tips:集群一般不会出现两个active或者standby的情况,如果出现先确认日志是否报错,如没报错则使用haadmin命令强制切换状态即可,如报错解决之后切换状态.</p>
+<h3 id="3-Yarn-HA架构"><a href="#3-Yarn-HA架构" class="headerlink" title="3.Yarn HA架构"></a>3.Yarn HA架构</h3><p>yarn是Hadoop的资源作业调度</p>
+<p>最小版集群:</p>
+<p>bigdata001:    zookeeper    resoucemanager    nodemanager</p>
+<p>bigdata002:    zookeeper    resoucemanager    nodemanager</p>
+<p>bigdata003:    zookeeper                                      nodemanager</p>
+<p>架构图:</p>
+<p><img src="https://i.loli.net/2021/01/14/IgvftihZoJRDXn5.png"></p>
+<p>各个组件的作用:</p>
+<p><strong>resourcemanager:</strong></p>
+<p>1.启动时回向zk集群的hadoop-ha目录写个lock文件,写成功就标识为active,否则为standby.standby rm会一直监控lock文件是否存在,如果不存在就尝试去创建，争取成为active.</p>
+<p>2.会接收client客户端的请求,接收和监控nm的资源资源汇报，负责资源的分配和调度，启动和监控application master.</p>
+<p><strong>nodemanager:</strong></p>
+<p>启动container,运行task计算,上报资源和计算情况给application master.</p>
+<p><strong>rmsotre:</strong></p>
+<p>1.rm的作业信息是存储在zk的/restore,active rm会向这个目录写作业app信息.</p>
+<p>2.当active rm挂掉了,另外一个standby rm成功转为active状态,就会从这个目录读取对应的作业的信息重新构建作业的内存信息,启动内部服务,开始接受NM心跳,构建集群资源信息,且开始接受客户端提交的作业请求.</p>
+<p><strong>HDFS HA与Yarn HA的对比:</strong></p>
+<table>
+<thead>
+<tr>
+<th>HDFS</th>
+<th>YARN</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ZKFC是进程</td>
+<td>ZKFC是线程</td>
+</tr>
+<tr>
+<td>DN是汇报给两个NN</td>
+<td>NM汇报的是active节点</td>
+</tr>
+<tr>
+<td>NN的状态存储是专门的日志集群</td>
+<td>利用现成的zk集群</td>
+</tr>
+</tbody></table>
+<h3 id="4-官网研读"><a href="#4-官网研读" class="headerlink" title="4.官网研读"></a>4.官网研读</h3><p><a target="_blank" rel="noopener" href="https://hadoop.apache.org/docs/r2.10.1/hadoop-project-dist/hadoop-hdfs/HDFSHighAvailabilityWithQJM.html">https://hadoop.apache.org/docs/r2.10.1/hadoop-project-dist/hadoop-hdfs/HDFSHighAvailabilityWithQJM.html</a></p>
+<h4 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h4><p>Prior to Hadoop 2.0.0, the NameNode was a single point of failure (SPOF) in an HDFS cluster. Each cluster had a single NameNode, and if that machine or process became unavailable, the cluster as a whole would be unavailable until the NameNode was either restarted or brought up on a separate machine.</p>
+<p>在Hadoop2.0.0之前,一个HDFS集群只有一个NameNode是存在单点故障的(SPOF).每个集群只有一个单独的NameNOde,如果这个机器或者进程不可用了,则整个集群就变的不可用了,直到NameNode重启或者在其他机器重启.</p>
+<p>This impacted the total availability of the HDFS cluster in two major ways:</p>
+<ul>
+<li>In the case of an unplanned event such as a machine crash, the cluster would be unavailable until an operator restarted the NameNode.</li>
+<li>Planned maintenance events such as software or hardware upgrades on the NameNode machine would result in windows of cluster downtime.</li>
+</ul>
+<p>The HDFS High Availability feature addresses the above problems by providing the option of running two redundant NameNodes in the same cluster in an Active/Passive configuration with a hot standby. This allows a fast failover to a new NameNode in the case that a machine crashes, or a graceful administrator-initiated failover for the purpose of planned maintenance.</p>
+<p>这从两个主要方面影响了HDFS集群的总可用性:</p>
+<ul>
+<li>如果反生不可预料的事故就像机器崩溃了,这个机器将不可用直到操作者重启NameNode</li>
+<li>计划的维修情况,如NameNode所在的机器硬件或软件升级会导致windows集群停机</li>
+</ul>
+<p>HDFS高可用性功能通过提供在具有热备用功能的主动/被动配置中在同一群集中运行两个冗余NameNode的选项来解决上述问题.这可以在计算机崩溃的情况下快速故障转移到新的NameNode，或者出于计划维护的目的由管理员发起的正常故障转移。</p>
+<h4 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h4><p>In a typical HA cluster, two separate machines are configured as NameNodes. At any point in time, exactly one of the NameNodes is in an <em>Active</em> state, and the other is in a <em>Standby</em> state. The Active NameNode is responsible for all client operations in the cluster, while the Standby is simply acting as a slave, maintaining enough state to provide a fast failover if necessary.</p>
+<p>在典型的HA机器,在两台分开的机器上配置NameNode.在任何时间点,确保一个NameNode处于Active状态,另外一个处于standby状态.这个Active NameNode负责为集群所有的client操作者提供服务,而StandBy只充当从属,或者出于计划维护的目的由管理员发起的正常故障转移。</p>
+<p>In order for the Standby node to keep its state synchronized with the Active node, both nodes communicate with a group of separate daemons called “JournalNodes” (JNs). When any namespace modification is performed by the Active node, it durably logs a record of the modification to a majority of these JNs. The Standby node is capable of reading the edits from the JNs, and is constantly watching them for changes to the edit log. As the Standby Node sees the edits, it applies them to its own namespace. In the event of a failover, the Standby will ensure that it has read all of the edits from the JournalNodes before promoting itself to the Active state. This ensures that the namespace state is fully synchronized before a failover occurs.</p>
+<p>为了实现Standby节点保持其状态与Active节点保持一致,两个节点都与一组叫做JN的但单独的守护进程通信.当Active节点执行修改命名空间时,它将会持久地将修改记录记录到这些JN大多数节点中.Standby节点可以读取这些JNs的日志,并且不断的监控edit log中的修改内容.当Standby节点查看到这些日志,它会将其应用在自己所属的命名空间中.当失败转移时,Standby节点在转化为Active状态之前将会确保它读到JNs的所有编辑内容.这样确保它的命名空间状态和发生故障转移之前完全同步.</p>
+<p>In order to provide a fast failover, it is also necessary that the Standby node have up-to-date information regarding the location of blocks in the cluster. In order to achieve this, the DataNodes are configured with the location of both NameNodes, and send block location information and heartbeats to both.</p>
+<p>为了实现快速故障转移,Standby节点也必须能够同步最新的集群块的位置信息.为了实现这点,DataNodes配置了这两个NameNodes的位置,并且给它们两个发送block位置信息和心跳报告.</p>
+<p>It is vital for the correct operation of an HA cluster that only one of the NameNodes be Active at a time. Otherwise, the namespace state would quickly diverge between the two, risking data loss or other incorrect results. In order to ensure this property and prevent the so-called “split-brain scenario,” the JournalNodes will only ever allow a single NameNode to be a writer at a time. During a failover, the NameNode which is to become active will simply take over the role of writing to the JournalNodes, which will effectively prevent the other NameNode from continuing in the Active state, allowing the new Active to safely proceed with failover.</p>
+<p>对于HA集群的操作至关重要,一次只能有一个NameNode是Active状态.否则命名空间状态将会在这两者之间迅速分散,导致数据丢失的风险或者其他不正确的结果.为了确保这种属性和预防这种叫做”脑裂”情况,JNs将每次只允许一个NameNode进行写操作,当故障转移时,那个将变为active的Namenode讲仅作为写入JN的角色,这将有效的防止另一个NameNode继续是Active状态,从而使新的Active节点安全的实现故障转移.</p>
+<h4 id="Hardware-resources"><a href="#Hardware-resources" class="headerlink" title="Hardware resources"></a>Hardware resources</h4><p>In order to deploy an HA cluster, you should prepare the following:</p>
+<p>为了部署高可用的集群,你需要准备如下几点:</p>
+<ul>
+<li><strong>NameNode machines</strong> - the machines on which you run the Active and Standby NameNodes should have equivalent hardware to each other, and equivalent hardware to what would be used in a non-HA cluster.</li>
+<li>NameNode机器-这个机器用来跑Active和Standby NameNodes需要为两个都准备相同硬件环境,和非HA集群的使用相同的硬件.</li>
+<li><strong>JournalNode machines</strong> - the machines on which you run the JournalNodes. The JournalNode daemon is relatively lightweight, so these daemons may reasonably be collocated on machines with other Hadoop daemons, for example NameNodes, the JobTracker, or the YARN ResourceManager. <strong>Note:</strong> There must be at least 3 JournalNode daemons, since edit log modifications must be written to a majority of JNs. This will allow the system to tolerate the failure of a single machine. You may also run more than 3 JournalNodes, but in order to actually increase the number of failures the system can tolerate, you should run an odd number of JNs, (i.e. 3, 5, 7, etc.). Note that when running with N JournalNodes, the system can tolerate at most (N - 1) / 2 failures and continue to function normally.</li>
+<li>JN机器-这些机器用来运行JNs几点,JN的守护进程相对轻量级,因此可以将这些进程合理的和其他的Hadoop守护进程并置在机器上,例如:NameNodes, the JobTracker, or the YARN ResourceManager.注意:这里必须有至少三个JN守护进程,且当edit log发生修改必须写入大多数JNs.这将允许系统容忍一个单独的机器故障.你也可以运行超过3个JNs,但是为了实际增加系统容忍故障机器的个数,你需要运行奇数个JNs.注意当运行N个JNs时,系统最多可容忍(N-1)/2故障,并且继续正常运行.</li>
+</ul>
+<p>Note that, in an HA cluster, the Standby NameNode also performs checkpoints of the namespace state, and thus it is not necessary to run a Secondary NameNode, CheckpointNode, or BackupNode in an HA cluster. In fact, to do so would be an error. This also allows one who is reconfiguring a non-HA-enabled HDFS cluster to be HA-enabled to reuse the hardware which they had previously dedicated to the Secondary NameNode.</p>
+<p>注意,在高可用集群中,Standby NameNode也执行检查点动作和命名空间状态,因此在HA集群不必在去运行SNN, CheckpointNode, or BackupNode 节点,事实上,这样做是错误的.这还允许正在重新配置未启用HA的HDFS群集的用户启用HA，以重用他们先前专用于SNN的硬件。</p>
 
       </div>
       
@@ -459,7 +544,7 @@ more 20201107error.log</code></pre>
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2018/10/13/2020-11-04-quannnxu-linux/" target="_blank" title="Linux基础01">http://www.quanxu.com/2018/10/13/2020-11-04-quannnxu-linux/</a>
+    <a href="/2019/03/10/hadoopha01/" target="_blank" title="Hadoop HA架构">http://www.quanxu.com/2019/03/10/hadoopha01/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -475,12 +560,20 @@ more 20201107error.log</code></pre>
       <div class="post-nav">
 
   <div class="post-nav-prev post-nav-item">
-    <a href="/2018/10/15/2020-11-08-quannnxu-linux2/">
-      上一篇:    Linux基础02
+    <a href="/2019/03/15/hadoopha02/">
+      上一篇:    Hadoop HA之集群部署
     </a>
   </div>
 
 
+
+  <div class="post-nav-next post-nav-item">
+    <a href="/2018/12/23/2020-12-18-quannnxu-xiang-mu-4/">
+      <span>
+        下一篇:    数仓知识 
+      </span>
+    </a>
+  </div>
 
 </div>
 
