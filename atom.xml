@@ -373,11 +373,11 @@ path.logs:</summary>
   </entry>
   
   <entry>
-    <title>Sparrk对接HBase</title>
+    <title>Spark对接HBase</title>
     <link href="http://www.quanxu.com/2019/12/21/spark-dui-jie-hbase/"/>
     <id>http://www.quanxu.com/2019/12/21/spark-dui-jie-hbase/</id>
     <published>2019-12-21T14:19:56.000Z</published>
-    <updated>2021-05-30T07:40:58.544Z</updated>
+    <updated>2021-06-10T08:39:24.852Z</updated>
     
     
       
@@ -391,10 +391,10 @@ path.logs:</summary>
     
     
     
-    <category term="Sparrk" scheme="http://www.quanxu.com/categories/Sparrk/"/>
+    <category term="Spark" scheme="http://www.quanxu.com/categories/Spark/"/>
     
     
-    <category term="Sparrk" scheme="http://www.quanxu.com/tags/Sparrk/"/>
+    <category term="Spark" scheme="http://www.quanxu.com/tags/Spark/"/>
     
   </entry>
   
