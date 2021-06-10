@@ -328,7 +328,7 @@
             <div class="flag">
               <div class="img-mask" style="height: 100%;background-image: url('/medias/beijing.jpg'); background-size: cover; 
                 background-position: center center;"></div>
-              <!-- <img class="homeSwiper img-mask" src="/medias/14.png" alt="" style="width: 100%;background-size: cover; 
+              <!-- <img class="homeSwiper img-mask" src="/medias/6.jpg" alt="" style="width: 100%;background-size: cover; 
               background-position: center center;"> -->
               <div class="flag-text">
                 <div>
@@ -593,23 +593,23 @@
         <div class="post-info">
           <div class="post-time">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2019-02-15</span>
+            <span class="post-time">2020-03-05</span>
           </div>
           <div class="post-title">
-            <a class="post-title-link" href="/2019/02/15/flume01/">Flume基础</a>
+            <a class="post-title-link" href="/2020/03/05/flink05/">Flink WaterMarker</a>
           </div>
           <div class="post-meta">
             <div class="post-tags">
               
     <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flume/" rel="tag">Flume</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flink/" rel="tag">Flink</a></li></ul>
 
             </div>
             <div class="post-categories">
               
 <div class="article-category">
   <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/Flume/">Flume</a>
+  <a class="article-category-link" href="/categories/Flink/">Flink</a>
 </div>
 
             </div>
@@ -617,26 +617,27 @@
           <div class="post-img-mobile">
             
               
-              <a href="/2019/02/15/flume01/" style="background: url('/medias/6.jpg');background-size: cover; 
+              <a href="/2020/03/05/flink05/" style="background: url('/medias/14.png');background-size: cover; 
                 background-position: center center;">
               </a>
             
           </div>
           <div class="post-content">
-            1 Flume1.1 解压tar -zxvf flume-ng-1.6.0-cdh5.16.2.tar.gz -C  ../app/
-1.2 配置环境变量环境变量下追加:
-export FLUME_HOME=/home/hadoop/app
+            EventTime使用时必须要有一个带时间的字段.
+​    如果window是5s,从数据产生到flink会有一个延迟.那么具体要等多久,这就需要watermark.
+开启WM必须要配置
+env.setStreamTimeCharacte
           </div>
         </div>
         <div class="post-more">
-          <a href="/2019/02/15/flume01/">
+          <a href="/2020/03/05/flink05/">
             <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
         
-          <a href="/2019/02/15/flume01/" style="background: url('/medias/6.jpg');background-size: cover; 
+          <a href="/2020/03/05/flink05/" style="background: url('/medias/14.png');background-size: cover; 
             background-position: center center;">
           </a>
         
@@ -648,23 +649,23 @@ export FLUME_HOME=/home/hadoop/app
         <div class="post-info">
           <div class="post-time">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2019-02-15</span>
+            <span class="post-time">2019-12-25</span>
           </div>
           <div class="post-title">
-            <a class="post-title-link" href="/2019/02/15/shell-ji-chu-01/">Shell基础</a>
+            <a class="post-title-link" href="/2019/12/25/sparkstreaming01/">Spark Sreaming</a>
           </div>
           <div class="post-meta">
             <div class="post-tags">
               
     <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/" rel="tag">Shell</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spark/" rel="tag">Spark</a></li></ul>
 
             </div>
             <div class="post-categories">
               
 <div class="article-category">
   <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/Shell/">Shell</a>
+  <a class="article-category-link" href="/categories/Spark/">Spark</a>
 </div>
 
             </div>
@@ -672,30 +673,32 @@ export FLUME_HOME=/home/hadoop/app
           <div class="post-img-mobile">
             
               
-              <a href="/2019/02/15/shell-ji-chu-01/" style="background: url('/medias/4.png');background-size: cover; 
+              <a href="/2019/12/25/sparkstreaming01/" style="background: url('/medias/10.jpg');background-size: cover; 
                 background-position: center center;">
               </a>
             
           </div>
           <div class="post-content">
-            1.脚本规范1.1 第一行:#!/bin/bash
-第一行是解释器,脚本后缀一般是.sh
-/etc/passwd文件保存的是用户信息和命令解释器
-/bin/bash
-/bin/false
-/sbin/nologin
-后面两种是切换不到用户的
+            重点:
+​    状态
+​    数据一致性
+​    容错
+​    对接kafka
+Spark是批处理为主,Flink是流处理为主的.
+简单的WC案例:
+package com.bigdata.sparkstreaming.basic
+
           </div>
         </div>
         <div class="post-more">
-          <a href="/2019/02/15/shell-ji-chu-01/">
+          <a href="/2019/12/25/sparkstreaming01/">
             <i class="iconfont iconmore" style="" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
         
-          <a href="/2019/02/15/shell-ji-chu-01/" style="background: url('/medias/4.png');background-size: cover; 
+          <a href="/2019/12/25/sparkstreaming01/" style="background: url('/medias/10.jpg');background-size: cover; 
             background-position: center center;">
           </a>
         
@@ -707,23 +710,23 @@ export FLUME_HOME=/home/hadoop/app
         <div class="post-info">
           <div class="post-time">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2019-01-31</span>
+            <span class="post-time">2019-12-25</span>
           </div>
           <div class="post-title">
-            <a class="post-title-link" href="/2019/01/31/hive-zong-jie/">Hive总结</a>
+            <a class="post-title-link" href="/2019/12/25/sparkstreaming02/">Spark Sreaming对接kafka管理offset</a>
           </div>
           <div class="post-meta">
             <div class="post-tags">
               
     <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hive/" rel="tag">Hive</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spark/" rel="tag">Spark</a></li></ul>
 
             </div>
             <div class="post-categories">
               
 <div class="article-category">
   <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/Hive/">Hive</a>
+  <a class="article-category-link" href="/categories/Spark/">Spark</a>
 </div>
 
             </div>
@@ -731,32 +734,27 @@ export FLUME_HOME=/home/hadoop/app
           <div class="post-img-mobile">
             
               
-              <a href="/2019/01/31/hive-zong-jie/" style="background: url('/medias/8.png');background-size: cover; 
+              <a href="/2019/12/25/sparkstreaming02/" style="background: url('/medias/14.png');background-size: cover; 
                 background-position: center center;">
               </a>
             
           </div>
           <div class="post-content">
-            一 Hive基础总结1.1 Hive简介Hive是构建在Hadoop之上的数据仓库
-Hive主要是用来跑离线批处理作业,时效性较差.
-1.2 Hive与RDBMS对比从以下几点对比:
-分布式
-节点数
-成本
-数据量
-事务
-1.3 Hive架构
+            SparkStreaming对接kafka:
+package com.bigdata.sparkstreaming.ss.offset
+
+import org.apache.kafka.common.serialization.String
           </div>
         </div>
         <div class="post-more">
-          <a href="/2019/01/31/hive-zong-jie/">
+          <a href="/2019/12/25/sparkstreaming02/">
             <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
         
-          <a href="/2019/01/31/hive-zong-jie/" style="background: url('/medias/8.png');background-size: cover; 
+          <a href="/2019/12/25/sparkstreaming02/" style="background: url('/medias/14.png');background-size: cover; 
             background-position: center center;">
           </a>
         
@@ -768,23 +766,23 @@ Hive主要是用来跑离线批处理作业,时效性较差.
         <div class="post-info">
           <div class="post-time">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2018-12-23</span>
+            <span class="post-time">2019-12-25</span>
           </div>
           <div class="post-title">
-            <a class="post-title-link" href="/2018/12/23/2020-12-18-quannnxu-xiang-mu-4/">数仓知识</a>
+            <a class="post-title-link" href="/2019/12/25/sparkstreamingstruct01/">Spark Sreaming Structure</a>
           </div>
           <div class="post-meta">
             <div class="post-tags">
               
     <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E4%BB%93/" rel="tag">数仓</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spark/" rel="tag">Spark</a></li></ul>
 
             </div>
             <div class="post-categories">
               
 <div class="article-category">
   <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E6%95%B0%E4%BB%93/">数仓</a>
+  <a class="article-category-link" href="/categories/Spark/">Spark</a>
 </div>
 
             </div>
@@ -792,24 +790,28 @@ Hive主要是用来跑离线批处理作业,时效性较差.
           <div class="post-img-mobile">
             
               
-              <a href="/2018/12/23/2020-12-18-quannnxu-xiang-mu-4/" style="background: url('/medias/3.png');background-size: cover; 
+              <a href="/2019/12/25/sparkstreamingstruct01/" style="background: url('/medias/12.png');background-size: cover; 
                 background-position: center center;">
               </a>
             
           </div>
           <div class="post-content">
-            
+            WC案例:
+package com.bigdata.spark.sss
+
+import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.streaming.Outp
           </div>
         </div>
         <div class="post-more">
-          <a href="/2018/12/23/2020-12-18-quannnxu-xiang-mu-4/">
+          <a href="/2019/12/25/sparkstreamingstruct01/">
             <i class="iconfont iconmore" style="" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
         
-          <a href="/2018/12/23/2020-12-18-quannnxu-xiang-mu-4/" style="background: url('/medias/3.png');background-size: cover; 
+          <a href="/2019/12/25/sparkstreamingstruct01/" style="background: url('/medias/12.png');background-size: cover; 
             background-position: center center;">
           </a>
         
@@ -821,23 +823,23 @@ Hive主要是用来跑离线批处理作业,时效性较差.
         <div class="post-info">
           <div class="post-time">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2018-12-16</span>
+            <span class="post-time">2019-12-21</span>
           </div>
           <div class="post-title">
-            <a class="post-title-link" href="/2018/12/16/2020-12-16-quannnxu-xiang-mu-1/">数仓知识</a>
+            <a class="post-title-link" href="/2019/12/21/spark-dui-jie-hbase/">Sparrk对接HBase</a>
           </div>
           <div class="post-meta">
             <div class="post-tags">
               
     <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E4%BB%93/" rel="tag">数仓</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sparrk/" rel="tag">Sparrk</a></li></ul>
 
             </div>
             <div class="post-categories">
               
 <div class="article-category">
   <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E6%95%B0%E4%BB%93/">数仓</a>
+  <a class="article-category-link" href="/categories/Sparrk/">Sparrk</a>
 </div>
 
             </div>
@@ -845,28 +847,28 @@ Hive主要是用来跑离线批处理作业,时效性较差.
           <div class="post-img-mobile">
             
               
-              <a href="/2018/12/16/2020-12-16-quannnxu-xiang-mu-1/" style="background: url('/medias/3.png');background-size: cover; 
+              <a href="/2019/12/21/spark-dui-jie-hbase/" style="background: url('/medias/8.png');background-size: cover; 
                 background-position: center center;">
               </a>
             
           </div>
           <div class="post-content">
-            一.ERP介绍可以理解为一个复杂的丰富的进销存管理系统
-1.1日志管理:pv    uv【智能分单】：如收货地址会进行分区域发货，但是收货地址规格不统一，需要预先清洗再智能分单
-清洗：
-甲：上海市    100W
-乙：上海        1
+            关键类:BaseRelationRelationProvider
+package com.bigdata.spark.source
+
+package object hbase &amp;#123;
+  case class SparkSch
           </div>
         </div>
         <div class="post-more">
-          <a href="/2018/12/16/2020-12-16-quannnxu-xiang-mu-1/">
+          <a href="/2019/12/21/spark-dui-jie-hbase/">
             <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
         
-          <a href="/2018/12/16/2020-12-16-quannnxu-xiang-mu-1/" style="background: url('/medias/3.png');background-size: cover; 
+          <a href="/2019/12/21/spark-dui-jie-hbase/" style="background: url('/medias/8.png');background-size: cover; 
             background-position: center center;">
           </a>
         
@@ -878,23 +880,23 @@ Hive主要是用来跑离线批处理作业,时效性较差.
         <div class="post-info">
           <div class="post-time">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2018-12-16</span>
+            <span class="post-time">2019-12-12</span>
           </div>
           <div class="post-title">
-            <a class="post-title-link" href="/2018/12/16/2020-12-17-quannnxu-xiang-mu-2/">数仓知识之数仓分层建模</a>
+            <a class="post-title-link" href="/2019/12/12/phoenix/">Phoenix</a>
           </div>
           <div class="post-meta">
             <div class="post-tags">
               
     <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E4%BB%93/" rel="tag">数仓</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Phoenix/" rel="tag">Phoenix</a></li></ul>
 
             </div>
             <div class="post-categories">
               
 <div class="article-category">
   <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E6%95%B0%E4%BB%93/">数仓</a>
+  <a class="article-category-link" href="/categories/Phoenix/">Phoenix</a>
 </div>
 
             </div>
@@ -902,30 +904,28 @@ Hive主要是用来跑离线批处理作业,时效性较差.
           <div class="post-img-mobile">
             
               
-              <a href="/2018/12/16/2020-12-17-quannnxu-xiang-mu-2/" style="background: url('/medias/11.png');background-size: cover; 
+              <a href="/2019/12/12/phoenix/" style="background: url('/medias/5.jpg');background-size: cover; 
                 background-position: center center;">
               </a>
             
           </div>
           <div class="post-content">
-            1.离线分层ODS
-DWD
-DWS
-ADS
-数据分层的数据量其实是一个倒三角型,越到后面数据量越精简.
-2.命名规范(表的命名,字段的命名)2.1 1个database的情况表前缀    ods    dwd    dws    ads
-二
+            OLTP 联机事务处理    关系型数据库    Oracle/MySQL
+OLAP 联机分析处理
+版本选择
+apache-phoenix-4.14.0-cdh5.14.2-bin.tar.gz
+部署 tar -zxvf apache-ph
           </div>
         </div>
         <div class="post-more">
-          <a href="/2018/12/16/2020-12-17-quannnxu-xiang-mu-2/">
+          <a href="/2019/12/12/phoenix/">
             <i class="iconfont iconmore" style="" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
         
-          <a href="/2018/12/16/2020-12-17-quannnxu-xiang-mu-2/" style="background: url('/medias/11.png');background-size: cover; 
+          <a href="/2019/12/12/phoenix/" style="background: url('/medias/5.jpg');background-size: cover; 
             background-position: center center;">
           </a>
         
@@ -937,23 +937,23 @@ ADS
         <div class="post-info">
           <div class="post-time">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2018-12-16</span>
+            <span class="post-time">2019-12-08</span>
           </div>
           <div class="post-title">
-            <a class="post-title-link" href="/2018/12/16/2020-12-18-quannnxu-xiang-mu-3/">数仓知识</a>
+            <a class="post-title-link" href="/2019/12/08/azkaban/">Azkaban部署及二次开发</a>
           </div>
           <div class="post-meta">
             <div class="post-tags">
               
     <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E4%BB%93/" rel="tag">数仓</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Azkaban/" rel="tag">Azkaban</a></li></ul>
 
             </div>
             <div class="post-categories">
               
 <div class="article-category">
   <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E6%95%B0%E4%BB%93/">数仓</a>
+  <a class="article-category-link" href="/categories/Azkaban/">Azkaban</a>
 </div>
 
             </div>
@@ -961,28 +961,27 @@ ADS
           <div class="post-img-mobile">
             
               
-              <a href="/2018/12/16/2020-12-18-quannnxu-xiang-mu-3/" style="background: url('/medias/3.png');background-size: cover; 
+              <a href="/2019/12/08/azkaban/" style="background: url('/medias/5.jpg');background-size: cover; 
                 background-position: center center;">
               </a>
             
           </div>
           <div class="post-content">
-            1.表设计
-1.1 主键字段
-1.2 更新时间字段
-1.3 逻辑删除
-
+            1.解压
+tar -zxvf azkaban-3.90.0.tar.gz
+2.打开gradle-wrapper.properties
+cd /home/hadoop/sourcecode/azkaban-3.90.0/gradle/wrap
           </div>
         </div>
         <div class="post-more">
-          <a href="/2018/12/16/2020-12-18-quannnxu-xiang-mu-3/">
+          <a href="/2019/12/08/azkaban/">
             <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
         
-          <a href="/2018/12/16/2020-12-18-quannnxu-xiang-mu-3/" style="background: url('/medias/3.png');background-size: cover; 
+          <a href="/2019/12/08/azkaban/" style="background: url('/medias/5.jpg');background-size: cover; 
             background-position: center center;">
           </a>
         
@@ -994,23 +993,23 @@ ADS
         <div class="post-info">
           <div class="post-time">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2018-12-13</span>
+            <span class="post-time">2019-12-05</span>
           </div>
           <div class="post-title">
-            <a class="post-title-link" href="/2018/12/13/2020-12-13-quannnxu-hive5/">Hive基础之数据导出Sqoop</a>
+            <a class="post-title-link" href="/2019/12/05/spark-yuan-ma-fen-xi/">Spark源码分析</a>
           </div>
           <div class="post-meta">
             <div class="post-tags">
               
     <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sqoop/" rel="tag">Sqoop</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spark/" rel="tag">Spark</a></li></ul>
 
             </div>
             <div class="post-categories">
               
 <div class="article-category">
   <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/Sqoop/">Sqoop</a>
+  <a class="article-category-link" href="/categories/Spark/">Spark</a>
 </div>
 
             </div>
@@ -1018,26 +1017,28 @@ ADS
           <div class="post-img-mobile">
             
               
-              <a href="/2018/12/13/2020-12-13-quannnxu-hive5/" style="background: url('/medias/4.png');background-size: cover; 
+              <a href="/2019/12/05/spark-yuan-ma-fen-xi/" style="background: url('/medias/15.png');background-size: cover; 
                 background-position: center center;">
               </a>
             
           </div>
           <div class="post-content">
-            SqoopRDBMS    ==&gt;    Hadoop(HDFS/Hive/HBase…)
-Hadoop(HDFS/Hive/HBase…)    ==&gt;    RDBMS
-以Hadoop作为参照物,如果数据是进Hadoop的,
+            Spark源码重点;
+SparkSubmit.mian&amp;#123;
+
+​    def doSubmit(args: Array[String]): Unit = &amp;#123;
+        val appArgs = p
           </div>
         </div>
         <div class="post-more">
-          <a href="/2018/12/13/2020-12-13-quannnxu-hive5/">
+          <a href="/2019/12/05/spark-yuan-ma-fen-xi/">
             <i class="iconfont iconmore" style="" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
         
-          <a href="/2018/12/13/2020-12-13-quannnxu-hive5/" style="background: url('/medias/4.png');background-size: cover; 
+          <a href="/2019/12/05/spark-yuan-ma-fen-xi/" style="background: url('/medias/15.png');background-size: cover; 
             background-position: center center;">
           </a>
         
@@ -1049,23 +1050,23 @@ Hadoop(HDFS/Hive/HBase…)    ==&gt;    RDBMS
         <div class="post-info">
           <div class="post-time">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2018-12-10</span>
+            <span class="post-time">2019-11-27</span>
           </div>
           <div class="post-title">
-            <a class="post-title-link" href="/2018/12/10/2020-12-07-quannnxu-hive3/">Hive基础之Hive DML语法</a>
+            <a class="post-title-link" href="/2019/11/27/flume-zi-ding-yi-source/">Flume自定义</a>
           </div>
           <div class="post-meta">
             <div class="post-tags">
               
     <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hive/" rel="tag">Hive</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Project/" rel="tag">Project</a></li></ul>
 
             </div>
             <div class="post-categories">
               
 <div class="article-category">
   <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/Hive/">Hive</a>
+  <a class="article-category-link" href="/categories/Project/">Project</a>
 </div>
 
             </div>
@@ -1073,26 +1074,27 @@ Hadoop(HDFS/Hive/HBase…)    ==&gt;    RDBMS
           <div class="post-img-mobile">
             
               
-              <a href="/2018/12/10/2020-12-07-quannnxu-hive3/" style="background: url('/medias/14.png');background-size: cover; 
+              <a href="/2019/11/27/flume-zi-ding-yi-source/" style="background: url('/medias/8.png');background-size: cover; 
                 background-position: center center;">
               </a>
             
           </div>
           <div class="post-content">
-            https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DML
-Loading files into tables语法:
-LOAD DATA [LOCAL] INPAT
+            pom.xml添加Flume依赖
+            &lt;dependency>
+                &lt;groupId>org.apache.flume&lt;/groupId>
+                &
           </div>
         </div>
         <div class="post-more">
-          <a href="/2018/12/10/2020-12-07-quannnxu-hive3/">
+          <a href="/2019/11/27/flume-zi-ding-yi-source/">
             <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
         
-          <a href="/2018/12/10/2020-12-07-quannnxu-hive3/" style="background: url('/medias/14.png');background-size: cover; 
+          <a href="/2019/11/27/flume-zi-ding-yi-source/" style="background: url('/medias/8.png');background-size: cover; 
             background-position: center center;">
           </a>
         
@@ -1104,23 +1106,23 @@ LOAD DATA [LOCAL] INPAT
         <div class="post-info">
           <div class="post-time">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2018-12-10</span>
+            <span class="post-time">2019-11-21</span>
           </div>
           <div class="post-title">
-            <a class="post-title-link" href="/2018/12/10/2020-12-12-quannnxu-hive4/">Hive基础之Hive分区和常用函数</a>
+            <a class="post-title-link" href="/2019/11/21/hadoop-chi-xian-shu-cang-01/">Hadoop离线数仓01</a>
           </div>
           <div class="post-meta">
             <div class="post-tags">
               
     <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hive/" rel="tag">Hive</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Project/" rel="tag">Project</a></li></ul>
 
             </div>
             <div class="post-categories">
               
 <div class="article-category">
   <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/Hive/">Hive</a>
+  <a class="article-category-link" href="/categories/Project/">Project</a>
 </div>
 
             </div>
@@ -1128,27 +1130,29 @@ LOAD DATA [LOCAL] INPAT
           <div class="post-img-mobile">
             
               
-              <a href="/2018/12/10/2020-12-12-quannnxu-hive4/" style="background: url('/medias/2.png');background-size: cover; 
+              <a href="/2019/11/21/hadoop-chi-xian-shu-cang-01/" style="background: url('/medias/9.png');background-size: cover; 
                 background-position: center center;">
               </a>
             
           </div>
           <div class="post-content">
-            1.PARTITIONED BY1.1 分区表​    如:操作日志表    需记录时间,事件等信息,数据量大
-​    所以就需要分区
-语法:
-[PARTITIONED BY (col_name data_type [COMMENT co
+            数据:
+​    日志数据
+​    业务数据:数据库
+流程:
+LogServer ==&gt; Flume ==&gt; HDFS ==&gt; 离线
+​                                      ==&g
           </div>
         </div>
         <div class="post-more">
-          <a href="/2018/12/10/2020-12-12-quannnxu-hive4/">
+          <a href="/2019/11/21/hadoop-chi-xian-shu-cang-01/">
             <i class="iconfont iconmore" style="" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
         
-          <a href="/2018/12/10/2020-12-12-quannnxu-hive4/" style="background: url('/medias/2.png');background-size: cover; 
+          <a href="/2019/11/21/hadoop-chi-xian-shu-cang-01/" style="background: url('/medias/9.png');background-size: cover; 
             background-position: center center;">
           </a>
         
@@ -1158,7 +1162,7 @@ LOAD DATA [LOCAL] INPAT
 </section>
 
   <nav class="page-nav">
-    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
+    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
   </nav>
 
     </main>

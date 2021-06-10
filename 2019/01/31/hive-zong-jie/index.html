@@ -771,8 +771,7 @@ concat_ws<span class="token punctuation">(</span><span class="token string">'-'<
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
 name<span class="token punctuation">,</span>
 date_sub<span class="token punctuation">(</span><span class="token keyword">date</span><span class="token punctuation">,</span>row_number<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span>distribute <span class="token keyword">by</span> name sort <span class="token keyword">by</span> <span class="token keyword">date</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">as</span> ds
-<span class="token keyword">from</span> visit_tmp<span class="token punctuation">)</span> t1
-<span class="token keyword">group</span> <span class="token keyword">by</span> name<span class="token punctuation">,</span>ds<span class="token punctuation">;</span></code></pre>
+<span class="token keyword">from</span> visit_tmp<span class="token punctuation">;</span></code></pre>
 <p>第二步：按照用name和持续的日期进行分组，求出每个用户所有持续日期的持续天数</p>
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
 name<span class="token punctuation">,</span>
@@ -780,9 +779,9 @@ name<span class="token punctuation">,</span>
 <span class="token keyword">from</span> 
 <span class="token punctuation">(</span><span class="token keyword">select</span> 
 name<span class="token punctuation">,</span>
-date_sub<span class="token punctuation">(</span><span class="token keyword">date</span><span class="token punctuation">,</span>row_number<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span>distribute <span class="token keyword">by</span> name sort <span class="token keyword">by</span> <span class="token keyword">date</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">as</span> ds
+date_sub<span class="token punctuation">(</span><span class="token keyword">date</span><span class="token punctuation">,</span>row_number<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span>distribute <span class="token keyword">by</span> name sort <span class="token keyword">by</span> <span class="token keyword">date</span><span class="token punctuation">)</span><span class="token punctuation">)</span> ds
 <span class="token keyword">from</span> visit_tmp<span class="token punctuation">)</span> t1
-<span class="token keyword">group</span> <span class="token keyword">by</span> name<span class="token punctuation">,</span>ds<span class="token punctuation">)</span> t2</code></pre>
+<span class="token keyword">group</span> <span class="token keyword">by</span> name<span class="token punctuation">,</span>ds<span class="token punctuation">;</span></code></pre>
 <p>第三步：按照name进行分组，求出每个用户连续登陆的最大天数</p>
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
 name<span class="token punctuation">,</span>
@@ -798,7 +797,7 @@ date_sub<span class="token punctuation">(</span><span class="token keyword">date
 <span class="token keyword">from</span> visit_tmp<span class="token punctuation">)</span> t1
 <span class="token keyword">group</span> <span class="token keyword">by</span> name<span class="token punctuation">,</span>ds<span class="token punctuation">)</span> t2
 <span class="token keyword">group</span> <span class="token keyword">by</span> name<span class="token punctuation">;</span></code></pre>
-
+<h5 id=""><a href="#" class="headerlink" title=""></a></h5>
       </div>
       
         <div class="copyright">
@@ -830,14 +829,6 @@ date_sub<span class="token punctuation">(</span><span class="token keyword">date
   </div>
 
 
-
-  <div class="post-nav-next post-nav-item">
-    <a href="/2018/12/23/2020-12-18-quannnxu-xiang-mu-4/">
-      <span>
-        下一篇:    数仓知识 
-      </span>
-    </a>
-  </div>
 
 </div>
 

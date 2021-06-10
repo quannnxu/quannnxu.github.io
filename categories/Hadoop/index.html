@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>分类: Hadoop | 欢迎来到我的博客</title>
+  <title>分类: hadoop | 欢迎来到我的博客</title>
   
     
 <link rel="stylesheet" href="/js/aos/aos.css">
@@ -316,7 +316,7 @@ background-position: center center;">
 </div>
 <div class="category">
   <div class="category-name">
-    <div class="name" style="background-color: #E8F8F5;">Hadoop 分类</div>
+    <div class="name" style="background-color: #FFF;">hadoop 分类</div>
   </div>
   <section class="posts">
     
@@ -326,10 +326,10 @@ background-position: center center;">
         <div class="post-info">
           <div class="post-time">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2019-03-21</span>
+            <span class="post-time">2019-03-22</span>
           </div>
           <div class="post-title">
-            <a class="post-title-link" href="/2019/03/21/hadoop-zong-jie/">Hadoop总结</a>
+            <a class="post-title-link" href="/2019/03/22/mr-bian-cheng-02/">Hadoop MapReduce编程01</a>
           </div>
           <div class="post-meta">
             <div class="post-tags">
@@ -342,30 +342,33 @@ background-position: center center;">
               
 <div class="article-category">
   <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/Hadoop/">Hadoop</a>
+  <a class="article-category-link" href="/categories/hadoop/">hadoop</a>
 </div>
 
             </div>
           </div>
           <div class="post-img-mobile">
-            <a href="/2019/03/21/hadoop-zong-jie/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
+            <a href="/2019/03/22/mr-bian-cheng-02/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
               background-position: center center;">
             </a>
           </div>
           <div class="post-content">
-            一 Hadoop伪分布式集群部署步骤及总结:1.1 JDK部署1.2 解压软连接两个使用场景:
-a.版本切换，脚本应用是配置的hadoop，是无感知的
-b.小盘换大盘/ 系统盘 100G /ruozedata 80G/data01 数据盘 
+            Hadoop序列化:
+​    序列化: 内存中的对象==&gt;字节数组        网络传输、数据持久化
+​    反序列化：字节数组==&gt;内存中
+IntWritable、Text等都是序列化类型
+自定义序列化:
+package
           </div>
         </div>
         <div class="post-more">
-          <a href="/2019/03/21/hadoop-zong-jie/">
+          <a href="/2019/03/22/mr-bian-cheng-02/">
             <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
-        <a href="/2019/03/21/hadoop-zong-jie/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
+        <a href="/2019/03/22/mr-bian-cheng-02/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
           background-position: center center;">
         </a>
       </div>
@@ -373,6 +376,59 @@ b.小盘换大盘/ 系统盘 100G /ruozedata 80G/data01 数据盘
     
     <article class="post" data-aos="fade-up"
       style="">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2019-03-20</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2019/03/20/mr-bian-cheng-01/">Hadoop MapReduce编程01</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop/" rel="tag">Hadoop</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/hadoop/">hadoop</a>
+</div>
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            <a href="/2019/03/20/mr-bian-cheng-01/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
+              background-position: center center;">
+            </a>
+          </div>
+          <div class="post-content">
+            Map: 一个任务拆解成多个
+Reduce:  把拆解开的任务做最后的聚合操作
+使用场景: 离线、批计算
+不适应场景：实时计算、迭代计算
+shuffle：按照key的hash进行分发的，相同的key分到同一个reduce任务做最后的汇总操作
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2019/03/20/mr-bian-cheng-01/">
+            <i class="iconfont iconmore" style="" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        <a href="/2019/03/20/mr-bian-cheng-01/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
+          background-position: center center;">
+        </a>
+      </div>
+    </article>
+    
+    <article class="post" data-aos="fade-up"
+      style="flex-direction: row-reverse;">
       <div class="post-main">
         <div class="post-info">
           <div class="post-time">
@@ -380,426 +436,42 @@ b.小盘换大盘/ 系统盘 100G /ruozedata 80G/data01 数据盘
             <span class="post-time">2019-03-15</span>
           </div>
           <div class="post-title">
-            <a class="post-title-link" href="/2019/03/15/hadoopha02/">Hadoop HA之集群部署</a>
+            <a class="post-title-link" href="/2019/03/15/hdfsapi-bian-cheng-01/">HadoopAPI编程01</a>
           </div>
           <div class="post-meta">
             <div class="post-tags">
               
     <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop-HA/" rel="tag">Hadoop HA</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HadoopAPI/" rel="tag">HadoopAPI</a></li></ul>
 
             </div>
             <div class="post-categories">
               
 <div class="article-category">
   <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/Hadoop/">Hadoop</a>
+  <a class="article-category-link" href="/categories/hadoop/">hadoop</a>
 </div>
 
             </div>
           </div>
           <div class="post-img-mobile">
-            <a href="/2019/03/15/hadoopha02/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
+            <a href="/2019/03/15/hdfsapi-bian-cheng-01/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
               background-position: center center;">
             </a>
           </div>
           <div class="post-content">
-            1.版本
-
-
-组件名
-版本
-
-
-
-Centos
-7.2
-
-
-JRE
-jdk-8u45-linux-x64.gz
-
-
-Hadoop
-hadoop-2.6.0-cdh5.16.2.tar.gz
-
-
-Zookeeper
-zookeeper-3.4
+            一 环境配置pom.xml
+&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance
           </div>
         </div>
         <div class="post-more">
-          <a href="/2019/03/15/hadoopha02/">
-            <i class="iconfont iconmore" style="" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2019/03/15/hadoopha02/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
-          background-position: center center;">
-        </a>
-      </div>
-    </article>
-    
-    <article class="post" data-aos="fade-up"
-      style="flex-direction: row-reverse;">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2019-03-10</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2019/03/10/hadoopha01/">Hadoop HA架构</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop-HA/" rel="tag">Hadoop HA</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/Hadoop/">Hadoop</a>
-</div>
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2019/03/10/hadoopha01/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
-              background-position: center center;">
-            </a>
-          </div>
-          <div class="post-content">
-            1.Linux1.1文件夹mkdir dir1 dir2
-mkdir -p dir3/dir4
-cd /app/xxx    绝对路径
-cd /app
-cd xxx    相对路径
-1.2 文件touch bd1.txt
-vi bd2.tx
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2019/03/10/hadoopha01/">
+          <a href="/2019/03/15/hdfsapi-bian-cheng-01/">
             <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
-        <a href="/2019/03/10/hadoopha01/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
-          background-position: center center;">
-        </a>
-      </div>
-    </article>
-    
-    <article class="post" data-aos="fade-up"
-      style="">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2018-12-02</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2018/12/02/2020-12-02-quannnxu-hadoop6/">hadoop06之Yarn参数调优</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop/" rel="tag">Hadoop</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/Hadoop/">Hadoop</a>
-</div>
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2018/12/02/2020-12-02-quannnxu-hadoop6/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
-              background-position: center center;">
-            </a>
-          </div>
-          <div class="post-content">
-            1.container容器关于yarn的调优,其实就是调整container
-虚拟化    是memory+cpu vcore组成的 是专门运行任务
-生产上应如何调优container参数?
-128G    16物理core
-1.1 系统装
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2018/12/02/2020-12-02-quannnxu-hadoop6/">
-            <i class="iconfont iconmore" style="" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2018/12/02/2020-12-02-quannnxu-hadoop6/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
-          background-position: center center;">
-        </a>
-      </div>
-    </article>
-    
-    <article class="post" data-aos="fade-up"
-      style="flex-direction: row-reverse;">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2018-11-30</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2018/11/30/2020-11-29-quannnxu-hadoop5/">hadoop05之MapReduce/yarn架构</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop/" rel="tag">Hadoop</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/Hadoop/">Hadoop</a>
-</div>
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2018/11/30/2020-11-29-quannnxu-hadoop5/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
-              background-position: center center;">
-            </a>
-          </div>
-          <div class="post-content">
-            MapReduce
-Hive 执行引擎就是MapReduce
-1.分布式计算框架map    映射
-​            指的是一组数据按照规则映射为一组
-​            string= a b c
-​            
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2018/11/30/2020-11-29-quannnxu-hadoop5/">
-            <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2018/11/30/2020-11-29-quannnxu-hadoop5/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
-          background-position: center center;">
-        </a>
-      </div>
-    </article>
-    
-    <article class="post" data-aos="fade-up"
-      style="">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2018-11-29</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2018/11/29/2020-11-28-quannnxu-hadoop4/">hadoop04之hdfs命令</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop/" rel="tag">Hadoop</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/Hadoop/">Hadoop</a>
-</div>
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2018/11/29/2020-11-28-quannnxu-hadoop4/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
-              background-position: center center;">
-            </a>
-          </div>
-          <div class="post-content">
-            1.SNN(检查点动作)
-
-517是正在编辑的日志                                                                                               
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2018/11/29/2020-11-28-quannnxu-hadoop4/">
-            <i class="iconfont iconmore" style="" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2018/11/29/2020-11-28-quannnxu-hadoop4/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
-          background-position: center center;">
-        </a>
-      </div>
-    </article>
-    
-    <article class="post" data-aos="fade-up"
-      style="flex-direction: row-reverse;">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2018-11-24</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2018/11/24/2020-11-25-quannnxu-hadoop3/">hadoop03之hdfs架构</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop/" rel="tag">Hadoop</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/Hadoop/">Hadoop</a>
-</div>
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2018/11/24/2020-11-25-quannnxu-hadoop3/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
-              background-position: center center;">
-            </a>
-          </div>
-          <div class="post-content">
-            1.HDFS主从架构namenode：nn名称节点a.文件的名称
-b.文件的目录结构
-c.文件的属性    权限    副本数    创建时间
-[hadoop@warehouse001 ~]$ hdfs dfs -ls /20/11/25 
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2018/11/24/2020-11-25-quannnxu-hadoop3/">
-            <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2018/11/24/2020-11-25-quannnxu-hadoop3/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
-          background-position: center center;">
-        </a>
-      </div>
-    </article>
-    
-    <article class="post" data-aos="fade-up"
-      style="">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2018-11-15</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2018/11/15/2020-11-22-quannnxu-hadoop2/">hadoop02之yarn部署及简析</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop/" rel="tag">Hadoop</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/Hadoop/">Hadoop</a>
-</div>
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2018/11/15/2020-11-22-quannnxu-hadoop2/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
-              background-position: center center;">
-            </a>
-          </div>
-          <div class="post-content">
-            主从架构ResourceManager daemon and NodeManager daemon
-1.yarn部署1.1 配置文件[hadoop@warehouse001hadoop]$ cp mapred-site.xml.templa
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2018/11/15/2020-11-22-quannnxu-hadoop2/">
-            <i class="iconfont iconmore" style="" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2018/11/15/2020-11-22-quannnxu-hadoop2/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
-          background-position: center center;">
-        </a>
-      </div>
-    </article>
-    
-    <article class="post" data-aos="fade-up"
-      style="flex-direction: row-reverse;">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2018-11-10</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2018/11/10/2020-11-21-quannnxu-hadoop1/">hadoop01之安装部署</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop/" rel="tag">Hadoop</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/Hadoop/">Hadoop</a>
-</div>
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2018/11/10/2020-11-21-quannnxu-hadoop1/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
-              background-position: center center;">
-            </a>
-          </div>
-          <div class="post-content">
-            1.谈谈大数据存储                      hdfs  hive  hbase  kudu计算                      SQL 数据处理 、scala/java、spark、flink资源和计算作业的调度
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2018/11/10/2020-11-21-quannnxu-hadoop1/">
-            <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2018/11/10/2020-11-21-quannnxu-hadoop1/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
+        <a href="/2019/03/15/hdfsapi-bian-cheng-01/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
           background-position: center center;">
         </a>
       </div>
@@ -1000,6 +672,75 @@ c.文件的属性    权限    副本数    创建时间
     computed: {
     },
     mounted() {
+      const that = this;
+      //  监听 ctrl + c事件  
+      $(document).unbind('keypress').bind('keypress', function (e) {
+        if (e.ctrlKey && e.keyCode == 67) {
+          doSomething();
+          // 返回false, 防止重复触发copy事件  
+          return false;
+        }
+      })
+
+      // 鼠标右键的复制事件  
+      $(document).unbind('copy').bind('copy', function (e) {
+        doSomething();
+        // console.log('右键复制 监听成功');
+      });
+
+      function doSomething() {
+        that.$notify({
+          title: '成功',
+          content: '复制成功了哦',
+          type: 'success'
+        })
+        // console.log('ctrl + c 监听成功');  
+      }
+    },
+    methods: {
+    },
+    created() { }
+  })
+</script>
+    
+
+    <!-- 输入框打字特效 -->
+    
+      
+<script src="/js/activate-power-mode.js"></script>
+
+      <script>
+          POWERMODE.colorful = true;  // 打开随机颜色特效
+          POWERMODE.shake = false;    // 关闭输入框抖动
+          document.body.addEventListener('input', POWERMODE);//监听打字事件
+      </script>
+    
+
+    <!-- markdown代码一键复制功能 -->
+    
+<script src="/js/clipboard/clipboard.min.js"></script>
+
+    <script>
+      !function (e, t, a) {
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function(){
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+          copyHtml += '<i class="fa fa-globe"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre code").before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+              target: function(trigger) {
+                  return trigger.nextElementSibling;
+              }
+          });
+        }
+        initCopyCode();
+      }(window, document);
+    </script>
+  </body>
+</html>ed() {
       const that = this;
       //  监听 ctrl + c事件  
       $(document).unbind('keypress').bind('keypress', function (e) {

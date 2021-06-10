@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html>
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>Phoenix | 欢迎来到我的博客</title>
+  
+    
+<link rel="stylesheet" href="/js/aos/aos.css">
+
+  
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+  
+  
+<link rel="stylesheet" href="/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="欢迎来到我的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+  
+<script src="/js/jquery3.5.1.js"></script>
+
+  
+<script src="/js/vue2.6.11.js"></script>
+
+  <body>
+    <header class="header bg-color" 
+  style="position: fixed; 
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <i class="fa fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+  </div>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo" src="/medias/tuxiang.jpg" alt="logo">
+      <h3 class="drawer-box-head_title">欢迎来到我的博客</h3>
+      <h5 class="drawer-box-head_desc">心之所动,梦之所往</h5>
+    </div>
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          <li class="drawer-box-content_item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/friends" class="menu-item-link">
+              
+                <i class="fa fa-link" aria-hidden="true"></i>
+              
+              <span>友情链接</span>
+            </a>
+          </li>
+        
+        <li class="drawer-box-content_item">
+          <a href="">
+            <i class="fa fa-github" aria-hidden="true"></i>
+            <span>Github</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+    </div>
+    <div class="blog-title" id="author-avatar">
+      <div class="avatar">
+        <img src="/medias/tuxiang.jpg" alt="logo">
+      </div>
+      <a href="/" class="logo">欢迎来到我的博客</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          <li class="menu-item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-archive" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/friends" class="menu-item-link">
+              
+                <i class="fa fa-link" aria-hidden="true"></i>
+              
+              <span>友情链接</span>
+            </a>
+          </li>
+        
+      </ul>
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fa fa-search" aria-hidden="true"></i></div>
+  <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+    <div class="message-box">
+      <h2>
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <span class="title">搜索</span>
+      </h2>
+      <form class="site-search-form">
+        <input type="text"
+          placeholder="请输入关键字"
+          id="local-search-input" 
+          @click="getSearchFile()"
+          class="st-search-input"
+          v-model="searchInput"
+        />
+      </form>
+      <div class="result-wrapper">
+        <div id="local-search-result" class="local-search-result-cls"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/local_search.js"></script>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile();
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+    </nav>
+  </div>
+  
+  <a target="_blank" rel="noopener" href="https://github.com/quannnxu/quannnxu.github.io" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+</header>
+    <main class="main" style="margin-top: 60px;">
+      
+
+
+<div class="post-detail-header" style="background: url(/medias/5.jpg) no-repeat; background-size: cover; 
+  background-position: center center;">
+  
+    <span class="title">Phoenix</span>
+  
+</div>
+<div class="row justify-center">
+  <div class="main-content">
+    <article class="post post-detail">
+      
+      
+      <div class="post-meta">
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+        <span class="post-time">2019-12-12</span>
+      </div>
+      
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          <i class="iconfont icontag"></i>
+          
+            <a href="/tags/Phoenix/" class="">
+              Phoenix
+            </a>
+          
+        </div>
+        
+        
+        <div class="categories">
+          <i class="iconfont iconbookmark1"></i>
+          
+            <a href="/categories/Phoenix/" class="">
+              Phoenix
+            </a>
+          
+        </div>
+        
+      </div>
+      <div class="post-content">
+        <p>OLTP 联机事务处理    关系型数据库    Oracle/MySQL</p>
+<p>OLAP 联机分析处理</p>
+<p>版本选择</p>
+<p>apache-phoenix-4.14.0-cdh5.14.2-bin.tar.gz</p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p> tar -zxvf apache-phoenix-4.14.0-cdh5.14.2-bin.tar.gz -C ../app/</p>
+<p>cd ../app/phoenix</p>
+<pre><code>-rw-rw-r-- 1 hadoop hadoop 171018736 Jun  5  2018 phoenix-4.14.0-cdh5.14.2-client.jar    //客户端
+-rw-rw-r-- 1 hadoop hadoop  77671902 Jun  5  2018 phoenix-4.14.0-cdh5.14.2-hive.jar
+-rw-rw-r-- 1 hadoop hadoop 117815157 Jun  5  2018 phoenix-4.14.0-cdh5.14.2-pig.jar
+-rw-rw-r-- 1 hadoop hadoop   7138744 Jun  5  2018 phoenix-4.14.0-cdh5.14.2-queryserver.jar
+-rw-rw-r-- 1 hadoop hadoop  39216559 Jun  5  2018 phoenix-4.14.0-cdh5.14.2-server.jar    //服务端,与hbase绑定
+-rw-rw-r-- 1 hadoop hadoop     86578 Jun  5  2018 phoenix-spark-4.14.0-cdh5.14.2.jar</code></pre>
+<p>服务端jar放到hbase的lib包下</p>
+<p>ln -s phoenix-4.14.0-cdh5.14.2-server.jar ../hbase/lib/</p>
+<p>修改hbase-site.xml</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hbase.table.sanity.checks<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hbase.regionserver.wal.codec<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>org.apache.hadoop.hbase.regionserver.wal.IndexedWALEditCodec<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>phoenix.schema.isNamespaceMappingEnabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>phoenix.schema.mapSysteamTablesToNamespace<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span></code></pre>
+<p>ln -s ../../hbase/conf/hbase-site.xml habse-site.xml</p>
+<p>重启hbase.</p>
+<p>删除phoenix/bin下的默认habse-site.xml</p>
+<p>配置hbase的habse-site.xml指向phoenix </p>
+<p>HDFS HA情况下:</p>
+<p>软连接core-site.xml和hdfs-site.xml到bin目录下</p>
+<p>python版本的话必须为2.7</p>
+<p>启动:</p>
+<p>[hadoop@warehouse001 bin]$ ./sqlline.py warehouse001:2181</p>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型:"></a>数据类型:</h3><pre><code>INT
+BIGINT
+FLOAT
+DOUBLE
+VARCHAR
+CHAR
+TIMESTAMP</code></pre>
+<p>上游CHAR/VARCHAR 长度50 =&gt; Phoenix VARCHAR翻倍 100</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法:"></a>语法:</h3><p>官网地址:<a target="_blank" rel="noopener" href="http://phoenix.apache.org/language/index.html#create_schema">Grammar | Apache Phoenix</a></p>
+<h4 id="创建shcema-相当于database"><a href="#创建shcema-相当于database" class="headerlink" title="创建shcema(相当于database)"></a>创建shcema(相当于database)</h4><p>CREATE SCHEMA IF NOT EXISTS my_schema<br>CREATE SCHEMA my_schema</p>
+<h4 id="创建表"><a href="#创建表" class="headerlink" title="创建表:"></a>创建表:</h4><p>CREATE TABLE IF NOT EXISTS my_schema.my_table (<br>  org_id CHAR(15), entity_id CHAR(15), payload binary(1000),<br>  CONSTRAINT pk PRIMARY KEY (org_id, entity_id) )<br>  TTL=86400</p>
+<p>支持upsert语法,不存在就insert,存在就update</p>
+<h4 id="Upsert"><a href="#Upsert" class="headerlink" title="Upsert:"></a>Upsert:</h4><p>UPSERT INTO TEST VALUES(‘foo’,’bar’,3);<br>UPSERT INTO TEST(NAME,ID) VALUES(‘foo’,123);</p>
+<p>UPSERT INTO test.targetTable(col1, col2) SELECT col3, col4 FROM test.sourceTable WHERE col5 &lt; 100<br>UPSERT INTO foo SELECT * FROM bar;</p>
+<p>创建库表:<br>create schema test;<br>create table test.test (<br>id bigint not null primary key,<br>name varchar(255),<br>age integer<br>);<br>habse查看库:<br>list_namespace<br>hbase查看表:<br>list_namespace_tables ‘TEST’</p>
+<p>插入数据:<br>upsert into test.test values(1,’pk’,18);<br>upsert into test.test values(2,’Jepson’,30);</p>
+<p>创建索引:</p>
+<p>CREATE INDEX test_idx ON test.test(name,age);</p>
+<p>查看执行计划:</p>
+<pre><code>0: jdbc:phoenix:warehouse001:2181&gt; explain select name from test.test where age = 30;
++-------------------------------------------------------------------------+-----------------+----------------+--------------+
+|                                  PLAN                                   | EST_BYTES_READ  | EST_ROWS_READ  | EST_INFO_TS  |
++-------------------------------------------------------------------------+-----------------+----------------+--------------+
+| CLIENT 1-CHUNK PARALLEL 1-WAY ROUND ROBIN FULL SCAN OVER TEST:TEST_IDX  | null            | null           | null         |
+|     SERVER FILTER BY FIRST KEY ONLY AND TO_INTEGER(&quot;AGE&quot;) = 30          | null            | null           | null         |
++-------------------------------------------------------------------------+-----------------+----------------+--------------+</code></pre>
+<pre><code>0: jdbc:phoenix:warehouse001:2181&gt; explain select age from test.test where name =&#39;pk&#39;;
++---------------------------------------------------------------------------------+-----------------+----------------+--------------+
+|                                      PLAN                                       | EST_BYTES_READ  | EST_ROWS_READ  | EST_INFO_TS  |
++---------------------------------------------------------------------------------+-----------------+----------------+--------------+
+| CLIENT 1-CHUNK PARALLEL 1-WAY ROUND ROBIN RANGE SCAN OVER TEST:TEST_IDX [&#39;pk&#39;]  | null            | null           | null         |
+|     SERVER FILTER BY FIRST KEY ONLY                                             | null            | null           | null         |
++---------------------------------------------------------------------------------+-----------------+----------------+--------------+
+2 rows selected (0.037 seconds)</code></pre>
+<p>这两个执行计划的区别,一个是full scan一个是range scan</p>
+<p>原因是哪个索引在前,先执行.</p>
+<p>Schema映射配置:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>phoenix.schema.isNamespaceMappingEnabled</td>
+<td>If it is enabled, then the tables created with schema will be mapped to namespace.This needs to be set at client and server both. if set once, should not be rollback. Old client will not work after this property is enabled.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>phoenix.schema.mapSystemTablesToNamespace</td>
+<td>Enabling this property will take affect when phoenix.connection.isNamespaceMappingEnabled is also set to true. If it is enabled, SYSTEM tables if present will automatically migrated to SYSTEM namespace. And If set to false , then system tables will be created in default namespace only. This needs to be set at client and server both.</td>
+<td>true</td>
+</tr>
+</tbody></table>
+<h3 id="盐表"><a href="#盐表" class="headerlink" title="盐表"></a>盐表</h3><p>CREATE TABLE table (a_key VARCHAR PRIMARY KEY, a_col VARCHAR) SALT_BUCKETS = 20;</p>
+<p>SALT_BUCKETS : 1~256</p>
+<p>regionserver有多少台就设置多少</p>
+<p>好处:其实就是随机数,有助于数据均匀落在各个region上,从而提高写的性能.</p>
+<p>缺点:查询性能降低</p>
+<p>坑:SALT_BUCKETS 参数不能修改,只能删表重建 </p>
+<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><h4 id="全局索引-重读轻写"><a href="#全局索引-重读轻写" class="headerlink" title="全局索引:重读轻写"></a>全局索引:重读轻写</h4><p>其实本质是一张表,对于使用该索引,在查询条件的字段如果不在索引表,就默认不走index,除非强制索引.</p>
+<p>盐表 =&gt; index就是全局索引</p>
+<p>创建全局索引:</p>
+<pre><code>DROP INDEX testsalt_idx ON test.testsalt;
+CREATE INDEX testsalt_idx ON test.testsalt (name,address);</code></pre>
+<pre><code>+---------+------------+------+
+| 0:NAME  | 0:ADDRESS  | :ID  |
++---------+------------+------+
+| J       | 上海         | 2    |
+| rz      | 北京         | 1    |
++---------+------------+------+ 这里的0是默认列族</code></pre>
+<p>explain select * from test.testsalt;</p>
+<p>强制索引</p>
+<p>explain select /<em>+ INDEX(TEST.TESTSALT TESTSALT_IDX)  \</em>/ *  from test.testsalt;</p>
+<p>explain select ? from test.testsalt where name= xx;</p>
+<p>当?不在索引字段时会全表扫描</p>
+<p>总结:where条件全部是索引字段,select条件是全部索引字段,这种是最优的.where条件全部是索引字段,select条件不全部是索引字段,为了走索引,强制索引.</p>
+<p>多看执行计划再做调优.</p>
+<h4 id="本地索引-重写轻读"><a href="#本地索引-重写轻读" class="headerlink" title="本地索引:重写轻读"></a>本地索引:重写轻读</h4><p>创建本地索引:</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> test<span class="token punctuation">.</span>testlocal
+<span class="token punctuation">(</span>id <span class="token keyword">integer</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
+name <span class="token keyword">varchar</span><span class="token punctuation">,</span>
+age <span class="token keyword">integer</span><span class="token punctuation">,</span>
+address <span class="token keyword">varchar</span><span class="token punctuation">)</span>
+split <span class="token keyword">ON</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">LOCAL</span> <span class="token keyword">INDEX</span> testlocal_idx <span class="token keyword">ON</span> test<span class="token punctuation">.</span>testlocal <span class="token punctuation">(</span>name<span class="token punctuation">,</span>address<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>region = 3 + 1 </p>
+<p>在hbase会多出一个cf</p>
+<p>本质:是index数据和原始数据存储在同一个表里,对于本地索引,查询中无论使用hint强制指定或者查询列是否都在index表里,都默认使用索引表.</p>
+<p>全表扫描:</p>
+<p>explain select * from test.testlocal;</p>
+<pre><code>+--------------------------------------------------------------------------+-----------------+----------------+--------------+
+|                                   PLAN                                   | EST_BYTES_READ  | EST_ROWS_READ  | EST_INFO_TS  |
++--------------------------------------------------------------------------+-----------------+----------------+--------------+
+| CLIENT 4-CHUNK PARALLEL 1-WAY ROUND ROBIN FULL SCAN OVER TEST:TESTLOCAL  | null            | null           | null         |
++--------------------------------------------------------------------------+-----------------+----------------+--------------+</code></pre>
+<p>explain select /<em>+ INDEX(TEST.testlocal testlocal_IDX)  \</em>/ * from test.testlocal ;</p>
+<pre><code>+--------------------------------------------------------------------------+-----------------+----------------+--------------+
+|                                   PLAN                                   | EST_BYTES_READ  | EST_ROWS_READ  | EST_INFO_TS  |
++--------------------------------------------------------------------------+-----------------+----------------+--------------+
+| CLIENT 4-CHUNK PARALLEL 1-WAY ROUND ROBIN FULL SCAN OVER TEST:TESTLOCAL  | null            | null           | null         |
++--------------------------------------------------------------------------+-----------------+----------------+--------------+</code></pre>
+<p>加条件:</p>
+<p>explain select name from test.testlocal where age = 18;</p>
+<pre><code>+--------------------------------------------------------------------------+-----------------+----------------+--------------+
+|                                   PLAN                                   | EST_BYTES_READ  | EST_ROWS_READ  | EST_INFO_TS  |
++--------------------------------------------------------------------------+-----------------+----------------+--------------+
+| CLIENT 4-CHUNK PARALLEL 1-WAY ROUND ROBIN FULL SCAN OVER TEST:TESTLOCAL  | null            | null           | null         |
+|     SERVER FILTER BY AGE = 18                                            | null            | null           | null         |
++--------------------------------------------------------------------------+-----------------+----------------+--------------+</code></pre>
+<p>这里是不走index的</p>
+<p>explain select name,address from test.testlocal where age = 18;</p>
+<p>总结:要有where条件,且字段不要以*</p>
+<p>好处:写的性能高,无需写索引表,其实是实际上没有索引表.</p>
+<p>坏处:在使用本地索引时,必须检查描所有的region的数据,因为无法先确定索引数据的准确区域位置,因此索引读的开销较大</p>
+<p>两者对比之后,加入不清楚业务场景,建议使用盐表和全局索引.</p>
+<p>1.盐表语法简单</p>
+<p>2.写的性能没有读的高.</p>
+<p><strong>全局是表 重读轻写,本地是CF 重写轻读</strong></p>
+<h4 id="覆盖索引"><a href="#覆盖索引" class="headerlink" title="覆盖索引"></a>覆盖索引</h4><p>本质:</p>
+<p>原始列的数据也存在索引表,这样查询索引数据时,不需要去原始表查询,直接获取结果,节省开销.</p>
+<p>好处:空间换时间,查询快</p>
+<p>坏处:存储空间浪费</p>
+<p>创建覆盖索引:</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> test<span class="token punctuation">.</span>testinclude
+<span class="token punctuation">(</span>id <span class="token keyword">integer</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
+name <span class="token keyword">varchar</span><span class="token punctuation">,</span>
+age <span class="token keyword">varchar</span><span class="token punctuation">,</span>
+address <span class="token keyword">varchar</span><span class="token punctuation">,</span>
+sal <span class="token keyword">integer</span><span class="token punctuation">)</span>split <span class="token keyword">ON</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+UPSERT <span class="token keyword">INTO</span> TEST<span class="token punctuation">.</span>testinclude <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'rz'</span><span class="token punctuation">,</span><span class="token string">'18'</span><span class="token punctuation">,</span><span class="token string">'北京'</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+UPSERT <span class="token keyword">INTO</span> TEST<span class="token punctuation">.</span>testinclude <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'J'</span><span class="token punctuation">,</span><span class="token string">'30'</span><span class="token punctuation">,</span><span class="token string">'上海'</span><span class="token punctuation">,</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">INDEX</span> testinclude_idx <span class="token keyword">ON</span> test<span class="token punctuation">.</span>testinclude<span class="token punctuation">(</span>name<span class="token punctuation">,</span>age<span class="token punctuation">)</span> include<span class="token punctuation">(</span>address<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>查看执行计划:</p>
+<p>explain SELECT * FROM test.testinclude;</p>
+<pre><code>+----------------------------------------------------------------------------+-----------------+----------------+--------------+
+|                                    PLAN                                    | EST_BYTES_READ  | EST_ROWS_READ  | EST_INFO_TS  |
++----------------------------------------------------------------------------+-----------------+----------------+--------------+
+| CLIENT 4-CHUNK PARALLEL 1-WAY ROUND ROBIN FULL SCAN OVER TEST:TESTINCLUDE  | null            | null           | null         |
++----------------------------------------------------------------------------+-----------------+----------------+--------------+</code></pre>
+<p>explain select /*+ INDEX(TEST.testinclude testinclude_IDX)  */ * from test.testinclude ;</p>
+<pre><code>+----------------------------------------------------------------------------+-----------------+----------------+--------------+
+|                                    PLAN                                    | EST_BYTES_READ  | EST_ROWS_READ  | EST_INFO_TS  |
++----------------------------------------------------------------------------+-----------------+----------------+--------------+
+| CLIENT 4-CHUNK PARALLEL 1-WAY ROUND ROBIN FULL SCAN OVER TEST:TESTINCLUDE  | null            | null           | null         |
++----------------------------------------------------------------------------+-----------------+----------------+--------------+</code></pre>
+<p>这里都是走的全表扫描.</p>
+<p> explain SELECT name FROM test.testinclude WHERE age= ‘18’;</p>
+<pre><code>+--------------------------------------------------------------------------------+-----------------+----------------+--------------+
+|                                      PLAN                                      | EST_BYTES_READ  | EST_ROWS_READ  | EST_INFO_TS  |
++--------------------------------------------------------------------------------+-----------------+----------------+--------------+
+| CLIENT 1-CHUNK PARALLEL 1-WAY ROUND ROBIN FULL SCAN OVER TEST:TESTINCLUDE_IDX  | null            | null           | null         |
+|     SERVER FILTER BY FIRST KEY ONLY AND &quot;AGE&quot; = &#39;18&#39;                           | null            | null           | null         |
++--------------------------------------------------------------------------------+-----------------+----------------+--------------+</code></pre>
+<p>这里是走的索引表.</p>
+<p>explain select /*+ INDEX(TEST.testinclude testinclude_IDX)  */ sal from test.testinclude ;</p>
+<pre><code>+----------------------------------------------------------------------------+-----------------+----------------+--------------+
+|                                    PLAN                                    | EST_BYTES_READ  | EST_ROWS_READ  | EST_INFO_TS  |
++----------------------------------------------------------------------------+-----------------+----------------+--------------+
+| CLIENT 4-CHUNK PARALLEL 1-WAY ROUND ROBIN FULL SCAN OVER TEST:TESTINCLUDE  | null            | null           | null         |
++----------------------------------------------------------------------------+-----------------+----------------+--------------+</code></pre>
+<p>这里强制扫描不在索引字段的sal,依然走的是全表扫描</p>
+<h4 id="函数索引"><a href="#函数索引" class="headerlink" title="函数索引"></a>函数索引</h4><hr>
+<h4 id="可变索引"><a href="#可变索引" class="headerlink" title="可变索引"></a>可变索引</h4><pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> test<span class="token punctuation">.</span>testimmu
+<span class="token punctuation">(</span>id <span class="token keyword">integer</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
+name <span class="token keyword">varchar</span><span class="token punctuation">,</span>
+age <span class="token keyword">integer</span><span class="token punctuation">,</span>
+address <span class="token keyword">varchar</span><span class="token punctuation">)</span>
+immutable_rows <span class="token operator">=</span> <span class="token boolean">TRUE</span> split <span class="token keyword">ON</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">INDEX</span> testimmu_idx <span class="token keyword">ON</span> test<span class="token punctuation">.</span>testimmu<span class="token punctuation">(</span>name<span class="token punctuation">,</span>age<span class="token punctuation">)</span> include<span class="token punctuation">(</span>address<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+UPSERT <span class="token keyword">INTO</span> TEST<span class="token punctuation">.</span>testimmu <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'rz'</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token string">'北京'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+UPSERT <span class="token keyword">INTO</span> TEST<span class="token punctuation">.</span>testimmu <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'J'</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token string">'上海'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>基于表属性设置可变,index默认就是可变</p>
+<h4 id="不可变索引"><a href="#不可变索引" class="headerlink" title="不可变索引"></a>不可变索引</h4><p>基于表属性设置不可变,index默认就是不可变的</p>
+<p>append这种场景是业务表,比如log日志的</p>
+<h4 id="异步索引"><a href="#异步索引" class="headerlink" title="异步索引"></a>异步索引</h4><h3 id="Phoenix编译"><a href="#Phoenix编译" class="headerlink" title="Phoenix编译"></a>Phoenix编译</h3><p>源码地址:</p>
+<p><a target="_blank" rel="noopener" href="https://archive.apache.org/dist/phoenix/apache-phoenix-4.14.0-cdh5.14.2/src/apache-phoenix-4.14.0-cdh5.14.2-src.tar.gz">https://archive.apache.org/dist/phoenix/apache-phoenix-4.14.0-cdh5.14.2/src/apache-phoenix-4.14.0-cdh5.14.2-src.tar.gz</a></p>
+<p>解压到本地,解压目录git bash执行</p>
+<pre><code>mvn clean package -DskipTests</code></pre>
+<p><img src="C:\Users\10090\Desktop\blogimg\image-20210526175705465.png" alt="image-20210526175705465"></p>
+<p>编译成功!</p>
+<h3 id="Phoenix-JDBC"><a href="#Phoenix-JDBC" class="headerlink" title="Phoenix JDBC"></a>Phoenix JDBC</h3><p>pom.xml添加依赖</p>
+<pre><code>&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.apache.phoenix&lt;/groupId&gt;
+        &lt;artifactId&gt;phoenix-client&lt;/artifactId&gt;
+        &lt;version&gt;4.14.0-cdh5.14.2&lt;/version&gt;
+        &lt;scope&gt;system&lt;/scope&gt;
+        &lt;systemPath&gt;你的本地路径/phoenix-4.14.0-cdh5.14.2-client.jar&lt;/systemPath&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.example&lt;/groupId&gt;
+        &lt;artifactId&gt;phoenix-jdbc&lt;/artifactId&gt;
+        &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>bigdata<span class="token punctuation">.</span>phoenix<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>Connection<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>DriverManager<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>ResultSet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>SQLException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Properties<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PhoenixJDBCJava</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> ClassNotFoundException <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        Properties properties <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        properties<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">"hbase.rpc.timeout"</span><span class="token punctuation">,</span><span class="token string">"600000"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        properties<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">"hbase.client.scanner.timeout.period"</span><span class="token punctuation">,</span><span class="token string">"600000"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        properties<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">"dfs.client.socket-timeout"</span><span class="token punctuation">,</span><span class="token string">"600000"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        properties<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">"phoenix.query.keepAliveMs"</span><span class="token punctuation">,</span><span class="token string">"600000"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        properties<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">"phoenix.query.timeoutMs"</span><span class="token punctuation">,</span><span class="token string">"3600000"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"org.apache.phoenix.jdbc.PhoenixDriver"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">try</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            Connection conn <span class="token operator">=</span> DriverManager<span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token string">"jdbc:phoenix:warehouse001:2181"</span><span class="token punctuation">,</span> properties<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            conn<span class="token punctuation">.</span><span class="token function">setAutoCommit</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            ResultSet rs <span class="token operator">=</span> null<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//            conn.createStatement().execute("upsert into test.test values (3,'一姐', 18)");</span>
+<span class="token comment" spellcheck="true">//            conn.commit();</span>
+
+            rs <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">createStatement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">executeQuery</span><span class="token punctuation">(</span><span class="token string">"select * from test.test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+            rs<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            conn<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">SQLException</span> throwables<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            throwables<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>quanxu</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/2019/12/12/phoenix/" target="_blank" title="Phoenix">http://www.quanxu.com/2019/12/12/phoenix/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <div class="post-nav">
+
+  <div class="post-nav-prev post-nav-item">
+    <a href="/2019/12/21/spark-dui-jie-hbase/">
+      上一篇:    Sparrk对接HBase
+    </a>
+  </div>
+
+
+
+  <div class="post-nav-next post-nav-item">
+    <a href="/2019/12/08/azkaban/">
+      <span>
+        下一篇:    Azkaban部署及二次开发 
+      </span>
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-if="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-if="visible">
+      <div class="donate-box_close">
+        <i class="fa fa-times" aria-hidden="true" @click="cancelDialogDrawer"></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-if="tabActive === 'Alipay'">
+          <img src="/medias/zfb1.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-if="tabActive === 'WeChatpay'">
+          <img src="/medias/weixin.png" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+
+
+<script src="/js/shareJs/social-share.min.js"></script>
+
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+
+    <!-- 评论 -->
+      
+        
+      
+  </div>
+
+  
+    <div class="toc-aside">
+      <div class="toc-main">
+        <div class="toc-aside-title">
+          <i class="fa fa-list-ul" aria-hidden="true"></i><span>目录</span>
+        </div>
+        <div class="toc-content">
+          <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script>
+<div class="toc"></div>
+
+<script>
+  if ($('.toc').length > 0) {
+    var headerEl = 'h2, h3, h4',  //headers 
+      content = '.post-detail',//文章容器
+      idArr = {};  //标题数组以确定是否增加索引id
+      //add #id
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: content,
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: headerEl,
+      scrollSmooth: true,
+      scrollSmoothOffset: -80,
+      headingsOffset: 130,
+      positionFixedSelector: '.toc-main',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  }
+
+</script>
+
+<style>
+.is-position-fixed {
+  position:fixed !important;
+  top: 64px;
+}
+
+</style>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+    </main>
+    <div class="footer bg-color">
+  <div class="footer-main">
+    <div class="link">
+      <a target="_blank" rel="noopener" href="https://github.com/yuang01/hexo-theme-bamboo">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+      <a href="mailto:1730241541@qq.com">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+      </a>
+      <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1730241541">
+        <i class="fa fa-qq" aria-hidden="true"></i>
+      </a>
+      <a href="/atom.xml" target="_blank">
+        <i class="fa fa-rss" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="footer-copyright">
+      Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/yuang01">yuang01</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> 
+    </div>
+    
+      
+  <!-- 不蒜子统计 -->
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-book" aria-hidden="true"></i>本站总阅读量：<span id="busuanzi_value_page_pv"></span> 次
+  </span>
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_uv" style='display:none'>
+        <i class="fa fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+  </span>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    
+  </div>
+</div>
+
+
+    
+      <div class="goTop bg-color">
+  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+</div>
+
+<script src="/js/goTop.js"></script>
+
+    
+
+    
+      <link href="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  display: none;
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  display: none;
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+<meting-js  
+  class=""
+  server="netease"
+  type="playlist"
+  id="442274724"
+  fixed='true'
+  autoplay='false'
+  theme='#42b983'
+  loop='all'
+  order='random'
+  preload='auto'
+  volume='0.7'
+  list-folded='true'
+>
+</meting-js>
+
+<!-- <style>
+  #aplayer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+  }
+</style> -->
+<script src="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      
+<script src="/js/fancybox/jquery.fancybox.min.js"></script>
+<script src="/js/wrapImage.js"></script>
+
+    
+
+    <!-- 爱心点击 -->
+    
+      
+<script src="/js/clicklove.js"></script>
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
+    
+      
+<script src="/js/aos/aos.js"></script>
+
+      <script>
+        // https://github.com/michalsnik/aos
+        const themeOffset = parseInt('120') || 120;
+        const themeDelay = parseInt('0')|| 0;
+        const themeDuration = parseInt('400') || 400;
+        const themeEasing = 'ease' || 'ease';
+        const themeOnce = JSON.parse('true' || true);
+        const themeMirror = JSON.parse('false' || false);
+        const themeAnchorPlacement = 'top-bottom' || 'top-bottom';
+        AOS.init({
+          // Global settings:
+          disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+          startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+          initClassName: 'aos-init', // class applied after initialization
+          animatedClassName: 'aos-animate', // class applied on animation
+          useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+          disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+          debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+          throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+          // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+          offset: themeOffset, // offset (in px) from the original trigger point
+          delay: themeDelay, // values from 0 to 3000, with step 50ms
+          duration: themeDuration, // values from 0 to 3000, with step 50ms
+          easing: themeEasing, // default easing for AOS animations
+          once: themeOnce, // whether animation should happen only once - while scrolling down
+          mirror: themeMirror, // whether elements should animate out while scrolling past them
+          anchorPlacement: themeAnchorPlacement, // defines which position of the element regarding to window should trigger the animation
+
+        });
+      </script>
+    
+
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css">
+<script src="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+<div id="appCopy">
+</div>
+<script>
+  var vm = new Vue({
+    el: '#appCopy',
+    data: {
+    },
+    computed: {
+    },
+    mounted() {
+      const that = this;
+      //  监听 ctrl + c事件  
+      $(document).unbind('keypress').bind('keypress', function (e) {
+        if (e.ctrlKey && e.keyCode == 67) {
+          doSomething();
+          // 返回false, 防止重复触发copy事件  
+          return false;
+        }
+      })
+
+      // 鼠标右键的复制事件  
+      $(document).unbind('copy').bind('copy', function (e) {
+        doSomething();
+        // console.log('右键复制 监听成功');
+      });
+
+      function doSomething() {
+        that.$notify({
+          title: '成功',
+          content: '复制成功了哦',
+          type: 'success'
+        })
+        // console.log('ctrl + c 监听成功');  
+      }
+    },
+    methods: {
+    },
+    created() { }
+  })
+</script>
+    
+
+    <!-- 输入框打字特效 -->
+    
+      
+<script src="/js/activate-power-mode.js"></script>
+
+      <script>
+          POWERMODE.colorful = true;  // 打开随机颜色特效
+          POWERMODE.shake = false;    // 关闭输入框抖动
+          document.body.addEventListener('input', POWERMODE);//监听打字事件
+      </script>
+    
+
+    <!-- markdown代码一键复制功能 -->
+    
+<script src="/js/clipboard/clipboard.min.js"></script>
+
+    <script>
+      !function (e, t, a) {
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function(){
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+          copyHtml += '<i class="fa fa-globe"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre code").before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+              target: function(trigger) {
+                  return trigger.nextElementSibling;
+              }
+          });
+        }
+        initCopyCode();
+      }(window, document);
+    </script>
+  </body>
+</html>

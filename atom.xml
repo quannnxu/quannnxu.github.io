@@ -6,7 +6,7 @@
   <link href="http://www.quanxu.com/atom.xml" rel="self"/>
   
   <link href="http://www.quanxu.com/"/>
-  <updated>2021-02-27T10:18:32.955Z</updated>
+  <updated>2021-04-08T16:25:48.830Z</updated>
   <id>http://www.quanxu.com/</id>
   
   <author>
@@ -17,92 +17,96 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Scala总结</title>
-    <link href="http://www.quanxu.com/2019/04/01/scala-zong-jie/"/>
-    <id>http://www.quanxu.com/2019/04/01/scala-zong-jie/</id>
-    <published>2019-04-01T15:22:19.000Z</published>
-    <updated>2021-02-27T10:18:32.955Z</updated>
+    <title>Spark编译报错解决</title>
+    <link href="http://www.quanxu.com/2020/12/18/spark-bian-yi-bao-cuo-chu-li/"/>
+    <id>http://www.quanxu.com/2020/12/18/spark-bian-yi-bao-cuo-chu-li/</id>
+    <published>2020-12-18T14:46:01.000Z</published>
+    <updated>2021-04-08T16:25:48.830Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;一-Scala类型&quot;&gt;&lt;a href=&quot;#一-Scala类型&quot; class=&quot;headerlink&quot; title=&quot;一 Scala类型&quot;&gt;&lt;/a&gt;一 Scala类型&lt;/h3&gt;&lt;p&gt;定义变量:&lt;/p&gt;
-&lt;p&gt;var   </summary>
+    <summary type="html">&lt;h5 id=&quot;本文版本选用&quot;&gt;&lt;a href=&quot;#本文版本选用&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
     
-    <category term="Scala" scheme="http://www.quanxu.com/categories/Scala/"/>
+    <category term="Spark" scheme="http://www.quanxu.com/categories/Spark/"/>
     
     
-    <category term="Scala" scheme="http://www.quanxu.com/tags/Scala/"/>
+    <category term="Spark" scheme="http://www.quanxu.com/tags/Spark/"/>
     
   </entry>
   
   <entry>
-    <title>Scala之面向对象编程</title>
-    <link href="http://www.quanxu.com/2019/03/25/scala03-mian-xiang-dui-xiang/"/>
-    <id>http://www.quanxu.com/2019/03/25/scala03-mian-xiang-dui-xiang/</id>
-    <published>2019-03-25T14:57:36.000Z</published>
-    <updated>2021-01-26T15:11:46.077Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;面向对象编程:OOS&lt;/p&gt;
-&lt;p&gt;Java面向对象编程:&lt;/p&gt;
-&lt;p&gt;​    封装: 在类中有属性、方法&lt;/p&gt;
-&lt;p&gt;​    继承:父类和子类之间的关系，属性、方法都可以进行重新&lt;/p&gt;
-&lt;p&gt;​    多态:父类引用指向子类对象&lt;/p&gt;
-&lt;p&gt;​   </summary>
-        
-      
+    <title>Flink</title>
+    <link href="http://www.quanxu.com/2020/04/07/flink13/"/>
+    <id>http://www.quanxu.com/2020/04/07/flink13/</id>
+    <published>2020-04-07T15:22:22.000Z</published>
+    <updated>2021-06-01T10:47:11.576Z</updated>
     
     
     
-    <category term="Scala" scheme="http://www.quanxu.com/categories/Scala/"/>
+    
+    <category term="Flink" scheme="http://www.quanxu.com/categories/Flink/"/>
     
     
-    <category term="Scala" scheme="http://www.quanxu.com/tags/Scala/"/>
+    <category term="Flink" scheme="http://www.quanxu.com/tags/Flink/"/>
     
   </entry>
   
   <entry>
-    <title>Hadoop总结</title>
-    <link href="http://www.quanxu.com/2019/03/21/hadoop-zong-jie/"/>
-    <id>http://www.quanxu.com/2019/03/21/hadoop-zong-jie/</id>
-    <published>2019-03-21T14:35:32.000Z</published>
-    <updated>2021-02-27T10:20:05.444Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;一-Hadoop伪分布式集群部署步骤及总结&quot;&gt;&lt;a href=&quot;#一-Hadoop伪分布式集群部署步骤及总结&quot; class=&quot;headerlink&quot; title=&quot;一 Hadoop伪分布式集群部署步骤及总结:&quot;&gt;&lt;/a&gt;一</summary>
-        
-      
+    <title>Flink</title>
+    <link href="http://www.quanxu.com/2020/04/05/flink12/"/>
+    <id>http://www.quanxu.com/2020/04/05/flink12/</id>
+    <published>2020-04-05T15:01:13.000Z</published>
+    <updated>2021-06-01T06:23:42.556Z</updated>
     
     
     
-    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
+    
+    <category term="Flink" scheme="http://www.quanxu.com/categories/Flink/"/>
     
     
-    <category term="Hadoop" scheme="http://www.quanxu.com/tags/Hadoop/"/>
+    <category term="Flink" scheme="http://www.quanxu.com/tags/Flink/"/>
     
   </entry>
   
   <entry>
-    <title>Scala之方法</title>
-    <link href="http://www.quanxu.com/2019/03/21/scala02-fang-fa/"/>
-    <id>http://www.quanxu.com/2019/03/21/scala02-fang-fa/</id>
-    <published>2019-03-21T13:33:51.000Z</published>
-    <updated>2021-01-25T16:15:26.986Z</updated>
+    <title>Flink 异步操作MySQL/Http</title>
+    <link href="http://www.quanxu.com/2020/04/02/flink11/"/>
+    <id>http://www.quanxu.com/2020/04/02/flink11/</id>
+    <published>2020-04-02T14:43:11.000Z</published>
+    <updated>2021-05-31T17:39:54.192Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Flink异步操作MySQL&lt;/p&gt;
+&lt;pre class=&quot; language-scala&quot;&gt;&lt;code class=&quot;language-scala&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;package&lt;/span&gt; com&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="Flink" scheme="http://www.quanxu.com/categories/Flink/"/>
+    
+    
+    <category term="Flink" scheme="http://www.quanxu.com/tags/Flink/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flink Table Join</title>
+    <link href="http://www.quanxu.com/2020/03/30/flink10/"/>
+    <id>http://www.quanxu.com/2020/03/30/flink10/</id>
+    <published>2020-03-30T15:21:21.000Z</published>
+    <updated>2021-05-31T07:49:57.419Z</updated>
     
     
       
@@ -115,411 +119,421 @@
     
     
     
-    <category term="Scala" scheme="http://www.quanxu.com/categories/Scala/"/>
+    <category term="Flink" scheme="http://www.quanxu.com/categories/Flink/"/>
     
     
-    <category term="Scala" scheme="http://www.quanxu.com/tags/Scala/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Scala之方法</title>
-    <link href="http://www.quanxu.com/2019/03/21/scala03oo/"/>
-    <id>http://www.quanxu.com/2019/03/21/scala03oo/</id>
-    <published>2019-03-21T13:33:51.000Z</published>
-    <updated>2021-01-25T16:15:26.986Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;pre class=&quot; language-scala&quot;&gt;&lt;code class=&quot;language-scala&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;package&lt;/span&gt; com&lt;span class=&quot;token</summary>
-        
-      
-    
-    
-    
-    <category term="Scala" scheme="http://www.quanxu.com/categories/Scala/"/>
-    
-    
-    <category term="Scala" scheme="http://www.quanxu.com/tags/Scala/"/>
+    <category term="Flink" scheme="http://www.quanxu.com/tags/Flink/"/>
     
   </entry>
   
   <entry>
-    <title>Hadoop HA之集群部署</title>
-    <link href="http://www.quanxu.com/2019/03/15/hadoopha02/"/>
-    <id>http://www.quanxu.com/2019/03/15/hadoopha02/</id>
-    <published>2019-03-15T13:47:06.000Z</published>
-    <updated>2021-01-18T15:38:54.997Z</updated>
+    <title>Flink Table API&amp;SQL</title>
+    <link href="http://www.quanxu.com/2020/03/29/flink09/"/>
+    <id>http://www.quanxu.com/2020/03/29/flink09/</id>
+    <published>2020-03-29T14:59:21.000Z</published>
+    <updated>2021-05-31T06:51:57.862Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;1-版本&quot;&gt;&lt;a href=&quot;#1-版本&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;p&gt;简单操作:&lt;/p&gt;
+&lt;pre class=&quot; language-scala&quot;&gt;&lt;code class=&quot;language-scala&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;package&lt;/span&gt; com&lt;span class=&quot;token</summary>
         
       
     
     
     
-    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
+    <category term="Flink" scheme="http://www.quanxu.com/categories/Flink/"/>
     
     
-    <category term="Hadoop HA" scheme="http://www.quanxu.com/tags/Hadoop-HA/"/>
+    <category term="Flink" scheme="http://www.quanxu.com/tags/Flink/"/>
     
   </entry>
   
   <entry>
-    <title>Scala基础</title>
-    <link href="http://www.quanxu.com/2019/03/15/2021-1-21-scala-ji-chu-01/"/>
-    <id>http://www.quanxu.com/2019/03/15/2021-1-21-scala-ji-chu-01/</id>
-    <published>2019-03-15T10:22:22.000Z</published>
-    <updated>2021-01-25T12:27:36.972Z</updated>
+    <title>Flink对接Kafka</title>
+    <link href="http://www.quanxu.com/2020/03/27/flink08/"/>
+    <id>http://www.quanxu.com/2020/03/27/flink08/</id>
+    <published>2020-03-27T14:47:21.000Z</published>
+    <updated>2021-05-30T11:17:27.911Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;1-Scala&quot;&gt;&lt;a href=&quot;#1-Scala&quot; class=&quot;headerlink&quot; title=&quot;1.Scala&quot;&gt;&lt;/a&gt;1.Scala&lt;/h3&gt;&lt;p&gt;下载路径:&lt;/p&gt;
+    <summary type="html">&lt;p&gt;代码实现:&lt;/p&gt;
+&lt;pre class=&quot; language-scala&quot;&gt;&lt;code class=&quot;language-scala&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;package&lt;/span&gt; com&lt;span class=&quot;token</summary>
+        
+      
+    
+    
+    
+    <category term="Flink" scheme="http://www.quanxu.com/categories/Flink/"/>
+    
+    
+    <category term="Flink" scheme="http://www.quanxu.com/tags/Flink/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flink Checkponit</title>
+    <link href="http://www.quanxu.com/2020/03/25/flink07/"/>
+    <id>http://www.quanxu.com/2020/03/25/flink07/</id>
+    <published>2020-03-25T15:19:41.000Z</published>
+    <updated>2021-05-30T07:39:28.676Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;官网:&lt;/p&gt;
 &lt;p&gt;&lt;a</summary>
         
       
     
     
     
-    <category term="Scala" scheme="http://www.quanxu.com/categories/Scala/"/>
+    <category term="Flink" scheme="http://www.quanxu.com/categories/Flink/"/>
     
     
-    <category term="Scala" scheme="http://www.quanxu.com/tags/Scala/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hadoop HA架构</title>
-    <link href="http://www.quanxu.com/2019/03/10/hadoopha01/"/>
-    <id>http://www.quanxu.com/2019/03/10/hadoopha01/</id>
-    <published>2019-03-10T14:19:28.000Z</published>
-    <updated>2021-01-17T06:27:49.692Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;1-Linux&quot;&gt;&lt;a href=&quot;#1-Linux&quot; class=&quot;headerlink&quot; title=&quot;1.Linux&quot;&gt;&lt;/a&gt;1.Linux&lt;/h3&gt;&lt;h4 id=&quot;1-1文件夹&quot;&gt;&lt;a href=&quot;#1-1文件夹&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Hadoop" scheme="http://www.quanxu.com/categories/Hadoop/"/>
-    
-    
-    <category term="Hadoop HA" scheme="http://www.quanxu.com/tags/Hadoop-HA/"/>
+    <category term="Flink" scheme="http://www.quanxu.com/tags/Flink/"/>
     
   </entry>
   
   <entry>
-    <title>Linux总结</title>
-    <link href="http://www.quanxu.com/2019/02/22/linux-zong-jie/"/>
-    <id>http://www.quanxu.com/2019/02/22/linux-zong-jie/</id>
-    <published>2019-02-22T14:12:45.000Z</published>
-    <updated>2021-02-27T10:23:30.594Z</updated>
+    <title>Flink</title>
+    <link href="http://www.quanxu.com/2020/03/12/flink/"/>
+    <id>http://www.quanxu.com/2020/03/12/flink/</id>
+    <published>2020-03-12T15:15:47.000Z</published>
+    <updated>2021-05-25T18:42:47.897Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;一-Linux&quot;&gt;&lt;a href=&quot;#一-Linux&quot; class=&quot;headerlink&quot; title=&quot;一 Linux&quot;&gt;&lt;/a&gt;一 Linux&lt;/h3&gt;&lt;h4 id=&quot;1-1-文件-文件夹&quot;&gt;&lt;a href=&quot;#1-1-文件-文件夹&quot;</summary>
+    <summary type="html">&lt;p&gt;Flink项目创建:&lt;/p&gt;
+&lt;p&gt;命令:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mvn archetype:generate \
+-DarchetypeGroupId=org.apache.flink</summary>
         
       
     
     
     
-    <category term="Linux" scheme="http://www.quanxu.com/categories/Linux/"/>
+    <category term="Flink" scheme="http://www.quanxu.com/categories/Flink/"/>
     
     
-    <category term="Linux" scheme="http://www.quanxu.com/tags/Linux/"/>
+    <category term="Flink" scheme="http://www.quanxu.com/tags/Flink/"/>
     
   </entry>
   
   <entry>
-    <title>Flume基础03</title>
-    <link href="http://www.quanxu.com/2019/02/20/flume03/"/>
-    <id>http://www.quanxu.com/2019/02/20/flume03/</id>
-    <published>2019-02-20T14:43:25.000Z</published>
-    <updated>2021-02-17T15:08:35.837Z</updated>
+    <title>Elasticsearch</title>
+    <link href="http://www.quanxu.com/2020/03/12/es-bu-shu/"/>
+    <id>http://www.quanxu.com/2020/03/12/es-bu-shu/</id>
+    <published>2020-03-12T14:24:29.000Z</published>
+    <updated>2021-05-28T19:24:54.711Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;一进多出:&lt;/p&gt;
-&lt;p&gt;vi channel-replicating-selector.conf&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;a1.sources = r1
-a1.channels = c1 c2 
-a1.sinks = k1</summary>
+    <summary type="html">&lt;p&gt;主配置文件:elasticsearch.yml&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;node.name: warehouse001
+path.data: /home/hadoop/data/elasticsearch
+path.logs:</summary>
         
       
     
     
     
-    <category term="Flume" scheme="http://www.quanxu.com/categories/Flume/"/>
+    <category term="Elasticsearch" scheme="http://www.quanxu.com/categories/Elasticsearch/"/>
     
     
-    <category term="Flume" scheme="http://www.quanxu.com/tags/Flume/"/>
+    <category term="Elasticsearch" scheme="http://www.quanxu.com/tags/Elasticsearch/"/>
     
   </entry>
   
   <entry>
-    <title>Flume基础</title>
-    <link href="http://www.quanxu.com/2019/02/15/flume01/"/>
-    <id>http://www.quanxu.com/2019/02/15/flume01/</id>
-    <published>2019-02-15T12:59:22.000Z</published>
-    <updated>2021-02-10T09:57:58.992Z</updated>
+    <title>Flink WaterMarker</title>
+    <link href="http://www.quanxu.com/2020/03/05/flink05/"/>
+    <id>http://www.quanxu.com/2020/03/05/flink05/</id>
+    <published>2020-03-05T15:22:21.000Z</published>
+    <updated>2021-05-30T15:35:16.803Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;1-Flume&quot;&gt;&lt;a href=&quot;#1-Flume&quot; class=&quot;headerlink&quot; title=&quot;1 Flume&quot;&gt;&lt;/a&gt;1 Flume&lt;/h3&gt;&lt;h4 id=&quot;1-1-解压&quot;&gt;&lt;a href=&quot;#1-1-解压&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;p&gt;EventTime使用时必须要有一个带时间的字段.&lt;/p&gt;
+&lt;p&gt;​    如果window是5s,从数据产生到flink会有一个延迟.那么具体要等多久,这就需要watermark.&lt;/p&gt;
+&lt;p&gt;开启WM必须要配置&lt;/p&gt;
+&lt;pre class=&quot;</summary>
         
       
     
     
     
-    <category term="Flume" scheme="http://www.quanxu.com/categories/Flume/"/>
+    <category term="Flink" scheme="http://www.quanxu.com/categories/Flink/"/>
     
     
-    <category term="Flume" scheme="http://www.quanxu.com/tags/Flume/"/>
+    <category term="Flink" scheme="http://www.quanxu.com/tags/Flink/"/>
     
   </entry>
   
   <entry>
-    <title>Shell基础</title>
-    <link href="http://www.quanxu.com/2019/02/15/shell-ji-chu-01/"/>
-    <id>http://www.quanxu.com/2019/02/15/shell-ji-chu-01/</id>
-    <published>2019-02-15T12:42:22.000Z</published>
-    <updated>2021-02-27T10:13:34.135Z</updated>
+    <title>Spark Sreaming</title>
+    <link href="http://www.quanxu.com/2019/12/25/sparkstreaming01/"/>
+    <id>http://www.quanxu.com/2019/12/25/sparkstreaming01/</id>
+    <published>2019-12-25T15:25:13.000Z</published>
+    <updated>2021-06-02T15:19:30.652Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;1-脚本规范&quot;&gt;&lt;a href=&quot;#1-脚本规范&quot; class=&quot;headerlink&quot; title=&quot;1.脚本规范&quot;&gt;&lt;/a&gt;1.脚本规范&lt;/h3&gt;&lt;h4 id=&quot;1-1-第一行&quot;&gt;&lt;a href=&quot;#1-1-第一行&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;p&gt;重点:&lt;/p&gt;
+&lt;p&gt;​    状态&lt;/p&gt;
+&lt;p&gt;​    数据一致性&lt;/p&gt;
+&lt;p&gt;​    容错&lt;/p&gt;
+&lt;p&gt;​    对接kafka&lt;/p&gt;
+&lt;p&gt;Spark是批处理为主,Flink是流处理为主的.&lt;/p&gt;
+&lt;p&gt;简单的WC案例:&lt;/p&gt;
+&lt;pre</summary>
         
       
     
     
     
-    <category term="Shell" scheme="http://www.quanxu.com/categories/Shell/"/>
+    <category term="Spark" scheme="http://www.quanxu.com/categories/Spark/"/>
     
     
-    <category term="Shell" scheme="http://www.quanxu.com/tags/Shell/"/>
+    <category term="Spark" scheme="http://www.quanxu.com/tags/Spark/"/>
     
   </entry>
   
   <entry>
-    <title>Hive总结</title>
-    <link href="http://www.quanxu.com/2019/01/31/hive-zong-jie/"/>
-    <id>http://www.quanxu.com/2019/01/31/hive-zong-jie/</id>
-    <published>2019-01-31T13:42:39.000Z</published>
-    <updated>2021-02-27T10:22:14.709Z</updated>
+    <title>Spark Sreaming对接kafka管理offset</title>
+    <link href="http://www.quanxu.com/2019/12/25/sparkstreaming02/"/>
+    <id>http://www.quanxu.com/2019/12/25/sparkstreaming02/</id>
+    <published>2019-12-25T15:25:13.000Z</published>
+    <updated>2021-06-03T10:40:34.735Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;一-Hive基础总结&quot;&gt;&lt;a href=&quot;#一-Hive基础总结&quot; class=&quot;headerlink&quot; title=&quot;一 Hive基础总结&quot;&gt;&lt;/a&gt;一 Hive基础总结&lt;/h3&gt;&lt;h4 id=&quot;1-1-Hive简介&quot;&gt;&lt;a</summary>
+    <summary type="html">&lt;p&gt;SparkStreaming对接kafka:&lt;/p&gt;
+&lt;pre class=&quot; language-scala&quot;&gt;&lt;code class=&quot;language-scala&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;package&lt;/span&gt; com&lt;span</summary>
         
       
     
     
     
-    <category term="Hive" scheme="http://www.quanxu.com/categories/Hive/"/>
+    <category term="Spark" scheme="http://www.quanxu.com/categories/Spark/"/>
     
     
-    <category term="Hive" scheme="http://www.quanxu.com/tags/Hive/"/>
+    <category term="Spark" scheme="http://www.quanxu.com/tags/Spark/"/>
     
   </entry>
   
   <entry>
-    <title>数仓知识</title>
-    <link href="http://www.quanxu.com/2018/12/23/2020-12-18-quannnxu-xiang-mu-4/"/>
-    <id>http://www.quanxu.com/2018/12/23/2020-12-18-quannnxu-xiang-mu-4/</id>
-    <published>2018-12-23T15:34:14.000Z</published>
-    <updated>2020-12-23T13:14:32.188Z</updated>
+    <title>Spark Sreaming Structure</title>
+    <link href="http://www.quanxu.com/2019/12/25/sparkstreamingstruct01/"/>
+    <id>http://www.quanxu.com/2019/12/25/sparkstreamingstruct01/</id>
+    <published>2019-12-25T15:25:13.000Z</published>
+    <updated>2021-06-06T18:39:59.747Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;WC案例:&lt;/p&gt;
+&lt;pre class=&quot; language-scala&quot;&gt;&lt;code class=&quot;language-scala&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;package&lt;/span&gt; com&lt;span class=&quot;token</summary>
+        
+      
     
     
     
+    <category term="Spark" scheme="http://www.quanxu.com/categories/Spark/"/>
     
-    <category term="数仓" scheme="http://www.quanxu.com/categories/%E6%95%B0%E4%BB%93/"/>
     
-    
-    <category term="数仓" scheme="http://www.quanxu.com/tags/%E6%95%B0%E4%BB%93/"/>
+    <category term="Spark" scheme="http://www.quanxu.com/tags/Spark/"/>
     
   </entry>
   
   <entry>
-    <title>数仓知识</title>
-    <link href="http://www.quanxu.com/2018/12/16/2020-12-16-quannnxu-xiang-mu-1/"/>
-    <id>http://www.quanxu.com/2018/12/16/2020-12-16-quannnxu-xiang-mu-1/</id>
-    <published>2018-12-16T14:58:14.000Z</published>
-    <updated>2020-12-22T13:27:02.963Z</updated>
+    <title>Sparrk对接HBase</title>
+    <link href="http://www.quanxu.com/2019/12/21/spark-dui-jie-hbase/"/>
+    <id>http://www.quanxu.com/2019/12/21/spark-dui-jie-hbase/</id>
+    <published>2019-12-21T14:19:56.000Z</published>
+    <updated>2021-05-30T07:40:58.544Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;一-ERP介绍&quot;&gt;&lt;a href=&quot;#一-ERP介绍&quot; class=&quot;headerlink&quot; title=&quot;一.ERP介绍&quot;&gt;&lt;/a&gt;一.ERP介绍&lt;/h3&gt;&lt;p&gt;可以理解为一个复杂的丰富的进销存管理系统&lt;/p&gt;
-&lt;h4</summary>
+    <summary type="html">&lt;p&gt;关键类:&lt;br&gt;BaseRelation&lt;br&gt;RelationProvider&lt;/p&gt;
+&lt;pre class=&quot; language-scala&quot;&gt;&lt;code class=&quot;language-scala&quot;&gt;&lt;span class=&quot;token</summary>
         
       
     
     
     
-    <category term="数仓" scheme="http://www.quanxu.com/categories/%E6%95%B0%E4%BB%93/"/>
+    <category term="Sparrk" scheme="http://www.quanxu.com/categories/Sparrk/"/>
     
     
-    <category term="数仓" scheme="http://www.quanxu.com/tags/%E6%95%B0%E4%BB%93/"/>
+    <category term="Sparrk" scheme="http://www.quanxu.com/tags/Sparrk/"/>
     
   </entry>
   
   <entry>
-    <title>数仓知识之数仓分层建模</title>
-    <link href="http://www.quanxu.com/2018/12/16/2020-12-17-quannnxu-xiang-mu-2/"/>
-    <id>http://www.quanxu.com/2018/12/16/2020-12-17-quannnxu-xiang-mu-2/</id>
-    <published>2018-12-16T14:58:14.000Z</published>
-    <updated>2020-12-22T15:34:17.146Z</updated>
+    <title>Phoenix</title>
+    <link href="http://www.quanxu.com/2019/12/12/phoenix/"/>
+    <id>http://www.quanxu.com/2019/12/12/phoenix/</id>
+    <published>2019-12-12T13:22:22.000Z</published>
+    <updated>2021-06-06T07:25:02.392Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;1-离线分层&quot;&gt;&lt;a href=&quot;#1-离线分层&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;p&gt;OLTP 联机事务处理    关系型数据库    Oracle/MySQL&lt;/p&gt;
+&lt;p&gt;OLAP 联机分析处理&lt;/p&gt;
+&lt;p&gt;版本选择&lt;/p&gt;
+&lt;p&gt;apache-phoenix-4.14.0-cdh5.14.2-bin.tar.gz&lt;/p&gt;
+&lt;h3</summary>
         
       
     
     
     
-    <category term="数仓" scheme="http://www.quanxu.com/categories/%E6%95%B0%E4%BB%93/"/>
+    <category term="Phoenix" scheme="http://www.quanxu.com/categories/Phoenix/"/>
     
     
-    <category term="数仓" scheme="http://www.quanxu.com/tags/%E6%95%B0%E4%BB%93/"/>
+    <category term="Phoenix" scheme="http://www.quanxu.com/tags/Phoenix/"/>
     
   </entry>
   
   <entry>
-    <title>数仓知识</title>
-    <link href="http://www.quanxu.com/2018/12/16/2020-12-18-quannnxu-xiang-mu-3/"/>
-    <id>http://www.quanxu.com/2018/12/16/2020-12-18-quannnxu-xiang-mu-3/</id>
-    <published>2018-12-16T14:58:14.000Z</published>
-    <updated>2020-12-20T16:06:54.354Z</updated>
+    <title>Azkaban部署及二次开发</title>
+    <link href="http://www.quanxu.com/2019/12/08/azkaban/"/>
+    <id>http://www.quanxu.com/2019/12/08/azkaban/</id>
+    <published>2019-12-08T15:34:56.000Z</published>
+    <updated>2021-05-12T08:48:30.317Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;1.表设计&lt;/p&gt;
-&lt;p&gt;1.1 主键字段&lt;/p&gt;
-&lt;p&gt;1.2 更新时间字段&lt;/p&gt;
-&lt;p&gt;1.3</summary>
+    <summary type="html">&lt;p&gt;1.解压&lt;/p&gt;
+&lt;p&gt;tar -zxvf azkaban-3.90.0.tar.gz&lt;/p&gt;
+&lt;p&gt;2.打开gradle-wrapper.properties&lt;/p&gt;
+&lt;p&gt;cd</summary>
         
       
     
     
     
-    <category term="数仓" scheme="http://www.quanxu.com/categories/%E6%95%B0%E4%BB%93/"/>
+    <category term="Azkaban" scheme="http://www.quanxu.com/categories/Azkaban/"/>
     
     
-    <category term="数仓" scheme="http://www.quanxu.com/tags/%E6%95%B0%E4%BB%93/"/>
+    <category term="Azkaban" scheme="http://www.quanxu.com/tags/Azkaban/"/>
     
   </entry>
   
   <entry>
-    <title>Hive基础之数据导出Sqoop</title>
-    <link href="http://www.quanxu.com/2018/12/13/2020-12-13-quannnxu-hive5/"/>
-    <id>http://www.quanxu.com/2018/12/13/2020-12-13-quannnxu-hive5/</id>
-    <published>2018-12-13T15:22:18.000Z</published>
-    <updated>2020-12-21T15:03:35.259Z</updated>
+    <title>Spark源码分析</title>
+    <link href="http://www.quanxu.com/2019/12/05/spark-yuan-ma-fen-xi/"/>
+    <id>http://www.quanxu.com/2019/12/05/spark-yuan-ma-fen-xi/</id>
+    <published>2019-12-05T15:22:53.000Z</published>
+    <updated>2021-05-09T05:45:32.620Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;Sqoop&quot;&gt;&lt;a href=&quot;#Sqoop&quot; class=&quot;headerlink&quot; title=&quot;Sqoop&quot;&gt;&lt;/a&gt;&lt;strong&gt;Sqoop&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;RDBMS    ==&amp;gt;   </summary>
+    <summary type="html">&lt;p&gt;Spark源码重点;&lt;/p&gt;
+&lt;pre class=&quot; language-scala&quot;&gt;&lt;code class=&quot;language-scala&quot;&gt;SparkSubmit&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mian&lt;span</summary>
         
       
     
     
     
-    <category term="Sqoop" scheme="http://www.quanxu.com/categories/Sqoop/"/>
+    <category term="Spark" scheme="http://www.quanxu.com/categories/Spark/"/>
     
     
-    <category term="Sqoop" scheme="http://www.quanxu.com/tags/Sqoop/"/>
+    <category term="Spark" scheme="http://www.quanxu.com/tags/Spark/"/>
     
   </entry>
   
   <entry>
-    <title>Hive基础之Hive DML语法</title>
-    <link href="http://www.quanxu.com/2018/12/10/2020-12-07-quannnxu-hive3/"/>
-    <id>http://www.quanxu.com/2018/12/10/2020-12-07-quannnxu-hive3/</id>
-    <published>2018-12-10T15:09:22.000Z</published>
-    <updated>2020-12-11T14:22:53.804Z</updated>
+    <title>Flume自定义</title>
+    <link href="http://www.quanxu.com/2019/11/27/flume-zi-ding-yi-source/"/>
+    <id>http://www.quanxu.com/2019/11/27/flume-zi-ding-yi-source/</id>
+    <published>2019-11-27T14:39:23.000Z</published>
+    <updated>2021-05-08T08:46:49.762Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;&lt;a</summary>
+    <summary type="html">&lt;p&gt;pom.xml添加Flume依赖&lt;/p&gt;
+&lt;pre class=&quot; language-xml&quot;&gt;&lt;code class=&quot;language-xml&quot;&gt;            &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token</summary>
         
       
     
     
     
-    <category term="Hive" scheme="http://www.quanxu.com/categories/Hive/"/>
+    <category term="Project" scheme="http://www.quanxu.com/categories/Project/"/>
     
     
-    <category term="Hive" scheme="http://www.quanxu.com/tags/Hive/"/>
+    <category term="Project" scheme="http://www.quanxu.com/tags/Project/"/>
     
   </entry>
   
   <entry>
-    <title>Hive基础之Hive分区和常用函数</title>
-    <link href="http://www.quanxu.com/2018/12/10/2020-12-12-quannnxu-hive4/"/>
-    <id>http://www.quanxu.com/2018/12/10/2020-12-12-quannnxu-hive4/</id>
-    <published>2018-12-10T15:09:22.000Z</published>
-    <updated>2020-12-15T14:04:48.749Z</updated>
+    <title>Hadoop离线数仓01</title>
+    <link href="http://www.quanxu.com/2019/11/21/hadoop-chi-xian-shu-cang-01/"/>
+    <id>http://www.quanxu.com/2019/11/21/hadoop-chi-xian-shu-cang-01/</id>
+    <published>2019-11-21T14:34:23.000Z</published>
+    <updated>2021-04-29T14:17:05.652Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;1-PARTITIONED-BY&quot;&gt;&lt;a href=&quot;#1-PARTITIONED-BY&quot; class=&quot;headerlink&quot; title=&quot;1.PARTITIONED BY&quot;&gt;&lt;/a&gt;1.PARTITIONED BY&lt;/h4&gt;&lt;h5</summary>
+    <summary type="html">&lt;p&gt;数据:&lt;/p&gt;
+&lt;p&gt;​    日志数据&lt;/p&gt;
+&lt;p&gt;​    业务数据:数据库&lt;/p&gt;
+&lt;p&gt;流程:&lt;/p&gt;
+&lt;p&gt;LogServer ==&amp;gt; Flume ==&amp;gt; HDFS ==&amp;gt; 离线&lt;/p&gt;
+&lt;p&gt;​                       </summary>
         
       
     
     
     
-    <category term="Hive" scheme="http://www.quanxu.com/categories/Hive/"/>
+    <category term="Project" scheme="http://www.quanxu.com/categories/Project/"/>
     
     
-    <category term="Hive" scheme="http://www.quanxu.com/tags/Hive/"/>
+    <category term="Project" scheme="http://www.quanxu.com/tags/Project/"/>
     
   </entry>
   

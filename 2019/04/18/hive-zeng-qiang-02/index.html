@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html>
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>Hive增强02 | 欢迎来到我的博客</title>
+  
+    
+<link rel="stylesheet" href="/js/aos/aos.css">
+
+  
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+  
+  
+<link rel="stylesheet" href="/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="欢迎来到我的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+  
+<script src="/js/jquery3.5.1.js"></script>
+
+  
+<script src="/js/vue2.6.11.js"></script>
+
+  <body>
+    <header class="header bg-color" 
+  style="position: fixed; 
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <i class="fa fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+  </div>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo" src="/medias/tuxiang.jpg" alt="logo">
+      <h3 class="drawer-box-head_title">欢迎来到我的博客</h3>
+      <h5 class="drawer-box-head_desc">心之所动,梦之所往</h5>
+    </div>
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          <li class="drawer-box-content_item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+          <li class="drawer-box-content_item">
+            <a href="/friends" class="menu-item-link">
+              
+                <i class="fa fa-link" aria-hidden="true"></i>
+              
+              <span>友情链接</span>
+            </a>
+          </li>
+        
+        <li class="drawer-box-content_item">
+          <a href="">
+            <i class="fa fa-github" aria-hidden="true"></i>
+            <span>Github</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+    </div>
+    <div class="blog-title" id="author-avatar">
+      <div class="avatar">
+        <img src="/medias/tuxiang.jpg" alt="logo">
+      </div>
+      <a href="/" class="logo">欢迎来到我的博客</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          <li class="menu-item">
+            <a href="/" class="menu-item-link">
+              
+                <i class="fa fa-home" aria-hidden="true"></i>
+              
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/archives" class="menu-item-link">
+              
+                <i class="fa fa-archive" aria-hidden="true"></i>
+              
+              <span>归档</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/tags" class="menu-item-link">
+              
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+              <span>标签</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/categories" class="menu-item-link">
+              
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/about" class="menu-item-link">
+              
+                <i class="fa fa-user" aria-hidden="true"></i>
+              
+              <span>关于</span>
+            </a>
+          </li>
+        
+          <li class="menu-item">
+            <a href="/friends" class="menu-item-link">
+              
+                <i class="fa fa-link" aria-hidden="true"></i>
+              
+              <span>友情链接</span>
+            </a>
+          </li>
+        
+      </ul>
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fa fa-search" aria-hidden="true"></i></div>
+  <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+    <div class="message-box">
+      <h2>
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <span class="title">搜索</span>
+      </h2>
+      <form class="site-search-form">
+        <input type="text"
+          placeholder="请输入关键字"
+          id="local-search-input" 
+          @click="getSearchFile()"
+          class="st-search-input"
+          v-model="searchInput"
+        />
+      </form>
+      <div class="result-wrapper">
+        <div id="local-search-result" class="local-search-result-cls"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/local_search.js"></script>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile();
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+    </nav>
+  </div>
+  
+  <a target="_blank" rel="noopener" href="https://github.com/quannnxu/quannnxu.github.io" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+</header>
+    <main class="main" style="margin-top: 60px;">
+      
+
+
+<div class="post-detail-header" style="background: url(/medias/3.png) no-repeat; background-size: cover; 
+  background-position: center center;">
+  
+    <span class="title">Hive增强02</span>
+  
+</div>
+<div class="row justify-center">
+  <div class="main-content">
+    <article class="post post-detail">
+      
+      
+      <div class="post-meta">
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+        <span class="post-time">2019-04-18</span>
+      </div>
+      
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          <i class="iconfont icontag"></i>
+          
+            <a href="/tags/Hive/" class="">
+              Hive
+            </a>
+          
+        </div>
+        
+        
+        <div class="categories">
+          <i class="iconfont iconbookmark1"></i>
+          
+            <a href="/categories/Hive/" class="">
+              Hive
+            </a>
+          
+        </div>
+        
+      </div>
+      <div class="post-content">
+        <h3 id="1-求每个域名截止到每个月的访问数-最大单月访问数-累计到该月的访问量"><a href="#1-求每个域名截止到每个月的访问数-最大单月访问数-累计到该月的访问量" class="headerlink" title="1.求每个域名截止到每个月的访问数,最大单月访问数,累计到该月的访问量."></a>1.求每个域名截止到每个月的访问数,最大单月访问数,累计到该月的访问量.</h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">table</span> access_tmp1 <span class="token keyword">as</span>
+<span class="token keyword">select</span> 
+domain<span class="token punctuation">,</span>date_format<span class="token punctuation">(</span>visit_time<span class="token punctuation">,</span><span class="token string">'yyyy-MM'</span><span class="token punctuation">)</span> month<span class="token punctuation">,</span><span class="token function">sum</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> pv
+<span class="token keyword">from</span> user_click
+<span class="token keyword">group</span> <span class="token keyword">by</span> domain<span class="token punctuation">,</span>date_format<span class="token punctuation">(</span>visit_time<span class="token punctuation">,</span><span class="token string">'yyyy-MM'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="1-1-第一种自连接"><a href="#1-1-第一种自连接" class="headerlink" title="1.1 第一种自连接:"></a>1.1 第一种自连接:</h4><pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">table</span> access_tmp2 <span class="token keyword">as</span>
+<span class="token keyword">select</span> 
+<span class="token number">a</span><span class="token punctuation">.</span>domain a_domain<span class="token punctuation">,</span>
+<span class="token number">a</span><span class="token punctuation">.</span>month a_month<span class="token punctuation">,</span>
+<span class="token number">a</span><span class="token punctuation">.</span>pv a_pv<span class="token punctuation">,</span>
+<span class="token number">b</span><span class="token punctuation">.</span>domain b_domain<span class="token punctuation">,</span>
+<span class="token number">b</span><span class="token punctuation">.</span>month b_month<span class="token punctuation">,</span>
+<span class="token number">b</span><span class="token punctuation">.</span>pv b_pv
+<span class="token keyword">from</span> access_tmp1 <span class="token number">a</span> <span class="token keyword">join</span> access_tmp1 <span class="token number">b</span>
+<span class="token keyword">on</span> <span class="token number">a</span><span class="token punctuation">.</span>domain <span class="token operator">=</span> <span class="token number">b</span><span class="token punctuation">.</span>domain<span class="token punctuation">;</span></code></pre>
+<p>result:</p>
+<pre><code>+-----------------------+----------------------+-------------------+-----------------------+----------------------+-------------------+--+
+| access_tmp2.a_domain  | access_tmp2.a_month  | access_tmp2.a_pv  | access_tmp2.b_domain  | access_tmp2.b_month  | access_tmp2.b_pv  |
++-----------------------+----------------------+-------------------+-----------------------+----------------------+-------------------+--+
+| www.baidu.com       | 2019-01              | 30                | www.baidu.com       | 2019-01              | 30                |
+| www.baidu.com       | 2019-02              | 15                | www.baidu.com       | 2019-01              | 30                |
+| www.baidu.com       | 2019-03              | 44                | www.baidu.com       | 2019-01              | 30                |
+| www.baidu.com       | 2019-01              | 30                | www.baidu.com       | 2019-02              | 15                |
+| www.baidu.com       | 2019-02              | 15                | www.baidu.com       | 2019-02              | 15                |
+| www.baidu.com       | 2019-03              | 44                | www.baidu.com       | 2019-02              | 15                |
+| www.baidu.com       | 2019-01              | 30                | www.baidu.com       | 2019-03              | 44                |
+| www.baidu.com       | 2019-02              | 15                | www.baidu.com       | 2019-03              | 44                |
+| www.baidu.com       | 2019-03              | 44                | www.baidu.com       | 2019-03              | 44                |
+| google.com         | 2019-01              | 33                | google.com         | 2019-01              | 33                |
+| google.com         | 2019-02              | 10                | google.com         | 2019-01              | 33                |
+| google.com         | 2019-03              | 38                | google.com         | 2019-01              | 33                |
+| google.com         | 2019-01              | 33                | google.com         | 2019-02              | 10                |
+| google.com         | 2019-02              | 10                | google.com         | 2019-02              | 10                |
+| google.com         | 2019-03              | 38                | google.com         | 2019-02              | 10                |
+| google.com         | 2019-01              | 33                | google.com         | 2019-03              | 38                |
+| google.com         | 2019-02              | 10                | google.com         | 2019-03              | 38                |
+| google.com         | 2019-03              | 38                | google.com         | 2019-03              | 38                |
++-----------------------+----------------------+-------------------+-----------------------+----------------------+-------------------+--+</code></pre>
+<p>访问到该月就是从头到当前月的,即a.month &lt;= b.month</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
+t<span class="token punctuation">.</span>b_domain<span class="token punctuation">,</span>t<span class="token punctuation">.</span>b_month<span class="token punctuation">,</span>t<span class="token punctuation">.</span>b_pv<span class="token punctuation">,</span>
+<span class="token function">max</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>a_pv<span class="token punctuation">)</span> max_pv<span class="token punctuation">,</span>
+<span class="token function">sum</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>a_pv<span class="token punctuation">)</span> sum_pv
+<span class="token keyword">from</span> <span class="token punctuation">(</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> access_tmp2 <span class="token keyword">where</span> a_month <span class="token operator">&lt;=</span> b_month
+<span class="token punctuation">)</span> t
+<span class="token keyword">group</span> <span class="token keyword">by</span> t<span class="token punctuation">.</span>b_domain<span class="token punctuation">,</span>t<span class="token punctuation">.</span>b_month<span class="token punctuation">,</span>t<span class="token punctuation">.</span>b_pv<span class="token punctuation">;</span></code></pre>
+<p>result:</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">+</span><span class="token comment" spellcheck="true">------------------+------------+---------+---------+---------+--+</span>
+<span class="token operator">|</span>    t<span class="token punctuation">.</span>b_domain    <span class="token operator">|</span> t<span class="token punctuation">.</span>b_month  <span class="token operator">|</span> t<span class="token punctuation">.</span>b_pv  <span class="token operator">|</span> max_pv  <span class="token operator">|</span> sum_pv  <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------------------+------------+---------+---------+---------+--+</span>
+<span class="token operator">|</span> www<span class="token punctuation">.</span>baidu<span class="token punctuation">.</span>com  <span class="token operator">|</span> <span class="token number">2019</span><span class="token operator">-</span><span class="token number">01</span>    <span class="token operator">|</span> <span class="token number">30</span>      <span class="token operator">|</span> <span class="token number">30</span>      <span class="token operator">|</span> <span class="token number">30</span>      <span class="token operator">|</span>
+<span class="token operator">|</span> www<span class="token punctuation">.</span>baidu<span class="token punctuation">.</span>com  <span class="token operator">|</span> <span class="token number">2019</span><span class="token operator">-</span><span class="token number">02</span>    <span class="token operator">|</span> <span class="token number">15</span>      <span class="token operator">|</span> <span class="token number">30</span>      <span class="token operator">|</span> <span class="token number">45</span>      <span class="token operator">|</span>
+<span class="token operator">|</span> www<span class="token punctuation">.</span>baidu<span class="token punctuation">.</span>com  <span class="token operator">|</span> <span class="token number">2019</span><span class="token operator">-</span><span class="token number">03</span>    <span class="token operator">|</span> <span class="token number">44</span>      <span class="token operator">|</span> <span class="token number">44</span>      <span class="token operator">|</span> <span class="token number">89</span>      <span class="token operator">|</span>
+<span class="token operator">|</span> google<span class="token punctuation">.</span>com    <span class="token operator">|</span> <span class="token number">2019</span><span class="token operator">-</span><span class="token number">01</span>    <span class="token operator">|</span> <span class="token number">33</span>      <span class="token operator">|</span> <span class="token number">33</span>      <span class="token operator">|</span> <span class="token number">33</span>      <span class="token operator">|</span>
+<span class="token operator">|</span> google<span class="token punctuation">.</span>com    <span class="token operator">|</span> <span class="token number">2019</span><span class="token operator">-</span><span class="token number">02</span>    <span class="token operator">|</span> <span class="token number">10</span>      <span class="token operator">|</span> <span class="token number">33</span>      <span class="token operator">|</span> <span class="token number">43</span>      <span class="token operator">|</span>
+<span class="token operator">|</span> google<span class="token punctuation">.</span>com    <span class="token operator">|</span> <span class="token number">2019</span><span class="token operator">-</span><span class="token number">03</span>    <span class="token operator">|</span> <span class="token number">38</span>      <span class="token operator">|</span> <span class="token number">38</span>      <span class="token operator">|</span> <span class="token number">81</span>      <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------------------+------------+---------+---------+---------+--+</span></code></pre>
+<h4 id="1-2-第二种窗口函数"><a href="#1-2-第二种窗口函数" class="headerlink" title="1.2 第二种窗口函数:"></a>1.2 第二种窗口函数:</h4><pre class=" language-sql"><code class="language-sql"> <span class="token keyword">select</span> 
+ domain<span class="token punctuation">,</span>
+ month<span class="token punctuation">,</span>
+ pv<span class="token punctuation">,</span>
+ <span class="token function">max</span><span class="token punctuation">(</span>pv<span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> domain <span class="token keyword">order</span> <span class="token keyword">by</span> month<span class="token punctuation">)</span> max_pv<span class="token punctuation">,</span>
+ <span class="token function">sum</span><span class="token punctuation">(</span>pv<span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> domain <span class="token keyword">order</span> <span class="token keyword">by</span> month<span class="token punctuation">)</span> sum_pv
+ <span class="token keyword">from</span> access_tmp1<span class="token punctuation">;</span>
+</code></pre>
+<p>可选参数:</p>
+<pre><code>(ROWS | RANGE) BETWEEN (UNBOUNDED | [num]) PRECEDING AND ([num] PRECEDING | CURRENT ROW | (UNBOUNDED | [num]) FOLLOWING)
+窗口范围:UNBOUNDED 最前面    CURRENT ROW 到当前行    FOLLOWING 往后取
+(ROWS | RANGE) BETWEEN CURRENT ROW AND (CURRENT ROW | (UNBOUNDED | [num]) FOLLOWING)
+(ROWS | RANGE) BETWEEN [num] FOLLOWING AND (UNBOUNDED | [num]) FOLLOWING</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token function">sum</span><span class="token punctuation">(</span>pv<span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> domain <span class="token keyword">order</span> <span class="token keyword">by</span> month <span class="token keyword">rows</span> <span class="token operator">BETWEEN</span> <span class="token keyword">UNBOUNDED</span> <span class="token keyword">PRECEDING</span> <span class="token operator">AND</span> <span class="token keyword">CURRENT</span> <span class="token keyword">ROW</span><span class="token punctuation">)</span> max_pv
+从最前开始取到当前行</code></pre>
+<pre class=" language-SQL"><code class="language-SQL">sum(pv) over(partition by domain order by month rows BETWEEN 3 PRECEDING AND CURRENT ROW ) max_pv
+向前取一条</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token function">sum</span><span class="token punctuation">(</span>pv<span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> domain <span class="token keyword">order</span> <span class="token keyword">by</span> month <span class="token keyword">rows</span> <span class="token operator">BETWEEN</span> <span class="token number">3</span> <span class="token keyword">PRECEDING</span> <span class="token operator">AND</span> <span class="token number">1</span> <span class="token keyword">FOLLOWING</span> <span class="token punctuation">)</span> max_pv
+向前取三条向后取一条</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token function">sum</span><span class="token punctuation">(</span>pv<span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> domain <span class="token keyword">order</span> <span class="token keyword">by</span> month <span class="token keyword">rows</span> <span class="token operator">BETWEEN</span> <span class="token keyword">CURRENT</span> <span class="token keyword">ROW</span> <span class="token operator">AND</span>  <span class="token keyword">UNBOUNDED</span> <span class="token keyword">FOLLOWING</span><span class="token punctuation">)</span> max_pv<span class="token punctuation">;</span>
+当前行取到最后一行</code></pre>
+<p><img src="https://i.loli.net/2021/03/14/wyc3xkQFdLPBZ6p.png"></p>
+<h3 id="2-窗口函数"><a href="#2-窗口函数" class="headerlink" title="2.窗口函数:"></a>2.窗口函数:</h3><h4 id="2-1-NTILE-切片功能-把分区内的数据切分"><a href="#2-1-NTILE-切片功能-把分区内的数据切分" class="headerlink" title="2.1 NTILE():切片功能,把分区内的数据切分"></a>2.1 NTILE():切片功能,把分区内的数据切分</h4><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
+domain<span class="token punctuation">,</span>
+month<span class="token punctuation">,</span>
+pv<span class="token punctuation">,</span>
+ntile<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> domain <span class="token keyword">order</span> <span class="token keyword">by</span> month<span class="token punctuation">)</span> an1<span class="token punctuation">,</span>
+ntile<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> domain <span class="token keyword">order</span> <span class="token keyword">by</span> month<span class="token punctuation">)</span> an2
+<span class="token keyword">from</span> access_tmp1
+<span class="token keyword">order</span> <span class="token keyword">by</span> domain<span class="token punctuation">;</span></code></pre>
+<h4 id="2-1-ROW-NUMBER-给窗口函数加上编号-一般用于排名-排名不会重复"><a href="#2-1-ROW-NUMBER-给窗口函数加上编号-一般用于排名-排名不会重复" class="headerlink" title="2.1 ROW_NUMBER():给窗口函数加上编号,一般用于排名,排名不会重复"></a>2.1 ROW_NUMBER():给窗口函数加上编号,一般用于排名,排名不会重复</h4><pre class=" language-SQL"><code class="language-SQL">select 
+domain,
+month,
+pv,
+ROW_NUMBER() over(partition by domain order by PV) an1
+from access_tmp1;</code></pre>
+<h4 id="2-3-RANK-相同排名编号一样-下一个排名会加上相同排名的个数"><a href="#2-3-RANK-相同排名编号一样-下一个排名会加上相同排名的个数" class="headerlink" title="2.3 RANK():相同排名编号一样,下一个排名会加上相同排名的个数"></a>2.3 RANK():相同排名编号一样,下一个排名会加上相同排名的个数</h4><h4 id="2-4-DENSE-RANK-相同排名编号一样-下一个排名按顺序加1"><a href="#2-4-DENSE-RANK-相同排名编号一样-下一个排名按顺序加1" class="headerlink" title="2.4 DENSE_RANK():相同排名编号一样,下一个排名按顺序加1"></a>2.4 DENSE_RANK():相同排名编号一样,下一个排名按顺序加1</h4><pre class=" language-SQL"><code class="language-SQL">select 
+domain,
+month,
+pv,
+ROW_NUMBER() over(partition by domain order by PV) an1,
+RANK() over(partition by domain order by PV) an2,
+DENSE_RANK() over(partition by domain order by PV) an3
+from access_tmp1;</code></pre>
+<h4 id="2-5-CUME-DIST-小于等于当前行的行数-分组内的总行数-用来求占比"><a href="#2-5-CUME-DIST-小于等于当前行的行数-分组内的总行数-用来求占比" class="headerlink" title="2.5 CUME_DIST():小于等于当前行的行数 / 分组内的总行数    用来求占比"></a>2.5 CUME_DIST():小于等于当前行的行数 / 分组内的总行数    用来求占比</h4><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
+domain<span class="token punctuation">,</span>
+month<span class="token punctuation">,</span>
+pv<span class="token punctuation">,</span>
+CUME_DIST<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">order</span> <span class="token keyword">by</span> pv<span class="token punctuation">)</span> rn1<span class="token punctuation">,</span>
+CUME_DIST<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> domain <span class="token keyword">order</span> <span class="token keyword">by</span> pv<span class="token punctuation">)</span> an2
+<span class="token keyword">from</span> access_tmp1<span class="token punctuation">;</span></code></pre>
+<h4 id="2-6-PERCENT-RANK-分组内当前行的rank-1-分组内的总行数-1"><a href="#2-6-PERCENT-RANK-分组内当前行的rank-1-分组内的总行数-1" class="headerlink" title="2.6 PERCENT_RANK(): 分组内当前行的rank-1 / 分组内的总行数 -1"></a>2.6 PERCENT_RANK(): 分组内当前行的rank-1 / 分组内的总行数 -1</h4><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
+domain<span class="token punctuation">,</span>
+month<span class="token punctuation">,</span>
+pv<span class="token punctuation">,</span>
+PERCENT_RANK<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">order</span> <span class="token keyword">by</span> pv<span class="token punctuation">)</span> rn1<span class="token punctuation">,</span>
+PERCENT_RANK<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> domain <span class="token keyword">order</span> <span class="token keyword">by</span> pv<span class="token punctuation">)</span> an2
+<span class="token keyword">from</span> access_tmp1<span class="token punctuation">;</span></code></pre>
+<h4 id="2-7-lag-domain-1-0-取到上一条记录-取不到就默认为0"><a href="#2-7-lag-domain-1-0-取到上一条记录-取不到就默认为0" class="headerlink" title="2.7 lag(domain,1,0):取到上一条记录,取不到就默认为0"></a>2.7 lag(domain,1,0):取到上一条记录,取不到就默认为0</h4><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
+domain<span class="token punctuation">,</span>
+month<span class="token punctuation">,</span>
+pv<span class="token punctuation">,</span>
+lag<span class="token punctuation">(</span>domain<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>'<span class="token comment" spellcheck="true">-----') over(partition by domain order by pv) pre_domain,</span>
+lag<span class="token punctuation">(</span>domain<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span>'<span class="token comment" spellcheck="true">-----') over(partition by domain order by pv) pre_domain2</span>
+<span class="token keyword">from</span> 
+access_tmp1<span class="token punctuation">;</span></code></pre>
+<h4 id="2-8-lead-domain-1-0-取到先一条记录-取不到就默认为0"><a href="#2-8-lead-domain-1-0-取到先一条记录-取不到就默认为0" class="headerlink" title="2.8 lead(domain,1,0):取到先一条记录,取不到就默认为0"></a>2.8 lead(domain,1,0):取到先一条记录,取不到就默认为0</h4><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
+domain<span class="token punctuation">,</span>
+month<span class="token punctuation">,</span>
+pv<span class="token punctuation">,</span>
+lead<span class="token punctuation">(</span>domain<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>'<span class="token comment" spellcheck="true">-----') over(partition by domain order by pv) pre_domain,</span>
+lead<span class="token punctuation">(</span>domain<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span>'<span class="token comment" spellcheck="true">-----') over(partition by domain order by pv) pre_domain2</span>
+<span class="token keyword">from</span> 
+access_tmp1<span class="token punctuation">;</span></code></pre>
+<h4 id="2-9-first-value-取到当前分组的第一条"><a href="#2-9-first-value-取到当前分组的第一条" class="headerlink" title="2.9 first_value():取到当前分组的第一条"></a>2.9 first_value():取到当前分组的第一条</h4><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
+domain<span class="token punctuation">,</span>
+month<span class="token punctuation">,</span>
+pv<span class="token punctuation">,</span>
+first_value<span class="token punctuation">(</span>pv<span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> domain <span class="token keyword">order</span> <span class="token keyword">by</span> pv<span class="token punctuation">)</span> pre_domain
+<span class="token keyword">from</span> 
+access_tmp1<span class="token punctuation">;</span></code></pre>
+<h4 id="2-10-last-value-取到当前分组到现在为止的最后一条记录"><a href="#2-10-last-value-取到当前分组到现在为止的最后一条记录" class="headerlink" title="2.10 last_value():取到当前分组到现在为止的最后一条记录."></a>2.10 last_value():取到当前分组到现在为止的最后一条记录.</h4><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
+domain<span class="token punctuation">,</span>
+month<span class="token punctuation">,</span>
+pv<span class="token punctuation">,</span>
+last_value<span class="token punctuation">(</span>pv<span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> domain <span class="token keyword">order</span> <span class="token keyword">by</span> pv<span class="token punctuation">)</span> pre_domain
+<span class="token keyword">from</span> 
+access_tmp1<span class="token punctuation">;</span></code></pre>
+<h3 id="3-求连续登陆"><a href="#3-求连续登陆" class="headerlink" title="3.求连续登陆:"></a>3.求连续登陆:</h3><p>数据:</p>
+<p>+————-+——————-+–+<br>| visit.name  | visit.visit_time  |<br>+————-+——————-+–+<br>| A           | 20190101          |<br>| A           | 20190102          |<br>| A           | 20190103          |<br>| A           | 20190104          |<br>| A           | 20190106          |<br>| A           | 20190107          |<br>| A           | 20190108          |<br>| A           | 20190111          |<br>| A           | 20190112          |<br>| B           | 20190227          |<br>| B           | 20190228          |<br>| B           | 20190301          |<br>| B           | 20190104          |<br>| B           | 20190106          |<br>+————-+——————-+–+</p>
+<h4 id="3-1-找参考系-先排序-时间减去排名为连续开始登陆时间"><a href="#3-1-找参考系-先排序-时间减去排名为连续开始登陆时间" class="headerlink" title="3.1 找参考系,先排序,时间减去排名为连续开始登陆时间"></a>3.1 找参考系,先排序,时间减去排名为连续开始登陆时间</h4><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
+name<span class="token punctuation">,</span>
+day<span class="token punctuation">,</span>
+rn<span class="token punctuation">,</span>
+date_sub<span class="token punctuation">(</span>concat_ws<span class="token punctuation">(</span><span class="token string">'-'</span><span class="token punctuation">,</span>substr<span class="token punctuation">(</span>day<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span>substr<span class="token punctuation">(</span>day<span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>substr<span class="token punctuation">(</span>day<span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>rn<span class="token punctuation">)</span> date_diff
+<span class="token keyword">from</span><span class="token punctuation">(</span>
+<span class="token keyword">select</span> 
+name<span class="token punctuation">,</span>
+visit_time day<span class="token punctuation">,</span>
+row_number<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> name <span class="token keyword">order</span> <span class="token keyword">by</span> visit_time<span class="token punctuation">)</span> rn
+<span class="token keyword">from</span>
+visit<span class="token punctuation">)</span> t<span class="token punctuation">;</span></code></pre>
+<p>result:</p>
+<pre><code>+-------+-----------+-----+-------------+--+
+| name  |    day    | rn  |  date_diff  |
++-------+-----------+-----+-------------+--+
+| A     | 20190101  | 1   | 2018-12-31  |
+| A     | 20190102  | 2   | 2018-12-31  |
+| A     | 20190103  | 3   | 2018-12-31  |
+| A     | 20190104  | 4   | 2018-12-31  |
+| A     | 20190106  | 5   | 2019-01-01  |
+| A     | 20190107  | 6   | 2019-01-01  |
+| A     | 20190108  | 7   | 2019-01-01  |
+| A     | 20190111  | 8   | 2019-01-03  |
+| A     | 20190112  | 9   | 2019-01-03  |
+| B     | 20190104  | 1   | 2019-01-03  |
+| B     | 20190106  | 2   | 2019-01-04  |
+| B     | 20190227  | 3   | 2019-02-24  |
+| B     | 20190228  | 4   | 2019-02-24  |
+| B     | 20190301  | 5   | 2019-02-24  |
++-------+-----------+-----+-------------+--+</code></pre>
+<h4 id="3-2-分组求出连续登陆次数"><a href="#3-2-分组求出连续登陆次数" class="headerlink" title="3.2 分组求出连续登陆次数:"></a>3.2 分组求出连续登陆次数:</h4><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span>
+name<span class="token punctuation">,</span>
+<span class="token function">count</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> times
+<span class="token keyword">from</span>
+<span class="token punctuation">(</span><span class="token keyword">select</span> 
+name<span class="token punctuation">,</span>
+day<span class="token punctuation">,</span>
+rn<span class="token punctuation">,</span>
+date_sub<span class="token punctuation">(</span>concat_ws<span class="token punctuation">(</span><span class="token string">'-'</span><span class="token punctuation">,</span>substr<span class="token punctuation">(</span>day<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span>substr<span class="token punctuation">(</span>day<span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>substr<span class="token punctuation">(</span>day<span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>rn<span class="token punctuation">)</span> date_diff
+<span class="token keyword">from</span><span class="token punctuation">(</span>
+<span class="token keyword">select</span> 
+name<span class="token punctuation">,</span>
+visit_time day<span class="token punctuation">,</span>
+row_number<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> name <span class="token keyword">order</span> <span class="token keyword">by</span> visit_time<span class="token punctuation">)</span> rn
+<span class="token keyword">from</span>
+visit<span class="token punctuation">)</span> <span class="token number">a</span><span class="token punctuation">)</span> <span class="token number">b</span>
+<span class="token keyword">group</span> <span class="token keyword">by</span> name<span class="token punctuation">,</span>date_diff<span class="token punctuation">;</span></code></pre>
+<p>result:</p>
+<pre><code>+-------+--------+--+
+| name  | times  |
++-------+--------+--+
+| A     | 4      |
+| A     | 3      |
+| A     | 2      |
+| B     | 1      |
+| B     | 1      |
+| B     | 3      |
++-------+--------+--+</code></pre>
+<h4 id="3-3-去重求出最大登陆次数"><a href="#3-3-去重求出最大登陆次数" class="headerlink" title="3.3 去重求出最大登陆次数:"></a>3.3 去重求出最大登陆次数:</h4><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
+name<span class="token punctuation">,</span>
+<span class="token function">max</span><span class="token punctuation">(</span>times<span class="token punctuation">)</span>
+<span class="token keyword">from</span> <span class="token punctuation">(</span><span class="token keyword">select</span>
+name<span class="token punctuation">,</span>
+<span class="token function">count</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> times
+<span class="token keyword">from</span>
+<span class="token punctuation">(</span><span class="token keyword">select</span> 
+name<span class="token punctuation">,</span>
+day<span class="token punctuation">,</span>
+rn<span class="token punctuation">,</span>
+date_sub<span class="token punctuation">(</span>concat_ws<span class="token punctuation">(</span><span class="token string">'-'</span><span class="token punctuation">,</span>substr<span class="token punctuation">(</span>day<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span>substr<span class="token punctuation">(</span>day<span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>substr<span class="token punctuation">(</span>day<span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>rn<span class="token punctuation">)</span> date_diff
+<span class="token keyword">from</span><span class="token punctuation">(</span>
+<span class="token keyword">select</span> 
+name<span class="token punctuation">,</span>
+visit_time day<span class="token punctuation">,</span>
+row_number<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> name <span class="token keyword">order</span> <span class="token keyword">by</span> visit_time<span class="token punctuation">)</span> rn
+<span class="token keyword">from</span>
+visit<span class="token punctuation">)</span> <span class="token number">a</span><span class="token punctuation">)</span> <span class="token number">b</span>
+<span class="token keyword">group</span> <span class="token keyword">by</span> name<span class="token punctuation">,</span>date_diff<span class="token punctuation">)</span> <span class="token number">c</span>
+<span class="token keyword">group</span> <span class="token keyword">by</span> name<span class="token punctuation">;</span></code></pre>
+<p>result:</p>
+<pre><code>+-------+------+--+
+| name  | _c1  |
++-------+------+--+
+| A     | 4    |
+| B     | 3    |
++-------+------+--+</code></pre>
+<h3 id="4-Hive参数"><a href="#4-Hive参数" class="headerlink" title="4.Hive参数"></a>4.Hive参数</h3><h5 id="hive-fetch-task-conversion参数-控制是否执行MapReduce作业"><a href="#hive-fetch-task-conversion参数-控制是否执行MapReduce作业" class="headerlink" title="hive.fetch.task.conversion参数    控制是否执行MapReduce作业"></a>hive.fetch.task.conversion参数    控制是否执行MapReduce作业</h5><ol start="0">
+<li><p><code>none</code>:  Disable hive.fetch.task.conversion (value added in Hive 0.14.0 with <a target="_blank" rel="noopener" href="https://issues.apache.org/jira/browse/HIVE-8389">HIVE-8389</a>)</p>
+<p>禁用,所有作业都跑MR</p>
+</li>
+<li><p><code>minimal</code>:  SELECT *, FILTER on partition columns (WHERE and HAVING clauses), LIMIT only</p>
+<p>select分区列filter不执行</p>
+</li>
+<li><p><code>more</code>:  SELECT, FILTER, LIMIT only (including TABLESAMPLE, virtual columns)</p>
+</li>
+</ol>
+<h5 id="hive-mapred-mode参数"><a href="#hive-mapred-mode参数" class="headerlink" title="hive.mapred.mode参数"></a>hive.mapred.mode参数</h5><ul>
+<li>Default Value: <ul>
+<li>Hive 0.x: <code>nonstrict</code></li>
+<li>Hive 1.x: <code>nonstrict</code></li>
+<li>Hive 2.x: <code>strict</code> (<a target="_blank" rel="noopener" href="https://issues.apache.org/jira/browse/HIVE-12413">HIVE-12413</a>)</li>
+</ul>
+</li>
+</ul>
+<p>严格模式下order by不能执行,笛卡尔积操作也不能执行</p>
+<p>查询分区表时不加分区,也不能执行</p>
+<h5 id="hive-exec-parallel参数-决定作业是否可以并行跑-没有依赖的作业"><a href="#hive-exec-parallel参数-决定作业是否可以并行跑-没有依赖的作业" class="headerlink" title="hive.exec.parallel参数    决定作业是否可以并行跑(没有依赖的作业)"></a>hive.exec.parallel参数    决定作业是否可以并行跑(没有依赖的作业)</h5><ul>
+<li>Default Value: <code>false</code></li>
+<li>Added In: Hive 0.5.0</li>
+</ul>
+<p>集群资源足够时可以开启.</p>
+<h5 id="hive-auto-convert-join参数-是否自动转换成为mapjoin"><a href="#hive-auto-convert-join参数-是否自动转换成为mapjoin" class="headerlink" title="hive.auto.convert.join参数    是否自动转换成为mapjoin"></a>hive.auto.convert.join参数    是否自动转换成为mapjoin</h5><p>查看执行计划:</p>
+<p>explain (extended) select * from emp a left join dept b on a.deptno = b.deptno;</p>
+<pre><code>+----------------------------------------------------+--+
+|                      Explain                       |
++----------------------------------------------------+--+
+| STAGE DEPENDENCIES:                                |
+|   Stage-4 is a root stage                          |
+|   Stage-3 depends on stages: Stage-4               |
+|   Stage-0 depends on stages: Stage-3               |
+|                                                    |
+| STAGE PLANS:                                       |
+|   Stage: Stage-4                                   |
+|     Map Reduce Local Work                          |
+|       Alias -&gt; Map Local Tables:                   |
+|         b                                          |
+|           Fetch Operator                           |
+|             limit: -1                              |
+|       Alias -&gt; Map Local Operator Tree:            |
+|         b                                          |
+|           TableScan                                |
+|             alias: b                               |
+|             Statistics: Num rows: 1 Data size: 79 Basic stats: COMPLETE Column stats: NONE |
+|             HashTable Sink Operator                |
+|               keys:                                |
+|                 0 deptno (type: int)               |
+|                 1 deptno (type: int)               |
+|                                                    |
+|   Stage: Stage-3                                   |
+|     Map Reduce                                     |
+|       Map Operator Tree:                           |
+|           TableScan                                |
+|             alias: a                               |
+|             Statistics: Num rows: 2 Data size: 700 Basic stats: COMPLETE Column stats: NONE |
+|             Map Join Operator                      |
+|               condition map:                       |
+|                    Left Outer Join0 to 1           |
+|               keys:                                |
+|                 0 deptno (type: int)               |
+|                 1 deptno (type: int)               |
+|               outputColumnNames: _col0, _col1, _col2, _col3, _col4, _col5, _col6, _col7, _col11, _col12, _col13 |
+|               Statistics: Num rows: 2 Data size: 770 Basic stats: COMPLETE Column stats: NONE |
+|               Select Operator                      |
+|                 expressions: _col0 (type: int), _col1 (type: string), _col2 (type: string), _col3 (type: int), _col4 (type: string), _col5 (type: double), _col6 (type: double), _col7 (type: int), _col11 (type: int), _col12 (type: string), _col13 (type: string) |
+|                 outputColumnNames: _col0, _col1, _col2, _col3, _col4, _col5, _col6, _col7, _col8, _col9, _col10 |
+|                 Statistics: Num rows: 2 Data size: 770 Basic stats: COMPLETE Column stats: NONE |
+|                 File Output Operator               |
+|                   compressed: false                |
+|                   Statistics: Num rows: 2 Data size: 770 Basic stats: COMPLETE Column stats: NONE |
+|                   table:                           |
+|                       input format: org.apache.hadoop.mapred.TextInputFormat |
+|                       output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat |
+|                       serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe |
+|       Local Work:                                  |
+|         Map Reduce Local Work                      |
+|                                                    |
+|   Stage: Stage-0                                   |
+|     Fetch Operator                                 |
+|       limit: -1                                    |
+|       Processor Tree:                              |
+|         ListSink                                   |
+|                                                    |
++----------------------------------------------------+--+</code></pre>
+<p>hive.smalltable.filesize <em>or</em> hive.mapjoin.smalltable.filesize参数    可调节默认走map的表的大小</p>
+<p><strong>set mapreduce.job.reduce = x;设置reduce个数</strong></p>
+<h5 id="hive-exec-mode-local-auto参数-本地模式"><a href="#hive-exec-mode-local-auto参数-本地模式" class="headerlink" title="hive.exec.mode.local.auto参数    本地模式"></a>hive.exec.mode.local.auto参数    本地模式</h5>
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>quanxu</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/2019/04/18/hive-zeng-qiang-02/" target="_blank" title="Hive增强02">http://www.quanxu.com/2019/04/18/hive-zeng-qiang-02/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <div class="post-nav">
+
+  <div class="post-nav-prev post-nav-item">
+    <a href="/2019/04/20/zookeeper01/">
+      上一篇:    Zookeeper01
+    </a>
+  </div>
+
+
+
+  <div class="post-nav-next post-nav-item">
+    <a href="/2019/04/15/hive-zeng-qiang-01/">
+      <span>
+        下一篇:    Hive增强01 
+      </span>
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-if="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-if="visible">
+      <div class="donate-box_close">
+        <i class="fa fa-times" aria-hidden="true" @click="cancelDialogDrawer"></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-if="tabActive === 'Alipay'">
+          <img src="/medias/zfb1.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-if="tabActive === 'WeChatpay'">
+          <img src="/medias/weixin.png" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+
+
+<script src="/js/shareJs/social-share.min.js"></script>
+
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+
+    <!-- 评论 -->
+      
+        
+      
+  </div>
+
+  
+    <div class="toc-aside">
+      <div class="toc-main">
+        <div class="toc-aside-title">
+          <i class="fa fa-list-ul" aria-hidden="true"></i><span>目录</span>
+        </div>
+        <div class="toc-content">
+          <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script>
+<div class="toc"></div>
+
+<script>
+  if ($('.toc').length > 0) {
+    var headerEl = 'h2, h3, h4',  //headers 
+      content = '.post-detail',//文章容器
+      idArr = {};  //标题数组以确定是否增加索引id
+      //add #id
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: content,
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: headerEl,
+      scrollSmooth: true,
+      scrollSmoothOffset: -80,
+      headingsOffset: 130,
+      positionFixedSelector: '.toc-main',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  }
+
+</script>
+
+<style>
+.is-position-fixed {
+  position:fixed !important;
+  top: 64px;
+}
+
+</style>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+    </main>
+    <div class="footer bg-color">
+  <div class="footer-main">
+    <div class="link">
+      <a target="_blank" rel="noopener" href="https://github.com/yuang01/hexo-theme-bamboo">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+      <a href="mailto:1730241541@qq.com">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+      </a>
+      <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1730241541">
+        <i class="fa fa-qq" aria-hidden="true"></i>
+      </a>
+      <a href="/atom.xml" target="_blank">
+        <i class="fa fa-rss" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="footer-copyright">
+      Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/yuang01">yuang01</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> 
+    </div>
+    
+      
+  <!-- 不蒜子统计 -->
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-book" aria-hidden="true"></i>本站总阅读量：<span id="busuanzi_value_page_pv"></span> 次
+  </span>
+  <span id="busuanzi_container_site_pv">
+        <i class="fa fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+  </span>
+  <span class="post-meta-divider">|</span>
+  <span id="busuanzi_container_site_uv" style='display:none'>
+        <i class="fa fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+  </span>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    
+  </div>
+</div>
+
+
+    
+      <div class="goTop bg-color">
+  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+</div>
+
+<script src="/js/goTop.js"></script>
+
+    
+
+    
+      <link href="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  display: none;
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  display: none;
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+<meting-js  
+  class=""
+  server="netease"
+  type="playlist"
+  id="442274724"
+  fixed='true'
+  autoplay='false'
+  theme='#42b983'
+  loop='all'
+  order='random'
+  preload='auto'
+  volume='0.7'
+  list-folded='true'
+>
+</meting-js>
+
+<!-- <style>
+  #aplayer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+  }
+</style> -->
+<script src="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      
+<script src="/js/fancybox/jquery.fancybox.min.js"></script>
+<script src="/js/wrapImage.js"></script>
+
+    
+
+    <!-- 爱心点击 -->
+    
+      
+<script src="/js/clicklove.js"></script>
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
+    
+      
+<script src="/js/aos/aos.js"></script>
+
+      <script>
+        // https://github.com/michalsnik/aos
+        const themeOffset = parseInt('120') || 120;
+        const themeDelay = parseInt('0')|| 0;
+        const themeDuration = parseInt('400') || 400;
+        const themeEasing = 'ease' || 'ease';
+        const themeOnce = JSON.parse('true' || true);
+        const themeMirror = JSON.parse('false' || false);
+        const themeAnchorPlacement = 'top-bottom' || 'top-bottom';
+        AOS.init({
+          // Global settings:
+          disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+          startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+          initClassName: 'aos-init', // class applied after initialization
+          animatedClassName: 'aos-animate', // class applied on animation
+          useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+          disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+          debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+          throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+          // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+          offset: themeOffset, // offset (in px) from the original trigger point
+          delay: themeDelay, // values from 0 to 3000, with step 50ms
+          duration: themeDuration, // values from 0 to 3000, with step 50ms
+          easing: themeEasing, // default easing for AOS animations
+          once: themeOnce, // whether animation should happen only once - while scrolling down
+          mirror: themeMirror, // whether elements should animate out while scrolling past them
+          anchorPlacement: themeAnchorPlacement, // defines which position of the element regarding to window should trigger the animation
+
+        });
+      </script>
+    
+
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css">
+<script src="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+<div id="appCopy">
+</div>
+<script>
+  var vm = new Vue({
+    el: '#appCopy',
+    data: {
+    },
+    computed: {
+    },
+    mounted() {
+      const that = this;
+      //  监听 ctrl + c事件  
+      $(document).unbind('keypress').bind('keypress', function (e) {
+        if (e.ctrlKey && e.keyCode == 67) {
+          doSomething();
+          // 返回false, 防止重复触发copy事件  
+          return false;
+        }
+      })
+
+      // 鼠标右键的复制事件  
+      $(document).unbind('copy').bind('copy', function (e) {
+        doSomething();
+        // console.log('右键复制 监听成功');
+      });
+
+      function doSomething() {
+        that.$notify({
+          title: '成功',
+          content: '复制成功了哦',
+          type: 'success'
+        })
+        // console.log('ctrl + c 监听成功');  
+      }
+    },
+    methods: {
+    },
+    created() { }
+  })
+</script>
+    
+
+    <!-- 输入框打字特效 -->
+    
+      
+<script src="/js/activate-power-mode.js"></script>
+
+      <script>
+          POWERMODE.colorful = true;  // 打开随机颜色特效
+          POWERMODE.shake = false;    // 关闭输入框抖动
+          document.body.addEventListener('input', POWERMODE);//监听打字事件
+      </script>
+    
+
+    <!-- markdown代码一键复制功能 -->
+    
+<script src="/js/clipboard/clipboard.min.js"></script>
+
+    <script>
+      !function (e, t, a) {
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function(){
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+          copyHtml += '<i class="fa fa-globe"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre code").before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+              target: function(trigger) {
+                  return trigger.nextElementSibling;
+              }
+          });
+        }
+        initCopyCode();
+      }(window, document);
+    </script>
+  </body>
+</html>
